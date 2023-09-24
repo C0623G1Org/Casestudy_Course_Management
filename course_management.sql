@@ -4,7 +4,7 @@ USE course_management;
 CREATE TABLE course (
     course_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     course_name VARCHAR(255) NOT NULL,
-    course_descreption VARCHAR(1000) NOT NULL,
+    course_description VARCHAR(1000) NOT NULL,
     instructor VARCHAR(50) NOT NULL,
     price DOUBLE NOT NULL,
     course_content_id INT,
@@ -15,7 +15,7 @@ CREATE TABLE course (
 CREATE TABLE course_content (
     course_content_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     course_content_name VARCHAR(255) NOT NULL,
-    course_content_descreption VARCHAR(1000) NOT NULL
+    course_content_description VARCHAR(1000) NOT NULL
 );
 
 CREATE TABLE video (
@@ -48,11 +48,11 @@ CREATE TABLE theory (
 CREATE TABLE course_user (
     user_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     user_name VARCHAR(255) NOT NULL,
-    birthday DATE NOT NULL,
-    gender BIT NOT NULL,
+    birthday DATE,
+    gender BIT,
     phone VARCHAR(50) NOT NULL,
     email VARCHAR(255) NOT NULL,
-    access_right BIT NOT NULL
+    access_right VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE course_order (
