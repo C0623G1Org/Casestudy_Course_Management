@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3f28473f-ca85-4ef9-be6d-016e191bff08" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/image/Group 60.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/Group.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/Rectangle 52.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/Rectangle 522.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/image 8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/truongnq.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/checkout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/course-detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="SOFT" />
   </component>
   <component name="ProjectId" id="2Vs3Dy6rJ4gc828A7GV4kO7qmG2" />
   <component name="PropertiesComponent">
@@ -9,5 +30,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
