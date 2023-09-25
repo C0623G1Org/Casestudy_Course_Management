@@ -1,0 +1,15 @@
+.card-title{
+    text-decoration: none;
+    color: #CDCDCD;
+    font-size: 40px;
+    font-weight: bold;
+}
+.card-text{
+    text-decoration: none;
+    color: #CDCDCD;
+    font-weight: bold;
+}
+.row{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
