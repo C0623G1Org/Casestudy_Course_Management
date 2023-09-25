@@ -60,6 +60,12 @@
 .img-hero img {
     max-height: 500px;
 }
+.imgsl1-course{
+    max-width: 100%;
+}
+.card-img-overlay{
+    padding: 50px 50px 50px 100px;
+}
 .why h2{
     color: #111319;
     font-size: 50px;
