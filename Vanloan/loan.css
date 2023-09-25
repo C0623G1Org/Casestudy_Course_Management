@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', serif;
+}
+
+.nav-header li a {
+    color: #101218;
+    font-size: 18px;
+    font-family: 'Montserrat', serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.btn-primary {
+    border-radius: 30px;
+    background: #111319;
+    border: unset;
+    font-weight: 600;
+}
+
+.btn-hero {
+    border-radius: 40px;
+    background: #101218;
+    padding: 10px 30px;
+    box-shadow: 2px 10px 20px 0px rgba(11, 16, 63, 0.40);
+}
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    position: relative;
+    width: 500px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+/*.wrapper img {*/
+/*    display: flex;*/
+/*    justify-items: center;*/
+/*    z-index: -1;*/
+/*    text-align: center;*/
+/*}*/
+
+.wrapper h3{
+    font-size: 32px;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Montserrat', serif;
+
+}
+
+.wrapper p {
+    text-align: center;
+    font-size: 16px;
+}
+
+.wrapper .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid rgba(97, 93, 93, .2);
+    /*border: 2px solid #615D5D;*/
+    border-radius: 40px;
+    font-size: 20px;
+    padding: 25px 45px 25px 25px;
+    color: black;
+}
+
+.input-box i {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.wrapper .register-btn {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    border-radius: 40px;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.wrapper .login-link {
+    font-size: 20px;
+    text-align: center;
+    margin: 15px 0 0;
+}
+
+.login-link p a {
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.login-link p a:hover {
+    text-decoration: underline;
+}
+
+.accept {
+    text-align: center;
+    margin: 0 30px 20px;
+    font-size: 14px;
+
+}
