@@ -1,5 +1,5 @@
 * {
-    font-family: 'Montserrat', serif;
+    font-family: 'Quicksand', serif;
 }
 
 .nav-header li a {
@@ -65,4 +65,210 @@
 }
 .card-img-overlay{
     padding: 50px 50px 50px 100px;
+}
+.why h2{
+    color: #111319;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+.feature.col.one {
+    border-radius: 30px;
+    background: #AEE5FF;
+    padding: 20px;
+}
+
+.feature.col.two {
+    border-radius: 30px;
+    background: #B4FFC6;
+    padding: 20px;
+}
+.feature.col.one {
+    border-radius: 30px;
+    background: #AEE5FF;
+    padding: 20px;
+}
+
+.feature.col.two {
+    border-radius: 30px;
+    background: #B4FFC6;
+    padding: 20px;
+}
+
+.feature.col i {
+    color: #fff;
+}
+
+.feature.col.one i {
+    background: #A3A3F5;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.feature.col.two i {
+    padding: 15px;
+    background: #FE7D76;
+    border-radius: 50%;
+}
+.feature h5 {
+    color: #3B0200;
+    font-size: 24px !important;
+    font-weight: 600;
+}
+.feature p {
+    color: #3B0200;
+    font-size: 16px;
+    font-weight: 400;
+}
+.voucher-home h3 {
+    color: #0B0B0C;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.voucher-home .bg-circe {
+    text-align: center;
+}
+.voucher-home .bg-circe p {
+    border-radius: 30px;
+    background: #F1F1F1;
+    margin: 0;
+    padding: 5px 10px;
+}
+.course-home h2 {
+    color: #0C0E14;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+.row.form-search-home {
+    border-radius: 50px;
+    background: #EEE;
+}
+.row.form-search-home p {
+    margin: 0;
+    color: #666;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 10px 10px;
+}
+.form-search-home .btn-search {
+    border-radius: 50px;
+    background: #111319;
+}
+.form-search-home .btn-search p{
+    color: #fff;
+}
+.card-body .card-head {
+    display: flex;
+    justify-content: space-between;
+}
+.category, .feedback {
+    display: flex;
+    justify-content: flex-end;
+}
+.card-body .category p.text-right, .card-body .feedback p {
+    padding: 5px 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background: #FFC4DF;
+}
+.card-body .card-head h3 {
+    color: #000;
+    text-align: right;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+.card-bottom .author {
+    border-radius: 50px;
+    background: #E2F6FF;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+.card-bottom .rating {
+    border-radius: 10px;
+    background: #FDF7EF;
+    color: #666;
+    padding: 5px 10px;
+}
+.card-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px;
+}
+.card-price .price {
+    color: #3B0200;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+.card-price .btn {
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border-radius: 30px;
+}
+.card {
+    border-radius: 30px;
+    border: 1px solid #DEDEDE;
+}
+.card-bottom .category {
+    border-radius: 10px;
+    background: #E2F6FF;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+.card-name-course h3 {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+form.news {
+    margin: 0;
+    border-radius: 30px;
+    background: #D9D9D9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+form.news input, form.news .form-control:focus {
+    background: unset;
+    border: 0;
+    padding-top: 0;
+    box-shadow: unset;
+}
+form.news .col-auto {
+    margin: 0;
+    padding: 0;
+}
+form.news button.btn.btn-primary {
+    margin: 0;
+}
+ul.nav.nav-pills.menu-footer .nav-link {
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
