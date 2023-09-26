@@ -272,3 +272,68 @@ ul.nav.nav-pills.menu-footer .nav-link {
     font-weight: 600;
     line-height: normal;
 }
+.siderbar-dashboard {
+    border-radius: 20px;
+    background: #070707;
+    padding: 30px;
+    min-height: 100vh;
+}
+.siderbar-dashboard .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    border-radius: 30px;
+    background: #8D8DF5;
+}
+.img-logo-dashboard {
+    margin-bottom: 50px;
+}
+.siderbar-dashboard .nav-pills .fa-solid {
+    margin-right: 10px;
+    font-size: 16px;
+}
+.siderbar-dashboard .nav-pills svg {
+    width: 18px;
+}
+.content-dashboard {
+    padding: 30px;
+}
+.content-dashboard .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content-dashboard .header-content h3 {
+     color: #111824;
+     font-size: 29px;
+     font-style: normal;
+     font-weight: 700;
+     line-height: 20px;
+}
+.content-dashboard .header-content .day-now p {
+    border-radius: 50px;
+    border: 1px solid #E9E9EA;
+    margin: 0;
+    padding: 5px 20px;
+}
+.form-search-course input {
+    border-radius: 50px;
+    background: #F4F4F4;
+    padding: 5px 10px;
+}
+.form-search-course input::placeholder {
+    font-size: 14px;
+    color: #646464;
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+.content-dashboard .rounded-pill {
+    background: #3B0200;
+}
+.content-dashboard .rounded-pill img {
+    border: 3px solid #FFF;
+}.content-dashboard .rounded-pill .day-buy p {
+     color: #666;
+     font-size: 16px;
+     font-style: normal;
+     line-height: normal;
+}
