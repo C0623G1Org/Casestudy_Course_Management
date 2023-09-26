@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buy Courses</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../libs/fontawesome/css/all.min.css">
+    <link rel="shortcut icon" href="../public/image/favaticon.png" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="../public/main.css">
+    <link rel="stylesheet" href="../public/buyCoures.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <div class="col-md-3 mb-2 mb-md-0">
+                <a href="../public"
+                   class="d-inline-flex link-body-emphasis text-decoration-none">
+                    <img src="../public/image/logo-website.png" alt="Logo Website">
+                </a>
+            </div>
+
+            <ul class="nav nav-header col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="#" class="nav-link px-4">Trang chủ</a></li>
+                <li><a href="#" class="nav-link px-4">Khóa học</a></li>
+                <li><a href="#" class="nav-link px-4">Cộng đồng</a></li>
+                <li><a href="#" class="nav-link px-4">Về chúng tôi</a></li>
+            </ul>
+
+            <div class="col-md-3 text-end">
+                <button type="button" class="btn-login btn btn-dark">Đăng nhập</button>
+            </div>
+        </div>
+    </div>
+</header>
+<section>'
+    <div class="container">
+        <form role="form" class="check-out">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 style="font-weight: bold">Thông tin khách hàng</h1>
+                    <div class="form-group my-3">
+                        <label for="nameBC"><img src="../public/image/acountBC.png"> và tên của bạn*</label>
+                        <input type="text" class="form-control" id="nameBC">
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="numberphoneBC"><img src="../public/image/sdtBC.png">Số điện thoại của bạn*</label>
+                        <input type="number" class="form-control" id="numberphoneBC" >
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="EmailBC"><img src="../public/image/emailBC.png">Email của bạn*</label>
+                        <input type="text" class="form-control" id="EmailBC" >
+                    </div>
+                    <p>(Nếu email của bạn chưa có trên hệ thống, chúng tôi sẽ dùng Email thanh toán này để tạo tài khoản. Nhằm mục đích lưu trữ trông tin để phục vụ cho việc học tập của bạn)</p>
+                </div>
+                <div class="col-md-6">
+                    <h1 style="font-weight: bold">Order Summary</h1>
+                    <div class="row">
+                        <div class="col-md-9"><h5>Order Summary</h5></div>
+                        <div class="col-md-3" style="text-align: right"><p style="color: #0a53be; text-align: right"><img src="../public/image/penBC.png">Edit</p></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="../public/image/RectangleBC.png" width="120p" height="100">
+                        </div>
+                        <div class="col-md-6">
+                            <h5 style="font-weight: bold">Javascript Foudatament</h5>
+                            <p>JavaScript là ngôn ngữ lập trình phía client, được sử dụng chủ yếu trong các ứng dụng web để tạo ra các hiệu ứng tương tác trên trang web</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p style="font-size: 25px; font-weight: bold; text-align: right">1.200.000VNĐ</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10"><p>Discount</p></div>
+                        <div class="col-md-2"><p style="text-align: right">10%</p></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p style="font-size: 30px; font-weight: bold">Total</p></div>
+                        <div class="col-md-6" style="text-align: right">
+                            <p style="font-size: 25px; font-weight: bold">1.080.000 VNĐ</p><br/>
+                            <p>(VAT included if applicable)</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p style="font-size: 30px; font-weight: bold">Phương thức thanh toán</p>
+                        <p><input type="radio" name="payment-methods" value="select-1"> Chuyển khoản qua thẻ ngân hàng</p><br/>
+                        <p><input type="radio" name="payment-methods" value="select-2"> Thanh toán qua thẻ tín dụng</p><br/>
+                    </div>
+                    <div class="row">
+                        <button type="submit" class="btn btn-outline-primary">Thanh toán</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script src="../libs/bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+</html>
