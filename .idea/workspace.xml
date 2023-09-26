@@ -4,37 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c51c2ea-0667-4fa2-b974-09a37c55ca66" name="Changes" comment="up">
+    <list default="true" id="48903e53-c7b7-4c95-885c-2b588e88d8ca" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/truongnq.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/truongnq.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/course-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/course-detail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
-}</component>
   <component name="ProjectId" id="2Vs3Dy6rJ4gc828A7GV4kO7qmG2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -42,11 +25,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/CodeGym/C0623G1_Pham_Van_Thanh_Module3/Casestudy_Course_Management/view",
+    "last_opened_file_path": "E:/Casestudy_Course_Management",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -54,42 +36,25 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\CodeGym\C0623G1_Pham_Van_Thanh_Module3\Casestudy_Course_Management\view" />
-    </key>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8c51c2ea-0667-4fa2-b974-09a37c55ca66" name="Changes" comment="up" />
-      <created>1695638541578</created>
+      <changelist id="48903e53-c7b7-4c95-885c-2b588e88d8ca" name="Changes" comment="" />
+      <created>1695633304586</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1695638541578</updated>
-      <workItem from="1695638543328" duration="472000" />
-      <workItem from="1695639030518" duration="161000" />
-      <workItem from="1695646229276" duration="388000" />
-      <workItem from="1695709727133" duration="5578000" />
+      <updated>1695633304586</updated>
+      <workItem from="1695633305585" duration="280000" />
+      <workItem from="1695633779005" duration="1149000" />
+      <workItem from="1695643893815" duration="1470000" />
+      <workItem from="1695649228223" duration="1545000" />
+      <workItem from="1695698744270" duration="1187000" />
+      <workItem from="1695713046535" duration="2781000" />
+      <workItem from="1695715870656" duration="844000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="up" />
-    <option name="LAST_COMMIT_MESSAGE" value="up" />
   </component>
 </project>
