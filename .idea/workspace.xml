@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c51c2ea-0667-4fa2-b974-09a37c55ca66" name="Changes" comment="up" />
+    <list default="true" id="8c51c2ea-0667-4fa2-b974-09a37c55ca66" name="Changes" comment="up">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Diagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ERD.mwb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/truongnq.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/truongnq.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/course-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/course-detail.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,6 +59,7 @@
       <updated>1695638541578</updated>
       <workItem from="1695638543328" duration="472000" />
       <workItem from="1695639030518" duration="161000" />
+      <workItem from="1695646229276" duration="388000" />
     </task>
     <servers />
   </component>
