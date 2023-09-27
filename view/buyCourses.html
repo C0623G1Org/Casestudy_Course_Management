@@ -13,12 +13,11 @@
     <link rel="stylesheet" href="../public/buyCoures.css">
 </head>
 <body>
-<header>
+<header id="header">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
             <div class="col-md-3 mb-2 mb-md-0">
-                <a href="../public"
-                   class="d-inline-flex link-body-emphasis text-decoration-none">
+                <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
                     <img src="../public/image/logo-website.png" alt="Logo Website">
                 </a>
             </div>
@@ -31,36 +30,36 @@
             </ul>
 
             <div class="col-md-3 text-end">
-                <button type="button" class="btn-login btn btn-dark">Đăng nhập</button>
+                <button type="button" class="btn-login btn btn-primary">Đăng nhập</button>
             </div>
         </div>
     </div>
 </header>
-<section>'
+<section>
     <div class="container">
         <form role="form" class="check-out">
             <div class="row">
                 <div class="col-md-6">
-                    <h1 style="font-weight: bold">Thông tin khách hàng</h1>
+                    <h3 style="font-weight: bold">Thông tin khách hàng</h3>
                     <div class="form-group my-3">
-                        <label for="nameBC"><img src="../public/image/acountBC.png"> và tên của bạn*</label>
-                        <input type="text" class="form-control" id="nameBC">
+                        <label for="nameBC"><i class="fa-solid fa-user"></i> Họ và tên của bạn*</label>
+                        <input type="text" class="form-control" id="nameBC" placeholder="Vui lòng nhập tên">
                     </div>
                     <div class="form-group my-3">
-                        <label for="numberphoneBC"><img src="../public/image/sdtBC.png">Số điện thoại của bạn*</label>
-                        <input type="number" class="form-control" id="numberphoneBC" >
+                        <label for="numberphoneBC"><i class="fa-solid fa-phone"></i> Số điện thoại của bạn*</label>
+                        <input type="number" class="form-control" id="numberphoneBC" placeholder="Vui lòng nhập số điện thoại">
                     </div>
                     <div class="form-group my-3">
-                        <label for="EmailBC"><img src="../public/image/emailBC.png">Email của bạn*</label>
-                        <input type="text" class="form-control" id="EmailBC" >
+                        <label for="EmailBC"><i class="fa-solid fa-envelope"></i> Email của bạn*</label>
+                        <input type="text" class="form-control" id="EmailBC" placeholder="Vui lòng nhập email">
                     </div>
                     <p>(Nếu email của bạn chưa có trên hệ thống, chúng tôi sẽ dùng Email thanh toán này để tạo tài khoản. Nhằm mục đích lưu trữ trông tin để phục vụ cho việc học tập của bạn)</p>
                 </div>
                 <div class="col-md-6">
-                    <h1 style="font-weight: bold">Order Summary</h1>
+                    <h3 style="font-weight: bold">Order Summary</h3>
                     <div class="row">
                         <div class="col-md-9"><h5>Order Summary</h5></div>
-                        <div class="col-md-3" style="text-align: right"><p style="color: #0a53be; text-align: right"><img src="../public/image/penBC.png">Edit</p></div>
+                        <div class="col-md-3" style="text-align: right"><i class="fa-solid fa-pen"></i> Edit</div>
                     </div>
                     <div class="row">
                         <div class="col-md-3">
