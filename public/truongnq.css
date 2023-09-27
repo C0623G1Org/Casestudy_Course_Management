@@ -137,6 +137,57 @@
     line-height: 20px;
 }
 i{
-    min-width: 30px;
+    min-width: 22px;
     color: cornflowerblue;
+}
+.body-1{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-evenly;
+}
+.body-content-2 h3{
+    color: #111824;
+    font-size: 29px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+}
+.done{
+
+}
+.table{
+    text-align: center;
+}
+.done{
+    width: 20%
+}
+.done-content{
+    width: 100%;
+    height: 100%;
+    background: #ECFDF3;
+    border-radius: 20px;
+}
+.done-content i{
+    color: #52860d;
+}
+.view-detail-course-bg{
+    background: #ECFDF3;
+    border-radius: 20px;
+    width: 200px;
+    height: 30px;
+}
+.view-detail-course {
+    margin-left: 14px;
+    padding-top: 3px;
+}
+.card-table{
+    border-radius: 10px;
+    border: 1px solid #DEDEDE;
+}
+.operation {
+    height: 25px;
+}
+.button-add-update-delete i{
+    margin-right: 2px;
+    width: 5px;
 }
