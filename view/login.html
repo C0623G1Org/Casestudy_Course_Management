@@ -6,108 +6,167 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../libs/fontawesome/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="shortcut icon" href="../public/image/favaticon.png" type="image/x-icon">
     <link rel="stylesheet" href="../public/main.css">
     <link rel="stylesheet" href="../public/loan.css">
     <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
 </head>
+
 <body>
-<header id="header">
-    <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-            <div class="col-md-3 mb-2 mb-md-0">
-                <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-                    <img src="../public/image/logo-website.png" alt="Logo Website">
-                </a>
+<div class="containers">
+    <header id="header">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+                <div class="col-md-3 mb-2 mb-md-0">
+                    <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+                        <img src="../public/image/logo-website.png" alt="Logo Website">
+                    </a>
+                </div>
+
+                <ul class="nav nav-header col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="#" class="nav-link px-4">Trang chủ</a></li>
+                    <li><a href="#" class="nav-link px-4">Khóa học</a></li>
+                    <li><a href="#" class="nav-link px-4">Cộng đồng</a></li>
+                    <li><a href="#" class="nav-link px-4">Về chúng tôi</a></li>
+                </ul>
+
+                <div class="col-md-3 text-end">
+                    <button id="login-btn" type="button" class="btn-login btn btn-primary">Đăng nhập</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <div class="row hero-home">
+                <div class="col-lg-6">
+                    <h1>Master New Skills with LTTA</h1>
+                    <p>Những khóa học được LTTA sản xuất theo tiêu chuẩn chất lượng cao đối với học tập trực tuyến</p>
+                    <div class="row">
+                        <div class="col-4">
+                            <button type="button" class="btn-hero btn btn-primary">Get Started</button>
+                        </div>
+                        <div class="col-5">
+                            <div class="circle-item">
+                                <img src="../public/image/Ellipse 1.png" alt="">
+                                <img src="../public/image/Ellipse 2.png" alt="">
+                                <img src="../public/image/Ellipse 3.png" alt="">
+                                <img src="../public/image/Ellipse 4.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-3 using">
+                            <p class="title">42k +</p>
+                            <p>User using</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="col-lg-4">
+                            <img src="../public/image/logo-banner-1 1.png" height="38" width="174"/>
+                        </div>
+                        <div class="col-lg-4">
+                            <img src="../public/image/logo-banner-2.png" height="94" width="167"/>
+                        </div>
+                        <div class="col-lg-4">
+                            <img src="../public/image/W3Schools_logo.png" height="77" width="82"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 img-hero">
+                    <img src="../public/image/vector-banner 1.png">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="form-modal">
+        <div class="login-modal"></div>
+        <div class="login-page" >
+            <div id="sign-up" class="wrapper">
+                <form action="#" class="signup_signin">
+                    <div class="close-icon">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <img src="../public/image/removebg_logo.png" width="170px" height="60px" alt="..."/>
+                    <h3>Đăng kí tài khoản</h3>
+                    <p>Tham gia cùng cộng đồng học tập của chúng tôi!</p>
+
+                    <div class="input-box">
+                        <input type="text" placeholder="Tên đăng nhập" required>
+                        <i class='bx bxs-user'></i>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="password" placeholder="Mật khẩu" required>
+                        <i class='bx bxs-lock'></i>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="password" placeholder="Nhập lại mật khẩu" required>
+                        <i class='bx bxs-lock'></i>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="text" placeholder="Email của bạn" required>
+                        <i class='bx bxs-envelope'></i>
+                    </div>
+
+                    <button type="submit" class="register-btn">Đăng ký</button>
+
+                    <div class="login-link">
+                        <p>Bạn đã có tài khoản, <a id="login-here" href="#">đăng nhập tại đây</a>
+                        </p>
+                    </div>
+                    <div class="accept">
+                        <p>Bằng cách ấn đăng kí, bạn đồng ý với các điều khoản, điều kiện và chính sách dữ liệu của chúng
+                            tôi</p>
+                    </div>
+                </form>
             </div>
 
-            <ul class="nav nav-header col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-4">Trang chủ</a></li>
-                <li><a href="#" class="nav-link px-4">Khóa học</a></li>
-                <li><a href="#" class="nav-link px-4">Cộng đồng</a></li>
-                <li><a href="#" class="nav-link px-4">Về chúng tôi</a></li>
-            </ul>
+            <div id="log-in" class="wrapper">
+                <form action="#" class="signup_signin">
+                    <div class="close-icon">
+                    <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <img src="../public/image/removebg_logo.png" width="170px" height="60px" alt="..."/>
+                    <h3>Đăng nhập</h3>
+                    <p>Tham gia cùng cộng đồng học tập của chúng tôi!</p>
 
-            <div class="col-md-3 text-end">
-                <button type="button" class="btn-login btn btn-primary">Đăng nhập</button>
+                    <div class="input-box">
+                        <input type="text" placeholder="Tên đăng nhập" required>
+                        <i class='bx bxs-user'></i>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="password" placeholder="Mật khẩu" required>
+                        <i class='bx bxs-lock'></i>
+                    </div>
+
+                    <!--            <div class="forgot">-->
+                    <!--                <a href="#">Quên mật khẩu</a>-->
+                    <!--            </div>-->
+
+                    <button type="submit" class="register-btn">Đăng nhập</button>
+
+                    <div class="login-link">
+                        <p>Bạn chưa có tài khoản, <a id="sign-up-here" href="#">đăng ký tại đây</a>
+                        </p>
+                    </div>
+
+                    <div class="accept">
+                        <p>Việc bạn tiếp tục sử dụng trang web này đồng nghĩa bạn đồng ý với điều khoản sử dụng của chúng
+                            tôi</p>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-</header>
-
-<div class="login-page">
-    <div class="wrapper">
-        <form action="#" class="signup_signin">
-            <img src="../public/image/removebg_logo.png" width="250px" height="150px" alt="..."/>
-            <h3>Đăng kí tài khoản</h3>
-            <p>Tham gia cùng cộng đồng học tập của chúng tôi!</p>
-
-            <div class="input-box">
-                <input type="text" placeholder="Tên đăng nhập" required>
-                <i class='bx bxs-user'></i>
-            </div>
-
-            <div class="input-box">
-                <input type="password" placeholder="Mật khẩu" required>
-                <i class='bx bxs-lock'></i>
-            </div>
-
-            <div class="input-box">
-                <input type="password" placeholder="Nhập lại mật khẩu" required>
-                <i class='bx bxs-lock'></i>
-            </div>
-
-            <div class="input-box">
-                <input type="text" placeholder="Email của bạn" required>
-                <i class='bx bxs-envelope' ></i>
-            </div>
-
-            <button type="submit" class="register-btn">Đăng ký</button>
-
-            <div class="login-link">
-                <p>Bạn đã có tài khoản, <a href="#">đăng nhập tại đây</a>
-                </p>
-            </div>
-            <div class="accept">
-            <p>Bằng cách ấn đăng kí, bạn đồng ý với các điều khoản, điều kiện và chính sách dữ liệu của chúng tôi</p>
-            </div>
-        </form>
-    </div>
-
-    <div class="wrapper">
-        <form action="#" class="signup_signin">
-            <img src="../public/image/removebg_logo.png" width="250px" height="150px" alt="..."/>
-            <h3>Đăng nhập</h3>
-            <p>Tham gia cùng cộng đồng học tập của chúng tôi!</p>
-
-            <div class="input-box">
-                <input type="text" placeholder="Tên đăng nhập" required>
-                <i class='bx bxs-user'></i>
-            </div>
-
-            <div class="input-box">
-                <input type="password" placeholder="Mật khẩu" required>
-                <i class='bx bxs-lock'></i>
-            </div>
-
-<!--            <div class="forgot">-->
-<!--                <a href="#">Quên mật khẩu</a>-->
-<!--            </div>-->
-
-            <button type="submit" class="register-btn">Đăng nhập</button>
-
-            <div class="login-link">
-                <p>Bạn chưa có tài khoản, <a href="#">đăng ký tại đây</a>
-                </p>
-            </div>
-            <div class="accept">
-                <p>Việc bạn tiếp tục sử dụng trang web này đồng nghĩa bạn đồng ý với điều khoản sử dụng của chúng tôi</p>
-            </div>
-        </form>
-    </div>
 </div>
 <script src="../libs/bootstrap/js/bootstrap.bundle.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src=".idea/login.js"></script>
 </body>
 </html>
