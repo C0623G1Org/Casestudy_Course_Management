@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', serif;
+}
+
+.containers {
+    position: relative;
+}
+
+.nav-header li a {
+    color: #101218;
+    font-size: 18px;
+    font-family: 'Montserrat', serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.btn-primary {
+    border-radius: 30px;
+    background: #111319;
+    border: unset;
+    font-weight: 600;
+}
+
+.btn-hero {
+    border-radius: 40px;
+    background: #101218;
+    padding: 10px 30px;
+    box-shadow: 2px 10px 20px 0px rgba(11, 16, 63, 0.40);
+}
+
+/*.login-page {*/
+/*   position: absolute;*/
+/*}*/
+
+.wrapper {
+    width: 450px;
+    /*height: 580px;*/
+    /*background: transparent;*/
+    background: #F2F2F2;
+    /*border: 2px solid rgba(242, 242, 242, .2);*/
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.wrapper .signup_signin {
+    text-align: center;
+    margin-top: 0;
+}
+
+.close-icon {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    padding: 10px;
+    cursor: pointer;
+    opacity: 1;
+
+}
+
+.wrapper h3 {
+    font-size: 23px;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Montserrat', serif;
+    margin-top: 15px;
+}
+
+.wrapper p {
+    text-align: center;
+    font-size: 14px;
+}
+
+.wrapper .input-box {
+    width: 100%;
+    height: 45px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(97, 93, 93, .2);
+    border-radius: 40px;
+
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    /*border: 2px solid #615D5D;*/
+    border-radius: 40px;
+    font-size: 16px;
+    padding: 20px 45px 20px 25px;
+    color: black;
+}
+
+.input-box i {
+    margin-top: 20px;
+    margin-right: 20px;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.register-btn:hover {
+    opacity: 1.0;
+}
+
+.wrapper .register-btn {
+    width: 100%;
+    height: 45px;
+    background-color: black;
+    color: white;
+    border-radius: 40px;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+.wrapper .register-btn:hover {
+    background: #191919;
+}
+
+.wrapper .login-link {
+    font-size: 18px;
+    text-align: center;
+    margin: 10px 0 0;
+}
+
+.login-link p a {
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.login-link p a:hover {
+    text-decoration: underline;
+}
+
+.accept {
+    text-align: center;
+    margin: 0 30px 20px;
+    font-size: 14px;
+}
+
+.form-modal {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: none;
+}
+
+.login-modal {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
+
+.login-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /*width: 100%;*/
+    height: 100vh;
+
+}ll
+
+.login-modal.open {
+    display: flex;
+}
+
+.edit-user-inf input button {
+    border: 1px solid rgba(97, 93, 93, .2);
+    border-radius: 20px;
+}
+
+.content-edit-info {
+    border: 1px solid #D0CCCB;
+    border-radius: 15px;
+    text-align: center;
+    padding: 0 50px;
+}
+
+.edit-user-inf {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 50px;
+}
+
+.edit-user-inf input {
+    width: 100%;
+    height: 40px;
+    border-radius: 15px;
+    border: 1px solid #D0CCCB;
+    margin-top: 7px;
+
+}
+
+.edit-user-inf .ava-btn {
+    width: 150px;
+    height: 35px;
+    border-radius: 15px;
+    border: none;
+    background-color: #E2F6FF;
+}
+
+.edit-user-inf span {
+    margin-left:8px;
+}
+
+.save button{
+    width: 250px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: #0070FD;
+    color: white;
+}
+
+.save {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.edit-header {
+    /*padding: 20px;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.edit-header .avatar img {
+    margin-bottom: 20px;
+    margin-right: 0;
+}
+
+.edit-header .avatar {
+    text-align: center;
+}
+
+.edit-header-inf {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.edit-header-inf {
+    margin-bottom: 10px;
+}
+
+.edit-body {
+    margin-top: 25px;
+}
+
+.edit-body h4 {
+    font-weight: bold;
+}
+
+.edit-body div {
+    margin-top: 18px;
+}
+
+.label-edit-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lb {
+    display: flex;
+   align-items: center;
+}
+
+.social_media p {
+    margin-top: 25px;
+}
+
+
+
+
