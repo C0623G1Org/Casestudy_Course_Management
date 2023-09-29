@@ -22,7 +22,7 @@
                     </div>
                     <ul class="nav nav-pills flex-column mb-auto">
                         <li class="nav-item">
-                            <a href="#" class="nav-link active" aria-current="page">
+                            <a href="#" class="nav-link text-white" aria-current="page">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
                                      fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -45,7 +45,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="nav-link text-white">
+                            <a href="#" class="nav-link active">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="34" viewBox="0 0 30 34"
                                      fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -96,7 +96,8 @@
                     </div>
                     <div class="user">
                        <span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">
-                            <img class="rounded-circle me-1" width="35" height="35" src="https://zpsocial-f54-org.zadn.vn/24a379da816c6f32367d.jpg" alt="">Trần Thị Vân Loan
+                            <img class="rounded-circle me-1" width="35" height="35"
+                                 src="https://zpsocial-f54-org.zadn.vn/24a379da816c6f32367d.jpg" alt="">Trần Thị Vân Loan
                        </span>
                     </div>
                 </div>
@@ -108,15 +109,19 @@
                         <p>26-09-2023</p>
                     </div>
                 </div>
-                <div class="row my-5">
-                    <div class="col-lg-6">
+                <div class="intro-dashboard-page">
+                    <h3>Khóa học của bạn.</h3>
+                    <p>Bạn đã đăng kí 2 khóa học tại hệ thống !</p>
+                </div>
+                <div class="row dashboard-course-user my-5">
+                    <div class="col-lg-12 mb-3">
                         <div class="card" style="width: 100%;">
                             <div class="card-body">
                                 <div class="row card-head mb-2">
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <img src="../public/image/Rectangle 43.png">
                                     </div>
-                                    <div class="col-md-8 ml-auto">
+                                    <div class="col-md-10 ml-auto">
                                         <div class="category">
                                             <p class="text-right">Javascript
                                             </p>
@@ -124,26 +129,37 @@
                                         <h3>Javascript Foudatament</h3>
                                     </div>
                                 </div>
-                                <p class="card-text">JavaScript là ngôn ngữ lập trình phía client, được sử dụng chủ yếu trong
+                                <p class="card-text">JavaScript là ngôn ngữ lập trình phía client, được sử dụng chủ yếu
+                                    trong
                                     các ứng dụng web để tạo ra các hiệu ứng tương tác trên trang web</p>
                                 <div class="card-bottom">
-                                    <div class="author"><i class="fa-solid fa-graduation-cap"></i> ThanhPV</div>
-                                    <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>
+                                    <div class="author">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19"
+                                             viewBox="0 0 19 19" fill="none">
+                                            <path opacity="0.4"
+                                                  d="M15.2189 9.79663V14.251C15.2189 15.3985 14.2832 16.6273 13.1585 16.9888L10.1436 17.9465C9.61432 18.1182 8.75426 18.1182 8.23444 17.9465L5.21954 16.9888C4.0854 16.6273 3.15918 15.3985 3.15918 14.251L3.16863 9.79663L7.34603 12.3988C8.36676 13.0403 10.0491 13.0403 11.0698 12.3988L15.2189 9.79663Z"
+                                                  fill="#0070FD"/>
+                                            <path d="M16.7318 4.03202L11.0705 0.481131C10.0498 -0.160377 8.36746 -0.160377 7.34673 0.481131L1.65713 4.03202C-0.166959 5.16143 -0.166959 7.71847 1.65713 8.85692L3.16932 9.7966L7.34673 12.3988C8.36746 13.0403 10.0498 13.0403 11.0705 12.3988L15.2196 9.7966L16.5144 8.98342V11.7482C16.5144 12.1187 16.8357 12.4259 17.2232 12.4259C17.6107 12.4259 17.9321 12.1187 17.9321 11.7482V7.30284C18.3101 6.13725 17.9226 4.78195 16.7318 4.03202Z"
+                                                  fill="#0070FD"/>
+                                        </svg>
+                                        ThanhPV
+                                    </div>
                                 </div>
                                 <div class="day-buy mt-2">
                                     <p>Bạn đã mua khóa học này vào 24-09-2023</p>
                                 </div>
+                                <button type="button" class="btn resume-course btn-primary">Tiếp tục học</button>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-12 mb-3">
                         <div class="card" style="width: 100%;">
                             <div class="card-body">
                                 <div class="row card-head mb-2">
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <img src="../public/image/Rectangle 43.png">
                                     </div>
-                                    <div class="col-md-8 ml-auto">
+                                    <div class="col-md-10 ml-auto">
                                         <div class="category">
                                             <p class="text-right">Javascript
                                             </p>
@@ -151,15 +167,64 @@
                                         <h3>Javascript Foudatament</h3>
                                     </div>
                                 </div>
-                                <p class="card-text">JavaScript là ngôn ngữ lập trình phía client, được sử dụng chủ yếu trong
+                                <p class="card-text">JavaScript là ngôn ngữ lập trình phía client, được sử dụng chủ yếu
+                                    trong
                                     các ứng dụng web để tạo ra các hiệu ứng tương tác trên trang web</p>
                                 <div class="card-bottom">
-                                    <div class="author"><i class="fa-solid fa-graduation-cap"></i> ThanhPV</div>
-                                    <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>
+                                    <div class="author">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19"
+                                             viewBox="0 0 19 19" fill="none">
+                                            <path opacity="0.4"
+                                                  d="M15.2189 9.79663V14.251C15.2189 15.3985 14.2832 16.6273 13.1585 16.9888L10.1436 17.9465C9.61432 18.1182 8.75426 18.1182 8.23444 17.9465L5.21954 16.9888C4.0854 16.6273 3.15918 15.3985 3.15918 14.251L3.16863 9.79663L7.34603 12.3988C8.36676 13.0403 10.0491 13.0403 11.0698 12.3988L15.2189 9.79663Z"
+                                                  fill="#0070FD"/>
+                                            <path d="M16.7318 4.03202L11.0705 0.481131C10.0498 -0.160377 8.36746 -0.160377 7.34673 0.481131L1.65713 4.03202C-0.166959 5.16143 -0.166959 7.71847 1.65713 8.85692L3.16932 9.7966L7.34673 12.3988C8.36746 13.0403 10.0498 13.0403 11.0705 12.3988L15.2196 9.7966L16.5144 8.98342V11.7482C16.5144 12.1187 16.8357 12.4259 17.2232 12.4259C17.6107 12.4259 17.9321 12.1187 17.9321 11.7482V7.30284C18.3101 6.13725 17.9226 4.78195 16.7318 4.03202Z"
+                                                  fill="#0070FD"/>
+                                        </svg>
+                                        ThanhPV
+                                    </div>
                                 </div>
                                 <div class="day-buy mt-2">
                                     <p>Bạn đã mua khóa học này vào 24-09-2023</p>
                                 </div>
+                                <button type="button" class="btn resume-course btn-primary">Tiếp tục học</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 mb-3">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body">
+                                <div class="row card-head mb-2">
+                                    <div class="col-md-2">
+                                        <img src="../public/image/Rectangle 43.png">
+                                    </div>
+                                    <div class="col-md-10 ml-auto">
+                                        <div class="category">
+                                            <p class="text-right">Javascript
+                                            </p>
+                                        </div>
+                                        <h3>Javascript Foudatament</h3>
+                                    </div>
+                                </div>
+                                <p class="card-text">JavaScript là ngôn ngữ lập trình phía client, được sử dụng chủ yếu
+                                    trong
+                                    các ứng dụng web để tạo ra các hiệu ứng tương tác trên trang web</p>
+                                <div class="card-bottom">
+                                    <div class="author">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19"
+                                             viewBox="0 0 19 19" fill="none">
+                                            <path opacity="0.4"
+                                                  d="M15.2189 9.79663V14.251C15.2189 15.3985 14.2832 16.6273 13.1585 16.9888L10.1436 17.9465C9.61432 18.1182 8.75426 18.1182 8.23444 17.9465L5.21954 16.9888C4.0854 16.6273 3.15918 15.3985 3.15918 14.251L3.16863 9.79663L7.34603 12.3988C8.36676 13.0403 10.0491 13.0403 11.0698 12.3988L15.2189 9.79663Z"
+                                                  fill="#0070FD"/>
+                                            <path d="M16.7318 4.03202L11.0705 0.481131C10.0498 -0.160377 8.36746 -0.160377 7.34673 0.481131L1.65713 4.03202C-0.166959 5.16143 -0.166959 7.71847 1.65713 8.85692L3.16932 9.7966L7.34673 12.3988C8.36746 13.0403 10.0498 13.0403 11.0705 12.3988L15.2196 9.7966L16.5144 8.98342V11.7482C16.5144 12.1187 16.8357 12.4259 17.2232 12.4259C17.6107 12.4259 17.9321 12.1187 17.9321 11.7482V7.30284C18.3101 6.13725 17.9226 4.78195 16.7318 4.03202Z"
+                                                  fill="#0070FD"/>
+                                        </svg>
+                                        ThanhPV
+                                    </div>
+                                </div>
+                                <div class="day-buy mt-2">
+                                    <p>Bạn đã mua khóa học này vào 24-09-2023</p>
+                                </div>
+                                <button type="button" class="btn resume-course btn-primary">Tiếp tục học</button>
                             </div>
                         </div>
                     </div>

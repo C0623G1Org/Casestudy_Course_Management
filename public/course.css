@@ -1,14 +1,29 @@
-.card-title{
+#all-course-page .card-title{
     text-decoration: none;
     color: #CDCDCD;
     font-size: 40px;
     font-weight: bold;
 }
-.card-text {
-    text-decoration: none;
-    color: #CDCDCD;
-    font-weight: bold;
+.question-course .accordion-button:not(.collapsed) {
+    background: unset;
+    color: #020202;
+    font-family: Quicksand;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border: 0;
 }
+.question-course .accordion-button:focus  {
+    border: 0;
+    box-shadow: unset;
+    font-size: 20px;
+}
+/*.card-text {*/
+/*    text-decoration: none;*/
+/*    color: #CDCDCD;*/
+/*    font-weight: bold;*/
+/*}*/
 #row1Course{
     padding-top: 30px;
     padding-bottom: 30px;
