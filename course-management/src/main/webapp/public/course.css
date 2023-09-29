@@ -1,0 +1,66 @@
+#all-course-page .card-title{
+    text-decoration: none;
+    color: #CDCDCD;
+    font-size: 40px;
+    font-weight: bold;
+}
+.question-course .accordion-button:not(.collapsed) {
+    background: unset;
+    color: #020202;
+    font-family: Quicksand;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border: 0;
+}
+.question-course .accordion-button:focus  {
+    border: 0;
+    box-shadow: unset;
+    font-size: 20px;
+}
+/*.card-text {*/
+/*    text-decoration: none;*/
+/*    color: #CDCDCD;*/
+/*    font-weight: bold;*/
+/*}*/
+#row1Course{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+#row2Course{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+#row3Course{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#row4Course{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.prow4Course{
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+#row2CourseSmall1,#row2CourseSmall2,#row2CourseSmall3{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+#row3CourseSmall1,#row3CourseSmall2,#row3CourseSmall3{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.accordion-button.collapsed{
+    font-weight: bold;
+    font-size: 20px;
+}
+.row .question-course{
+    padding-right: 200px;
+    padding-left: 200px;
+}
