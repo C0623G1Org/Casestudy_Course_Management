@@ -330,7 +330,7 @@ ul.nav.nav-pills.menu-footer .nav-link {
     top: 20px;
 }
 
-.siderbar-dashboard .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+.siderbar-dashboard .nav-pills .nav-link.active, .nav-pills .show .nav-link {
     border-radius: 30px;
     background: #8D8DF5;
 }
