@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48903e53-c7b7-4c95-885c-2b588e88d8ca" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/course-management/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/course-management/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/course-management/src/main/java/com/example/coursemanagement/controller/CourseServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/course-management/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/course-management/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/course-management/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/course-management/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/course-management/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/course-management/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/course-management/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/course-management/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/course-management/src/main/webapp/public/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/course-management/src/main/webapp/public/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/course_management_29.9.sql" beforeDir="false" afterPath="$PROJECT_DIR$/course_management_29.9.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +36,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2Vs3Dy6rJ4gc828A7GV4kO7qmG2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,9 +47,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/Casestudy_Course_Management",
-    "nodejs_package_manager_path": "npm"
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -71,6 +91,8 @@
       <workItem from="1695954977636" duration="39000" />
       <workItem from="1695959131264" duration="36000" />
       <workItem from="1695959493625" duration="303000" />
+      <workItem from="1695996884037" duration="2119000" />
+      <workItem from="1696050537557" duration="4964000" />
     </task>
     <servers />
   </component>
