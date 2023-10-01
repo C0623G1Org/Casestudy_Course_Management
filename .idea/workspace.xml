@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="48903e53-c7b7-4c95-885c-2b588e88d8ca" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/course-management/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/course-management/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/course-management/src/main/java/com/example/coursemanagement/model/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/course-management/src/main/java/com/example/coursemanagement/model/Course.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,13 +33,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Casestudy_Course_Management",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Casestudy_Course_Management&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
@@ -70,7 +72,10 @@
       <workItem from="1695903342868" duration="9891000" />
       <workItem from="1695954977636" duration="39000" />
       <workItem from="1695959131264" duration="36000" />
-      <workItem from="1695959493625" duration="303000" />
+      <workItem from="1695959774636" duration="600000" />
+      <workItem from="1695987933010" duration="1000" />
+      <workItem from="1696064966702" duration="14238000" />
+      <workItem from="1696152822551" duration="516000" />
     </task>
     <servers />
   </component>
