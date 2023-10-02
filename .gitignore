@@ -9,6 +9,8 @@ gradlew.bat
 build/
 gradle/
 .idea/
+BaseRepository.java
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
