@@ -1,9 +1,6 @@
 package com.example.coursemanagement.controller;
 
-import com.example.coursemanagement.model.Course;
-import com.example.coursemanagement.model.CourseCategory;
-import com.example.coursemanagement.model.CourseContent;
-import com.example.coursemanagement.model.CourseDetailedContent;
+import com.example.coursemanagement.model.*;
 import com.example.coursemanagement.service.ICourseContentService;
 import com.example.coursemanagement.service.ICourseDetailContentService;
 import com.example.coursemanagement.service.ICourseService;
@@ -18,6 +15,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @WebServlet(name = "CourseServlet", urlPatterns = {"", "/course", "/course/detail"})
 public class CourseServlet extends HttpServlet {
@@ -47,7 +45,17 @@ public class CourseServlet extends HttpServlet {
         int idCourse = Integer.parseInt(request.getParameter("id"));
         Course course = courseService.selectCourse(idCourse);
         List<CourseContent> courseContents = courseContentService.selectByCourseId(idCourse);
-        List<CourseDetailedContent> detailedContents = detailContentService.showListE();
+        Map<Integer, List<CourseDetailedContent>> detailedContents = new HashMap<>();
+        List<CourseDetailedContent> courseDetailedContents = detailContentService.showListE();
+        for (CourseDetailedContent courseDetailedContent : courseDetailedContents) {
+            if (detailedContents.containsKey(courseDetailedContent.getCourseContentId())) {
+                detailedContents.get(courseDetailedContent.getCourseContentId()).add(courseDetailedContent);
+            } else {
+                detailedContents.put(courseDetailedContent.getCourseContentId(), new LinkedList<CourseDetailedContent>() {{
+                    add(courseDetailedContent);
+                }});
+            }
+        }
         request.setAttribute("course", course);
         request.setAttribute("courseContents", courseContents);
         request.setAttribute("detailedContents", detailedContents);

@@ -22,8 +22,7 @@ public class DashboardServlet extends HttpServlet {
         // Kiểm tra session
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("user") == null) {
-            // Chuyển hướng về trang đăng nhập nếu chưa đăng nhập
-            response.sendRedirect(request.getContextPath() + "/login");
+            response.sendRedirect(request.getContextPath() + "/");
         } else {
             User user = (User) session.getAttribute("user");
             request.setAttribute("user", user);
