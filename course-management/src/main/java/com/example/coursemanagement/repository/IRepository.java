@@ -1,7 +1,5 @@
 package com.example.coursemanagement.repository;
 
-import com.example.coursemanagement.model.Course;
-
 import java.util.List;
 
 public interface IRepository<E> {

@@ -1,10 +1,8 @@
 package com.example.coursemanagement.repository.impl;
 
-import com.example.coursemanagement.model.CourseContentType;
 import com.example.coursemanagement.model.CourseDetailedContent;
 import com.example.coursemanagement.repository.BaseRepository;
 import com.example.coursemanagement.repository.ICourseDetailRepo;
-import com.example.coursemanagement.repository.IRepository;
 
 import java.sql.*;
 import java.util.ArrayList;
