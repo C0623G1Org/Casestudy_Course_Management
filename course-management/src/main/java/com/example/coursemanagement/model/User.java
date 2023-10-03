@@ -26,6 +26,7 @@ public class User {
         this.role = role;
     }
 
+
     public User(int id, String username, String password, String fullName, String idCard, Date birthday, boolean gender, String phone, String email, String role) {
         this.id = id;
         this.username = username;
@@ -37,6 +38,17 @@ public class User {
         this.phone = phone;
         this.email = email;
         this.role = role;
+    }
+
+    public User(int id, String username, String fullName, String idCard, Date birthday, boolean gender, String phone, String email) {
+        this.id = id;
+        this.username = username;
+        this.fullName = fullName;
+        this.idCard = idCard;
+        this.birthday = birthday;
+        this.gender = gender;
+        this.phone = phone;
+        this.email = email;
     }
 
     public User(String username, String password, String email) {
