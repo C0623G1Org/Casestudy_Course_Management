@@ -34,6 +34,10 @@ public class Course {
         this.otherInfoCourse = otherInfoCourse;
     }
 
+    public Course(int course_id, String name, String description, double price) {
+
+    }
+
     public int getId() {
         return id;
     }

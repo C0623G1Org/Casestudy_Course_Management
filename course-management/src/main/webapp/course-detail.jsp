@@ -83,7 +83,7 @@
                         </div>
                     </div>
                     <div class="mt-3">
-                        <a href="#" role="button" class="btn btn-primary btn-order-course">Mua khóa học</a>
+                        <a href="/course-purchase-servlet?id=${course.getId()}" role="button" class="btn btn-primary btn-order-course">Mua khóa học</a>
                     </div>
                 </div>
             </div>

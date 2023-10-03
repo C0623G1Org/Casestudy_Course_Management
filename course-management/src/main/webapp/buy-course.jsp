@@ -1,3 +1,4 @@
+
 <%--
   Created by IntelliJ IDEA.
   User: admin
@@ -5,39 +6,13 @@
   Time: 8:13 PM
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="header.jsp"></c:import>
-<html>
-<head>
-    <title>Course Purchase</title>
-</head>
-<body>
-<header id="header">
-    <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-            <div class="col-md-3 mb-2 mb-md-0">
-                <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-                    <img src="../public/image/logo-website.png" alt="Logo Website">
-                </a>
-            </div>
-
-            <ul class="nav nav-header col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-4">Trang chủ</a></li>
-                <li><a href="#" class="nav-link px-4">Khóa học</a></li>
-                <li><a href="#" class="nav-link px-4">Cộng đồng</a></li>
-                <li><a href="#" class="nav-link px-4">Về chúng tôi</a></li>
-            </ul>
-
-            <div class="col-md-3 text-end">
-                <button type="button" class="btn-login btn btn-primary">Đăng nhập</button>
-            </div>
-        </div>
-    </div>
-</header>
 <section>
     <div class="container">
-        <form role="form" class="check-out">
+        <form action="/course-purchase-servlet?action=" role="form" class="check-out">
             <div class="row">
                 <div class="col-md-6">
                     <h3 style="font-weight: bold">Thông tin khách hàng</h3>
@@ -66,11 +41,12 @@
                             <img src="../public/image/RectangleBC.png" width="120p" height="100">
                         </div>
                         <div class="col-md-6">
-                            <h5 style="font-weight: bold">Javascript Foudatament</h5>
-                            <p>JavaScript là ngôn ngữ lập trình phía client, được sử dụng chủ yếu trong các ứng dụng web để tạo ra các hiệu ứng tương tác trên trang web</p>
+                            <h5 style="font-weight: bold">${course.getName()}</h5>
+                            <p>${course.getDescription()}</p>
+                            <p>${course.getId()}</p>
                         </div>
                         <div class="col-md-3">
-                            <p style="font-size: 25px; font-weight: bold; text-align: right">1.200.000VNĐ</p>
+                            <p style="font-size: 25px; font-weight: bold; text-align: right">${course.getPrice()}</p>
                         </div>
                     </div>
                     <div class="row">
@@ -85,6 +61,8 @@
                             <p>(VAT included if applicable)</p>
                         </div>
                     </div>
+<%--                    test--%>
+
                     <div class="row">
                         <p style="font-size: 30px; font-weight: bold">Phương thức thanh toán</p>
                         <p><input type="radio" name="payment-methods" value="select-1"> Chuyển khoản qua thẻ ngân hàng</p><br/>
@@ -98,7 +76,13 @@
         </form>
     </div>
 </section>
+<%--<div>--%>
+<%--    <c:forEach items="${loan}" var="courseItem">--%>
+<%--        <p>ID: ${courseItem.id}</p>--%>
+<%--        <p>Name: ${courseItem.name}</p>--%>
+<%--        <p>Description: ${courseItem.description}</p>--%>
+<%--        <p>Price: ${courseItem.price}</p>--%>
+<%--    </c:forEach>--%>
+<%--</div>--%>
+<c:import url="footer.jsp"></c:import>
 
-<script src="../libs/bootstrap/js/bootstrap.bundle.js"></script>
-</body>
-</html>
