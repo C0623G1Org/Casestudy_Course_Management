@@ -11,9 +11,8 @@ import java.util.List;
 
 public class UserRepoImpl implements IUserRepo {
     private final static String SELECT_ALL = "SELECT * FROM user;";
-    private static final String SELECT_BY_ID = "SELECT * FROM user WHERE user_id = ?;";
+    private static final String SELECT_BY_ID = "SELECT * FROM user WHERE user_id = ?";
     private static final String SELECT_BY_USERNAME = "SELECT * FROM user WHERE user_name = ?;";
-//    private final static String UPDATEUSER = "call update_user(?,?,?,?,?,?,?,?,?);";
     private static final String SELECT_BY_USERNAME_PASSWORD = "SELECT * FROM user WHERE user_name = ? AND password = ?;";
     private static final String INSERT_USER = "INSERT INTO user(user_name, password, email, role) VALUES (?, ?, ?, 'user');";
 
