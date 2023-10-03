@@ -1,42 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Master New Skills with LTTA</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../libs/fontawesome/css/all.min.css">
-    <link rel="shortcut icon" href="../public/image/favaticon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../public/main.css">
-    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-</head>
-<body>
-<header id="header">
-    <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-            <div class="col-md-3 mb-2 mb-md-0">
-                <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-                    <img src="../public/image/logo-website.png" alt="Logo Website">
-                </a>
-            </div>
-
-            <ul class="nav nav-header col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-4">Trang chủ</a></li>
-                <li><a href="#" class="nav-link px-4">Khóa học</a></li>
-                <li><a href="#" class="nav-link px-4">Cộng đồng</a></li>
-                <li><a href="#" class="nav-link px-4">Về chúng tôi</a></li>
-            </ul>
-
-            <div class="col-md-3 text-end">
-                <button type="button" class="btn-login btn btn-primary">Đăng nhập</button>
-            </div>
-        </div>
-    </div>
-</header>
-<div>
-    <img src="" alt="">
-</div>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
 <footer>
     <div class="container">
         <div class="row my-5">
@@ -50,7 +14,8 @@
                                 <p class="lead mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                                 <form class="row news g-2">
                                     <div class="col-auto">
-                                        <input type="text" class="form-control" id="inputEmail" placeholder="Nhập email của bạn">
+                                        <input type="text" class="form-control" id="inputEmail"
+                                               placeholder="Nhập email của bạn">
                                     </div>
                                     <div class="col-auto">
                                         <button type="submit" class="btn btn-primary">Đăng kí</button>
@@ -58,7 +23,8 @@
                                 </form>
                                 <div class="d-flex justify-content-center py-3">
                                     <ul class="nav nav-pills menu-footer">
-                                        <li class="nav-item"><a href="#" class="nav-link" aria-current="page">Home</a></li>
+                                        <li class="nav-item"><a href="#" class="nav-link" aria-current="page">Home</a>
+                                        </li>
                                         <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
                                         <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
                                         <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
@@ -77,6 +43,11 @@
         </div>
     </div>
 </footer>
+</html>
 <script src="../libs/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="../public/js/main.js"></script>
+
 </body>
 </html>
+

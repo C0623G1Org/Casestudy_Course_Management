@@ -255,12 +255,15 @@
 }
 
 .card-price .btn {
-    color: #000;
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     border-radius: 30px;
+}
+
+.card-price a {
+    color: #FFFFFF;
 }
 
 .card {
@@ -364,6 +367,10 @@ ul.nav.nav-pills.menu-footer .nav-link {
     font-style: normal;
     font-weight: 700;
     line-height: 20px;
+}
+.content-dashboard .header-content span {
+    padding: 5px 30px 5px 10px !important;
+    font-size: 15px;
 }
 
 .content-dashboard .intro-dashboard-page h3 {
@@ -528,7 +535,7 @@ ul.nav.nav-pills.menu-footer .nav-link {
 .content-course .main-content p, .content-course .main-content b {
     font-family: 'Montserrat';
 }
-button.btn-hero.btn.btn-primary:after {
+a.btn-hero.btn.btn-primary::after {
     content: "\f0a9";
     font-family: 'FontAwesome';
     margin-left: 10px;
@@ -538,4 +545,68 @@ button.btn-hero.btn.btn-primary:after {
 }
 .rating .fa-solid {
     color: #FEC43F;
+}
+.content-font p {
+    color: #101218;
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+.content-knowledge p:before, .content-other-info p:before {
+    content: "\f058";
+    font-family: 'FontAwesome';
+    margin-right: 10px;
+    color: #0d6efd;
+}.content-requirements p:before {
+    content: "\f044";
+    font-family: 'FontAwesome';
+    margin-right: 10px;
+    color: #0d6efd;
+}
+.content-font.main-content {
+    position: relative;
+}
+.content-font.main-content .column-2 {
+    margin-top: 0;
+}
+.content-font.main-content .column-2 .content-1 {
+    position: sticky;
+    top: 20px;
+    margin-top: 0;
+}
+a.btn-order-course {
+    font-size: 20px;
+    border-radius: 40px;
+    background: #3B0200;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+}
+.modal-content .wrapper {
+    width: 100%;
+}
+.btn-close-form {
+    display: flex;
+    justify-content: flex-end;
+}
+.login-link p a {
+    font-size: 16px;
+    color: #0d6efd !important;
+    font-weight: 600;
+}
+.card-img-overlay {
+    padding: 0;
+}
+.content-font-course .accordion-button , .content-font-course .accordion-item:first-of-type .accordion-button  {
+    background: #eee;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 0 !important;
+}
+.content-font-course .accordion-item{
+    border: 0 !important;
+}
+.content-font-course h3 {
+    font-size: 16px;
+    font-weight: 700;
 }

@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../libs/fontawesome/css/all.min.css">
-    <link rel="shortcut icon" href="../public/image/favaticon.png" type="image/x-icon">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../public/main.css">
-    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:import url="header-dashboard.jsp"></c:import>
+<section>
     <link rel="stylesheet" href="../public/loan.css">
-</head>
-<body>
-<section id="user-dashboard-edit">
     <div class="container my-4">
         <div class="row d-flex justify-content-between">
             <div class="col-lg-3 siderbar-dashboard">
@@ -103,106 +91,30 @@
 
                 <div class="row my-5 content-edit-info ">
                     <form action="#" class="edit-user-inf my-4 text-start">
-
-                        <div class="edit-header">
-                            <div class="avatar col-4">
-                                <img src="../public/image/ava.png" alt="ava"/> <br>
-                                <button class="ava-btn" type="submit">
-                                    <i class='bx bxs-user' style='color:#5585fd'></i>
-                                    <span>Edit avatar</span>
-                                </button>
-                            </div>
-
-                            <div class="edit-header-inf col-7">
-                                <div class="edit-inf col-12">
-                                    <div class="label-edit-header">
-                                        <label class="lb" for="user_name"><i class='bx bxs-user-circle' style='color:#5585fd'></i>
-                                            <span>Tên đăng nhập</span>
-                                        </label>
-                                        <label class="lb" for="user_name">
-                                            <i class='bx bx-edit-alt' style='color:#5585fd'></i>
-                                            <span>Edit</span>
-                                        </label>
-                                    </div>
-                                    <input type="text" id="user_name">
-                                </div>
-
-                                <div class="edit-inf col-12">
-                                    <div class="label-edit-header">
-                                        <label class="lb" for="name">
-                                            <i class='bx bxs-user-circle' style='color:#5585fd'></i>
-                                            <span>Họ và Tên</span>
-                                        </label>
-                                        <label class="lb" for="name">
-                                            <i class='bx bx-edit-alt' style='color:#5585fd'></i>
-                                            <span>Edit</span>
-                                        </label>
-                                    </div>
-                                    <input type="text" id="name">
-                                </div>
-
-                                <div class="edit-inf col-12">
-                                    <div class="label-edit-header">
-                                        <label class="lb" for="email">
-                                            <i class='bx bx-mail-send' style='color:#5585fd'></i>
-                                            <span>Email của bạn</span>
-                                        </label>
-                                        <label class="lb" for="email">
-                                            <i class='bx bx-edit-alt' style='color:#5585fd'></i>
-                                            <span>Edit</span>
-                                        </label>
-                                    </div>
-                                    <input type="text" id="email">
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="edit-body">
-                            <h4>Cập nhật thông tin</h4>
-                            <p>Cập nhật thêm thông tin của bạn.</p>
+                            <h4>Thay đổi mật khẩu</h4>
+                            <p>Cập nhật mật khẩu của bạn.</p>
 
                             <div class="edit-phone">
                                 <label class="lb" for="phone">
-                                    <i class='bx bxs-phone-call' style='color:#5585fd'></i>
-                                    <span>Số điện thoại</span>
+                                    <i class='bx bxs-key' style='color:#5585fd'></i>
+                                    <span>Nhập mật khẩu cũ</span>
                                 </label>
-                                <input type="text" id="phone">
+                                <input type="password" id="phone">
                             </div>
                             <div class="id_card">
                                 <label class="lb" for="id_card">
-                                    <i class='bx bxs-id-card' style='color:#5585fd'></i>
-                                    <span>Căn cước công dân</span>
+                                    <i class='bx bxs-key' style='color:#5585fd'></i>
+                                    <span>Nhập mật khẩu mới</span>
                                 </label>
-                                <input type="text" id="id_card">
+                                <input type="password" id="id_card">
                             </div>
                             <div class="edit-birthday">
                                 <label class="lb" for="birthday">
-                                    <i class='bx bxs-cake' style='color:#5585fd'></i>
-                                    <span>Ngày sinh</span>
+                                    <i class='bx bxs-key' style='color:#5585fd'></i>
+                                    <span>Nhập lại mật khẩu mới</span>
                                 </label>
-                                <input type="text" id="birthday">
-                            </div>
-                            <div class="address">
-                                <label class="lb" for="address">
-                                    <i class='bx bx-home' style='color:#5585fd'></i>
-                                    <span>Địa chỉ</span>
-                                </label>
-                                <input type="text" id="address">
-                            </div>
-                            <div class="social_media">
-                                <p>Liên kết đến mạng xã hội</p>
-                                <label class="lb" for="fb">
-                                    <i class='bx bxl-facebook-circle' style='color:#5585fd'></i>
-                                    <span>Facebook</span>
-                                </label>
-                                <input type="text" id="fb">
-                            </div>
-                            <div class="social_media">
-                                <label class="lb" for="ig">
-                                    <i class='bx bxl-instagram-alt' style='color:#5585fd'></i>
-                                    <span>Instagram</span>
-                                </label>
-                                <input type="text" id="ig">
+                                <input type="password" id="birthday">
                             </div>
                         </div>
                         <div class="save">
@@ -214,6 +126,4 @@
         </div>
     </div>
 </section>
-<script src="../libs/bootstrap/js/bootstrap.bundle.js"></script>
-</body>
-</html>
+<c:import url="footer-dashboard.jsp"></c:import>

@@ -6,26 +6,36 @@ public class Course {
     private String description;
     private String instructor;
     private double price;
-    private int contentId;
     private int categoryId;
+    private String knowledge;
+    private String device_requirements;
+    private String otherInfoCourse;
 
-    public Course(int id, String name, String description, String instructor, double price, int contentId, int categoryId) {
+    public Course(int id, String name, String description, String instructor, double price, int categoryId, String knowledge, String device_requirements, String otherInfoCourse) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.instructor = instructor;
         this.price = price;
-        this.contentId = contentId;
         this.categoryId = categoryId;
+        this.knowledge = knowledge;
+        this.device_requirements = device_requirements;
+        this.otherInfoCourse = otherInfoCourse;
     }
 
-    public Course(String name, String description, String instructor, double price, int contentId, int categoryId) {
+    public Course(String name, String description, String instructor, double price, int categoryId , String knowledge, String device_requirements, String otherInfoCourse) {
         this.name = name;
         this.description = description;
         this.instructor = instructor;
         this.price = price;
-        this.contentId = contentId;
         this.categoryId = categoryId;
+        this.knowledge = knowledge;
+        this.device_requirements = device_requirements;
+        this.otherInfoCourse = otherInfoCourse;
+    }
+
+    public Course(int course_id, String name, String description, double price) {
+
     }
 
     public int getId() {
@@ -68,19 +78,35 @@ public class Course {
         this.price = price;
     }
 
-    public int getContentId() {
-        return contentId;
-    }
-
-    public void setContentId(int contentId) {
-        this.contentId = contentId;
-    }
-
     public int getCategoryId() {
         return categoryId;
     }
 
     public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
+    }
+
+    public String getKnowledge() {
+        return knowledge;
+    }
+
+    public void setKnowledge(String knowledge) {
+        this.knowledge = knowledge;
+    }
+
+    public String getRequirements() {
+        return device_requirements;
+    }
+
+    public void setRequirements(String device_requirements) {
+        this.device_requirements = device_requirements;
+    }
+
+    public String getOtherInfoCourse() {
+        return otherInfoCourse;
+    }
+
+    public void setOtherInfoCourse(String otherInfoCourse) {
+        this.otherInfoCourse = otherInfoCourse;
     }
 }
