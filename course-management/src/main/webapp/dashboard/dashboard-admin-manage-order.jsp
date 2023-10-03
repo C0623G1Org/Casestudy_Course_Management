@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:import url="../dashboard/header-dashboard.jsp"></c:import>
+<c:import url="header-dashboard.jsp"></c:import>
 <section>
     <div class="container my-4">
         <div class="row">
@@ -13,7 +13,7 @@
                     </div>
                     <ul class="nav nav-pills flex-column mb-auto">
                         <li>
-                            <a href="/dashboard" class="nav-link active" aria-current="page">
+                            <a href="/dashboard" class="nav-link text-white" aria-current="page">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
                                      fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -35,7 +35,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/dashboard/order" class="nav-link text-white">
+                            <a href="/dashboard/order" class="nav-link active">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
                                      fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -58,7 +58,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="nav-link text-white">
+                            <a href="/user/logout" class="nav-link text-white">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31"
                                      fill="none">
                                     <path d="M15.0006 0C15.3416 0 15.6686 0.135464 15.9097 0.376591C16.1509 0.617718 16.2863 0.944757 16.2863 1.28576C16.2863 1.62677 16.1509 1.95381 15.9097 2.19493C15.6686 2.43606 15.3416 2.57153 15.0006 2.57153C11.7042 2.57153 8.5428 3.88101 6.21191 6.21191C3.88101 8.5428 2.57153 11.7042 2.57153 15.0006C2.57153 18.297 3.88101 21.4583 6.21191 23.7892C8.5428 26.1201 11.7042 27.4296 15.0006 27.4296C15.3416 27.4296 15.6686 27.5651 15.9097 27.8062C16.1509 28.0473 16.2863 28.3744 16.2863 28.7154C16.2863 29.0564 16.1509 29.3834 15.9097 29.6245C15.6686 29.8657 15.3416 30.0011 15.0006 30.0011C11.0222 30.0011 7.20672 28.4207 4.39356 25.6076C1.58041 22.7944 0 18.979 0 15.0006C0 11.0222 1.58041 7.20672 4.39356 4.39356C7.20672 1.58041 11.0222 0 15.0006 0Z"
@@ -88,91 +88,15 @@
                         </form>
                     </div>
                     <div class="user">
-                      <span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">
-                            <img class="rounded-circle me-1" width="35" height="35"
-                                 src="https://zpsocial-f54-org.zadn.vn/24a379da816c6f32367d.jpg"
-                                 alt="">${user.getFullName()}
+                       <span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">
+                            <img class="rounded-circle me-1" width="35" height="35" src="https://zpsocial-f54-org.zadn.vn/24a379da816c6f32367d.jpg" alt="">${user.getFullName()}
                        </span>
                     </div>
                 </div>
-                <div class="header-content my-5">
+                <div class="header-content mt-5">
                     <div class="hello">
-                        <h3>Welcome back,</h3>
-                    </div>
-                    <div class="day-now">
-                        <p>26-09-2023</p>
-                    </div>
-                </div>
-
-                <div class="body-content">
-                    <c:forEach items="${courseList}" var="courseList">
-                        <div class="card mb-3" style="width: 100%;">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <img src="../public/image/Rectangle 43.png">
-                                    </div>
-                                    <div class="col-10">
-                                        <div class="row">
-                                            <div class="col-7">
-                                                <h4>${courseList.getName()}</h4>
-                                            </div>
-                                            <div class="col-5">
-                                                <div class="row">
-                                                    <div class="col-7 category">
-                                                        <p class="text-right">Javascript
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-5 category">
-                                                        <p class="text-right"><i class="fa-solid fa-star"></i>4.8
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="body-1">
-                                                <div>
-                                                    <p>Author</p>
-                                                </div>
-
-                                                <div>
-                                                    <p><i class="fa-regular fa-user"></i>${courseList.getInstructor()}
-                                                    </p>
-                                                </div>
-
-                                                <div>
-                                                    <p><i class="fa-regular fa-clock"></i>24h 12m</p>
-                                                </div>
-                                                <div>
-                                                    <p><i class="fa-solid fa-users"></i>1523</p>
-                                                </div>
-                                                <div>
-                                                    <p>25 học phần</p>
-                                                </div>
-                                                <div>
-                                                    <p><i class="fa-solid fa-video"></i>70 bài giảng</p>
-                                                </div>
-                                                <div>
-                                                    <p><i class="fa-regular fa-file"></i>120 bài đọc</p>
-                                                </div>
-                                                <div>
-                                                    <p><i class="fa-regular fa-star"></i>50 bài tập</p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </c:forEach>
-                </div>
-                <div class="mt-5 body-content-2">
-                    <div>
-                        <h3>Đăng kí khóa học hôm nay</h3>
-                        <p class="mt-3">Các đơn đăng kí khóa học mới trong hôm nay</p>
+                        <h3>Đơn hàng</h3>
+                        <p>Danh sách đơn hàng</p>
                     </div>
                 </div>
                 <div class="mt-4 body-content-2">
@@ -180,9 +104,7 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th class="text-center" scope="col"><i class="fa-solid fa-arrow-down-wide-short"></i>Đơn
-                                    hàng
-                                </th>
+                                <th style="width: 150px" class="text-center" scope="col"><i class="fa-solid fa-arrow-down-wide-short"></i>Đơn hàng</th>
                                 <th class="text-center" scope="col">Tình trạng</th>
                                 <th class="text-center" scope="col">Chi tiết đơn hàng</th>
                                 <th class="text-center" scope="col">Thao tác</th>
@@ -195,24 +117,66 @@
                                     <div class="done-content"><i class="fa-solid fa-check"></i>Đã hoàn thành</div>
                                 </td>
                                 <td>Thành viên loanttv đã đăng kí khóa học Basic SQL Tutorial</td>
-                                <td>Xem chi tiết</td>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-success">Xem</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-warning">Sửa</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-danger">Xóa</button>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
-                                <th scope="row">2</th>
+                                <th scope="row">1</th>
                                 <td class="done">
                                     <div class="done-content"><i class="fa-solid fa-check"></i>Đã hoàn thành</div>
                                 </td>
                                 <td>Thành viên loanttv đã đăng kí khóa học Basic SQL Tutorial</td>
-                                <td>Xem chi tiết</td>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-success">Xem</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-warning">Sửa</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-danger">Xóa</button>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
-
+                            <tr>
+                                <th scope="row">1</th>
+                                <td class="done">
+                                    <div class="done-content"><i class="fa-solid fa-check"></i>Đã hoàn thành</div>
+                                </td>
+                                <td>Thành viên loanttv đã đăng kí khóa học Basic SQL Tutorial</td>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-success">Xem</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-warning">Sửa</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-danger">Xóa</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
                             </tbody>
                         </table>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<c:import url="../dashboard/footer-dashboard.jsp"></c:import>
+<c:import url="footer-dashboard.jsp"></c:import>
