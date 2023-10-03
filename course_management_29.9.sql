@@ -50,10 +50,11 @@ CREATE TABLE `user` (
     user_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     user_name VARCHAR(30) NOT NULL UNIQUE,
     `password` VARCHAR(30) NOT NULL, 
+    full_name VARCHAR(60),
     id_card VARCHAR(12) UNIQUE,
     birthday DATE,
     gender BIT,
-    phone VARCHAR(10) NOT NULL UNIQUE,
+    phone VARCHAR(10) UNIQUE,
     email VARCHAR(55) NOT NULL UNIQUE,
     `role` VARCHAR(10) NOT NULL
 );
@@ -145,10 +146,13 @@ VALUES ('CSS Selectors', 'Learn how to select HTML elements using CSS selectors.
 INSERT INTO detailed_content (content_title, content, url_video_id , course_content_id, content_type_id) 
 VALUES ('Python Data Types', 'Learn about the different data types in Python, such as strings, numbers, and lists.','0SJE9dYdpps', 2, 1);
 
-INSERT INTO `user` (user_name, `password`, id_card, birthday, gender, phone, email, `role`) 
-VALUES ('johndoe', 'password123', '123456789012', '1990-05-01', 1, '1234567890', 'johndoe@email.com', 'student');
-INSERT INTO `user` (user_name, `password`, id_card, birthday, gender, phone, email, `role`) 
-VALUES ('janedoe', 'password456', '098765432109', '1985-11-15', 0, '0987654321', 'janedoe@email.com', 'instructor');
+INSERT INTO `user` (user_name, `password`,full_name, id_card, birthday, gender, phone, email, `role`) 
+VALUES ('admin', 'admin1','Nguyễn Văn A', '124456789012', '1990-05-01', 1, '1224567890', 'joh1ndoe@email.com', 'admin');
+INSERT INTO `user` (user_name, `password`,full_name, id_card, birthday, gender, phone, email, `role`) 
+VALUES ('thanhpv', 'thanh123','Phạm Văn Thành', '123456789012', '1990-05-01', 1, '1234567890', 'johndoes@email.com', 'user');
+INSERT INTO `user` (user_name, `password`, full_name, id_card, birthday, gender, phone, email, `role`) 
+VALUES ('usertest', 'password456','Người dùng 1','098765432109', '1985-11-15', 0, '0987654321', 'jan2edoe@email.com', 'user');
+
 
 INSERT INTO course_order (order_date, order_price, user_id, course_id) 
 VALUES ('2022-01-01', 24.99, 1, 1);

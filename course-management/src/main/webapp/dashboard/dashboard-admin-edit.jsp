@@ -1,30 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Dashboard User</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../libs/fontawesome/css/all.min.css">
-    <link rel="shortcut icon" href="../public/image/favaticon.png" type="image/x-icon">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../public/main.css">
-    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <link rel="stylesheet" href="../public/loan.css">
-</head>
-<body>
-<section id="user-dashboard-edit">
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:import url="../dashboard/header-dashboard.jsp"></c:import>
+<section>
     <div class="container my-4">
-        <div class="row d-flex justify-content-between">
+        <div class="row">
             <div class="col-lg-3 siderbar-dashboard">
                 <div class="menu-left">
                     <div class="img-logo-dashboard">
-                        <img src="../public/image/logo-website-dark-thanhpv.png" width="100%"/>
+                        <a href="/">
+                            <img src="${req.requestURI}/public/image/logo-website-dark-thanhpv.png" width="100%"/>
+                        </a>
                     </div>
                     <ul class="nav nav-pills flex-column mb-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-white" aria-current="page">
+                        <li>
+                            <a href="/dashboard" class="nav-link text-white" aria-current="page">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
                                      fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -35,40 +24,41 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="nav-link active text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="38" viewBox="0 0 30 38"
-                                     fill="none">
-                                    <path d="M15 15C19.1421 15 22.5 11.6421 22.5 7.5C22.5 3.35786 19.1421 0 15 0C10.8579 0 7.5 3.35786 7.5 7.5C7.5 11.6421 10.8579 15 15 15Z"
-                                          fill="white"/>
-                                    <path d="M30 29.0625C30 33.7219 30 37.5 15 37.5C0 37.5 0 33.7219 0 29.0625C0 24.4031 6.71625 20.625 15 20.625C23.2838 20.625 30 24.4031 30 29.0625Z"
-                                          fill="white"/>
-                                </svg>
-                                Thông tin của bạn
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link text-white">
+                            <a href="/dashboard/course" class="nav-link text-white">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="34" viewBox="0 0 30 34"
                                      fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
                                           d="M13.3754 0H16.6246C19.4523 0 21.6923 0 23.4446 0.235385C25.2477 0.478462 26.7077 0.989231 27.86 2.14C29.0108 3.29231 29.5215 4.75231 29.7646 6.55539C30 8.30923 30 10.5477 30 13.3754V19.7015C30 22.5292 30 24.7692 29.7646 26.5215C29.5215 28.3246 29.0108 29.7846 27.86 30.9369C26.7077 32.0877 25.2477 32.5985 23.4446 32.8415C21.6908 33.0769 19.4523 33.0769 16.6246 33.0769H13.3754C10.5477 33.0769 8.30769 33.0769 6.55539 32.8415C4.75231 32.5985 3.29231 32.0877 2.14 30.9369C0.989231 29.7846 0.478462 28.3246 0.235385 26.5215C1.83399e-07 24.7677 0 22.5292 0 19.7015V13.3754C0 10.5477 1.83399e-07 8.30769 0.235385 6.55539C0.478462 4.75231 0.989231 3.29231 2.14 2.14C3.29231 0.989231 4.75231 0.478462 6.55539 0.235385C8.30923 0 10.5477 0 13.3754 0ZM6.86154 2.52308C5.31385 2.73077 4.42154 3.12154 3.76923 3.77231C3.12 4.42308 2.72923 5.31538 2.52154 6.86308C2.30923 8.44462 2.30615 10.5277 2.30615 13.4615V19.6154C2.30615 22.5492 2.30923 24.6338 2.52154 26.2154C2.72923 27.7615 3.12 28.6538 3.77077 29.3046C4.42154 29.9554 5.31385 30.3462 6.86154 30.5538C8.44308 30.7662 10.5262 30.7692 13.46 30.7692H16.5369C19.4708 30.7692 21.5554 30.7662 23.1369 30.5538C24.6831 30.3462 25.5754 29.9554 26.2262 29.3046C26.8769 28.6538 27.2677 27.7615 27.4754 26.2138C27.6877 24.6338 27.6908 22.5492 27.6908 19.6154V13.4615C27.6908 10.5277 27.6877 8.44462 27.4754 6.86154C27.2677 5.31538 26.8769 4.42308 26.2262 3.77231C25.5754 3.12154 24.6831 2.73077 23.1354 2.52308C21.5554 2.31077 19.4708 2.30769 16.5369 2.30769H13.46C10.5262 2.30769 8.44462 2.31077 6.86154 2.52308ZM7.69231 13.4615C7.69231 13.1555 7.81387 12.862 8.03026 12.6456C8.24665 12.4293 8.54014 12.3077 8.84615 12.3077H21.1538C21.4599 12.3077 21.7534 12.4293 21.9697 12.6456C22.1861 12.862 22.3077 13.1555 22.3077 13.4615C22.3077 13.7676 22.1861 14.061 21.9697 14.2774C21.7534 14.4938 21.4599 14.6154 21.1538 14.6154H8.84615C8.54014 14.6154 8.24665 14.4938 8.03026 14.2774C7.81387 14.061 7.69231 13.7676 7.69231 13.4615ZM7.69231 19.6154C7.69231 19.3094 7.81387 19.0159 8.03026 18.7995C8.24665 18.5831 8.54014 18.4615 8.84615 18.4615H16.5385C16.8445 18.4615 17.138 18.5831 17.3544 18.7995C17.5707 19.0159 17.6923 19.3094 17.6923 19.6154C17.6923 19.9214 17.5707 20.2149 17.3544 20.4313C17.138 20.6477 16.8445 20.7692 16.5385 20.7692H8.84615C8.54014 20.7692 8.24665 20.6477 8.03026 20.4313C7.81387 20.2149 7.69231 19.9214 7.69231 19.6154Z"
                                           fill="white"/>
                                 </svg>
-                                Khóa học của bạn
+                                Quản lý khóa học
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="nav-link text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"
+                            <a href="/dashboard/order" class="nav-link active">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
                                      fill="none">
-                                    <path d="M15.9375 0C14.4578 0.00132681 12.9994 0.35259 11.6813 1.02511C10.3633 1.69763 9.22294 2.67234 8.35346 3.86965C7.48399 5.06697 6.91001 6.45294 6.67838 7.91441C6.44676 9.37588 6.56406 10.8714 7.0207 12.2789L0.274219 19.0242C0.187187 19.1113 0.118174 19.2148 0.0711224 19.3286C0.0240711 19.4424 -9.65492e-05 19.5644 2.89874e-07 19.6875V24.375C2.89874e-07 24.6236 0.0987723 24.8621 0.274588 25.0379C0.450403 25.2137 0.68886 25.3125 0.9375 25.3125H5.625C5.87364 25.3125 6.1121 25.2137 6.28791 25.0379C6.46373 24.8621 6.5625 24.6236 6.5625 24.375V22.5H8.4375C8.68614 22.5 8.9246 22.4012 9.10041 22.2254C9.27623 22.0496 9.375 21.8111 9.375 21.5625V19.6875H11.25C11.3732 19.6876 11.4951 19.6634 11.6089 19.6164C11.7227 19.5693 11.8262 19.5003 11.9133 19.4133L13.0336 18.2918C14.3221 18.7101 15.686 18.8443 17.0313 18.6849C18.3766 18.5256 19.6714 18.0766 20.8265 17.3688C21.9816 16.6611 22.9697 15.7114 23.7225 14.5851C24.4754 13.4589 24.9753 12.1829 25.1877 10.8449C25.4001 9.50695 25.32 8.13885 24.9529 6.83482C24.5859 5.53078 23.9406 4.32178 23.0614 3.29108C22.1823 2.26037 21.0902 1.43244 19.8604 0.864293C18.6306 0.296146 17.2922 0.00128052 15.9375 0ZM18.2812 8.90625C17.9104 8.90625 17.5479 8.79628 17.2396 8.59026C16.9312 8.38423 16.6909 8.09139 16.549 7.74878C16.4071 7.40617 16.3699 7.02917 16.4423 6.66546C16.5146 6.30174 16.6932 5.96765 16.9554 5.70543C17.2176 5.4432 17.5517 5.26462 17.9155 5.19228C18.2792 5.11993 18.6562 5.15706 18.9988 5.29898C19.3414 5.44089 19.6342 5.68121 19.8403 5.98956C20.0463 6.2979 20.1562 6.66041 20.1562 7.03125C20.1562 7.52853 19.9587 8.00544 19.6071 8.35707C19.2554 8.70871 18.7785 8.90625 18.2812 8.90625Z"
-                                          fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M10.0298 2.41667C10.4965 1.43333 11.5031 0.75 12.6665 0.75H19.3331C20.4965 0.75 21.5015 1.43333 21.9698 2.41667C23.1081 2.42667 23.9965 2.47833 24.7898 2.78833C25.7369 3.15879 26.5605 3.78835 27.1665 4.605C27.7781 5.42833 28.0665 6.48333 28.4598 7.935L29.6965 12.4717L30.1631 13.8733L30.2031 13.9233C31.7048 15.8467 30.9898 18.7067 29.5598 24.425C28.6498 28.0633 28.1965 29.8817 26.8398 30.9417C25.4831 32 23.6081 32 19.8581 32H12.1415C8.39148 32 6.51648 32 5.15981 30.9417C3.80314 29.8817 3.34814 28.0633 2.43981 24.425C1.00981 18.7067 0.29481 15.8467 1.79648 13.9233L1.83648 13.8733L2.30314 12.4717L3.53981 7.935C3.93481 6.48333 4.22314 5.42667 4.83314 4.60333C5.43936 3.7873 6.26297 3.15833 7.20981 2.78833C8.00314 2.47833 8.88981 2.425 10.0298 2.41667ZM10.0331 4.92C8.92981 4.93167 8.48648 4.97333 8.11981 5.11667C7.60975 5.31613 7.16616 5.65518 6.83981 6.095C6.54648 6.49 6.37314 7.04167 5.88981 8.82L4.93981 12.3017C6.63981 12 8.96314 12 12.1398 12H19.8581C23.0365 12 25.3581 12 27.0581 12.3L26.1098 8.81833C25.6265 7.04 25.4531 6.48833 25.1598 6.09333C24.8335 5.65351 24.3899 5.31447 23.8798 5.115C23.5131 4.97167 23.0698 4.93 21.9665 4.91833C21.7298 5.41641 21.3568 5.8372 20.8907 6.1319C20.4247 6.42659 19.8846 6.58312 19.3331 6.58333H12.6665C12.1152 6.58327 11.5753 6.42699 11.1092 6.1326C10.6431 5.83821 10.27 5.41777 10.0331 4.92Z"
+                                          fill="#F8F8F8"/>
                                 </svg>
-                                Đổi mật khẩu
+                                Quản lý đơn hàng
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="nav-link text-white">
+                            <a href="/dashboard/member" class="nav-link text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="38" viewBox="0 0 30 38"
+                                     fill="none">
+                                    <path d="M15 15C19.1421 15 22.5 11.6421 22.5 7.5C22.5 3.35786 19.1421 0 15 0C10.8579 0 7.5 3.35786 7.5 7.5C7.5 11.6421 10.8579 15 15 15Z"
+                                          fill="white"></path>
+                                    <path d="M30 29.0625C30 33.7219 30 37.5 15 37.5C0 37.5 0 33.7219 0 29.0625C0 24.4031 6.71625 20.625 15 20.625C23.2838 20.625 30 24.4031 30 29.0625Z"
+                                          fill="white"></path>
+                                </svg>
+                                Quản lý thành viên
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/user/logout" class="nav-link text-white">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31"
                                      fill="none">
                                     <path d="M15.0006 0C15.3416 0 15.6686 0.135464 15.9097 0.376591C16.1509 0.617718 16.2863 0.944757 16.2863 1.28576C16.2863 1.62677 16.1509 1.95381 15.9097 2.19493C15.6686 2.43606 15.3416 2.57153 15.0006 2.57153C11.7042 2.57153 8.5428 3.88101 6.21191 6.21191C3.88101 8.5428 2.57153 11.7042 2.57153 15.0006C2.57153 18.297 3.88101 21.4583 6.21191 23.7892C8.5428 26.1201 11.7042 27.4296 15.0006 27.4296C15.3416 27.4296 15.6686 27.5651 15.9097 27.8062C16.1509 28.0473 16.2863 28.3744 16.2863 28.7154C16.2863 29.0564 16.1509 29.3834 15.9097 29.6245C15.6686 29.8657 15.3416 30.0011 15.0006 30.0011C11.0222 30.0011 7.20672 28.4207 4.39356 25.6076C1.58041 22.7944 0 18.979 0 15.0006C0 11.0222 1.58041 7.20672 4.39356 4.39356C7.20672 1.58041 11.0222 0 15.0006 0Z"
@@ -80,7 +70,7 @@
                             </a>
                         </li>
                     </ul>
-                    <img width="100%" src="../public/image/vector-banner-2-thanhpv.png">
+                    <img width="100%" src="${req.requestURI}/public/image/vector-banner-2-thanhpv.png">
                 </div>
             </div>
             <div class="col-lg-9 content-dashboard ps-5 ">
@@ -98,7 +88,8 @@
                     </div>
                     <div class="user">
                        <span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">
-                            <img class="rounded-circle me-1" width="35" height="35" src="https://zpsocial-f54-org.zadn.vn/24a379da816c6f32367d.jpg" alt="">Trần Thị Vân Loan
+                            <img class="rounded-circle me-1" width="35" height="35"
+                                 src="https://zpsocial-f54-org.zadn.vn/24a379da816c6f32367d.jpg" alt="">${admin}
                        </span>
                     </div>
                 </div>
@@ -108,7 +99,7 @@
 
                         <div class="edit-header">
                             <div class="avatar col-4">
-                                <img src="../public/image/ava.png" alt="ava"/> <br>
+                                <img src="${req.requestURI}/public/image/ava.png" alt="ava"/> <br>
                                 <button class="ava-btn" type="submit">
                                     <i class='bx bxs-user' style='color:#5585fd'></i>
                                     <span>Edit avatar</span>
@@ -118,43 +109,43 @@
                             <div class="edit-header-inf col-7">
                                 <div class="edit-inf col-12">
                                     <div class="label-edit-header">
-                                    <label class="lb" for="user_name"><i class='bx bxs-user-circle' style='color:#5585fd'></i>
-                                        <span>Tên đăng nhập</span>
-                                    </label>
-                                    <label class="lb" for="user_name">
-                                        <i class='bx bx-edit-alt' style='color:#5585fd'></i>
-                                        <span>Edit</span>
-                                    </label>
+                                        <label class="lb" for="user_name"><i class='bx bxs-user-circle' style='color:#5585fd'></i>
+                                            <span>Tên đăng nhập</span>
+                                        </label>
+                                        <label class="lb" for="user_name">
+                                            <i class='bx bx-edit-alt' style='color:#5585fd'></i>
+                                            <span>Edit</span>
+                                        </label>
                                     </div>
-                                    <input type="text" id="user_name">
+                                    <input type="text" id="user_name" name="userName" value="${user.getUsername()}">
                                 </div>
 
                                 <div class="edit-inf col-12">
                                     <div class="label-edit-header">
-                                    <label class="lb" for="name">
-                                        <i class='bx bxs-user-circle' style='color:#5585fd'></i>
-                                        <span>Họ và Tên</span>
-                                    </label>
-                                    <label class="lb" for="name">
-                                        <i class='bx bx-edit-alt' style='color:#5585fd'></i>
-                                        <span>Edit</span>
-                                    </label>
+                                        <label class="lb" for="name">
+                                            <i class='bx bxs-user-circle' style='color:#5585fd'></i>
+                                            <span>Họ và Tên</span>
+                                        </label>
+                                        <label class="lb" for="name">
+                                            <i class='bx bx-edit-alt' style='color:#5585fd'></i>
+                                            <span>Edit</span>
+                                        </label>
                                     </div>
-                                    <input type="text" id="name">
+                                    <input type="text" id="name"  name="fullName" value="${user.getFullName()}">
                                 </div>
 
                                 <div class="edit-inf col-12">
                                     <div class="label-edit-header">
-                                    <label class="lb" for="email">
-                                        <i class='bx bx-mail-send' style='color:#5585fd'></i>
-                                        <span>Email của bạn</span>
-                                    </label>
-                                    <label class="lb" for="email">
-                                        <i class='bx bx-edit-alt' style='color:#5585fd'></i>
-                                        <span>Edit</span>
-                                    </label>
+                                        <label class="lb" for="email">
+                                            <i class='bx bx-mail-send' style='color:#5585fd'></i>
+                                            <span>Email của bạn</span>
+                                        </label>
+                                        <label class="lb" for="email">
+                                            <i class='bx bx-edit-alt' style='color:#5585fd'></i>
+                                            <span>Edit</span>
+                                        </label>
                                     </div>
-                                    <input type="text" id="email">
+                                    <input type="text" id="email" name="email" value="${user.getEmail()}">
                                 </div>
                             </div>
                         </div>
@@ -168,43 +159,21 @@
                                     <i class='bx bxs-phone-call' style='color:#5585fd'></i>
                                     <span>Số điện thoại</span>
                                 </label>
-                                <input type="text" id="phone">
+                                <input type="text" id="phone" name="phone" value="${user.getPhone()}">
                             </div>
                             <div class="id_card">
                                 <label class="lb" for="id_card">
                                     <i class='bx bxs-id-card' style='color:#5585fd'></i>
                                     <span>Căn cước công dân</span>
                                 </label>
-                                <input type="text" id="id_card">
+                                <input type="text" id="id_card" name="idCard" value="${user.getIdCard()}">
                             </div>
                             <div class="edit-birthday">
                                 <label class="lb" for="birthday">
                                     <i class='bx bxs-cake' style='color:#5585fd'></i>
                                     <span>Ngày sinh</span>
                                 </label>
-                                <input type="text" id="birthday">
-                            </div>
-                            <div class="address">
-                                <label class="lb" for="address">
-                                    <i class='bx bx-home' style='color:#5585fd'></i>
-                                   <span>Địa chỉ</span>
-                                </label>
-                                <input type="text" id="address">
-                            </div>
-                            <div class="social_media">
-                                <p>Liên kết đến mạng xã hội</p>
-                                <label class="lb" for="fb">
-                                    <i class='bx bxl-facebook-circle' style='color:#5585fd'></i>
-                                    <span>Facebook</span>
-                                </label>
-                                <input type="text" id="fb">
-                            </div>
-                            <div class="social_media">
-                                <label class="lb" for="ig">
-                                    <i class='bx bxl-instagram-alt' style='color:#5585fd'></i>
-                                    <span>Instagram</span>
-                                </label>
-                                <input type="text" id="ig">
+                                <input type="text" id="birthday" name="birthday" value="${user.getBirthday()}">
                             </div>
                         </div>
                         <div class="save">
@@ -216,6 +185,4 @@
         </div>
     </div>
 </section>
-<script src="../libs/bootstrap/js/bootstrap.bundle.js"></script>
-</body>
-</html>
+<c:import url="../dashboard/footer-dashboard.jsp"></c:import>

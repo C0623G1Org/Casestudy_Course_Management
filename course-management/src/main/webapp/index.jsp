@@ -154,7 +154,7 @@
               </div>
               <div class="card-price">
                 <div class="price">${courseList.getPrice()}</div>
-<%--                <a style="color: #FFFFFF" role="button" class="btn-login btn btn-primary" href="/course/id=${courseList.getId()}">Đăng kí</a>--%>
+                  <%--                <a style="color: #FFFFFF" role="button" class="btn-login btn btn-primary" href="/course/id=${courseList.getId()}">Đăng kí</a>--%>
                 <a style="color: #FFFFFF" role="button" class="btn-login btn btn-primary" href="/course/detail?id=${courseList.getId()}">Đăng kí</a>
               </div>
             </div>
