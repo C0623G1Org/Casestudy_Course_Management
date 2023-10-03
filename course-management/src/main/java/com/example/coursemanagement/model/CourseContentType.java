@@ -1,19 +1,14 @@
 package com.example.coursemanagement.model;
 
-public class CourseContent {
+public class CourseContentType {
     private int id;
     private String name;
-    private int courseId;
-
-    public CourseContent(int id, String name,int courseId) {
+    public CourseContentType(String name) {
+        this.name = name;
+    }
+    public CourseContentType(int id, String name) {
         this.id = id;
         this.name = name;
-        this.courseId = courseId;
-    }
-
-    public CourseContent(String name) {
-        this.name = name;
-        this.courseId = courseId;
     }
 
     public int getId() {
@@ -22,14 +17,6 @@ public class CourseContent {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getCourseId() {
-        return courseId;
-    }
-
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
     }
 
     public String getName() {

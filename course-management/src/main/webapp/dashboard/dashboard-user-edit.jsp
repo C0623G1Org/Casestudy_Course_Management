@@ -1,30 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../libs/fontawesome/css/all.min.css">
-    <link rel="shortcut icon" href="../public/image/favaticon.png" type="image/x-icon">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../public/main.css">
-    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <link rel="stylesheet" href="../public/loan.css">
-</head>
-<body>
-<section id="user-dashboard-edit">
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:import url="header-dashboard.jsp"></c:import>
+<section>
     <div class="container my-4">
         <div class="row d-flex justify-content-between">
             <div class="col-lg-3 siderbar-dashboard">
-            <div class="menu-left">
                 <div class="img-logo-dashboard">
                     <img src="../public/image/logo-website-dark-thanhpv.png" width="100%"/>
                 </div>
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-white" aria-current="page">
+                        <a href="/dashboard" class="nav-link text-white" aria-current="page">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
                                  fill="none">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -35,7 +21,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link text-white">
+                        <a href="/dashboard?action=update" class="nav-link active">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="38" viewBox="0 0 30 38"
                                  fill="none">
                                 <path d="M15 15C19.1421 15 22.5 11.6421 22.5 7.5C22.5 3.35786 19.1421 0 15 0C10.8579 0 7.5 3.35786 7.5 7.5C7.5 11.6421 10.8579 15 15 15Z"
@@ -58,7 +44,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link active text-white">
+                        <a href="#" class="nav-link text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"
                                  fill="none">
                                 <path d="M15.9375 0C14.4578 0.00132681 12.9994 0.35259 11.6813 1.02511C10.3633 1.69763 9.22294 2.67234 8.35346 3.86965C7.48399 5.06697 6.91001 6.45294 6.67838 7.91441C6.44676 9.37588 6.56406 10.8714 7.0207 12.2789L0.274219 19.0242C0.187187 19.1113 0.118174 19.2148 0.0711224 19.3286C0.0240711 19.4424 -9.65492e-05 19.5644 2.89874e-07 19.6875V24.375C2.89874e-07 24.6236 0.0987723 24.8621 0.274588 25.0379C0.450403 25.2137 0.68886 25.3125 0.9375 25.3125H5.625C5.87364 25.3125 6.1121 25.2137 6.28791 25.0379C6.46373 24.8621 6.5625 24.6236 6.5625 24.375V22.5H8.4375C8.68614 22.5 8.9246 22.4012 9.10041 22.2254C9.27623 22.0496 9.375 21.8111 9.375 21.5625V19.6875H11.25C11.3732 19.6876 11.4951 19.6634 11.6089 19.6164C11.7227 19.5693 11.8262 19.5003 11.9133 19.4133L13.0336 18.2918C14.3221 18.7101 15.686 18.8443 17.0313 18.6849C18.3766 18.5256 19.6714 18.0766 20.8265 17.3688C21.9816 16.6611 22.9697 15.7114 23.7225 14.5851C24.4754 13.4589 24.9753 12.1829 25.1877 10.8449C25.4001 9.50695 25.32 8.13885 24.9529 6.83482C24.5859 5.53078 23.9406 4.32178 23.0614 3.29108C22.1823 2.26037 21.0902 1.43244 19.8604 0.864293C18.6306 0.296146 17.2922 0.00128052 15.9375 0ZM18.2812 8.90625C17.9104 8.90625 17.5479 8.79628 17.2396 8.59026C16.9312 8.38423 16.6909 8.09139 16.549 7.74878C16.4071 7.40617 16.3699 7.02917 16.4423 6.66546C16.5146 6.30174 16.6932 5.96765 16.9554 5.70543C17.2176 5.4432 17.5517 5.26462 17.9155 5.19228C18.2792 5.11993 18.6562 5.15706 18.9988 5.29898C19.3414 5.44089 19.6342 5.68121 19.8403 5.98956C20.0463 6.2979 20.1562 6.66041 20.1562 7.03125C20.1562 7.52853 19.9587 8.00544 19.6071 8.35707C19.2554 8.70871 18.7785 8.90625 18.2812 8.90625Z"
@@ -80,10 +66,7 @@
                         </a>
                     </li>
                 </ul>
-                <img width="100%" src="../public/image/vector-banner-2-thanhpv.png">
             </div>
-        </div>
-
             <div class="col-lg-9 content-dashboard ps-5 ">
                 <div class="header-content">
                     <div class="hello">
@@ -99,39 +82,117 @@
                     </div>
                     <div class="user">
                        <span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">
-                            <img class="rounded-circle me-1" width="35" height="35" src="https://zpsocial-f54-org.zadn.vn/24a379da816c6f32367d.jpg" alt="">Trần Thị Vân Loan
+                            <img class="rounded-circle me-1" width="35" height="35"
+                                 src="https://zpsocial-f54-org.zadn.vn/24a379da816c6f32367d.jpg" alt="">Trần Thị Vân Loan
                        </span>
                     </div>
                 </div>
+                <div class="row my-5 content-edit-info ">
+                    <form class="edit-user-inf my-4 text-start" action="/dashboard?action=update">
+                        <input type="hidden" value="${user.getId()}" name="id">
+                        <div class="edit-header">
+                            <div class="avatar col-4">
+                                <img src="../public/image/ava.png" alt="ava"/> <br>
+                                <button class="ava-btn" type="submit">
+                                    <i class='bx bxs-user' style='color:#5585fd'></i>
+                                    <span>Edit avatar</span>
+                                </button>
+                            </div>
 
-                <div class="row my-5 edit-content ">
-                    <form action="#" class="edit-user-inf my-4 text-start">
-                        <div class="change-pw-body">
-                            <h4>Thay đổi mật khẩu</h4>
-                            <p>Cập nhật mật khẩu của bạn.</p>
+                            <div class="edit-header-inf col-7">
+                                <div class="edit-inf col-12">
+                                    <div class="label-edit-header">
+                                        <label class="lb" for="user_name"><i class='bx bxs-user-circle' style='color:#5585fd'></i>
+                                            <span>Tên đăng nhập</span>
+                                        </label>
+                                        <label class="lb" for="user_name">
+                                            <i class='bx bx-edit-alt' style='color:#5585fd'></i>
+                                            <span>Edit</span>
+                                        </label>
+                                    </div>
+                                    <input type="text" id="user_name" name="username" value="${user.getUsername()}">
+                                </div>
+
+                                <div class="edit-inf col-12">
+                                    <div class="label-edit-header">
+                                        <label class="lb" for="name">
+                                            <i class='bx bxs-user-circle' style='color:#5585fd'></i>
+                                            <span>Họ và Tên</span>
+                                        </label>
+                                        <label class="lb" for="name">
+                                            <i class='bx bx-edit-alt' style='color:#5585fd'></i>
+                                            <span>Edit</span>
+                                        </label>
+                                    </div>
+                                    <input type="text" id="name" name="fullName" value="${user.getFullName()}">
+                                </div>
+
+                                <div class="edit-inf col-12">
+                                    <div class="label-edit-header">
+                                        <label class="lb" for="email">
+                                            <i class='bx bx-mail-send' style='color:#5585fd'></i>
+                                            <span>Email của bạn</span>
+                                        </label>
+                                        <label class="lb" for="email">
+                                            <i class='bx bx-edit-alt' style='color:#5585fd'></i>
+                                            <span>Edit</span>
+                                        </label>
+                                    </div>
+                                    <input type="text" id="email" name="email" value="${user.getEmail()}">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="edit-body">
+                            <h4>Cập nhật thông tin</h4>
+                            <p>Cập nhật thêm thông tin của bạn.</p>
 
                             <div class="edit-phone">
                                 <label class="lb" for="phone">
-                                    <i class='bx bxs-key' style='color:#5585fd'></i>
-                                    <span>Nhập mật khẩu cũ</span>
+                                    <i class='bx bxs-phone-call' style='color:#5585fd'></i>
+                                    <span>Số điện thoại</span>
                                 </label>
-                                <input type="password" id="phone">
+                                <input type="text" id="phone" name="phone" value="${user.getPhone()}">
+                            </div>
+                            <div class="edit-phone ms-3">
+                                <i class='bx bxs-id-card' style='color:#5585fd'></i>
+                                <span>Giới tính</span>
+                                <br>
+                                <input style="width: 20px; height: 20px" type="radio" id="male" name="gender" value="1">
+                                <label for="male">Nam</label>
+                                <input style="width: 20px; height: 20px" type="radio" id="female" name="gender" value="0">
+                                <label for="female">Nữ</label><br>
                             </div>
                             <div class="id_card">
                                 <label class="lb" for="id_card">
-                                    <i class='bx bxs-key' style='color:#5585fd'></i>
-                                    <span>Nhập mật khẩu mới</span>
+                                    <i class='bx bxs-id-card' style='color:#5585fd'></i>
+                                    <span>Căn cước công dân</span>
                                 </label>
-                                <input type="password" id="id_card">
+                                <input type="text" id="id_card" name="idCard" value="${user.getIdCard()}">
                             </div>
                             <div class="edit-birthday">
                                 <label class="lb" for="birthday">
-                                    <i class='bx bxs-key' style='color:#5585fd'></i>
-                                    <span>Nhập lại mật khẩu mới</span>
+                                    <i class='bx bxs-cake' style='color:#5585fd'></i>
+                                    <span>Ngày sinh</span>
                                 </label>
-                                <input type="password" id="birthday">
+                                <input type="text" id="birthday" name="birthday" value="${user.getBirthday()}">
                             </div>
-                        </div>
+<%--                            <div class="social_media">--%>
+<%--                                <p>Liên kết đến mạng xã hội</p>--%>
+<%--                                <label class="lb" for="fb">--%>
+<%--                                    <i class='bx bxl-facebook-circle' style='color:#5585fd'></i>--%>
+<%--                                    <span>Facebook</span>--%>
+<%--                                </label>--%>
+<%--                                <input type="text" id="fb" name="fb">--%>
+<%--                            </div>--%>
+<%--                            <div class="social_media">--%>
+<%--                                <label class="lb" for="ig">--%>
+<%--                                    <i class='bx bxl-instagram-alt' style='color:#5585fd'></i>--%>
+<%--                                    <span>Instagram</span>--%>
+<%--                                </label>--%>
+<%--                                <input type="text" id="ig" name="ig">--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
                         <div class="save">
                             <button type="submit">Lưu thay đổi</button>
                         </div>
@@ -141,6 +202,4 @@
         </div>
     </div>
 </section>
-<script src="../libs/bootstrap/js/bootstrap.bundle.js"></script>
-</body>
-</html>
+<c:import url="footer-dashboard.jsp"></c:import>
