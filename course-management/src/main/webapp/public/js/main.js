@@ -1,5 +1,5 @@
-$(document).ready(function() {
-    $('#form-signup').submit(function(e) {
+$(document).ready(function () {
+    $('#form-signup').submit(function (e) {
         e.preventDefault();
         var usernameSignUp = $('#usernameSignUp').val();
         var passwordSignUp = $('#passwordSignUp').val();
@@ -14,18 +14,19 @@ $(document).ready(function() {
                 'passwordSignUpAgain': passwordSignUpAgain,
                 'emailSignUp': emailSignUp
             },
-            success: function(data) {
-                if (data != "") {
+            success: function (data) {
+                if (data !== "") {
                     $('#msg-signup').html("<div class='alert alert-danger' role='alert'>" + data + "</div>");
                 }
             },
-            error: function(jqXHR, textStatus, errorThrown) {
+            error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus, errorThrown); // Hiển thị lỗi trong console
             }
         });
     });
-});$(document).ready(function() {
-    $('#form-login').submit(function(e) {
+});
+$(document).ready(function () {
+    $('#form-login').submit(function (e) {
         e.preventDefault();
         var usernameLogIn = $('#usernameLogIn').val();
         var passwordLogIn = $('#passwordLogIn').val();
@@ -36,26 +37,47 @@ $(document).ready(function() {
                 'usernameLogIn': usernameLogIn,
                 'passwordLogIn': passwordLogIn,
             },
-            success: function(data) {
-                if (data != "") {
+            success: function (data) {
+                if (data !== "") {
                     $('#msg-login').html("<div class='alert alert-danger' role='alert'>" + data + "</div>");
                 } else {
                     window.location.href = "/dashboard";
                 }
             },
-            error: function(jqXHR, textStatus, errorThrown) {
+            error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus, errorThrown); // Hiển thị lỗi trong console
             }
         });
     });
 });
 
-window.addEventListener("DOMContentLoaded", function() {
-    var currentUrl = window.location.pathname;
-    var currentSearch = window.location.search;
-    var href = currentUrl + currentSearch;
-    var targetLink = document.querySelector('a[href="' + href + '"]');
+window.addEventListener("DOMContentLoaded", function () {
+    let currentUrl = window.location.pathname;
+    let currentSearch = window.location.search;
+    let href = currentUrl + currentSearch;
+    let targetLink = document.querySelector('a[href="' + href + '"]');
     if (targetLink) {
         targetLink.classList.add("active");
     }
+});
+window.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll('#admin-siderbar li a');
+    let href = window.location.pathname;
+    let targetLink = document.querySelector('a[href="' + href + '"]');
+    links.forEach(link => {
+        if (link === href) {
+            targetLink.classList.replace('text-white','active');
+        }
+    });
+});
+
+window.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll('#user-siderbar li a');
+    let href = window.location.pathname;
+    let targetLink = document.querySelector('a[href="' + href + '"]');
+    links.forEach(link => {
+        if (link === href) {
+            targetLink.classList.replace('text-white','active');
+        }
+    });
 });
