@@ -6,7 +6,6 @@ import com.example.coursemanagement.repository.IUserRepo;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class UserRepoImpl implements IUserRepo {

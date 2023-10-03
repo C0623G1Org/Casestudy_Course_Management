@@ -1,6 +1,5 @@
 package com.example.coursemanagement.repository.impl;
 
-import com.example.coursemanagement.model.CourseContent;
 import com.example.coursemanagement.model.CourseContentType;
 import com.example.coursemanagement.repository.BaseRepository;
 import com.example.coursemanagement.repository.IRepository;

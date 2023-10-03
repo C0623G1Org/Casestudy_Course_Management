@@ -4,11 +4,12 @@ import com.example.coursemanagement.model.User;
 import com.example.coursemanagement.service.IUserService;
 import com.example.coursemanagement.service.impl.UserServiceImpl;
 
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.io.PrintWriter;
+
 
 @WebServlet(name = "UserServlet", value = {"/user/signup", "/user/login","/user/logout"})
 public class UserServlet extends HttpServlet {

@@ -1,7 +1,6 @@
 package com.example.coursemanagement.service.impl;
 
 import com.example.coursemanagement.model.CourseCategory;
-import com.example.coursemanagement.repository.IRepository;
 import com.example.coursemanagement.repository.impl.CourseCategoryRepoImpl;
 import com.example.coursemanagement.service.IService;
 
