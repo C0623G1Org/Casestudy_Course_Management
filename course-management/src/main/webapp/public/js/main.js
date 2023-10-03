@@ -49,3 +49,13 @@ $(document).ready(function() {
         });
     });
 });
+
+window.addEventListener("DOMContentLoaded", function() {
+    var currentUrl = window.location.pathname;
+    var currentSearch = window.location.search;
+    var href = currentUrl + currentSearch;
+    var targetLink = document.querySelector('a[href="' + href + '"]');
+    if (targetLink) {
+        targetLink.classList.add("active");
+    }
+});

@@ -2,13 +2,14 @@ package com.example.coursemanagement.repository.impl;
 
 import com.example.coursemanagement.model.CourseCategory;
 import com.example.coursemanagement.repository.BaseRepository;
+import com.example.coursemanagement.repository.ICourseCategory;
 import com.example.coursemanagement.repository.IRepository;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CourseCategoryRepoImpl implements IRepository<CourseCategory> {
+public class CourseCategoryRepoImpl implements ICourseCategory {
     private final static String SELECT = "SELECT * FROM course_category";
     private final static String SELECT_BY_ID = "SELECT * FROM course_category WHERE course_category_id = ?;";
 
