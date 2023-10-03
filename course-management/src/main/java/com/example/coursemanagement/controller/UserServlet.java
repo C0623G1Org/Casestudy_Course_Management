@@ -11,13 +11,23 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 
-@WebServlet(name = "UserServlet", value = {"/user/signup", "/user/login"})
+@WebServlet(name = "UserServlet", value = {"/user/signup", "/user/login","/user/logout"})
 public class UserServlet extends HttpServlet {
     private final IUserService userService = new UserServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        String url = request.getRequestURI();
+        if (url.endsWith("/user/logout")) {
+            removeSession(request, response);
+        }
+    }
 
+    private static void removeSession(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        request.getSession().removeAttribute("user");
+        request.getSession().invalidate();
+        response.sendRedirect("/");
     }
 
     @Override

@@ -41,14 +41,12 @@
                                      class="accordion-collapse collapse<c:if test="${loop.first}"> show</c:if>"
                                      data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                            <c:forEach items="${detailedContents}" var="detailedContents" varStatus="item">
-                                                <c:if test="${courseContents.getId() == detailedContents.getCourseContentId()}">
+                                            <c:forEach items="${detailedContents.get(courseContents.getId())}" var="detailedContent" varStatus="item">
                                                 <a href="#" class="list-group-item list-group-item-action"
                                                    aria-current="true">
-                                                    ${detailedContents.getTitle()}
+                                                    ${item.count}. ${detailedContent.getTitle()}
                                                 </a>
                                                 <hr>
-                                                </c:if>
                                             </c:forEach>
                                     </div>
                                 </div>

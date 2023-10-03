@@ -12,6 +12,7 @@ public class UserRepoImpl implements IUserRepo {
     private final static String SELECT_ALL = "SELECT * FROM user;";
     private static final String SELECT_BY_ID = "SELECT * FROM user WHERE user_id = ?;";
     private static final String SELECT_BY_USERNAME = "SELECT * FROM user WHERE user_name = ?;";
+//    private final static String UPDATEUSER = "call update_user(?,?,?,?,?,?,?,?,?);";
     private static final String SELECT_BY_USERNAME_PASSWORD = "SELECT * FROM user WHERE user_name = ? AND password = ?;";
     private static final String INSERT_USER = "INSERT INTO user(user_name, password, email, role) VALUES (?, ?, ?, 'user');";
 
@@ -97,7 +98,23 @@ public class UserRepoImpl implements IUserRepo {
     }
 
     @Override
-    public boolean updateE(int id, User course) {
+    public boolean updateE(int id, User user) {
+//        Connection connection=BaseRepository.getConnection();
+//        try {
+//            CallableStatement callableStatement=connection.prepareCall(UPDATEUSER);
+//            callableStatement.setString(1, user.getUsername());
+//            callableStatement.setString(2, user.getPassword());
+//            callableStatement.setString(3, user.getFullName());
+//            callableStatement.setString(4, user.getIdCard());
+////            callableStatement.setDate(5, user.getBirthday());
+//            callableStatement.setBoolean(6, user.isGender());
+//            callableStatement.setString(7, user.getPhone());
+//            callableStatement.setString(8, user.getEmail());
+//            callableStatement.setString(9, user.getRole());
+//            callableStatement.executeUpdate();
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
         return false;
     }
 

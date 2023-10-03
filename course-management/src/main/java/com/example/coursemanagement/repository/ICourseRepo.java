@@ -12,4 +12,5 @@ public interface ICourseRepo {
     boolean deleteCourse(int id);
     boolean updateCourse(int id, Course course);
     List<Course> findByNameCourse(String nameCourse);
+    List<Course> selectByUserBuy(int idUser);
 }

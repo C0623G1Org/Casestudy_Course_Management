@@ -7,10 +7,12 @@
             <div class="col-lg-3 siderbar-dashboard">
                 <div class="menu-left">
                     <div class="img-logo-dashboard">
-                        <img src="../public/image/logo-website-dark-thanhpv.png" width="100%"/>
+                        <a href="/">
+                            <img src="../public/image/logo-website-dark-thanhpv.png" width="100%"/>
+                        </a>
                     </div>
                     <ul class="nav nav-pills flex-column mb-auto">
-                        <li class="nav-item">
+                        <li>
                             <a href="#" class="nav-link active" aria-current="page">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
                                      fill="none">
@@ -34,17 +36,23 @@
                         </li>
                         <li>
                             <a href="#" class="nav-link text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0298 2.41667C10.4965 1.43333 11.5031 0.75 12.6665 0.75H19.3331C20.4965 0.75 21.5015 1.43333 21.9698 2.41667C23.1081 2.42667 23.9965 2.47833 24.7898 2.78833C25.7369 3.15879 26.5605 3.78835 27.1665 4.605C27.7781 5.42833 28.0665 6.48333 28.4598 7.935L29.6965 12.4717L30.1631 13.8733L30.2031 13.9233C31.7048 15.8467 30.9898 18.7067 29.5598 24.425C28.6498 28.0633 28.1965 29.8817 26.8398 30.9417C25.4831 32 23.6081 32 19.8581 32H12.1415C8.39148 32 6.51648 32 5.15981 30.9417C3.80314 29.8817 3.34814 28.0633 2.43981 24.425C1.00981 18.7067 0.29481 15.8467 1.79648 13.9233L1.83648 13.8733L2.30314 12.4717L3.53981 7.935C3.93481 6.48333 4.22314 5.42667 4.83314 4.60333C5.43936 3.7873 6.26297 3.15833 7.20981 2.78833C8.00314 2.47833 8.88981 2.425 10.0298 2.41667ZM10.0331 4.92C8.92981 4.93167 8.48648 4.97333 8.11981 5.11667C7.60975 5.31613 7.16616 5.65518 6.83981 6.095C6.54648 6.49 6.37314 7.04167 5.88981 8.82L4.93981 12.3017C6.63981 12 8.96314 12 12.1398 12H19.8581C23.0365 12 25.3581 12 27.0581 12.3L26.1098 8.81833C25.6265 7.04 25.4531 6.48833 25.1598 6.09333C24.8335 5.65351 24.3899 5.31447 23.8798 5.115C23.5131 4.97167 23.0698 4.93 21.9665 4.91833C21.7298 5.41641 21.3568 5.8372 20.8907 6.1319C20.4247 6.42659 19.8846 6.58312 19.3331 6.58333H12.6665C12.1152 6.58327 11.5753 6.42699 11.1092 6.1326C10.6431 5.83821 10.27 5.41777 10.0331 4.92Z" fill="#F8F8F8"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                     fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M10.0298 2.41667C10.4965 1.43333 11.5031 0.75 12.6665 0.75H19.3331C20.4965 0.75 21.5015 1.43333 21.9698 2.41667C23.1081 2.42667 23.9965 2.47833 24.7898 2.78833C25.7369 3.15879 26.5605 3.78835 27.1665 4.605C27.7781 5.42833 28.0665 6.48333 28.4598 7.935L29.6965 12.4717L30.1631 13.8733L30.2031 13.9233C31.7048 15.8467 30.9898 18.7067 29.5598 24.425C28.6498 28.0633 28.1965 29.8817 26.8398 30.9417C25.4831 32 23.6081 32 19.8581 32H12.1415C8.39148 32 6.51648 32 5.15981 30.9417C3.80314 29.8817 3.34814 28.0633 2.43981 24.425C1.00981 18.7067 0.29481 15.8467 1.79648 13.9233L1.83648 13.8733L2.30314 12.4717L3.53981 7.935C3.93481 6.48333 4.22314 5.42667 4.83314 4.60333C5.43936 3.7873 6.26297 3.15833 7.20981 2.78833C8.00314 2.47833 8.88981 2.425 10.0298 2.41667ZM10.0331 4.92C8.92981 4.93167 8.48648 4.97333 8.11981 5.11667C7.60975 5.31613 7.16616 5.65518 6.83981 6.095C6.54648 6.49 6.37314 7.04167 5.88981 8.82L4.93981 12.3017C6.63981 12 8.96314 12 12.1398 12H19.8581C23.0365 12 25.3581 12 27.0581 12.3L26.1098 8.81833C25.6265 7.04 25.4531 6.48833 25.1598 6.09333C24.8335 5.65351 24.3899 5.31447 23.8798 5.115C23.5131 4.97167 23.0698 4.93 21.9665 4.91833C21.7298 5.41641 21.3568 5.8372 20.8907 6.1319C20.4247 6.42659 19.8846 6.58312 19.3331 6.58333H12.6665C12.1152 6.58327 11.5753 6.42699 11.1092 6.1326C10.6431 5.83821 10.27 5.41777 10.0331 4.92Z"
+                                          fill="#F8F8F8"/>
                                 </svg>
                                 Quản lý đơn hàng
                             </a>
                         </li>
                         <li>
                             <a href="#" class="nav-link text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="38" viewBox="0 0 30 38" fill="none">
-                                    <path d="M15 15C19.1421 15 22.5 11.6421 22.5 7.5C22.5 3.35786 19.1421 0 15 0C10.8579 0 7.5 3.35786 7.5 7.5C7.5 11.6421 10.8579 15 15 15Z" fill="white"></path>
-                                    <path d="M30 29.0625C30 33.7219 30 37.5 15 37.5C0 37.5 0 33.7219 0 29.0625C0 24.4031 6.71625 20.625 15 20.625C23.2838 20.625 30 24.4031 30 29.0625Z" fill="white"></path>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="38" viewBox="0 0 30 38"
+                                     fill="none">
+                                    <path d="M15 15C19.1421 15 22.5 11.6421 22.5 7.5C22.5 3.35786 19.1421 0 15 0C10.8579 0 7.5 3.35786 7.5 7.5C7.5 11.6421 10.8579 15 15 15Z"
+                                          fill="white"></path>
+                                    <path d="M30 29.0625C30 33.7219 30 37.5 15 37.5C0 37.5 0 33.7219 0 29.0625C0 24.4031 6.71625 20.625 15 20.625C23.2838 20.625 30 24.4031 30 29.0625Z"
+                                          fill="white"></path>
                                 </svg>
                                 Quản lý thành viên
                             </a>
@@ -80,8 +88,10 @@
                         </form>
                     </div>
                     <div class="user">
-                       <span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">
-                            <img class="rounded-circle me-1" width="35" height="35" src="https://zpsocial-f54-org.zadn.vn/24a379da816c6f32367d.jpg" alt="">${user.getFullName()}
+                      <span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">
+                            <img class="rounded-circle me-1" width="35" height="35"
+                                 src="https://zpsocial-f54-org.zadn.vn/24a379da816c6f32367d.jpg"
+                                 alt="">${user.getFullName()}
                        </span>
                     </div>
                 </div>
@@ -93,6 +103,7 @@
                         <p>26-09-2023</p>
                     </div>
                 </div>
+
                 <div class="body-content">
                     <c:forEach items="${courseList}" var="courseList">
                         <div class="card mb-3" style="width: 100%;">
@@ -119,14 +130,15 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row" >
+                                        <div class="row">
                                             <div class="body-1">
                                                 <div>
                                                     <p>Author</p>
                                                 </div>
 
                                                 <div>
-                                                    <p><i class="fa-regular fa-user"></i>${courseList.getInstructor()}</p>
+                                                    <p><i class="fa-regular fa-user"></i>${courseList.getInstructor()}
+                                                    </p>
                                                 </div>
 
                                                 <div>
@@ -157,20 +169,20 @@
                         </div>
                     </c:forEach>
                 </div>
-
                 <div class="mt-5 body-content-2">
                     <div>
                         <h3>Đăng kí khóa học hôm nay</h3>
                         <p class="mt-3">Các đơn đăng kí khóa học mới trong hôm nay</p>
                     </div>
                 </div>
-
                 <div class="mt-4 body-content-2">
                     <div class="card-table">
                         <table class="table">
                             <thead>
                             <tr>
-                                <th class="text-center" scope="col"><i class="fa-solid fa-arrow-down-wide-short"></i>Đơn hàng</th>
+                                <th class="text-center" scope="col"><i class="fa-solid fa-arrow-down-wide-short"></i>Đơn
+                                    hàng
+                                </th>
                                 <th class="text-center" scope="col">Tình trạng</th>
                                 <th class="text-center" scope="col">Chi tiết đơn hàng</th>
                                 <th class="text-center" scope="col">Thao tác</th>

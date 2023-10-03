@@ -34,7 +34,31 @@
             </ul>
 
             <div class="col-md-3 text-end">
-                <c:import url="modal-login.jsp"></c:import>
+                <c:if test="${empty sessionScope.user}">
+                    <c:import url="modal-login.jsp"></c:import>
+                </c:if>
+                <c:if test="${not empty sessionScope.user}">
+                    <div class="d-flex justify-content-end">
+                        <div class="dropdown">
+                            <button class="btn-login btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <c:if test="${empty sessionScope.user.getFullName()}">
+                                        ${sessionScope.user.getUsername()}
+                                    </c:if>
+                                    <c:if test="${not empty sessionScope.user.getFullName()}">
+                                        ${sessionScope.user.getFullName()}
+                                    </c:if>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+                                <li><a class="dropdown-item" href="/dashboard/manager/course">Quản lý khóa học</a></li>
+                                <li><a class="dropdown-item" href="/dashboard/manager/course">Quản lý đơn hàng</a></li>
+                                <li><a class="dropdown-item" href="/dashboard/manager/course">Quản lý đơn hàng</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="/user/logout">Đăng xuất</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </c:if>
             </div>
         </div>
     </div>
