@@ -38,4 +38,9 @@ public class CourseServiceImpl implements ICourseService {
     public List<Course> findByNameCourse(String nameCourse) {
         return courseRepo.findByNameCourse(nameCourse);
     }
+
+    @Override
+    public List<Course> selectByUserBuy(int idUser) {
+        return courseRepo.selectByUserBuy(idUser);
+    }
 }
