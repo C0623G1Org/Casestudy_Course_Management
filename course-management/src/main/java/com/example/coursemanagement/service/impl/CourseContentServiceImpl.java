@@ -35,6 +35,11 @@ public class CourseContentServiceImpl implements ICourseContentService {
     }
 
     @Override
+    public void updateE(CourseContent courseContent) {
+
+    }
+
+    @Override
     public List<CourseContent> selectByCourseId(int id) {
         return courseContentIRepository.selectByCourseId(id);
     }

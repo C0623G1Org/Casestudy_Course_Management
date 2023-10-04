@@ -35,6 +35,11 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
+    public void updateE(User user) {
+        userRepo.updateE(user);
+    }
+
+    @Override
     public boolean checkUsernameExits(String username) {
         return userRepo.checkUsernameExits(username);
     }

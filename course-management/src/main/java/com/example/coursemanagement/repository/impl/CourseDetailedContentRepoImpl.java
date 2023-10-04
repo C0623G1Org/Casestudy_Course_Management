@@ -43,19 +43,23 @@ public class CourseDetailedContentRepoImpl implements ICourseDetailRepo {
 
     @Override
     public CourseDetailedContent selectE(int id) {
-        CourseDetailedContent detailedContent;
+        CourseDetailedContent detailedContent = null;
         Connection connection = BaseRepository.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BY_ID);
             preparedStatement.setInt(1, id);
-            ResultSet resultSet = preparedStatement.getResultSet();
-            int detailed_content_id = resultSet.getInt("detailed_content_id");
-            String content_title = resultSet.getString("content_title");
-            String content = resultSet.getString("content");
-            String idVideo = resultSet.getString("url_video_id");
-            int courseContentId = resultSet.getInt("course_content_id");
-            int courseContentTypeId = resultSet.getInt("content_type_id");
-            detailedContent = new CourseDetailedContent(detailed_content_id, content_title,content,idVideo,courseContentId,courseContentTypeId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                int detailed_content_id = resultSet.getInt("detailed_content_id");
+                String content_title = resultSet.getString("content_title");
+                String content = resultSet.getString("content");
+                String idVideo = resultSet.getString("url_video_id");
+                int courseContentId = resultSet.getInt("course_content_id");
+                int courseContentTypeId = resultSet.getInt("content_type_id");
+                detailedContent = new CourseDetailedContent(detailed_content_id, content_title,content,idVideo,courseContentId,courseContentTypeId);
+            }
+            preparedStatement.close();
+            connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -70,6 +74,11 @@ public class CourseDetailedContentRepoImpl implements ICourseDetailRepo {
     @Override
     public boolean updateE(int id, CourseDetailedContent course) {
         return false;
+    }
+
+    @Override
+    public void updateE(CourseDetailedContent courseDetailedContent) {
+
     }
 
     @Override

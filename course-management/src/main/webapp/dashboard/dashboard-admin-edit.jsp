@@ -1,11 +1,11 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:import url="header-dashboard.jsp"></c:import>
+<c:import url="../dashboard/header-dashboard.jsp"></c:import>
 <section>
     <div class="container my-4">
-        <div class="row d-flex justify-content-between">
+        <div class="row">
             <div class="col-lg-3 siderbar-dashboard">
-                <c:import url="user-siderbar.jsp"></c:import>
+                <c:import url="admin-siderbar.jsp"></c:import>
             </div>
             <div class="col-lg-9 content-dashboard ps-5 ">
                 <div class="header-content">
@@ -13,7 +13,7 @@
                         <form class="row form-search-course g-2">
                             <div class="col-auto">
                                 <input type="text" class="form-control" id="inputEmail"
-                                       placeholder=" Nhập khóa học cần tìm" name="course">
+                                       placeholder=" Nhập khóa học cần tìm">
                             </div>
                             <div class="col-auto">
                                 <button type="submit" class="btn btn-primary">Tìm</button>
@@ -22,18 +22,19 @@
                     </div>
                     <div class="user">
                        <span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">
-<%--                            <img class="rounded-circle me-1" width="35" height="35"--%>
-<%--                                 src="https://zpsocial-f54-org.zadn.vn/24a379da816c6f32367d.jpg" alt="">--%>
-                           ${user.getFullName()}
+                            <img class="rounded-circle me-1" width="35" height="35"
+                                 src="https://zpsocial-f54-org.zadn.vn/24a379da816c6f32367d.jpg" alt="">${admin}
                        </span>
                     </div>
                 </div>
+
                 <div class="row my-5 content-edit-info ">
-                    <form class="edit-user-inf my-4 text-start" action="/dashboard/update" method="post">
-                        <input type="hidden" value="${user.getId()}" name="id">
+                    <form action="#" class="edit-user-inf my-4 text-start" method="post">
+
+
                         <div class="edit-header">
                             <div class="avatar col-4">
-                                <img src="../public/image/ava.png" alt="ava"/> <br>
+                                <img src="${req.requestURI}/public/image/ava.png" alt="ava"/> <br>
                                 <button class="ava-btn" type="submit">
                                     <i class='bx bxs-user' style='color:#5585fd'></i>
                                     <span>Edit avatar</span>
@@ -43,8 +44,7 @@
                             <div class="edit-header-inf col-7">
                                 <div class="edit-inf col-12">
                                     <div class="label-edit-header">
-                                        <label class="lb" for="user_name"><i class='bx bxs-user-circle'
-                                                                             style='color:#5585fd'></i>
+                                        <label class="lb" for="user_name"><i class='bx bxs-user-circle' style='color:#5585fd'></i>
                                             <span>Tên đăng nhập</span>
                                         </label>
                                         <label class="lb" for="user_name">
@@ -52,7 +52,7 @@
                                             <span>Edit</span>
                                         </label>
                                     </div>
-                                    <input type="text" id="user_name" name="username" value="${user.getUsername()}">
+                                    <input type="text" id="user_name" name="userName" value="${user.getUsername()}">
                                 </div>
 
                                 <div class="edit-inf col-12">
@@ -66,7 +66,7 @@
                                             <span>Edit</span>
                                         </label>
                                     </div>
-                                    <input type="text" id="name" name="fullName" value="${user.getFullName()}">
+                                    <input type="text" id="name"  name="fullName" value="${user.getFullName()}">
                                 </div>
 
                                 <div class="edit-inf col-12">
@@ -116,9 +116,9 @@
                                 </label>
                                 <input type="date" id="birthday" name="birthday" value="${user.getBirthday()}">
                             </div>
-                            <div class="save">
-                                <button type="submit">Lưu thay đổi</button>
-                            </div>
+                        </div>
+                        <div class="save">
+                            <button type="submit">Lưu thay đổi</button>
                         </div>
                     </form>
                 </div>
@@ -126,4 +126,4 @@
         </div>
     </div>
 </section>
-<c:import url="footer-dashboard.jsp"></c:import>
+<c:import url="../dashboard/footer-dashboard.jsp"></c:import>

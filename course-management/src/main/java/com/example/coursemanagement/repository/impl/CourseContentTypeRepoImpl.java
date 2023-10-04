@@ -2,13 +2,14 @@ package com.example.coursemanagement.repository.impl;
 
 import com.example.coursemanagement.model.CourseContentType;
 import com.example.coursemanagement.repository.BaseRepository;
+import com.example.coursemanagement.repository.IContentType;
 import com.example.coursemanagement.repository.IRepository;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CourseContentTypeRepoImpl implements IRepository<CourseContentType> {
+public class CourseContentTypeRepoImpl implements IContentType {
     private final static String SELECT = "SELECT * FROM content_type";
     private final static String SELECT_BY_ID = "SELECT * FROM content_type WHERE content_type_id = ?;";
 
@@ -63,5 +64,10 @@ public class CourseContentTypeRepoImpl implements IRepository<CourseContentType>
     @Override
     public boolean updateE(int id, CourseContentType course) {
         return false;
+    }
+
+    @Override
+    public void updateE(CourseContentType courseContentType) {
+
     }
 }
