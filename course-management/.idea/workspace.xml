@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b7fa4d5-6b60-40e8-94a6-bd99b53912e2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../course-management/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../course-management/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../course-management/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../course-management/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../course-management/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../course-management/settings.gradle" beforeDir="false" />
+    <list default="true" id="8b7fa4d5-6b60-40e8-94a6-bd99b53912e2" name="Changes" comment="fix bugs">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/controller/CourseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/controller/CourseServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/model/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/model/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/BaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/BaseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseContentRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseContentRepoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseDetailedContentRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseDetailedContentRepoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +28,28 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="course_management" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="course_management" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="course_management" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -54,10 +76,14 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2WEsIqSoa9YePTRoL5Mm26JYmi2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -73,6 +99,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -81,7 +108,28 @@
       <recent name="D:\CodeGym\C0623G1_Pham_Van_Thanh_Module3\Casestudy_Course_Management\course_management\src\main\webapp\learning" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.21">
+    <configuration name="course-management [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="Tomcat 9.0.21" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.21" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="hot-swap-classes" />
       <deployment>
@@ -169,6 +217,11 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.course-management [build]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -181,18 +234,42 @@
       <workItem from="1696309000169" duration="5805000" />
       <workItem from="1696316958441" duration="9511000" />
       <workItem from="1696330259083" duration="7447000" />
+      <workItem from="1696417020262" duration="4138000" />
     </task>
+    <task id="LOCAL-00001" summary="fix bugs">
+      <created>1696417177332</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696417177332</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseDetailedContentRepoImpl.java</url>
-          <line>45</line>
+          <line>40</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>

@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CourseRepoImpl implements ICourseRepo {
-    private final static String SELECT = "SELECT * FROM course";
-    private final static String SELECT_BY_ID = "SELECT * FROM course WHERE course_id = ?;";
+    private final static String SELECT = "SELECT * FROM courses";
+    private final static String SELECT_BY_ID = "SELECT * FROM courses WHERE course_id = ?;";
 
-    private final static String SELECT_FULL = "SELECT * FROM course c JOIN course_content cct ON c.course_content_id = cct.course_content_id JOIN course_category ccc ON c.course_category_id = ccc.course_category_id WHERE c.course_category_id = ?;";
-    private final static String SELECT_BY_USER_BY = "select c.* from course c JOIN course_order co ON c.course_id = co.course_id JOIN user u ON co.user_id = u.user_id WHERE u.user_id = ?;";
+    private final static String SELECT_FULL = "SELECT * FROM courses c JOIN course_content cct ON c.course_content_id = cct.course_content_id JOIN course_levels ccc ON c.course_level_id = ccc.course_level_id WHERE c.course_level_id = ?;";
+    private final static String SELECT_BY_USER_BY = "select c.* from courses c JOIN course_orders co ON c.course_id = co.course_id JOIN user u ON co.user_id = u.user_id WHERE u.user_id = ?;";
     @Override
     public List<Course> showList() {
         List<Course> courseList = new ArrayList<>();
@@ -24,13 +24,13 @@ public class CourseRepoImpl implements ICourseRepo {
             while (resultSet.next()){
                 int course_id = resultSet.getInt("course_id");
                 String name = resultSet.getString("course_name");
-                String description = resultSet.getString("course_description");
+                String description = resultSet.getString("short_description");
                 String instructor = resultSet.getString("instructor");
                 double price = resultSet.getDouble("price");
-                int categoryId = resultSet.getInt("course_category_id");
+                int categoryId = resultSet.getInt("course_level_id");
                 String knowledge = resultSet.getString("knowledge");
-                String device_requirements = resultSet.getString("device_requirements");
-                String course_other_info = resultSet.getString("course_other_info");
+                String device_requirements = resultSet.getString("requirements");
+                String course_other_info = resultSet.getString("course_inclusion");
                 courseList.add(new Course(course_id,name,description,instructor,price, categoryId,
                         knowledge,device_requirements,course_other_info));
             }
@@ -58,13 +58,13 @@ public class CourseRepoImpl implements ICourseRepo {
             if (resultSet.next()) {
                 int course_id = resultSet.getInt("course_id");
                 String name = resultSet.getString("course_name");
-                String description = resultSet.getString("course_description");
+                String description = resultSet.getString("short_description");
                 String instructor = resultSet.getString("instructor");
                 double price = resultSet.getDouble("price");
-                int categoryId = resultSet.getInt("course_category_id");
+                int categoryId = resultSet.getInt("course_level_id");
                 String knowledge = resultSet.getString("knowledge");
-                String device_requirements = resultSet.getString("device_requirements");
-                String course_other_info = resultSet.getString("course_other_info");
+                String device_requirements = resultSet.getString("requirements");
+                String course_other_info = resultSet.getString("course_inclusion");
                 course = new Course(course_id,name,description,instructor,price, categoryId,knowledge,device_requirements,course_other_info);
             }
             resultSet.close();
@@ -102,13 +102,13 @@ public class CourseRepoImpl implements ICourseRepo {
             while (resultSet.next()){
                 int course_id = resultSet.getInt("course_id");
                 String name = resultSet.getString("course_name");
-                String description = resultSet.getString("course_description");
+                String description = resultSet.getString("short_description");
                 String instructor = resultSet.getString("instructor");
                 double price = resultSet.getDouble("price");
-                int categoryId = resultSet.getInt("course_category_id");
+                int categoryId = resultSet.getInt("course_level_id");
                 String knowledge = resultSet.getString("knowledge");
-                String device_requirements = resultSet.getString("device_requirements");
-                String course_other_info = resultSet.getString("course_other_info");
+                String device_requirements = resultSet.getString("requirements");
+                String course_other_info = resultSet.getString("course_inclusion");
                 courseList.add(new Course(course_id,name,description,instructor,price, categoryId,knowledge,device_requirements,course_other_info));
             }
         } catch (SQLException e) {

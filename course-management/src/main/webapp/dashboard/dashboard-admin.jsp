@@ -28,6 +28,7 @@
                        </span>
                     </div>
                 </div>
+
                 <div class="header-content my-5">
                     <div class="hello">
                         <h3>Welcome back,</h3>
@@ -113,32 +114,25 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th class="text-center" scope="col"><i class="fa-solid fa-arrow-down-wide-short"></i>Đơn
+                                <th class="text-center" scope="col"><i class="fa-solid fa-arrow-down-wide-short"></i>Mã đơn
                                     hàng
                                 </th>
                                 <th class="text-center" scope="col">Tình trạng</th>
                                 <th class="text-center" scope="col">Chi tiết đơn hàng</th>
-                                <th class="text-center" scope="col">Thao tác</th>
+                                <th class="text-center" scope="col">Tên học viên</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td class="done">
-                                    <div class="done-content"><i class="fa-solid fa-check"></i>Đã hoàn thành</div>
-                                </td>
-                                <td>Thành viên loanttv đã đăng kí khóa học Basic SQL Tutorial</td>
-                                <td>Xem chi tiết</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td class="done">
-                                    <div class="done-content"><i class="fa-solid fa-check"></i>Đã hoàn thành</div>
-                                </td>
-                                <td>Thành viên loanttv đã đăng kí khóa học Basic SQL Tutorial</td>
-                                <td>Xem chi tiết</td>
-                            </tr>
-
+                            <c:forEach items="${courseOrderInfs}" var="order">
+                                <tr>
+                                    <th scope="row"><a href="course-order-servlet?action=show_detail_order&id=${order.getOrderId}">${order.getOrderCode()}</a></th>
+                                    <td class="done">
+                                        <div class="done-content"><i class="fa-solid fa-check"></i>${order.getStatus()}</div>
+                                    </td>
+                                    <td>${order.getCourseName()}</td>
+                                    <td>${order.getFullName()}</td>
+                                </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
 

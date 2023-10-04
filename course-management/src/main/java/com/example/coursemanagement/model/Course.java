@@ -6,36 +6,39 @@ public class Course {
     private String description;
     private String instructor;
     private double price;
-    private int categoryId;
+    private int courseLevelId;
     private String knowledge;
-    private String device_requirements;
-    private String otherInfoCourse;
+    private String requirements;
+    private String courseInclusion;
 
-    public Course(int id, String name, String description, String instructor, double price, int categoryId, String knowledge, String device_requirements, String otherInfoCourse) {
+    public Course(int id, String name, String description, String instructor, double price, int courseLevelId, String knowledge, String requirements, String courseInclusion) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.instructor = instructor;
         this.price = price;
-        this.categoryId = categoryId;
+        this.courseLevelId = courseLevelId;
         this.knowledge = knowledge;
-        this.device_requirements = device_requirements;
-        this.otherInfoCourse = otherInfoCourse;
+        this.requirements = requirements;
+        this.courseInclusion = courseInclusion;
     }
 
-    public Course(String name, String description, String instructor, double price, int categoryId , String knowledge, String device_requirements, String otherInfoCourse) {
+    public Course(String name, String description, String instructor, double price, int courseLevelId, String knowledge, String requirements, String courseInclusion) {
         this.name = name;
         this.description = description;
         this.instructor = instructor;
         this.price = price;
-        this.categoryId = categoryId;
+        this.courseLevelId = courseLevelId;
         this.knowledge = knowledge;
-        this.device_requirements = device_requirements;
-        this.otherInfoCourse = otherInfoCourse;
+        this.requirements = requirements;
+        this.courseInclusion = courseInclusion;
     }
 
-    public Course(int course_id, String name, String description, double price) {
-
+    public Course(int id, String name, String description, double price) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.price = price;
     }
 
     public int getId() {
@@ -78,12 +81,12 @@ public class Course {
         this.price = price;
     }
 
-    public int getCategoryId() {
-        return categoryId;
+    public int getCourseLevelId() {
+        return courseLevelId;
     }
 
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+    public void setCourseLevelId(int courseLevelId) {
+        this.courseLevelId = courseLevelId;
     }
 
     public String getKnowledge() {
@@ -95,18 +98,18 @@ public class Course {
     }
 
     public String getRequirements() {
-        return device_requirements;
+        return requirements;
     }
 
     public void setRequirements(String device_requirements) {
-        this.device_requirements = device_requirements;
+        this.requirements = device_requirements;
     }
 
-    public String getOtherInfoCourse() {
-        return otherInfoCourse;
+    public String getCourseInclusion() {
+        return courseInclusion;
     }
 
-    public void setOtherInfoCourse(String otherInfoCourse) {
-        this.otherInfoCourse = otherInfoCourse;
+    public void setCourseInclusion(String courseInclusion) {
+        this.courseInclusion = courseInclusion;
     }
 }

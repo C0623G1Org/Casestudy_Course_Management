@@ -28,7 +28,9 @@ public class CourseServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         request.setCharacterEncoding("UTF-8");
         String url = request.getRequestURI();
+        System.out.println("anc");
         if (url.endsWith("/course/detail")) {
+            System.out.println("abc");
             showDetailCourse(request, response);
         } else if (url.endsWith("/course")) {
             showCoursePage(request, response);
@@ -43,6 +45,7 @@ public class CourseServlet extends HttpServlet {
 
     private void showDetailCourse(HttpServletRequest request, HttpServletResponse response) {
         int idCourse = Integer.parseInt(request.getParameter("id"));
+        System.out.println(idCourse);
         Course course = courseService.selectCourse(idCourse);
         List<CourseContent> courseContents = courseContentService.selectByCourseId(idCourse);
         Map<Integer, List<CourseDetailedContent>> detailedContents = new HashMap<>();

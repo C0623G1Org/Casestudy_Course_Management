@@ -9,9 +9,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CourseContentTypeRepoImpl implements IContentType {
-    private final static String SELECT = "SELECT * FROM content_type";
-    private final static String SELECT_BY_ID = "SELECT * FROM content_type WHERE content_type_id = ?;";
+public class CourseContentTypeRepoImpl implements IRepository<CourseContentType> {
+    private final static String SELECT = "SELECT * FROM content_types";
+    private final static String SELECT_BY_ID = "SELECT * FROM content_types WHERE content_type_id = ?;";
 
 
     @Override

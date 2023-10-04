@@ -10,9 +10,9 @@ import java.util.List;
 
 public class CourseContentRepoImpl implements ICourseContentRepo {
     private final static String SELECT = "SELECT * FROM course_content";
-    private final static String SELECT_BY_ID = "SELECT * FROM course_content WHERE course_content_id = ?;";
+    private final static String SELECT_BY_ID = "SELECT * FROM course_content WHERE detailed_course_content_id = ?;";
     private final static String SELECT_BY_COURSE_ID = "SELECT * FROM course_content WHERE course_id = ?;";
-    private final static String SELECT_BY_DETAIL_ID = "SELECT cc.* FROM course_content cc JOIN detailed_content dc ON cc.course_content_id = dc.course_content_id WHERE dc.detailed_content_id = ?;";
+    private final static String SELECT_BY_DETAIL_ID = "SELECT cc.* FROM course_content cc JOIN detailed_course_content dc ON cc.course_content_id = dc.course_content_id WHERE dc.detailed_course_content_id = ?;";
 
     @Override
     public List<CourseContent> showListE() {
