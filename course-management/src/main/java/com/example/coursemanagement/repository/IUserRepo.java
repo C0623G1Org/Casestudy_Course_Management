@@ -7,5 +7,6 @@ public interface IUserRepo extends IRepository<User> {
     boolean checkUsernameExits(String username);
     boolean checkExitsByUsernameAndPassword(String username, String password);
     User selectByUsername(String username);
+    void deleteUser(int id);
 
 }

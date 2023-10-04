@@ -1,6 +1,6 @@
 package com.example.coursemanagement.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class User {
     private int id;
@@ -8,13 +8,13 @@ public class User {
     private String password;
     private String fullName;
     private String idCard;
-    private Date birthday;
+    private String birthday;
     private boolean gender;
     private String phone;
     private String email;
     private String role;
 
-    public User(String username, String password, String fullName, String idCard, Date birthday, boolean gender, String phone, String email, String role) {
+    public User(String username, String password, String fullName, String idCard, String birthday, boolean gender, String phone, String email, String role) {
         this.username = username;
         this.password = password;
         this.fullName = fullName;
@@ -27,7 +27,7 @@ public class User {
     }
 
 
-    public User(int id, String username, String password, String fullName, String idCard, Date birthday, boolean gender, String phone, String email, String role) {
+    public User(int id, String username, String password, String fullName, String idCard, String birthday, boolean gender, String phone, String email, String role) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -40,7 +40,7 @@ public class User {
         this.role = role;
     }
 
-    public User(int id, String username, String fullName, String idCard, Date birthday, boolean gender, String phone, String email) {
+    public User(int id, String username, String fullName, String idCard, String birthday, boolean gender, String phone, String email, String role) {
         this.id = id;
         this.username = username;
         this.fullName = fullName;
@@ -49,6 +49,7 @@ public class User {
         this.gender = gender;
         this.phone = phone;
         this.email = email;
+        this.role = role;
     }
 
     public User(String username, String password, String email) {
@@ -96,11 +97,11 @@ public class User {
         this.idCard = idCard;
     }
 
-    public Date getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
