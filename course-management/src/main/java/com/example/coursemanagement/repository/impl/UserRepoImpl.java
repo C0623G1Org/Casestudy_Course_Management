@@ -113,7 +113,7 @@ public class UserRepoImpl implements IUserRepo {
             preparedStatement.setString(1,user.getUsername());
             preparedStatement.setString(2,user.getFullName());
             preparedStatement.setString(3,user.getIdCard());
-            preparedStatement.setDate(4, (Date) user.getBirthday());
+            preparedStatement.setDate(4, (java.sql.Date) user.getBirthday());
             preparedStatement.setBoolean(5,user.isGender());
             preparedStatement.setString(6, user.getEmail());
             preparedStatement.setInt(7,user.getId());

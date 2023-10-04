@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ICourseContentService extends IService<CourseContent>{
     List<CourseContent> selectByCourseId(int id);
+    CourseContent selectByDetailContentId(int idDetailContent);
 }

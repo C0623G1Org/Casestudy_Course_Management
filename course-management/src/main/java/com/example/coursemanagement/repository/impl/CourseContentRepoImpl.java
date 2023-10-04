@@ -12,6 +12,7 @@ public class CourseContentRepoImpl implements ICourseContentRepo {
     private final static String SELECT = "SELECT * FROM course_content";
     private final static String SELECT_BY_ID = "SELECT * FROM course_content WHERE course_content_id = ?;";
     private final static String SELECT_BY_COURSE_ID = "SELECT * FROM course_content WHERE course_id = ?;";
+    private final static String SELECT_BY_DETAIL_ID = "SELECT cc.* FROM course_content cc JOIN detailed_content dc ON cc.course_content_id = dc.course_content_id WHERE dc.detailed_content_id = ?;";
 
     @Override
     public List<CourseContent> showListE() {
@@ -24,7 +25,7 @@ public class CourseContentRepoImpl implements ICourseContentRepo {
                 int id = resultSet.getInt("course_content_id");
                 String name = resultSet.getString("course_content_name");
                 int courseId = resultSet.getInt("course_id");
-                courseContentList.add(new CourseContent(id, name,courseId));
+                courseContentList.add(new CourseContent(id, name, courseId));
             }
             resultSet.close();
             statement.close();
@@ -41,17 +42,21 @@ public class CourseContentRepoImpl implements ICourseContentRepo {
 
     @Override
     public CourseContent selectE(int id) {
-        CourseContent courseContent;
+        CourseContent courseContent = null;
         Connection connection = BaseRepository.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BY_ID);
             preparedStatement.setInt(1, id);
-            ResultSet resultSet = preparedStatement.getResultSet();
-            courseContent = new CourseContent(
-                    resultSet.getInt("course_category_id"),
-                    resultSet.getString("course_category_name"),
-                    resultSet.getInt("course_id")
-                    );
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                courseContent = new CourseContent(
+                        resultSet.getInt("course_content_id"),
+                        resultSet.getString("course_content_name"),
+                        resultSet.getInt("course_id")
+                );
+            }
+            preparedStatement.close();
+            connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -78,14 +83,14 @@ public class CourseContentRepoImpl implements ICourseContentRepo {
         List<CourseContent> courseContents = new ArrayList<>();
         Connection connection = BaseRepository.getConnection();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BY_COURSE_ID);
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BY_DETAIL_ID);
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 int idValue = resultSet.getInt("course_content_id");
                 String name = resultSet.getString("course_content_name");
                 int courseId = resultSet.getInt("course_id");
-                courseContents.add(new CourseContent(idValue,name,courseId));
+                courseContents.add(new CourseContent(idValue, name, courseId));
             }
             connection.close();
             preparedStatement.close();
@@ -93,5 +98,28 @@ public class CourseContentRepoImpl implements ICourseContentRepo {
             throw new RuntimeException(e);
         }
         return courseContents;
+    }
+
+    @Override
+    public CourseContent selectByDetailContentId(int idDetailContent) {
+        CourseContent courseContent = null;
+        Connection connection = BaseRepository.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BY_COURSE_ID);
+            preparedStatement.setInt(1, idDetailContent);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                courseContent = new CourseContent(
+                        resultSet.getInt("course_content_id"),
+                        resultSet.getString("course_content_name"),
+                        resultSet.getInt("course_id")
+                );
+            }
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return courseContent;
     }
 }

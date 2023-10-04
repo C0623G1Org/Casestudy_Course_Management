@@ -12,6 +12,9 @@ public class CourseDetailedContentRepoImpl implements ICourseDetailRepo {
     private final static String SELECT = "SELECT * FROM detailed_content";
     private final static String SELECT_BY_ID = "SELECT * FROM detailed_content WHERE detailed_content_id = ?;";
     private final static String SELECT_BY_COURSE_CONTENT_ID = "SELECT * FROM detailed_content WHERE course_content_id = ?;";
+    private final static String INSERT_DETAIL = "INSERT INTO detailed_content(content_title, content, url_video_id, course_content_id,content_type_id) VALUES (?,?,?,?,?);";
+    private final static String UPDATE_DETAIL = "UPDATE detailed_content SET content_title = ?, content = ?, url_video_id= ? , content_type_id = ? WHERE detailed_content_id = ?;";
+    private final static String DELETE_DETAIL = "DELETE FROM detailed_content WHERE detailed_content_id = ?;";
     @Override
     public List<CourseDetailedContent> showListE() {
         List<CourseDetailedContent> detailedContents = new ArrayList<>();
@@ -38,7 +41,24 @@ public class CourseDetailedContentRepoImpl implements ICourseDetailRepo {
 
     @Override
     public void saveE(CourseDetailedContent courseDetailedContent) {
-
+        Connection connection = BaseRepository.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_DETAIL);
+            preparedStatement.setString(1,courseDetailedContent.getTitle());
+            preparedStatement.setString(2,courseDetailedContent.getContent());
+            if (courseDetailedContent.getIdVideo() == ""){
+                preparedStatement.setString(3,null);
+            } else {
+                preparedStatement.setString(3,courseDetailedContent.getIdVideo());
+            }
+            preparedStatement.setInt(4,courseDetailedContent.getCourseContentId());
+            preparedStatement.setInt(5,courseDetailedContent.getCourseContentTypeId());
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -68,12 +88,42 @@ public class CourseDetailedContentRepoImpl implements ICourseDetailRepo {
 
     @Override
     public boolean deleteE(int id) {
-        return false;
+        if (selectE(id) ==  null) {
+            return false;
+        }
+        Connection connection = BaseRepository.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(DELETE_DETAIL);
+            preparedStatement.setInt(1,id);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return true;
     }
 
     @Override
-    public boolean updateE(int id, CourseDetailedContent course) {
-        return false;
+    public boolean updateE(int id, CourseDetailedContent courseDetail) {
+        if (selectE(id) ==  null) {
+            return false;
+        }
+        Connection connection = BaseRepository.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_DETAIL);
+            preparedStatement.setString(1,courseDetail.getTitle());
+            preparedStatement.setString(2,courseDetail.getContent());
+            preparedStatement.setString(3,courseDetail.getIdVideo());
+            preparedStatement.setInt(4,courseDetail.getCourseContentTypeId());
+            preparedStatement.setInt(5,id);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return true;
     }
 
     @Override
@@ -89,7 +139,7 @@ public class CourseDetailedContentRepoImpl implements ICourseDetailRepo {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BY_COURSE_CONTENT_ID);
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
+            while (resultSet.next()) {
                 int detailed_content_id = resultSet.getInt("detailed_content_id");
                 String content_title = resultSet.getString("content_title");
                 String content = resultSet.getString("content");
