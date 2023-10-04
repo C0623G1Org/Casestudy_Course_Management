@@ -24,7 +24,8 @@ $(document).ready(function() {
             }
         });
     });
-});$(document).ready(function() {
+});
+$(document).ready(function() {
     $('#form-login').submit(function(e) {
         e.preventDefault();
         var usernameLogIn = $('#usernameLogIn').val();

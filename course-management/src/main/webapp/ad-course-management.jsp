@@ -1,6 +1,13 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: admin
+  Date: 10/4/2023
+  Time: 8:50 AM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:import url="../dashboard/header-dashboard.jsp"></c:import>
+<c:import url="/dashboard/header-dashboard.jsp"></c:import>
 <section>
     <div class="container my-4">
         <div class="row">
@@ -13,7 +20,7 @@
                     </div>
                     <ul class="nav nav-pills flex-column mb-auto">
                         <li>
-                            <a href="dashboard" class="nav-link active" aria-current="page">
+                            <a href="#" class="nav-link active" aria-current="page">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
                                      fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -96,84 +103,10 @@
                     </div>
                 </div>
 
-                <div class="header-content my-5">
+                <div class="header-content mt-5">
                     <div class="hello">
-                        <h3>Welcome back,</h3>
-                    </div>
-                    <div class="day-now">
-                        <p>26-09-2023</p>
-                    </div>
-                </div>
-
-                <div class="body-content">
-                    <c:forEach items="${courseList}" var="courseList">
-                        <div class="card mb-3" style="width: 100%;">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <img src="../public/image/Rectangle 43.png">
-                                    </div>
-                                    <div class="col-10">
-                                        <div class="row">
-                                            <div class="col-7">
-                                                <h4>${courseList.getName()}</h4>
-                                            </div>
-                                            <div class="col-5">
-                                                <div class="row">
-                                                    <div class="col-7 category">
-                                                        <p class="text-right">Javascript
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-5 category">
-                                                        <p class="text-right"><i class="fa-solid fa-star"></i>4.8
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="body-1">
-                                                <div>
-                                                    <p>Author</p>
-                                                </div>
-
-                                                <div>
-                                                    <p><i class="fa-regular fa-user"></i>${courseList.getInstructor()}
-                                                    </p>
-                                                </div>
-
-                                                <div>
-                                                    <p><i class="fa-regular fa-clock"></i>24h 12m</p>
-                                                </div>
-                                                <div>
-                                                    <p><i class="fa-solid fa-users"></i>1523</p>
-                                                </div>
-                                                <div>
-                                                    <p>25 học phần</p>
-                                                </div>
-                                                <div>
-                                                    <p><i class="fa-solid fa-video"></i>70 bài giảng</p>
-                                                </div>
-                                                <div>
-                                                    <p><i class="fa-regular fa-file"></i>120 bài đọc</p>
-                                                </div>
-                                                <div>
-                                                    <p><i class="fa-regular fa-star"></i>50 bài tập</p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </c:forEach>
-                </div>
-                <div class="mt-5 body-content-2">
-                    <div>
-                        <h3>Đăng kí khóa học hôm nay</h3>
-                        <p class="mt-3">Các đơn đăng kí khóa học mới trong hôm nay</p>
+                        <h3>Đơn hàng</h3>
+                        <p>Danh sách đơn hàng</p>
                     </div>
                 </div>
                 <div class="mt-4 body-content-2">
@@ -181,25 +114,74 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th class="text-center" scope="col"><i class="fa-solid fa-arrow-down-wide-short"></i>Mã đơn
-                                    hàng
-                                </th>
+                                <th style="width: 150px" class="text-center" scope="col"><i class="fa-solid fa-arrow-down-wide-short"></i>Đơn hàng</th>
                                 <th class="text-center" scope="col">Tình trạng</th>
                                 <th class="text-center" scope="col">Chi tiết đơn hàng</th>
-                                <th class="text-center" scope="col">Tên học viên</th>
+                                <th class="text-center" scope="col">Thao tác</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <c:forEach items="${courseOrderInfs}" var="order">
-                                <tr>
-                                    <th scope="row"><a href="course-order-servlet?action=show_detail_order&id=${order.getOrderId}">${order.getOrderCode()}</a></th>
-                                    <td class="done">
-                                        <div class="done-content"><i class="fa-solid fa-check"></i>${order.getStatus()}</div>
-                                    </td>
-                                    <td>${order.getCourseName()}</td>
-                                    <td>${order.getFullName()}</td>
-                                </tr>
-                            </c:forEach>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td class="done">
+                                    <div class="done-content"><i class="fa-solid fa-check"></i>Đã hoàn thành</div>
+                                </td>
+                                <td>Thành viên loanttv đã đăng kí khóa học Basic SQL Tutorial</td>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-success">Xem</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-warning">Sửa</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-danger">Xóa</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td class="done">
+                                    <div class="done-content"><i class="fa-solid fa-check"></i>Đã hoàn thành</div>
+                                </td>
+                                <td>Thành viên loanttv đã đăng kí khóa học Basic SQL Tutorial</td>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-success">Xem</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-warning">Sửa</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-danger">Xóa</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td class="done">
+                                    <div class="done-content"><i class="fa-solid fa-check"></i>Đã hoàn thành</div>
+                                </td>
+                                <td>Thành viên loanttv đã đăng kí khóa học Basic SQL Tutorial</td>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-success">Xem</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-warning">Sửa</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-danger">Xóa</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
                             </tbody>
                         </table>
 
@@ -209,4 +191,4 @@
         </div>
     </div>
 </section>
-<c:import url="../dashboard/footer-dashboard.jsp"></c:import>
+<c:import url="/dashboard/footer-dashboard.jsp"></c:import>

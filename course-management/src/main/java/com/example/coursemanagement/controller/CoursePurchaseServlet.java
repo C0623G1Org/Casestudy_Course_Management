@@ -37,8 +37,6 @@ public class CoursePurchaseServlet extends HttpServlet {
                     break;
             }
         }
-
-
     }
 
     private void showCourseInf(HttpServletRequest request, HttpServletResponse response) {

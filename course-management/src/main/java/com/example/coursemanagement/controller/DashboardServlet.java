@@ -1,9 +1,12 @@
 package com.example.coursemanagement.controller;
 
 import com.example.coursemanagement.model.Course;
+import com.example.coursemanagement.model.CourseOrderInf;
 import com.example.coursemanagement.model.User;
+import com.example.coursemanagement.service.ICourseOrderService;
 import com.example.coursemanagement.service.ICourseService;
 import com.example.coursemanagement.service.IUserService;
+import com.example.coursemanagement.service.impl.CourseOrderServiceImpl;
 import com.example.coursemanagement.service.impl.CourseServiceImpl;
 import com.example.coursemanagement.service.impl.UserServiceImpl;
 
@@ -18,6 +21,8 @@ import java.util.List;
 public class DashboardServlet extends HttpServlet {
     private final ICourseService courseService = new CourseServiceImpl();
     private final IUserService userService = new UserServiceImpl();
+    private final ICourseOrderService courseOrderService = new CourseOrderServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Kiểm tra session
@@ -29,6 +34,8 @@ public class DashboardServlet extends HttpServlet {
             request.setAttribute("user", user);
             if (user.getRole().equals("admin")) {
                 List<Course> courseList = courseService.showList();
+                List<CourseOrderInf> courseOrderInfs = courseOrderService.showCourseOrder();
+                request.setAttribute("courseOrderInfs", courseOrderInfs);
                 request.setAttribute("courseList",courseList);
                 request.setAttribute("user",user);
                 dispatcherData(request, response,"/dashboard/dashboard-admin.jsp");
@@ -52,6 +59,12 @@ public class DashboardServlet extends HttpServlet {
             }
         }
     }
+//    private void showCourseOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        List<CourseOrderInf> courseOrderInfs = courseOrderService.showCourseOrder();
+//        request.setAttribute("courseOrderInfs", courseOrderInfs);
+//        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/dashboard/dashboard-admin.jsp");
+//        requestDispatcher.forward(request, response);
+//    }
     private void showPageUpdateUser(HttpServletRequest request,HttpServletResponse response, User user){
         request.setAttribute("user",user);
         dispatcherData(request,response,"/dashboard/dashboard-user-edit.jsp");

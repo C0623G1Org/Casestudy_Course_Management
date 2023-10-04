@@ -1,13 +1,13 @@
 <%--
   Created by IntelliJ IDEA.
   User: admin
-  Date: 10/3/2023
-  Time: 8:53 PM
+  Date: 10/4/2023
+  Time: 8:50 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:import url="../dashboard/header-dashboard.jsp"></c:import>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:import url="/dashboard/header-dashboard.jsp"></c:import>
 <section>
     <div class="container my-4">
         <div class="row">
@@ -104,123 +104,57 @@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
                 </div>
 
                 <div class="header-content my-5">
-                    <div class="hello">
-                        <h3>Welcome back,</h3>
-                    </div>
-                    <div class="day-now">
-                        <p>26-09-2023</p>
-                    </div>
-                </div>
-
-                <div class="body-content">
-                    <c:forEach items="${courseList}" var="courseList">
-                        <div class="card mb-3" style="width: 100%;">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <img src="../public/image/Rectangle 43.png">
-                                    </div>
-                                    <div class="col-10">
-                                        <div class="row">
-                                            <div class="col-7">
-                                                <h4>${courseList.getName()}</h4>
-                                            </div>
-                                            <div class="col-5">
-                                                <div class="row">
-                                                    <div class="col-7 category">
-                                                        <p class="text-right">Javascript
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-5 category">
-                                                        <p class="text-right"><i class="fa-solid fa-star"></i>4.8
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="body-1">
-                                                <div>
-                                                    <p>Author</p>
-                                                </div>
-
-                                                <div>
-                                                    <p><i class="fa-regular fa-user"></i>${courseList.getInstructor()}
-                                                    </p>
-                                                </div>
-
-                                                <div>
-                                                    <p><i class="fa-regular fa-clock"></i>24h 12m</p>
-                                                </div>
-                                                <div>
-                                                    <p><i class="fa-solid fa-users"></i>1523</p>
-                                                </div>
-                                                <div>
-                                                    <p>25 học phần</p>
-                                                </div>
-                                                <div>
-                                                    <p><i class="fa-solid fa-video"></i>70 bài giảng</p>
-                                                </div>
-                                                <div>
-                                                    <p><i class="fa-regular fa-file"></i>120 bài đọc</p>
-                                                </div>
-                                                <div>
-                                                    <p><i class="fa-regular fa-star"></i>50 bài tập</p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </c:forEach>
-                </div>
-                <div class="mt-5 body-content-2">
-                    <div>
-                        <h3>Đăng kí khóa học hôm nay</h3>
-                        <p class="mt-3">Các đơn đăng kí khóa học mới trong hôm nay</p>
+                    <div class="row content-oder-detail-1" style="padding-bottom: 10px; padding-left: 30px">
+                        <h4 style="font-weight: bold">Đơn đặt mua khóa học #1</h4>
+                        <p>Chi tiết về đơn đặt mua khóa học #1 </p>
+                        <p> <i class="fa-solid fa-check" style="color: #146c43"></i> Đã hoàn thành &emsp;&emsp;<i class="fa-solid fa-pen" style="color: #0a58ca;height: 30px"></i> edit</p>
                     </div>
                 </div>
-                <div class="mt-4 body-content-2">
-                    <div class="card-table">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th class="text-center" scope="col"><i class="fa-solid fa-arrow-down-wide-short"></i>Đơn
-                                    hàng
-                                </th>
-                                <th class="text-center" scope="col">Tình trạng</th>
-                                <th class="text-center" scope="col">Chi tiết đơn hàng</th>
-                                <th class="text-center" scope="col">Thao tác</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td class="done">
-                                    <div class="done-content"><i class="fa-solid fa-check"></i>Đã hoàn thành</div>
-                                </td>
-                                <td>Thành viên loanttv đã đăng kí khóa học Basic SQL Tutorial</td>
-                                <td>Xem chi tiết</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td class="done">
-                                    <div class="done-content"><i class="fa-solid fa-check"></i>Đã hoàn thành</div>
-                                </td>
-                                <td>Thành viên loanttv đã đăng kí khóa học Basic SQL Tutorial</td>
-                                <td>Xem chi tiết</td>
-                            </tr>
-
-                            </tbody>
-                        </table>
-
+                <div class="row content-oder-detain-1" style="padding-left: 30px">
+                    <div class="row content-oder-detail-1" style="padding-bottom: 30px; padding-left: 30px">
+                        <h5 style="font-weight: bold;padding-bottom: 20px">Thông tin khách hàng</h5>
+                        <p style="padding-left: 20px"><i class="fa-solid fa-user" style="color: #0a58ca"></i>  Họ tên khách hàng: <b>Trần Thị Vân Loan</b></p>
+                        <p style="padding-left: 20px"><i class="fa-solid fa-phone" style="color: #0a58ca"></i>  Số điện thoại khách hàng: <b> 0123 456 789</b></p>
+                        <p style="padding-left: 20px"><i class="fa-solid fa-envelope"style="color: #0a58ca"></i>  Email khách hàng: <b>loanttv@ltta.co</b></p>
                     </div>
+                </div>
+                <div class="row content-oder-detain-2" style="padding-left: 30px">
+                    <h5 style="font-weight: bold;padding-bottom: 30px; padding-left: 30px">Item Ordered</h5>
+                </div>
+                <div class="row content-oder-detain-3" style="padding-left: 30px;padding-bottom: 30px">
+                    <div class="col-lg-3" style="padding-left: 30px">
+                        <img src="../public/image/Rectangle 52.png" height="100" width="200">
+                    </div>
+                    <div class="col-lg-5">
+                        <h5 style="font-weight: bold">Javascript Foudatament</h5>
+                        <p>JavaScript là ngôn ngữ lập trình phía client, được sử dụng chủ yếu trong các ứng dụng web để tạo ra các hiệu ứng tương tác trên trang web</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <h5 style="text-align: right;font-weight: bold">1.200.000 VNĐ</h5>
+                    </div>
+                    <hr>
+                </div>
+                <div class="row content-oder-detain-4" style="padding-left: 30px;padding-bottom: 30px">
+                    <div class="col-lg-11">
+                        <h5 style="padding-left: 30px" >Discount</h5>
+                    </div>
+                    <div class="col-lg-1">
+                        <h5 >10%</h5>
+                    </div>
+                </div>
+                <div class="row content-oder-detain-5" style="padding-left: 30px;padding-bottom: 30px">
+                    <div class="col-lg-10">
+                        <h5 style="padding-left: 30px; font-weight: bold" >Total</h5>
+                    </div>
+                    <div class="col-lg-2">
+                        <h6 style="font-weight: bold">1.080.000 VNĐ</h6>
+                    </div>
+                </div>
+                <div class="row content-oder-detain-6" style="padding-left: 30px;padding-bottom: 30px">
+                    <i style="padding-left: 30px">Khách hàng thanh toán qua chuyển khoản ngân hàng</i>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<c:import url="../dashboard/footer-dashboard.jsp"></c:import>
+<c:import url="/dashboard/footer-dashboard.jsp"></c:import>
