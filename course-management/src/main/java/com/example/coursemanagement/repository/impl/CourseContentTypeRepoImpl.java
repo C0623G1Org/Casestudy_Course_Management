@@ -64,4 +64,9 @@ public class CourseContentTypeRepoImpl implements IRepository<CourseContentType>
     public boolean updateE(int id, CourseContentType course) {
         return false;
     }
+
+    @Override
+    public void updateE(CourseContentType courseContentType) {
+
+    }
 }

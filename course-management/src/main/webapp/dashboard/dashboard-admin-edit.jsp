@@ -95,7 +95,8 @@
                 </div>
 
                 <div class="row my-5 content-edit-info ">
-                    <form action="#" class="edit-user-inf my-4 text-start">
+                    <form action="#" class="edit-user-inf my-4 text-start" method="post">
+
 
                         <div class="edit-header">
                             <div class="avatar col-4">
@@ -105,7 +106,7 @@
                                     <span>Edit avatar</span>
                                 </button>
                             </div>
-
+                            <input type="hidden" name="id" value="${user.getId()}">
                             <div class="edit-header-inf col-7">
                                 <div class="edit-inf col-12">
                                     <div class="label-edit-header">
@@ -161,6 +162,12 @@
                                 </label>
                                 <input type="text" id="phone" name="phone" value="${user.getPhone()}">
                             </div>
+                            <div class="edit-phone">
+                                <i class='bx bxs-id-card' style='color:#5585fd'></i>
+                                <span>Giới tính</span>
+                                <input style="width: 20px;height: auto" type="radio" name="gender" <c:if test="${user.isGender()==true}">checked</c:if> value="male" > Nam
+                                <input style="width: 20px;height: auto" type="radio" name="gender" <c:if test="${user.isGender()==false}">checked</c:if> value="female"> Nữ<br>
+                            </div>
                             <div class="id_card">
                                 <label class="lb" for="id_card">
                                     <i class='bx bxs-id-card' style='color:#5585fd'></i>
@@ -173,7 +180,7 @@
                                     <i class='bx bxs-cake' style='color:#5585fd'></i>
                                     <span>Ngày sinh</span>
                                 </label>
-                                <input type="text" id="birthday" name="birthday" value="${user.getBirthday()}">
+                                <input type="date" id="birthday" name="birthday" value="${user.getBirthday()}">
                             </div>
                         </div>
                         <div class="save">
