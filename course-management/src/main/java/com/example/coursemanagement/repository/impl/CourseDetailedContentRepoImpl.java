@@ -77,6 +77,11 @@ public class CourseDetailedContentRepoImpl implements ICourseDetailRepo {
     }
 
     @Override
+    public void updateE(CourseDetailedContent courseDetailedContent) {
+
+    }
+
+    @Override
     public List<CourseDetailedContent> selectByCourseContentId(int id) {
         List<CourseDetailedContent> detailedContents = new ArrayList<>();
         Connection connection = BaseRepository.getConnection();

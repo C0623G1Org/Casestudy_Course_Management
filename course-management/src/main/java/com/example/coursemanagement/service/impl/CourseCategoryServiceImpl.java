@@ -32,4 +32,9 @@ public class CourseCategoryServiceImpl implements IService<CourseCategory> {
     public boolean updateE(int id, CourseCategory course) {
         return false;
     }
+
+    @Override
+    public void updateE(CourseCategory courseCategory) {
+
+    }
 }

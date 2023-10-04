@@ -35,6 +35,11 @@ public class DetailedContentServiceImpl implements ICourseDetailContentService {
     }
 
     @Override
+    public void updateE(CourseDetailedContent courseDetailedContent) {
+
+    }
+
+    @Override
     public List<CourseDetailedContent> selectByCourseContentId(int id) {
         return courseDetailedContentIRepository.selectByCourseContentId(id);
     }
