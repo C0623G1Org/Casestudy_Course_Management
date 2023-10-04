@@ -14,7 +14,9 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @WebServlet(
@@ -30,7 +32,8 @@ import java.util.List;
                 "/dashboard/update",
                 "/dashboard/password",
                 "/dashboard/member/edit",
-                "/dashboard/member/view"})
+                "/dashboard/member/view",
+                "/dashboard/member/delete"})
 public class DashboardServlet extends HttpServlet {
     private final ICourseService courseService = new CourseServiceImpl();
     private final ICourseContentService contentService = new CourseContentServiceImpl();
@@ -40,6 +43,7 @@ public class DashboardServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         // Kiểm tra session
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("user") == null) {
@@ -49,7 +53,9 @@ public class DashboardServlet extends HttpServlet {
             request.setAttribute("user", user);
             if (user.getRole().equals("admin")) {
                 String url = request.getRequestURI();
-                if (url.endsWith("/dashboard/member/edit")) {
+                if (url.endsWith("/dashboard/member/delete")) {
+                    deleteUser(request, response);
+                }else if (url.endsWith("/dashboard/member/edit")) {
                     showPageMemberEdit(request, response, user);
                 } else if (url.endsWith("/dashboard/member/view")) {
                     showPageMemberView(request, response, user);
@@ -126,6 +132,16 @@ public class DashboardServlet extends HttpServlet {
     }
 
     // ADMIN
+    private void deleteUser(HttpServletRequest request, HttpServletResponse response){
+        int id= Integer.parseInt(request.getParameter("id"));
+        userService.deleteUser(id);
+        try {
+            response.sendRedirect("/dashboard/member");
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
     private void showPageMemberEdit(HttpServletRequest request, HttpServletResponse response, User user) {
         request.setAttribute("admin", user.getFullName());
         int id = Integer.parseInt(request.getParameter("id"));
@@ -199,6 +215,7 @@ public class DashboardServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("user") == null) {
             response.sendRedirect(request.getContextPath() + "/");
@@ -210,7 +227,13 @@ public class DashboardServlet extends HttpServlet {
                 if (url.endsWith("/dashboard/course/content/detail/add")){
                     addDetailContentToDb(request,response);
                 } else if (url.endsWith("/dashboard/course/content/detail/edit")) {
-                    updateDetailContentToDb(request,response);
+                    updateDetailContentToDb(request, response);
+                } else if(url.endsWith("/dashboard/member/edit")){
+                    try {
+                        updateMember(request,response,user);
+                    } catch (ParseException e) {
+                        System.out.println(e.getMessage());
+                    }
                 }
             } else {
                 String url = request.getRequestURI();
@@ -263,18 +286,25 @@ public class DashboardServlet extends HttpServlet {
         String fullName = request.getParameter("fullName");
         String phone = request.getParameter("phone");
         String birthday = request.getParameter("birthday");
-        SimpleDateFormat sm = new SimpleDateFormat("mm-dd-yyyy");
-        String dod = sm.format(birthday);
-        Date date=sm.parse(dod);
         boolean gender = "male".equals(request.getParameter("gender"));
         String email = request.getParameter("email");
         String idCard = request.getParameter("idCard");
-        User user = new User(id, username, fullName, idCard, date, gender, phone, email);
+        String role=request.getParameter("role");
+        User user = new User(id, username, fullName, idCard, birthday, gender, phone, email, role);
         userService.updateE(user);
-        try {
-            response.sendRedirect("/dashboard/update");
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
+        showPageUpdateUser(request,response,user);
+    }
+    private void updateMember(HttpServletRequest request, HttpServletResponse response, User admin) throws ParseException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        String username = request.getParameter("userName");
+        String fullName = request.getParameter("fullName");
+        String phone = request.getParameter("phone");
+        String birthday = request.getParameter("birthday");
+        boolean gender = "male".equals(request.getParameter("gender"));
+        String email = request.getParameter("email");
+        String idCard = request.getParameter("idCard");
+        User userEdit = new User(id, username, fullName, idCard, birthday, gender, phone, email, admin.getRole());
+        userService.updateE(userEdit);
+        showPageMemberEdit(request, response, admin);
     }
 }
