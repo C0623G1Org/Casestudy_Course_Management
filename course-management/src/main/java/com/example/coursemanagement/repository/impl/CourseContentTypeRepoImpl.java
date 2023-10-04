@@ -65,4 +65,9 @@ public class CourseContentTypeRepoImpl implements IContentType {
     public boolean updateE(int id, CourseContentType course) {
         return false;
     }
+
+    @Override
+    public void updateE(CourseContentType courseContentType) {
+
+    }
 }

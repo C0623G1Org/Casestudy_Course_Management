@@ -8,4 +8,6 @@ public interface IService<E> {
     E selectE(int id);
     boolean deleteE(int id);
     boolean updateE(int id, E course);
+
+    void updateE(E e);
 }
