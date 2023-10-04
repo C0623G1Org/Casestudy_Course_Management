@@ -2,6 +2,7 @@ package com.example.coursemanagement.repository.impl;
 
 import com.example.coursemanagement.model.CourseCategory;
 import com.example.coursemanagement.repository.BaseRepository;
+import com.example.coursemanagement.repository.ICourseCategory;
 import com.example.coursemanagement.repository.IRepository;
 
 import java.sql.*;
@@ -62,5 +63,10 @@ public class CourseCategoryRepoImpl implements IRepository<CourseCategory> {
     @Override
     public boolean updateE(int id, CourseCategory course) {
         return false;
+    }
+
+    @Override
+    public void updateE(CourseCategory courseCategory) {
+
     }
 }

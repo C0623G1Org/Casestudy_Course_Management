@@ -1,5 +1,9 @@
 package com.example.coursemanagement.controller;
 
+import com.example.coursemanagement.model.*;
+import com.example.coursemanagement.repository.IContentType;
+import com.example.coursemanagement.service.ICourseContentService;
+import com.example.coursemanagement.service.ICourseDetailContentService;
 import com.example.coursemanagement.model.Course;
 import com.example.coursemanagement.model.CourseOrderInf;
 import com.example.coursemanagement.model.User;
@@ -9,22 +13,46 @@ import com.example.coursemanagement.service.IUserService;
 import com.example.coursemanagement.service.impl.CourseOrderServiceImpl;
 import com.example.coursemanagement.service.impl.CourseServiceImpl;
 import com.example.coursemanagement.service.impl.UserServiceImpl;
+import com.example.coursemanagement.service.impl.*;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-@WebServlet(name = "DashboardServlet", value = "/dashboard")
+@WebServlet(
+        name = "DashboardServlet",
+        value = {"/dashboard",
+                "/dashboard/course",
+                "/dashboard/course/content",
+                "/dashboard/course/content/detail/add",
+                "/dashboard/course/content/detail/edit",
+                "/dashboard/course/content/detail/delete",
+                "/dashboard/member",
+                "/dashboard/order",
+                "/dashboard/update",
+                "/dashboard/password",
+                "/dashboard/member/edit",
+                "/dashboard/member/view",
+                "/dashboard/member/delete"})
 public class DashboardServlet extends HttpServlet {
     private final ICourseService courseService = new CourseServiceImpl();
+    private final ICourseContentService contentService = new CourseContentServiceImpl();
     private final IUserService userService = new UserServiceImpl();
     private final ICourseOrderService courseOrderService = new CourseOrderServiceImpl();
 
+    private final ICourseDetailContentService detailContentService = new DetailedContentServiceImpl();
+    private final IContentType contentType = new ContentTypeServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         // Kiểm tra session
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("user") == null) {
@@ -33,31 +61,58 @@ public class DashboardServlet extends HttpServlet {
             User user = (User) session.getAttribute("user");
             request.setAttribute("user", user);
             if (user.getRole().equals("admin")) {
-                List<Course> courseList = courseService.showList();
-                List<CourseOrderInf> courseOrderInfs = courseOrderService.showCourseOrder();
-                request.setAttribute("courseOrderInfs", courseOrderInfs);
-                request.setAttribute("courseList",courseList);
-                request.setAttribute("user",user);
-                dispatcherData(request, response,"/dashboard/dashboard-admin.jsp");
+                String url = request.getRequestURI();
+                if (url.endsWith("/dashboard/member/delete")) {
+                    deleteUser(request, response);
+                } else if (url.endsWith("/dashboard/member/edit")) {
+                    showPageMemberEdit(request, response, user);
+                } else if (url.endsWith("/dashboard/member/view")) {
+                    showPageMemberView(request, response, user);
+                } else if (url.endsWith("/dashboard/member")) {
+                    showPageManageMember(request, response, user);
+                } else if (url.endsWith("/dashboard/course")) {
+                    showPageManageCourse(request, response, user);
+                } else if (url.endsWith("/dashboard/course/content")) {
+                    showPageEditContent(request, response, user);
+                } else if (url.endsWith("/dashboard/course/content/detail/add")) {
+                    showFormAddDetailContent(request, response, user);
+                } else if (url.endsWith("/dashboard/course/content/detail/edit")) {
+                    showFormEditDetailContent(request, response, user);
+                } else if (url.endsWith("/dashboard/course/content/detail/delete")) {
+                    deleteDetailContent(request, response);
+                } else if (url.endsWith("/dashboard/order")) {
+                    showPageManageOrder(request, response, user);
+                } else {
+                    getListCourseAdmin(request, response, user);
+                }
             } else {
-                String action=request.getParameter("action");
-                if(action==null){
-                    action="";
+                String url = request.getRequestURI();
+                if (url.endsWith("/dashboard/update")) {
+                    showPageUpdateUser(request, response, user);
+                } else if (url.endsWith("/dashboard/password")) {
+                    showPageUpdatePassword(request, response, user);
+                } else {
+                    getCourseUserBuy(request, response, user);
                 }
-                switch (action){
-                    case "update":
-                        showPageUpdateUser(request,response,user);
-                        break;
-                    case "password":
-                        showPageUpdatePassword(request,response,user);
-                        break;
-                    default:
-                        getCourseUserBuy(request,response,user);
-
-                }
-
             }
         }
+    }
+
+    private void showPageManageCourse(HttpServletRequest request, HttpServletResponse response, User user) {
+        request.setAttribute("user", user);
+        dispatcherData(request, response, "/dashboard/dashboard-admin-manage-course.jsp");
+    }
+
+    private void showPageManageMember(HttpServletRequest request, HttpServletResponse response, User user) {
+        List<User> list = userService.showListE();
+        request.setAttribute("list", list);
+        request.setAttribute("user", user);
+        dispatcherData(request, response, "/dashboard/dashboard-admin-manage-member.jsp");
+    }
+
+    private void showPageManageOrder(HttpServletRequest request, HttpServletResponse response, User user) {
+        request.setAttribute("user", user);
+        dispatcherData(request, response, "/dashboard/dashboard-admin-manage-order.jsp");
     }
 //    private void showCourseOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        List<CourseOrderInf> courseOrderInfs = courseOrderService.showCourseOrder();
@@ -69,15 +124,18 @@ public class DashboardServlet extends HttpServlet {
         request.setAttribute("user",user);
         dispatcherData(request,response,"/dashboard/dashboard-user-edit.jsp");
     }
-    private void showPageUpdatePassword(HttpServletRequest request,HttpServletResponse response, User user){
-        request.setAttribute("user",user);
-        dispatcherData(request,response,"/dashboard/dashboard-user-password.jsp");
+
+    private void showPageUpdatePassword(HttpServletRequest request, HttpServletResponse response, User user) {
+        request.setAttribute("user", user);
+        dispatcherData(request, response, "/dashboard/dashboard-user-password.jsp");
     }
-    private void getCourseUserBuy(HttpServletRequest request,HttpServletResponse response, User user){
-        List<Course> listCourseUserBuy = courseService.selectByUserBuy(user.getId());
-        request.setAttribute("user",user);
-        request.setAttribute("listCourseUserBuy",listCourseUserBuy);
-        dispatcherData(request, response,"/dashboard/dashboard-user.jsp");
+
+    private void getCourseUserBuy(HttpServletRequest request, HttpServletResponse response, User user) {
+        int id = user.getId();
+        List<Course> listCourseUserBuy = courseService.selectByUserBuy(id);
+        request.setAttribute("user", user);
+        request.setAttribute("listCourseUserBuy", listCourseUserBuy);
+        dispatcherData(request, response, "/dashboard/dashboard-user.jsp");
     }
 
     private static void dispatcherData(HttpServletRequest request, HttpServletResponse response, String path) {
@@ -94,45 +152,172 @@ public class DashboardServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("user") == null) {
-            // Chuyển hướng về trang đăng nhập nếu chưa đăng nhập
-            response.sendRedirect(request.getContextPath() + "/login");
+            response.sendRedirect(request.getContextPath() + "/");
         } else {
             User user = (User) session.getAttribute("user");
             request.setAttribute("user", user);
             if (user.getRole().equals("admin")) {
-                List<Course> courseList = courseService.showList();
-                request.setAttribute("courseList",courseList);
-                request.setAttribute("user",user);
-                dispatcherData(request, response,"/dashboard/dashboard-admin.jsp");
+                String url = request.getRequestURI();
+                if (url.endsWith("/dashboard/course/content/detail/add")){
+                    addDetailContentToDb(request,response);
+                } else if (url.endsWith("/dashboard/course/content/detail/edit")) {
+                    updateDetailContentToDb(request, response);
+                } else if(url.endsWith("/dashboard/member/edit")){
+                    try {
+                        updateMember(request,response,user);
+                    } catch (ParseException e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
             } else {
-                String action=request.getParameter("action");
-                if(action==null){
-                    action="";
-                }
-                switch (action){
-                    case "update":
+                String url = request.getRequestURI();
+                if (url.endsWith("/dashboard/update")) {
+                    try {
                         updateUser(request,response);
-                        break;
-                    default:
-                        break;
-
+                    } catch (ParseException e) {
+                        System.out.println(e.getMessage());
+                    }
                 }
-
             }
         }
     }
-    private void updateUser(HttpServletRequest request, HttpServletResponse response){
-        int id= Integer.parseInt(request.getParameter("id"));
-        String username=request.getParameter("username");
-        String fullName=request.getParameter("fullName");
-        String phone=request.getParameter("phone");
-//        Date birthday=request.getParameter("birthday");
-//        Boolean gender=request.getParameter("gender");
-        String email=request.getParameter("email");
-        String idCard=request.getParameter("idCard");
-        String birthday=request.getParameter("birthday");
-//        User user=new User(id, username, fullName,idCard,birthday,true,phone,email)
+
+    private void updateDetailContentToDb(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("course-detail-id"));
+        String title = request.getParameter("name-detail");
+        String description = request.getParameter("description-detail");
+        String idVideo = request.getParameter("id-video");
+        int contentType = Integer.parseInt(request.getParameter("content-type"));
+        CourseDetailedContent courseDetailedContent = new CourseDetailedContent(title,description,idVideo,contentType);
+        detailContentService.updateE(id,courseDetailedContent);
+        CourseContent courseContent = contentService.selectByDetailContentId(id);
+        try {
+            response.sendRedirect("/dashboard/course/content?id="+courseContent.getId());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
+
+
+    private void addDetailContentToDb(HttpServletRequest request, HttpServletResponse response) {
+        String name = request.getParameter("name-detail");
+        String description = request.getParameter("description-detail");
+        String idVideo = request.getParameter("id-video");
+        int idCourseContent = Integer.parseInt(request.getParameter("course-content-id"));
+        int idContentType = Integer.parseInt(request.getParameter("content-type"));
+        CourseDetailedContent detailedContent = new CourseDetailedContent(name,description,idVideo,idCourseContent,idContentType);
+        detailContentService.saveE(detailedContent);
+        try {
+            response.sendRedirect("/dashboard/course/content?id="+ idCourseContent);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void updateUser(HttpServletRequest request, HttpServletResponse response) throws ParseException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        String username = request.getParameter("username");
+        String fullName = request.getParameter("fullName");
+        String phone = request.getParameter("phone");
+        String birthday = request.getParameter("birthday");
+        boolean gender = "male".equals(request.getParameter("gender"));
+        String email = request.getParameter("email");
+        String idCard = request.getParameter("idCard");
+        String role=request.getParameter("role");
+        User user = new User(id, username, fullName, idCard, birthday, gender, phone, email, role);
+        userService.updateE(user);
+        showPageUpdateUser(request,response,user);
+    }
+    private void updateMember(HttpServletRequest request, HttpServletResponse response, User admin) throws ParseException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        String username = request.getParameter("userName");
+        String fullName = request.getParameter("fullName");
+        String phone = request.getParameter("phone");
+        String birthday = request.getParameter("birthday");
+        boolean gender = "male".equals(request.getParameter("gender"));
+        String email = request.getParameter("email");
+        String idCard = request.getParameter("idCard");
+        User userEdit = new User(id, username, fullName, idCard, birthday, gender, phone, email, admin.getRole());
+        userService.updateE(userEdit);
+        showPageMemberEdit(request, response, admin);
+    }
+
+                    private void deleteDetailContent(HttpServletRequest request, HttpServletResponse response) {
+                        int idDetail = Integer.parseInt(request.getParameter("id"));
+                        detailContentService.deleteE(idDetail);
+                        try {
+                            response.sendRedirect("/dashboard/course");
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+
+                    private void showFormEditDetailContent(HttpServletRequest request, HttpServletResponse response, User user) {
+                        int idContent = Integer.parseInt(request.getParameter("content-id"));
+                        int idDetail = Integer.parseInt(request.getParameter("id"));
+                        CourseContent courseContent = contentService.selectE(idContent);
+                        CourseDetailedContent detailedContent = detailContentService.selectE(idDetail);
+                        List<CourseContentType> contentTypes = contentType.showListE();
+                        request.setAttribute("contentTypes",contentTypes);
+                        request.setAttribute("courseContent",courseContent);
+                        request.setAttribute("detailedContent",detailedContent);
+                        dispatcherData(request,response,"/course-content/edit-detail-to-content.jsp");
+                    }
+
+                    private void showFormAddDetailContent(HttpServletRequest request, HttpServletResponse response, User user) {
+                        int idContent = Integer.parseInt(request.getParameter("id-content"));
+                        CourseContent courseContent = contentService.selectE(idContent);
+                        List<CourseContentType> contentTypes = contentType.showListE();
+                        request.setAttribute("courseContent",courseContent);
+                        request.setAttribute("contentTypes",contentTypes);
+                        dispatcherData(request,response,"/course-content/add-detail-to-content.jsp");
+                    }
+
+                    private void showPageEditContent(HttpServletRequest request, HttpServletResponse response, User user) {
+                        int idContent = Integer.parseInt(request.getParameter("id"));
+                        CourseContent courseContent = contentService.selectE(idContent);
+                        Course course = courseService.selectCourse(courseContent.getCourseId());
+                        List<CourseDetailedContent> detailedContents = detailContentService.selectByCourseContentId(idContent);
+                        request.setAttribute("courseContent",courseContent);
+                        request.setAttribute("course",course);
+                        request.setAttribute("detailedContents",detailedContents);
+                        dispatcherData(request,response,"/course-content/edit-course-content.jsp");
+                    }
+
+                    // ADMIN
+                    private void deleteUser(HttpServletRequest request, HttpServletResponse response){
+                        int id= Integer.parseInt(request.getParameter("id"));
+                        userService.deleteUser(id);
+                        try {
+                            response.sendRedirect("/dashboard/member");
+                        } catch (IOException e) {
+                            System.out.println(e.getMessage());
+                        }
+
+                    }
+                    private void showPageMemberEdit(HttpServletRequest request, HttpServletResponse response, User user) {
+                        request.setAttribute("admin", user.getFullName());
+                        int id = Integer.parseInt(request.getParameter("id"));
+                        request.setAttribute("user", userService.selectE(id));
+                        dispatcherData(request, response, "/dashboard/dashboard-admin-edit.jsp");
+                    }
+
+                    private void showPageMemberView(HttpServletRequest request, HttpServletResponse response, User user) {
+                        request.setAttribute("admin", user.getFullName());
+                        int id = Integer.parseInt(request.getParameter("id"));
+                        request.setAttribute("user", userService.selectE(id));
+                        dispatcherData(request, response, "/dashboard/dashboard-admin-view.jsp");
+                    }
+
+                    private void getListCourseAdmin(HttpServletRequest request, HttpServletResponse response, User user) {
+                        List<Course> courseList = courseService.showList();
+                        request.setAttribute("courseList", courseList);
+                        List<CourseOrderInf> courseOrderInfs = courseOrderService.showCourseOrder();
+                        request.setAttribute("courseOrderInfs", courseOrderInfs);
+                        request.setAttribute("user", user);
+                        dispatcherData(request, response, "/dashboard/dashboard-admin.jsp");
+                    }
 }

@@ -35,6 +35,11 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
+    public void updateE(User user) {
+        userRepo.updateE(user);
+    }
+
+    @Override
     public boolean checkUsernameExits(String username) {
         return userRepo.checkUsernameExits(username);
     }
@@ -47,5 +52,10 @@ public class UserServiceImpl implements IUserService {
     @Override
     public User selectByUsername(String username) {
         return userRepo.selectByUsername(username);
+    }
+
+    @Override
+    public void deleteUser(int id) {
+        userRepo.deleteUser(id);
     }
 }

@@ -2,6 +2,7 @@ package com.example.coursemanagement.repository.impl;
 
 import com.example.coursemanagement.model.CourseContentType;
 import com.example.coursemanagement.repository.BaseRepository;
+import com.example.coursemanagement.repository.IContentType;
 import com.example.coursemanagement.repository.IRepository;
 
 import java.sql.*;
@@ -63,5 +64,10 @@ public class CourseContentTypeRepoImpl implements IRepository<CourseContentType>
     @Override
     public boolean updateE(int id, CourseContentType course) {
         return false;
+    }
+
+    @Override
+    public void updateE(CourseContentType courseContentType) {
+
     }
 }
