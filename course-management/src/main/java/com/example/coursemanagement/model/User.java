@@ -81,6 +81,7 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
     public String getFullName() {
         return fullName;
     }
@@ -88,6 +89,7 @@ public class User {
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
+
     public String getIdCard() {
         return idCard;
     }

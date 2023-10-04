@@ -25,7 +25,7 @@ public class UserRepoImpl implements IUserRepo {
             ResultSet resultSet = statement.executeQuery(SELECT_ALL);
             while (resultSet.next()){
                 int userId = resultSet.getInt("user_id");
-                String userName = resultSet.getString("user_name");
+                String userName = resultSet.getString("usexr_name");
                 String password = resultSet.getString("password");
                 String full_name = resultSet.getString("full_name");
                 String idCard = resultSet.getString("id_card");

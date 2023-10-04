@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CourseDetailedContentRepoImpl implements ICourseDetailRepo {
-    private final static String SELECT = "SELECT * FROM detailed_content";
-    private final static String SELECT_BY_ID = "SELECT * FROM detailed_content WHERE detailed_content_id = ?;";
-    private final static String SELECT_BY_COURSE_CONTENT_ID = "SELECT * FROM detailed_content WHERE course_content_id = ?;";
+    private final static String SELECT = "SELECT * FROM detailed_course_content";
+    private final static String SELECT_BY_ID = "SELECT * FROM detailed_course_content WHERE detailed_course_content_id = ?;";
+    private final static String SELECT_BY_COURSE_CONTENT_ID = "SELECT * FROM detailed_course_content WHERE detailed_course_content_id = ?;";
     @Override
     public List<CourseDetailedContent> showListE() {
         List<CourseDetailedContent> detailedContents = new ArrayList<>();
@@ -20,7 +20,7 @@ public class CourseDetailedContentRepoImpl implements ICourseDetailRepo {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(SELECT);
             while (resultSet.next()) {
-                int detailed_content_id = resultSet.getInt("detailed_content_id");
+                int detailed_content_id = resultSet.getInt("detailed_course_content_id");
                 String content_title = resultSet.getString("content_title");
                 String content = resultSet.getString("content");
                 String idVideo = resultSet.getString("url_video_id");
@@ -49,7 +49,7 @@ public class CourseDetailedContentRepoImpl implements ICourseDetailRepo {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BY_ID);
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.getResultSet();
-            int detailed_content_id = resultSet.getInt("detailed_content_id");
+            int detailed_content_id = resultSet.getInt("detailed_course_content_id");
             String content_title = resultSet.getString("content_title");
             String content = resultSet.getString("content");
             String idVideo = resultSet.getString("url_video_id");
@@ -81,7 +81,7 @@ public class CourseDetailedContentRepoImpl implements ICourseDetailRepo {
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
-                int detailed_content_id = resultSet.getInt("detailed_content_id");
+                int detailed_content_id = resultSet.getInt("detailed_course_content_id");
                 String content_title = resultSet.getString("content_title");
                 String content = resultSet.getString("content");
                 String idVideo = resultSet.getString("url_video_id");

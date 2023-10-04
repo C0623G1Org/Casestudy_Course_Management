@@ -34,8 +34,11 @@ public class Course {
         this.otherInfoCourse = otherInfoCourse;
     }
 
-    public Course(int course_id, String name, String description, double price) {
-
+    public Course(int id, String name, String description, double price) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.price = price;
     }
 
     public int getId() {

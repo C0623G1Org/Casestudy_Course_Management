@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CourseCategoryRepoImpl implements IRepository<CourseCategory> {
-    private final static String SELECT = "SELECT * FROM course_category";
-    private final static String SELECT_BY_ID = "SELECT * FROM course_category WHERE course_category_id = ?;";
+    private final static String SELECT = "SELECT * FROM course_levels";
+    private final static String SELECT_BY_ID = "SELECT * FROM course_levels WHERE course_level_id = ?;";
 
     @Override
     public List<CourseCategory> showListE() {
@@ -20,8 +20,8 @@ public class CourseCategoryRepoImpl implements IRepository<CourseCategory> {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(SELECT);
             while (resultSet.next()) {
-                int id = resultSet.getInt("course_category_id");
-                String name = resultSet.getString("course_category_name");
+                int id = resultSet.getInt("course_level_id");
+                String name = resultSet.getString("course_level_name");
                 categoryList.add(new CourseCategory(id, name));
             }
             resultSet.close();
@@ -46,8 +46,8 @@ public class CourseCategoryRepoImpl implements IRepository<CourseCategory> {
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.getResultSet();
             category = new CourseCategory(
-                    resultSet.getInt("course_category_id"),
-                    resultSet.getString("course_category_name"));
+                    resultSet.getInt("course_level_id"),
+                    resultSet.getString("course_level_name"));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

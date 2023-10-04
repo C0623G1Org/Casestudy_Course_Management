@@ -48,8 +48,8 @@ public class CourseContentRepoImpl implements ICourseContentRepo {
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.getResultSet();
             courseContent = new CourseContent(
-                    resultSet.getInt("course_category_id"),
-                    resultSet.getString("course_category_name"),
+                    resultSet.getInt("course_level_id"),
+                    resultSet.getString("course_level_name"),
                     resultSet.getInt("course_id")
                     );
         } catch (SQLException e) {
