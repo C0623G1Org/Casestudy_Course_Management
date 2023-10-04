@@ -6,4 +6,5 @@ public interface IUserService extends IService<User> {
     boolean checkUsernameExits(String username);
     boolean checkExitsByUsernameAndPassword(String username, String password);
     User selectByUsername(String username);
+    void deleteUser(int id);
 }

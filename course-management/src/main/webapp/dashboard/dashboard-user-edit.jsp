@@ -40,6 +40,7 @@
                                 </button>
                             </div>
                             <input type="hidden" name="id" value="${user.getId()}">
+                            <input type="hidden" name="role" value="${user.getRole()}">
                             <div class="edit-header-inf col-7">
                                 <div class="edit-inf col-12">
                                     <div class="label-edit-header">
