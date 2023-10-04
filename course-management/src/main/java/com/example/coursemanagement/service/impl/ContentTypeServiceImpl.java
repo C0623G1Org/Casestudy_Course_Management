@@ -1,13 +1,14 @@
 package com.example.coursemanagement.service.impl;
 
 import com.example.coursemanagement.model.CourseContentType;
+import com.example.coursemanagement.repository.IContentType;
 import com.example.coursemanagement.repository.IRepository;
 import com.example.coursemanagement.repository.impl.CourseContentTypeRepoImpl;
 import com.example.coursemanagement.service.IService;
 
 import java.util.List;
 
-public class ContentTypeServiceImpl implements IService<CourseContentType> {
+public class ContentTypeServiceImpl implements IContentType {
     private final IRepository<CourseContentType> contentTypeIRepository = new CourseContentTypeRepoImpl();
 
     @Override

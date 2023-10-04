@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface ICourseContentRepo extends IRepository<CourseContent> {
     List<CourseContent> selectByCourseId(int id);
+    CourseContent selectByDetailContentId(int idDetailContent);
 }

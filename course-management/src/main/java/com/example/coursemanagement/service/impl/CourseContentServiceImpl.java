@@ -43,4 +43,9 @@ public class CourseContentServiceImpl implements ICourseContentService {
     public List<CourseContent> selectByCourseId(int id) {
         return courseContentIRepository.selectByCourseId(id);
     }
+
+    @Override
+    public CourseContent selectByDetailContentId(int idDetailContent) {
+        return courseContentIRepository.selectByDetailContentId(idDetailContent);
+    }
 }
