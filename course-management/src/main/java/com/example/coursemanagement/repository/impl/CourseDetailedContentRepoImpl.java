@@ -12,9 +12,9 @@ public class CourseDetailedContentRepoImpl implements ICourseDetailRepo {
     private final static String SELECT = "SELECT * FROM detailed_course_content";
     private final static String SELECT_BY_ID = "SELECT * FROM detailed_course_content WHERE detailed_course_content_id = ?;";
     private final static String SELECT_BY_COURSE_CONTENT_ID = "SELECT * FROM detailed_course_content WHERE detailed_course_content_id = ?;";
-    private final static String INSERT_DETAIL = "INSERT INTO detailed_content(content_title, content, url_video_id, course_content_id,content_type_id) VALUES (?,?,?,?,?);";
-    private final static String UPDATE_DETAIL = "UPDATE detailed_content SET content_title = ?, content = ?, url_video_id= ? , content_type_id = ? WHERE detailed_content_id = ?;";
-    private final static String DELETE_DETAIL = "DELETE FROM detailed_content WHERE detailed_content_id = ?;";
+    private final static String INSERT_DETAIL = "INSERT INTO detailed_course_content(content_title, content, url_video_id, course_content_id,content_type_id) VALUES (?,?,?,?,?);";
+    private final static String UPDATE_DETAIL = "UPDATE detailed_course_content SET content_title = ?, content = ?, url_video_id= ? , content_type_id = ? WHERE detailed_course_content_id = ?;";
+    private final static String DELETE_DETAIL = "DELETE FROM detailed_course_content WHERE detailed_course_content_id = ?;";
 
     @Override
     public List<CourseDetailedContent> showListE() {

@@ -77,7 +77,7 @@
                     </div>
                     <div class="mt-4">
                         <div class="content-other-info">
-                            ${course.getOtherInfoCourse()}
+                            ${course.getCourseInclusion()}
                         </div>
                     </div>
                     <div class="mt-3">
@@ -85,6 +85,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
