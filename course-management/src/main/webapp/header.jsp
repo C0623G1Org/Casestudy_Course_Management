@@ -50,9 +50,9 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
-                                <li><a class="dropdown-item" href="/dashboard/manager/course">Quản lý khóa học</a></li>
-                                <li><a class="dropdown-item" href="/dashboard/manager/course">Quản lý đơn hàng</a></li>
-                                <li><a class="dropdown-item" href="/dashboard/manager/course">Quản lý đơn hàng</a></li>
+                                <li><a class="dropdown-item" href="/dashboard/course">Quản lý khóa học</a></li>
+                                <li><a class="dropdown-item" href="/dashboard/order">Quản lý đơn hàng</a></li>
+                                <li><a class="dropdown-item" href="/dashboard/member">Quản lý thành viên</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="/user/logout">Đăng xuất</a></li>
                             </ul>

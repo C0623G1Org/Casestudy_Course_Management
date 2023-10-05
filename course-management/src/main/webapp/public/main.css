@@ -700,3 +700,6 @@ a.btn.btn-primary.delete.btn-content {
     font-size: 18px;
     color: #0B0B0B;
 }
+.action-course a.btn {
+    border-radius: 5px;
+}

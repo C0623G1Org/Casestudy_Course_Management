@@ -2,11 +2,12 @@ package com.example.coursemanagement.service.impl;
 
 import com.example.coursemanagement.model.CourseCategory;
 import com.example.coursemanagement.repository.impl.CourseCategoryRepoImpl;
+import com.example.coursemanagement.service.ICourseLevelService;
 import com.example.coursemanagement.service.IService;
 
 import java.util.List;
 
-public class CourseCategoryServiceImpl implements IService<CourseCategory> {
+public class CourseCategoryServiceImpl implements ICourseLevelService {
     private final CourseCategoryRepoImpl categoryRepo = new CourseCategoryRepoImpl();
     @Override
     public List<CourseCategory> showListE() {

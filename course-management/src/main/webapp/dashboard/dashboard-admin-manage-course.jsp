@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="mt-2 view-detail-course-bg">
-                    <button type="button" class="btn btn-info"><i class="fa-solid fa-plus"></i></i>Thêm mới khóa học</button>
+                    <a href="/dashboard/course/add" role="button" class="btn btn-primary btn-sm add-detail-content" ><i class="fa-solid fa-plus"></i> <span>Thêm mới nội dung học</span></a>
                 </div>
 
 
@@ -46,52 +46,25 @@
                             <tr>
                                 <th class="text-center" scope="col"><i class="fa-solid fa-arrow-down-wide-short"></i>ID</th>
                                 <th class="text-center" scope="col">Tên khóa học</th>
-                                <th class="text-center" scope="col">Author</th>
-                                <th class="text-center" scope="col">Ngày xuất bản</th>
-                                <th class="text-center" scope="col">Thao tác</th>
+                                <th class="text-center" scope="col">Instructor</th>
+                                <th class="text-center" scope="col">Giá tiền</th>
+                                <th class="text-center" scope="col" colspan="3">Thao tác</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td><img src="../public/image/Course JV.png" height="20" width="20"/> Javascript Foudatament</td>
-                                <td class="done">
-                                    <div class="done-content"><i class="fa-solid fa-user-graduate"></i>ThanhPV</div>
-                                </td>
-                                <td>24-09-2023</td>
-                                <td>
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle operation" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Xem khóa học</a></li>
-                                            <li><a class="dropdown-item" href="#">Thêm học phần</a></li>
-                                            <li><a class="dropdown-item" href="#">Xóa khóa học</a></li>
-                                            <li><a class="dropdown-item" href="#">Chỉnh sửa khóa học</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td><img src="../public/image/Course SQl.png" height="20" width="20"/>   Basic SQL Tutorial</td>
-                                <td class="done">
-                                    <div class="done-content"><i class="fa-solid fa-user-graduate"></i>AnHN</div>
-                                </td>
-                                <td>24-09-2023</td>
-                                <td >
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle operation" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Xem khóa học</a></li>
-                                            <li><a class="dropdown-item" href="#">Thêm học phần</a></li>
-                                            <li><a class="dropdown-item" href="#">Xóa khóa học</a></li>
-                                            <li><a class="dropdown-item" href="#">Chỉnh sửa khóa học</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
+                                <c:forEach items="${courses}" var="courses" varStatus="loop">
+                                    <tr>
+                                        <td>${courses.getId()}</td>
+                                        <td>${courses.getName()}</td>
+                                        <td>${courses.getInstructor()}</td>
+                                        <td>${courses.getPrice()}</td>
+                                        <td class="action-course d-flex justify-content-between">
+                                                <a role="button" class="btn btn-primary learn btn-content mb-1" href="/course/detail?id=${courses.getId()}">Xem</a>
+                                                <a role="button" class="btn btn-primary edit btn-content mb-1" href="#">Sửa</a>
+                                                <a role="button" class="btn btn-primary delete btn-content mb-1" href="#">Xóa</a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>
