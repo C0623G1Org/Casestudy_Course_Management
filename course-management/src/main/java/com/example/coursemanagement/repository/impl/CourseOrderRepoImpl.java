@@ -24,7 +24,7 @@ public class CourseOrderRepoImpl implements ICourseOrderRepo {
             "WHERE order_id = ?;";
 
     private static final String INSERT_ORDER = "INSERT INTO course_orders (order_date, order_price, user_id, course_id, order_code, `status`) \n" +
-            "VALUES (?,?,?,?,?,?);";
+            "VALUES (?,?,?,?,?,'Đang xử lý');";
 
     @Override
     public List<CourseOrderInf> showCourseOrder() {
@@ -89,7 +89,6 @@ public class CourseOrderRepoImpl implements ICourseOrderRepo {
             preparedStatement.setInt(3, courseOrder.getUserId());
             preparedStatement.setInt(4, courseOrder.getCourseId());
             preparedStatement.setInt(5, courseOrder.getOrderCode());
-            preparedStatement.setString(6, courseOrder.getStatus());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);

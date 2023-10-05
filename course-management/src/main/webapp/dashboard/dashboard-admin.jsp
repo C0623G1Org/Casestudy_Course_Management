@@ -34,7 +34,7 @@
                         <h3>Welcome back,</h3>
                     </div>
                     <div class="day-now">
-                        <p>26-09-2023</p>
+                        <p>${localDate}</p>
                     </div>
                 </div>
 

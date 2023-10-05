@@ -30,13 +30,13 @@ public class CourseOrder {
         this.courseId = courseId;
     }
 
-    public CourseOrder(String orderDate, double orderPrice, int userId, int courseId, int orderCode, String status) {
+    public CourseOrder(String orderDate, double orderPrice, int userId, int courseId, int orderCode) {
         this.orderDate = orderDate;
         this.orderPrice = orderPrice;
         this.userId = userId;
         this.courseId = courseId;
         this.orderCode = orderCode;
-        this.status = status;
+//        this.status = status;
     }
 
     public int getOrderId() {

@@ -7,13 +7,14 @@
     <list default="true" id="8b7fa4d5-6b60-40e8-94a6-bd99b53912e2" name="Changes" comment="fix bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/controller/CourseOrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/controller/CourseOrderServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/controller/DashboardServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/controller/DashboardServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/controller/CoursePurchaseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/controller/CoursePurchaseServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/model/CourseOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/model/CourseOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/model/CourseOrderInf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/model/CourseOrderInf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/ICourseOrderRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/ICourseOrderRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseOrderRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseOrderRepoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-order-management.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-order-management.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/buy-course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/buy-course.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/check-out.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/check-out.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-detail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/detailed-course-order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/detailed-course-order.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,21 +89,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Casestudy_Course_Management/course-management",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Casestudy_Course_Management/course-management&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\CodeGym\C0623G1_Pham_Van_Thanh_Module3\Casestudy_Course_Management\course_management\src\main\webapp\learning" />
@@ -114,7 +115,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -130,8 +131,8 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Tomcat 9.0.21" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.21" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="hot-swap-classes" />
+    <configuration name="Tomcat 9.0.21" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.21" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Gradle : com.example : course_management-1.0-SNAPSHOT.war">
           <settings>
@@ -140,7 +141,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="8580f8a5-b935-4644-9079-d9dc2cb62f17" />
+        <option name="BASE_DIRECTORY_NAME" value="1627008f-9210-4655-a9c3-fb7e1e67e1b6" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -148,7 +149,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="50656" />
+        <option name="DEBUG_PORT" value="52981" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -217,6 +218,10 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Gradle.course-management [build]" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.21" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.course-management [build]" />
@@ -237,6 +242,10 @@
       <workItem from="1696417020262" duration="4337000" />
       <workItem from="1696427412983" duration="2885000" />
       <workItem from="1696468720422" duration="8216000" />
+      <workItem from="1696487517271" duration="5503000" />
+      <workItem from="1696493236760" duration="3718000" />
+      <workItem from="1696507516729" duration="6455000" />
+      <workItem from="1696516070341" duration="2458000" />
     </task>
     <task id="LOCAL-00001" summary="fix bugs">
       <created>1696417177332</created>
