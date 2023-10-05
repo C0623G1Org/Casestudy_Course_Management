@@ -208,7 +208,7 @@ public class DashboardServlet extends HttpServlet {
                 } else if (url.endsWith("/dashboard/course/add")) {
                         addCourseToDb(request,response);
                 } else if (url.endsWith("/dashboard/course/edit")) {
-
+                        updateCourseToDB(request,response);
                 }
             } else {
                 String url = request.getRequestURI();
@@ -234,6 +234,24 @@ public class DashboardServlet extends HttpServlet {
         int courseLevel = Integer.parseInt(request.getParameter("course-level"));
         Course course = new Course(courseName,descriptionCourse,instructor,priceCourse,courseLevel,knowledge,requirements,courseInclusion);
         courseService.saveCourse(course);
+        try {
+            response.sendRedirect("/dashboard/course");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    private void updateCourseToDB(HttpServletRequest request, HttpServletResponse response) {
+        int courseId = Integer.parseInt(request.getParameter("id-course"));
+        String courseName = request.getParameter("name-course");
+        String descriptionCourse = request.getParameter("description-course");
+        double priceCourse = Double.parseDouble(request.getParameter("price-course"));
+        String knowledge = request.getParameter("knowledge");
+        String requirements = request.getParameter("requirements");
+        String instructor = request.getParameter("instructor");
+        String courseInclusion = request.getParameter("course-inclusion");
+        int courseLevel = Integer.parseInt(request.getParameter("course-level"));
+        Course course = new Course(courseName,descriptionCourse,instructor,priceCourse,courseLevel,knowledge,requirements,courseInclusion);
+        courseService.updateCourse(courseId, course);
         try {
             response.sendRedirect("/dashboard/course");
         } catch (IOException e) {

@@ -34,7 +34,7 @@
                         <p>Chỉnh sửa khóa học ${course.getName()}</p>
                     </div>
                     <form class="add-course edit-course-content" action="/dashboard/course/edit" method="post">
-
+                        <input type="hidden" name="id-course" value="${course.getId()}">
                         <div class="mb-3">
                             <label for="name-course" class="form-label"><i class="fa-solid fa-book"></i> Tên khóa học</label>
                             <input type="text" class="form-control" name="name-course" id="name-course" value="${course.getName()}">
@@ -49,7 +49,7 @@
 
                         <div class="mb-3">
                             <label for="price-course" class="form-label"><i class="fa-solid fa-book"></i> Giá khóa học</label>
-                            <input type="number" class="form-control" name="price-course" id="price-course" value=" ${course.getPrice()}">
+                            <input type="text" class="form-control" name="price-course" id="price-course" value=" ${course.getPrice()}">
                         </div>
 
                         <div class="mb-3">
