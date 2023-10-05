@@ -6,9 +6,6 @@ import com.example.coursemanagement.service.*;
 import com.example.coursemanagement.model.Course;
 import com.example.coursemanagement.model.CourseOrderInf;
 import com.example.coursemanagement.model.User;
-import com.example.coursemanagement.service.ICourseOrderService;
-import com.example.coursemanagement.service.ICourseService;
-import com.example.coursemanagement.service.IUserService;
 import com.example.coursemanagement.service.impl.CourseOrderServiceImpl;
 import com.example.coursemanagement.service.impl.CourseServiceImpl;
 import com.example.coursemanagement.service.impl.UserServiceImpl;
@@ -31,9 +28,8 @@ import java.util.List;
                 "/dashboard/course",
                 "/dashboard/course/add",
                 "/dashboard/course/edit",
+                "/dashboard/course/delete",
                 "/dashboard/course/content",
-                "/dashboard/course/content/add",
-                "/dashboard/course/content/delete",
                 "/dashboard/course/content/detail/add",
                 "/dashboard/course/content/detail/edit",
                 "/dashboard/course/content/detail/delete",
@@ -74,15 +70,13 @@ public class DashboardServlet extends HttpServlet {
                 } else if (url.endsWith("/dashboard/member")) {
                     showPageManageMember(request, response, user);
                 } else if (url.endsWith("/dashboard/course/add")) {
-                    showFormAddCourse(request, response);
+                    showFormAddCourse(request,response);
                 } else if (url.endsWith("/dashboard/course/edit")) {
                     showFormEditCourse(request,response);
+                } else if (url.endsWith("/dashboard/course/delete")) {
+                    deleteCourseToDB(request,response);
                 } else if (url.endsWith("/dashboard/course")) {
                     showPageManageCourse(request, response, user);
-                } else if (url.endsWith("/dashboard/course/content/add")) {
-                    showPageAddContent(request,response);
-                } else if (url.endsWith("/dashboard/course/content/delete")) {
-                    deleteContent(request,response);
                 } else if (url.endsWith("/dashboard/course/content")) {
                     showPageEditContent(request, response, user);
                 } else if (url.endsWith("/dashboard/course/content/detail/add")) {
@@ -97,7 +91,6 @@ public class DashboardServlet extends HttpServlet {
                     getListCourseAdmin(request, response, user);
                 }
             } else {
-                User userGet = userService.selectByUsername(user.getUsername());
                 String url = request.getRequestURI();
                 if (url.endsWith("/dashboard/update")) {
                     showPageUpdateUser(request, response, user);
@@ -110,23 +103,13 @@ public class DashboardServlet extends HttpServlet {
         }
     }
 
-    private void deleteContent(HttpServletRequest request, HttpServletResponse response) {
-        int idContent = Integer.parseInt(request.getParameter("id"));
-        CourseContent courseContent = contentService.selectE(idContent);
-        contentService.deleteE(idContent);
-        try {
-            response.sendRedirect("/dashboard/course/edit?id="+courseContent.getCourseId());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
-
-    private void showPageAddContent(HttpServletRequest request, HttpServletResponse response) {
+    private void showFormEditCourse(HttpServletRequest request, HttpServletResponse response) {
+        List<CourseCategory> categoryList = levelService.showListE();
         int idCourse = Integer.parseInt(request.getParameter("id"));
         Course course = courseService.selectCourse(idCourse);
+        request.setAttribute("categoryList",categoryList);
         request.setAttribute("course",course);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/course-content/add-course-content.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/course-content/edit-course.jsp");
         try {
             requestDispatcher.forward(request,response);
         } catch (ServletException e) {
@@ -136,30 +119,12 @@ public class DashboardServlet extends HttpServlet {
         }
     }
 
-    private void showFormEditCourse(HttpServletRequest request, HttpServletResponse response) {
-        List<CourseCategory> categoryList = levelService.showListE();
-        int idCourse = Integer.parseInt(request.getParameter("id"));
-        List<CourseContent> courseContents = contentService.selectByCourseId(idCourse);
-        Course course = courseService.selectCourse(idCourse);
-        request.setAttribute("categoryList", categoryList);
-        request.setAttribute("courseContents", courseContents);
-        request.setAttribute("course", course);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/course-content/edit-course.jsp");
-        try {
-            requestDispatcher.forward(request, response);
-        } catch (ServletException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     private void showFormAddCourse(HttpServletRequest request, HttpServletResponse response) {
         List<CourseCategory> categoryList = levelService.showListE();
-        request.setAttribute("categoryList", categoryList);
+        request.setAttribute("categoryList",categoryList);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/course-content/add-course.jsp");
         try {
-            requestDispatcher.forward(request, response);
+            requestDispatcher.forward(request,response);
         } catch (ServletException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
@@ -182,8 +147,6 @@ public class DashboardServlet extends HttpServlet {
     }
 
     private void showPageManageOrder(HttpServletRequest request, HttpServletResponse response, User user) {
-        List<CourseOrderInf> courseOrderInfList = courseOrderService.showCourseOrder();
-        request.setAttribute("courseOrderInfList", courseOrderInfList);
         request.setAttribute("user", user);
         dispatcherData(request, response, "/dashboard/dashboard-admin-manage-order.jsp");
     }
@@ -205,10 +168,9 @@ public class DashboardServlet extends HttpServlet {
     }
 
     private void getCourseUserBuy(HttpServletRequest request, HttpServletResponse response, User user) {
-        String username = user.getUsername();
-        User user1 = userService.selectByUsername(username);
-        List<Course> listCourseUserBuy = courseService.selectByUserBuy(user1.getId());
-        request.setAttribute("user1", user1);
+        int id = user.getId();
+        List<Course> listCourseUserBuy = courseService.selectByUserBuy(id);
+        request.setAttribute("user", user);
         request.setAttribute("listCourseUserBuy", listCourseUserBuy);
         dispatcherData(request, response, "/dashboard/dashboard-user.jsp");
     }
@@ -240,18 +202,16 @@ public class DashboardServlet extends HttpServlet {
                     addDetailContentToDb(request, response);
                 } else if (url.endsWith("/dashboard/course/content/detail/edit")) {
                     updateDetailContentToDb(request, response);
-                } else if(url.endsWith("/dashboard/member/edit")){
+                } else if (url.endsWith("/dashboard/member/edit")) {
                     try {
-                        updateMember(request,response,user);
+                        updateMember(request, response, user);
                     } catch (ParseException e) {
                         System.out.println(e.getMessage());
                     }
                 } else if (url.endsWith("/dashboard/course/add")) {
-                    addCourseToDb(request, response);
+                        addCourseToDb(request,response);
                 } else if (url.endsWith("/dashboard/course/edit")) {
-                    updateCourseToDB(request,response);
-                } else if (url.endsWith("/dashboard/course/content/add")) {
-                    addCourseContentToDb(request,response);
+                        updateCourseToDB(request,response);
                 }
             } else {
                 String url = request.getRequestURI();
@@ -265,6 +225,7 @@ public class DashboardServlet extends HttpServlet {
             }
         }
     }
+
     private void deleteCourseToDB(HttpServletRequest request, HttpServletResponse response) {
         int courseId = Integer.parseInt(request.getParameter("id"));
         courseService.deleteCourse(courseId);
@@ -276,18 +237,6 @@ public class DashboardServlet extends HttpServlet {
 
     }
 
-    private void addCourseContentToDb(HttpServletRequest request, HttpServletResponse response) {
-        int idCourse = Integer.parseInt(request.getParameter("id-course"));
-        String nameContent = request.getParameter("name-content");
-        CourseContent courseContent = new CourseContent(nameContent,idCourse);
-        contentService.saveE(courseContent);
-        try {
-            response.sendRedirect("/dashboard/course/edit?id="+idCourse);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     private void addCourseToDb(HttpServletRequest request, HttpServletResponse response) {
         String courseName = request.getParameter("name-course");
         String descriptionCourse = request.getParameter("description-course");
@@ -297,7 +246,7 @@ public class DashboardServlet extends HttpServlet {
         String instructor = request.getParameter("instructor");
         String courseInclusion = request.getParameter("course-inclusion");
         int courseLevel = Integer.parseInt(request.getParameter("course-level"));
-        Course course = new Course(courseName, descriptionCourse, instructor, priceCourse, courseLevel, knowledge, requirements, courseInclusion);
+        Course course = new Course(courseName,descriptionCourse,instructor,priceCourse,courseLevel,knowledge,requirements,courseInclusion);
         courseService.saveCourse(course);
         try {
             response.sendRedirect("/dashboard/course");
@@ -387,10 +336,9 @@ public class DashboardServlet extends HttpServlet {
 
     private void deleteDetailContent(HttpServletRequest request, HttpServletResponse response) {
         int idDetail = Integer.parseInt(request.getParameter("id"));
-        CourseDetailedContent detailedContent = detailContentService.selectE(idDetail);
         detailContentService.deleteE(idDetail);
         try {
-            response.sendRedirect("/dashboard/course/content?id="+detailedContent.getCourseContentId());
+            response.sendRedirect("/dashboard/course");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -427,6 +375,7 @@ public class DashboardServlet extends HttpServlet {
         request.setAttribute("detailedContents", detailedContents);
         dispatcherData(request, response, "/course-content/edit-course-content.jsp");
     }
+
     // ADMIN
     private void deleteUser(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
@@ -460,31 +409,5 @@ public class DashboardServlet extends HttpServlet {
         request.setAttribute("courseOrderInfs", courseOrderInfs);
         request.setAttribute("user", user);
         dispatcherData(request, response, "/dashboard/dashboard-admin.jsp");
-    }
-
-    private void changePassWord(HttpServletRequest request,HttpServletResponse response){
-        String oldPassWord=request.getParameter("oldPassWord");
-        int id= Integer.parseInt(request.getParameter("id"));
-        User user=userService.selectE(id);
-        String alert = null;
-        String sucsess = null;
-        if (oldPassWord.equals(user.getPassword())){
-            String newPassWord=request.getParameter("newPassword");
-            String againNewPassWord=request.getParameter("againNewPassword");
-            if(newPassWord.equals(againNewPassWord)){
-                userService.changePassWord(user, againNewPassWord);
-                sucsess = "Thay đổi mật khẩu thành công";
-                request.setAttribute("sucsess",sucsess);
-                showPageUpdatePassword(request,response,user);
-            } else {
-                alert = "Mật Khẩu nhập lại không đúng";
-                request.setAttribute("alert", alert);
-                showPageUpdatePassword(request,response,user);
-            }
-        } else {
-            alert = "Mật khẩu cũ không đúng";
-            request.setAttribute("alert",alert);
-            showPageUpdatePassword(request,response,user);
-        }
     }
 }
