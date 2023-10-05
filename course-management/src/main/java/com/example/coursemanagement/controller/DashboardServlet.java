@@ -97,11 +97,11 @@ public class DashboardServlet extends HttpServlet {
                 User userGet = userService.selectByUsername(user.getUsername());
                 String url = request.getRequestURI();
                 if (url.endsWith("/dashboard/update")) {
-                    showPageUpdateUser(request, response, user);
+                    showPageUpdateUser(request, response, userGet);
                 } else if (url.endsWith("/dashboard/password")) {
-                    showPageUpdatePassword(request, response, user);
+                    showPageUpdatePassword(request, response, userGet);
                 } else {
-                    getCourseUserBuy(request, response, user);
+                    getCourseUserBuy(request, response, userGet);
                 }
             }
         }
@@ -260,6 +260,8 @@ public class DashboardServlet extends HttpServlet {
                     } catch (ParseException e) {
                         System.out.println(e.getMessage());
                     }
+                } else if(url.endsWith("/dashboard/password")){
+                    changePassWord(request,response);
                 }
             }
         }

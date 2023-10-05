@@ -79,6 +79,8 @@ public class UserServlet extends HttpServlet {
                 sendMessageToView(response, message);
             } else {
                 user = new User(username, password, email);
+                HttpSession session = request.getSession();
+                session.setAttribute("user", user);
                 userService.saveE(user);
                 message = "Đăng kí thành công, đăng nhập để tiếp tục !";
                 sendMessageToView(response, message);
