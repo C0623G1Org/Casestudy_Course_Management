@@ -2,14 +2,10 @@ package com.example.coursemanagement.controller;
 
 import com.example.coursemanagement.model.*;
 import com.example.coursemanagement.repository.IContentType;
-import com.example.coursemanagement.service.ICourseContentService;
-import com.example.coursemanagement.service.ICourseDetailContentService;
+import com.example.coursemanagement.service.*;
 import com.example.coursemanagement.model.Course;
 import com.example.coursemanagement.model.CourseOrderInf;
 import com.example.coursemanagement.model.User;
-import com.example.coursemanagement.service.ICourseOrderService;
-import com.example.coursemanagement.service.ICourseService;
-import com.example.coursemanagement.service.IUserService;
 import com.example.coursemanagement.service.impl.CourseOrderServiceImpl;
 import com.example.coursemanagement.service.impl.CourseServiceImpl;
 import com.example.coursemanagement.service.impl.UserServiceImpl;
@@ -30,6 +26,7 @@ import java.util.List;
         name = "DashboardServlet",
         value = {"/dashboard",
                 "/dashboard/course",
+                "/dashboard/course/add",
                 "/dashboard/course/content",
                 "/dashboard/course/content/detail/add",
                 "/dashboard/course/content/detail/edit",
@@ -46,9 +43,9 @@ public class DashboardServlet extends HttpServlet {
     private final ICourseContentService contentService = new CourseContentServiceImpl();
     private final IUserService userService = new UserServiceImpl();
     private final ICourseOrderService courseOrderService = new CourseOrderServiceImpl();
-
     private final ICourseDetailContentService detailContentService = new DetailedContentServiceImpl();
     private final IContentType contentType = new ContentTypeServiceImpl();
+    private final ICourseLevelService levelService = new CourseCategoryServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -70,6 +67,8 @@ public class DashboardServlet extends HttpServlet {
                     showPageMemberView(request, response, user);
                 } else if (url.endsWith("/dashboard/member")) {
                     showPageManageMember(request, response, user);
+                } else if (url.endsWith("/dashboard/course/add")) {
+                    showFormAddCourse(request,response);
                 } else if (url.endsWith("/dashboard/course")) {
                     showPageManageCourse(request, response, user);
                 } else if (url.endsWith("/dashboard/course/content")) {
@@ -99,8 +98,23 @@ public class DashboardServlet extends HttpServlet {
         }
     }
 
+    private void showFormAddCourse(HttpServletRequest request, HttpServletResponse response) {
+        List<CourseCategory> categoryList = levelService.showListE();
+        request.setAttribute("categoryList",categoryList);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/course-content/add-course.jsp");
+        try {
+            requestDispatcher.forward(request,response);
+        } catch (ServletException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private void showPageManageCourse(HttpServletRequest request, HttpServletResponse response, User user) {
+        List<Course> courses = courseService.showList();
         request.setAttribute("user", user);
+        request.setAttribute("courses", courses);
         dispatcherData(request, response, "/dashboard/dashboard-admin-manage-course.jsp");
     }
 
@@ -174,6 +188,8 @@ public class DashboardServlet extends HttpServlet {
                     } catch (ParseException e) {
                         System.out.println(e.getMessage());
                     }
+                } else if (url.endsWith("/dashboard/course/add")) {
+                        addCourseToDb(request,response);
                 }
             } else {
                 String url = request.getRequestURI();
@@ -187,6 +203,24 @@ public class DashboardServlet extends HttpServlet {
                     changePassWord(request,response);
                 }
             }
+        }
+    }
+
+    private void addCourseToDb(HttpServletRequest request, HttpServletResponse response) {
+        String courseName = request.getParameter("name-course");
+        String descriptionCourse = request.getParameter("description-course");
+        double priceCourse = Double.parseDouble(request.getParameter("price-course"));
+        String knowledge = request.getParameter("knowledge");
+        String requirements = request.getParameter("requirements");
+        String instructor = request.getParameter("instructor");
+        String courseInclusion = request.getParameter("course-inclusion");
+        int courseLevel = Integer.parseInt(request.getParameter("course-level"));
+        Course course = new Course(courseName,descriptionCourse,instructor,priceCourse,courseLevel,knowledge,requirements,courseInclusion);
+        courseService.saveCourse(course);
+        try {
+            response.sendRedirect("/dashboard/course");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -327,6 +361,7 @@ public class DashboardServlet extends HttpServlet {
         request.setAttribute("user", user);
         dispatcherData(request, response, "/dashboard/dashboard-admin.jsp");
     }
+<<<<<<< HEAD
 
     private void changePassWord(HttpServletRequest request,HttpServletResponse response){
         String oldPassWord=request.getParameter("oldPassWord");
@@ -353,4 +388,6 @@ public class DashboardServlet extends HttpServlet {
             showPageUpdatePassword(request,response,user);
         }
     }
+=======
+>>>>>>> 813fd12f44fbd14bf8d0c81fc655aa70fccabcb7
 }
