@@ -11,7 +11,7 @@ import java.util.List;
 public class CourseDetailedContentRepoImpl implements ICourseDetailRepo {
     private final static String SELECT = "SELECT * FROM detailed_course_content";
     private final static String SELECT_BY_ID = "SELECT * FROM detailed_course_content WHERE detailed_course_content_id = ?;";
-    private final static String SELECT_BY_COURSE_CONTENT_ID = "SELECT * FROM detailed_course_content WHERE detailed_course_content_id = ?;";
+    private final static String SELECT_BY_COURSE_CONTENT_ID = "SELECT * FROM detailed_course_content WHERE course_content_id = ?;";
     private final static String INSERT_DETAIL = "INSERT INTO detailed_course_content(content_title, content, url_video_id, course_content_id,content_type_id) VALUES (?,?,?,?,?);";
     private final static String UPDATE_DETAIL = "UPDATE detailed_course_content SET content_title = ?, content = ?, url_video_id= ? , content_type_id = ? WHERE detailed_course_content_id = ?;";
     private final static String DELETE_DETAIL = "DELETE FROM detailed_course_content WHERE detailed_course_content_id = ?;";
@@ -69,14 +69,16 @@ public class CourseDetailedContentRepoImpl implements ICourseDetailRepo {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BY_ID);
             preparedStatement.setInt(1, id);
-            ResultSet resultSet = preparedStatement.getResultSet();
-            int detailed_content_id = resultSet.getInt("detailed_course_content_id");
-            String content_title = resultSet.getString("content_title");
-            String content = resultSet.getString("content");
-            String idVideo = resultSet.getString("url_video_id");
-            int courseContentId = resultSet.getInt("course_content_id");
-            int courseContentTypeId = resultSet.getInt("content_type_id");
-            detailedContent = new CourseDetailedContent(detailed_content_id, content_title,content,idVideo,courseContentId,courseContentTypeId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int detailed_content_id = resultSet.getInt("detailed_course_content_id");
+                String content_title = resultSet.getString("content_title");
+                String content = resultSet.getString("content");
+                String idVideo = resultSet.getString("url_video_id");
+                int courseContentId = resultSet.getInt("course_content_id");
+                int courseContentTypeId = resultSet.getInt("content_type_id");
+                detailedContent = new CourseDetailedContent(detailed_content_id, content_title,content,idVideo,courseContentId,courseContentTypeId);   
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
