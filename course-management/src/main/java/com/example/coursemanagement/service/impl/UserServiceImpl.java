@@ -58,4 +58,9 @@ public class UserServiceImpl implements IUserService {
     public void deleteUser(int id) {
         userRepo.deleteUser(id);
     }
+
+    @Override
+    public void changePassWord(User user, String newPassWord) {
+        userRepo.changePassWord(user, newPassWord);
+    }
 }

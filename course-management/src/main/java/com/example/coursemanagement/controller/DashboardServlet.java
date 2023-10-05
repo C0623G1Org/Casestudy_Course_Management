@@ -97,13 +97,14 @@ public class DashboardServlet extends HttpServlet {
                     getListCourseAdmin(request, response, user);
                 }
             } else {
+                User userGet = userService.selectByUsername(user.getUsername());
                 String url = request.getRequestURI();
                 if (url.endsWith("/dashboard/update")) {
-                    showPageUpdateUser(request, response, user);
+                    showPageUpdateUser(request, response, userGet);
                 } else if (url.endsWith("/dashboard/password")) {
-                    showPageUpdatePassword(request, response, user);
+                    showPageUpdatePassword(request, response, userGet);
                 } else {
-                    getCourseUserBuy(request, response, user);
+                    getCourseUserBuy(request, response, userGet);
                 }
             }
         }
@@ -204,9 +205,10 @@ public class DashboardServlet extends HttpServlet {
     }
 
     private void getCourseUserBuy(HttpServletRequest request, HttpServletResponse response, User user) {
-        int id = user.getId();
-        List<Course> listCourseUserBuy = courseService.selectByUserBuy(id);
-        request.setAttribute("user", user);
+        String username = user.getUsername();
+        User user1 = userService.selectByUsername(username);
+        List<Course> listCourseUserBuy = courseService.selectByUserBuy(user1.getId());
+        request.setAttribute("user1", user1);
         request.setAttribute("listCourseUserBuy", listCourseUserBuy);
         dispatcherData(request, response, "/dashboard/dashboard-user.jsp");
     }
@@ -259,6 +261,8 @@ public class DashboardServlet extends HttpServlet {
                     } catch (ParseException e) {
                         System.out.println(e.getMessage());
                     }
+                } else if(url.endsWith("/dashboard/password")){
+                    changePassWord(request,response);
                 }
             }
         }
@@ -448,4 +452,33 @@ public class DashboardServlet extends HttpServlet {
         request.setAttribute("user", user);
         dispatcherData(request, response, "/dashboard/dashboard-admin.jsp");
     }
+<<<<<<< HEAD
+
+    private void changePassWord(HttpServletRequest request,HttpServletResponse response){
+        String oldPassWord=request.getParameter("oldPassWord");
+        int id= Integer.parseInt(request.getParameter("id"));
+        User user=userService.selectE(id);
+        String alert = null;
+        String sucsess = null;
+        if (oldPassWord.equals(user.getPassword())){
+            String newPassWord=request.getParameter("newPassword");
+            String againNewPassWord=request.getParameter("againNewPassword");
+            if(newPassWord.equals(againNewPassWord)){
+                userService.changePassWord(user, againNewPassWord);
+                sucsess = "Thay đổi mật khẩu thành công";
+                request.setAttribute("sucsess",sucsess);
+                showPageUpdatePassword(request,response,user);
+            } else {
+                alert = "Mật Khẩu nhập lại không đúng";
+                request.setAttribute("alert", alert);
+                showPageUpdatePassword(request,response,user);
+            }
+        } else {
+            alert = "Mật khẩu cũ không đúng";
+            request.setAttribute("alert",alert);
+            showPageUpdatePassword(request,response,user);
+        }
+    }
+=======
+>>>>>>> 813fd12f44fbd14bf8d0c81fc655aa70fccabcb7
 }

@@ -28,6 +28,9 @@ public class UserRepoImpl implements IUserRepo {
             "where user_id=?;";
     private static final String DELETE_USER = "delete from user"+"\n" +
             "where user_id=?;";
+    private static final String CHANGE_PASSWORD = "update user\n" +
+            "set password=?"+ "\n" +
+            "where user_id=? and role=\"user\";";
 
     @Override
     public List<User> showListE() {
@@ -101,6 +104,12 @@ public class UserRepoImpl implements IUserRepo {
             connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
         return user;
     }
@@ -146,6 +155,13 @@ public class UserRepoImpl implements IUserRepo {
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } finally {
+            try {
+                preparedStatement.close();
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
@@ -214,6 +230,19 @@ public class UserRepoImpl implements IUserRepo {
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+        }
+    }
+
+    @Override
+    public void changePassWord(User user, String newPassWord) {
+        Connection connection=BaseRepository.getConnection();
+        try {
+            PreparedStatement preparedStatement=connection.prepareStatement(CHANGE_PASSWORD);
+            preparedStatement.setString(1,newPassWord);
+            preparedStatement.setInt(2,user.getId());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 }

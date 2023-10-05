@@ -10,15 +10,15 @@
             <div class="col-lg-9 content-dashboard ps-5 ">
                 <div class="header-content">
                     <div class="hello">
-                        <form class="row form-search-course g-2">
-                            <div class="col-auto">
-                                <input type="text" class="form-control" id="inputEmail"
-                                       placeholder=" Nhập khóa học cần tìm">
-                            </div>
-                            <div class="col-auto">
-                                <button type="submit" class="btn btn-primary">Tìm</button>
-                            </div>
-                        </form>
+<%--                        <form class="row form-search-course g-2">--%>
+<%--                            <div class="col-auto">--%>
+<%--                                <input type="text" class="form-control" id="inputEmail"--%>
+<%--                                       placeholder=" Nhập khóa học cần tìm">--%>
+<%--                            </div>--%>
+<%--                            <div class="col-auto">--%>
+<%--                                <button type="submit" class="btn btn-primary">Tìm</button>--%>
+<%--                            </div>--%>
+<%--                        </form>--%>
                     </div>
                     <div class="user">
                        <span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">
@@ -43,7 +43,7 @@
                                             <span>Tên đăng nhập</span>
                                         </label>
                                     </div>
-                                    <input type="text" id="user_name" name="userName" value="${user.getUsername()}">
+                                    <input class="form-control" type="text" id="user_name" name="userName" value="${user.getUsername()}">
                                 </div>
 
                                 <div class="edit-inf col-12">
@@ -53,7 +53,7 @@
                                             <span>Họ và Tên</span>
                                         </label>
                                     </div>
-                                    <input type="text" id="name"  name="fullName" value="${user.getFullName()}">
+                                    <input class="form-control" type="text" id="name"  name="fullName" value="${user.getFullName()}">
                                 </div>
 
                                 <div class="edit-inf col-12">
@@ -63,7 +63,7 @@
                                             <span>Email của bạn</span>
                                         </label>
                                     </div>
-                                    <input type="text" id="email" name="email" value="${user.getEmail()}">
+                                    <input class="form-control" type="text" id="email" name="email" value="${user.getEmail()}">
                                 </div>
                             </div>
                         </div>
@@ -77,21 +77,21 @@
                                     <i class='bx bxs-phone-call' style='color:#5585fd'></i>
                                     <span>Số điện thoại</span>
                                 </label>
-                                <input type="text" id="phone" name="phone" value="${user.getPhone()}">
+                                <input class="form-control" type="text" id="phone" name="phone" value="${user.getPhone()}">
                             </div>
                             <div class="id_card">
                                 <label class="lb" for="id_card">
                                     <i class='bx bxs-id-card' style='color:#5585fd'></i>
                                     <span>Căn cước công dân</span>
                                 </label>
-                                <input type="text" id="id_card" name="idCard" value="${user.getIdCard()}">
+                                <input class="form-control" type="text" id="id_card" name="idCard" value="${user.getIdCard()}">
                             </div>
                             <div class="edit-birthday">
                                 <label class="lb" for="birthday">
                                     <i class='bx bxs-cake' style='color:#5585fd'></i>
                                     <span>Ngày sinh</span>
                                 </label>
-                                <input type="text" id="birthday" name="birthday" value="${user.getBirthday()}">
+                                <input class="form-control" type="text" id="birthday" name="birthday" value="${user.getBirthday()}">
                             </div>
                         </div>
                     </form>
