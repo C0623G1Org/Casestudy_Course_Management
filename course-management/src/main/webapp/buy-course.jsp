@@ -11,13 +11,13 @@
 <c:import url="header.jsp"></c:import>
 <section>
     <div class="container">
-        <form action="/course-purchase-servlet?action=check-out&id=${course.getId()}" method="post" role="form"
-              class="check-out">
+        <form action="/course-purchase-servlet?action=check-out&id=${course.getId()}" method="post" role="form" class="check-out">
             <div class="row">
                 <div class="col-md-6">
                     <h3 style="font-weight: bold">Thông tin khách hàng</h3>
                     <div class="form-group my-3">
                         <label for="nameBC"><i class="fa-solid fa-user"></i> Họ và tên của bạn*</label>
+                        <input type="hidden" name="userId" value="${user.getId()}">
                         <input type="text" class="form-control" id="nameBC" placeholder="Vui lòng nhập tên"
                                value="${user.getFullName()}">
                     </div>
@@ -46,7 +46,7 @@
                             <img src="../public/image/RectangleBC.png" width="120p" height="100">
                         </div>
                         <div class="col-md-6">
-                            <input type="hidden" name="id" value="${course.getId()}">
+                            <input type="hidden" name="courseId" value="${course.getId()}">
                             <h5 style="font-weight: bold">${course.getName()}</h5>
                             <p>${course.getDescription()}</p>
                         </div>
@@ -63,8 +63,9 @@
                             <p style="font-size: 30px; font-weight: bold">Total</p></div>
                         <div class="col-md-6" style="text-align: right">
                             <%--                                tam thoi chua co discount--%>
+                            <input type="hidden" name="orderPrice" value="${course.getPrice()}">
                             <p style="font-size: 25px; font-weight: bold">${course.getPrice()}</p><br/>
-                            <p>Ngày thanh toán: ${localDate}</p>
+                            <p>Ngày mua: ${localDate}</p>
                                 <p>Mã đơn hàng: ${code}</p>
                             <p>(VAT included if applicable)</p>
                         </div>

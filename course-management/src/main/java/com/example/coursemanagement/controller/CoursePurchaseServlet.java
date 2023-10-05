@@ -33,7 +33,7 @@ public class CoursePurchaseServlet extends HttpServlet {
 
         if (user == null) {
             int id = Integer.parseInt(request.getParameter("id"));
-            response.sendRedirect("/course/detail?id="+id);
+            response.sendRedirect("/course/detail?id=" + id);
         } else {
             String action = request.getParameter("action");
             if (action == null) {
@@ -41,17 +41,18 @@ public class CoursePurchaseServlet extends HttpServlet {
             }
             switch (action) {
                 case "buy_course":
-
                     showCourseInf(request, response);
                     break;
+//                case "check-out":
+//                    showCheckoutPage(request, response);
+//                    break;
             }
         }
     }
 
     private void showCourseInf(HttpServletRequest request, HttpServletResponse response) {
 
-
-        int id = Integer.parseInt(request.getParameter("id"));
+        int id = Integer.parseInt(request.getParameter("courseId"));
         Course course = coursePurchaseService.displayCourse(id);
         request.setAttribute("course", course);
         request.setAttribute("code", orderCode);
@@ -66,20 +67,6 @@ public class CoursePurchaseServlet extends HttpServlet {
         }
     }
 
-    private void createOrder (HttpServletRequest request, HttpServletResponse response) {
-        String orderDate = request.getParameter("orderDate");
-        double orderPrice = Double.parseDouble(request.getParameter("orderPrice"));
-        int userId = Integer.parseInt(request.getParameter("userId"));
-        int courseId = Integer.parseInt(request.getParameter("courseId"));
-        int orderCode = Integer.parseInt(request.getParameter("courseCode"));
-        String status = request.getParameter("status");
-        courseOrderService.createOrder(new CourseOrder(orderDate, orderPrice, userId, courseId, orderCode, status));
-        try {
-            response.sendRedirect("/course-purchase-servlet");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -88,7 +75,7 @@ public class CoursePurchaseServlet extends HttpServlet {
 
         if (user == null) {
             int id = Integer.parseInt(request.getParameter("id"));
-            response.sendRedirect("/course/detail?id="+id);
+            response.sendRedirect("/course/detail?id=" + id);
         } else {
             String action = request.getParameter("action");
             if (action == null) {
@@ -96,29 +83,18 @@ public class CoursePurchaseServlet extends HttpServlet {
             }
             switch (action) {
                 case "buy_course":
-
                     showCourseInf(request, response);
                     break;
                 case "check-out":
                     showCheckoutPage(request, response);
+                    createOrder(request, response);
                     break;
             }
         }
-
-//        String action = request.getParameter("action");
-//        if (action == null) {
-//            action = "";
-//        }
-//        switch (action) {
-//            case "check-out":
-//                showCheckoutPage(request, response);
-//                break;
-//
-//        }
     }
 
     private void showCheckoutPage(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("id"));
+        int id = Integer.parseInt(request.getParameter("courseId"));
         Course course = coursePurchaseService.displayCourse(id);
         request.setAttribute("course", course);
         request.setAttribute("code", orderCode);
@@ -131,4 +107,19 @@ public class CoursePurchaseServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
+
+    private void createOrder(HttpServletRequest request, HttpServletResponse response) {
+        String orderDate = String.valueOf(localDate);
+        double orderPrice = Double.parseDouble(request.getParameter("orderPrice"));
+        int userId = Integer.parseInt(request.getParameter("userId"));
+        int courseId = Integer.parseInt(request.getParameter("courseId"));
+//        String status = request.getParameter("status");
+        courseOrderService.createOrder(new CourseOrder(orderDate, orderPrice, userId, courseId, orderCode));
+        try {
+            response.sendRedirect("/course-purchase-servlet");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
