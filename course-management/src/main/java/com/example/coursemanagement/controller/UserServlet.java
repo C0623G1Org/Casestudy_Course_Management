@@ -68,8 +68,6 @@ public class UserServlet extends HttpServlet {
         String username = request.getParameter("usernameSignUp");
         String password = request.getParameter("passwordSignUp");
         String confirmPassword = request.getParameter("passwordSignUpAgain");
-        System.out.println(password);
-        System.out.println(confirmPassword);
         String email = request.getParameter("emailSignUp");
         User user;
         if (userService.checkUsernameExits(username)) {
@@ -81,8 +79,11 @@ public class UserServlet extends HttpServlet {
                 sendMessageToView(response, message);
             } else {
                 user = new User(username, password, email);
+                HttpSession session = request.getSession();
+                session.setAttribute("user", user);
                 userService.saveE(user);
-                sendMessageToView(response, message);
+                response.sendRedirect("/dashboard");
+//                sendMessageToView(response, message);
             }
         }
     }

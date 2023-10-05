@@ -23,7 +23,13 @@
                     <div class="user">
                        <span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">
                             <img class="rounded-circle me-1" width="35" height="35"
-                                 src="https://zpsocial-f54-org.zadn.vn/24a379da816c6f32367d.jpg" alt="">${user.getFullName()}
+                                 src="https://zpsocial-f54-org.zadn.vn/24a379da816c6f32367d.jpg" alt="">
+                                    <c:if test="${empty sessionScope.user.getFullName()}">
+                                        ${sessionScope.user.getUsername()}
+                                    </c:if>
+                                    <c:if test="${not empty sessionScope.user.getFullName()}">
+                                        ${sessionScope.user.getFullName()}
+                                    </c:if>
                        </span>
                     </div>
                 </div>
