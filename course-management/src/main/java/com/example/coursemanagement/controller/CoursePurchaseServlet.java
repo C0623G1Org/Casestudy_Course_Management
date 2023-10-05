@@ -39,7 +39,7 @@ public class CoursePurchaseServlet extends HttpServlet {
 
         if (user == null) {
             int id = Integer.parseInt(request.getParameter("id"));
-            response.sendRedirect("/course/detail?id="+id);
+            response.sendRedirect("/course/detail?id=" + id);
         } else {
             String action = request.getParameter("action");
             if (action == null) {
