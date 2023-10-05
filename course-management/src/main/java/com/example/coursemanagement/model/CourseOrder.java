@@ -11,7 +11,8 @@ public class CourseOrder {
 
     private String status;
 
-    public CourseOrder(int orderId, String orderDate, double orderPrice, int userId, int courseId, double orderCode, String status) {
+    public CourseOrder(int orderId, String orderDate, double orderPrice, int userId, int courseId, double orderCode,
+                       String status) {
         this.orderId = orderId;
         this.orderDate = orderDate;
         this.orderPrice = orderPrice;

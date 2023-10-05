@@ -69,9 +69,9 @@ public class DashboardServlet extends HttpServlet {
                 } else if (url.endsWith("/dashboard/member")) {
                     showPageManageMember(request, response, user);
                 } else if (url.endsWith("/dashboard/course/add")) {
-                    showFormAddCourse(request,response);
+                    showFormAddCourse(request, response);
                 } else if (url.endsWith("/dashboard/course/edit")) {
-                    showFormEditCourse(request,response);
+                    showFormEditCourse(request, response);
                 } else if (url.endsWith("/dashboard/course")) {
                     showPageManageCourse(request, response, user);
                 } else if (url.endsWith("/dashboard/course/content")) {
@@ -104,11 +104,11 @@ public class DashboardServlet extends HttpServlet {
         List<CourseCategory> categoryList = levelService.showListE();
         int idCourse = Integer.parseInt(request.getParameter("id"));
         Course course = courseService.selectCourse(idCourse);
-        request.setAttribute("categoryList",categoryList);
-        request.setAttribute("course",course);
+        request.setAttribute("categoryList", categoryList);
+        request.setAttribute("course", course);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/course-content/edit-course.jsp");
         try {
-            requestDispatcher.forward(request,response);
+            requestDispatcher.forward(request, response);
         } catch (ServletException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
@@ -118,10 +118,10 @@ public class DashboardServlet extends HttpServlet {
 
     private void showFormAddCourse(HttpServletRequest request, HttpServletResponse response) {
         List<CourseCategory> categoryList = levelService.showListE();
-        request.setAttribute("categoryList",categoryList);
+        request.setAttribute("categoryList", categoryList);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/course-content/add-course.jsp");
         try {
-            requestDispatcher.forward(request,response);
+            requestDispatcher.forward(request, response);
         } catch (ServletException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
@@ -206,7 +206,7 @@ public class DashboardServlet extends HttpServlet {
                         System.out.println(e.getMessage());
                     }
                 } else if (url.endsWith("/dashboard/course/add")) {
-                        addCourseToDb(request,response);
+                    addCourseToDb(request, response);
                 } else if (url.endsWith("/dashboard/course/edit")) {
 
                 }
@@ -232,7 +232,7 @@ public class DashboardServlet extends HttpServlet {
         String instructor = request.getParameter("instructor");
         String courseInclusion = request.getParameter("course-inclusion");
         int courseLevel = Integer.parseInt(request.getParameter("course-level"));
-        Course course = new Course(courseName,descriptionCourse,instructor,priceCourse,courseLevel,knowledge,requirements,courseInclusion);
+        Course course = new Course(courseName, descriptionCourse, instructor, priceCourse, courseLevel, knowledge, requirements, courseInclusion);
         courseService.saveCourse(course);
         try {
             response.sendRedirect("/dashboard/course");
@@ -373,8 +373,8 @@ public class DashboardServlet extends HttpServlet {
     private void getListCourseAdmin(HttpServletRequest request, HttpServletResponse response, User user) {
         List<Course> courseList = courseService.showList();
         request.setAttribute("courseList", courseList);
-        List<CourseOrderInf> courseOrderInfs = courseOrderService.showCourseOrder();
-        request.setAttribute("courseOrderInfs", courseOrderInfs);
+        List<CourseOrderInf> courseOrderInfList = courseOrderService.showCourseOrder();
+        request.setAttribute("courseOrderInfList", courseOrderInfList);
         request.setAttribute("user", user);
         dispatcherData(request, response, "/dashboard/dashboard-admin.jsp");
     }
