@@ -182,6 +182,8 @@ public class DashboardServlet extends HttpServlet {
     }
 
     private void showPageManageOrder(HttpServletRequest request, HttpServletResponse response, User user) {
+        List<CourseOrderInf> courseOrderInfList = courseOrderService.showCourseOrder();
+        request.setAttribute("courseOrderInfList", courseOrderInfList);
         request.setAttribute("user", user);
         dispatcherData(request, response, "/dashboard/dashboard-admin-manage-order.jsp");
     }
