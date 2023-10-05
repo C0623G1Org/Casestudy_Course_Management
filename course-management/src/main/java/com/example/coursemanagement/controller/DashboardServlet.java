@@ -28,6 +28,7 @@ import java.util.List;
                 "/dashboard/course",
                 "/dashboard/course/add",
                 "/dashboard/course/edit",
+                "/dashboard/course/delete",
                 "/dashboard/course/content",
                 "/dashboard/course/content/add",
                 "/dashboard/course/content/delete",
@@ -73,7 +74,9 @@ public class DashboardServlet extends HttpServlet {
                 } else if (url.endsWith("/dashboard/course/add")) {
                     showFormAddCourse(request, response);
                 } else if (url.endsWith("/dashboard/course/edit")) {
-                    showFormEditCourse(request, response);
+                    showFormEditCourse(request,response);
+                } else if (url.endsWith("/dashboard/course/delete")) {
+                    deleteCourseToDB(request,response);
                 } else if (url.endsWith("/dashboard/course")) {
                     showPageManageCourse(request, response, user);
                 } else if (url.endsWith("/dashboard/course/content/add")) {
@@ -258,7 +261,6 @@ public class DashboardServlet extends HttpServlet {
             }
         }
     }
-
     private void addCourseContentToDb(HttpServletRequest request, HttpServletResponse response) {
         int idCourse = Integer.parseInt(request.getParameter("id-course"));
         String nameContent = request.getParameter("name-content");
