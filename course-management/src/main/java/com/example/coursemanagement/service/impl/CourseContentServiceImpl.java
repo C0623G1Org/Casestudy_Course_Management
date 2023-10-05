@@ -31,7 +31,7 @@ public class CourseContentServiceImpl implements ICourseContentService {
 
     @Override
     public boolean updateE(int id, CourseContent course) {
-        return false;
+        return courseContentIRepository.updateE(id,course);
     }
 
     @Override

@@ -33,14 +33,15 @@
                         <h3 style="font-weight: bold">${course.getName()}</h3>
                         <p>Chỉnh sửa học phần: <span class="course-content-name">${courseContent.getName()}</span></p>
                     </div>
-                    <form class="edit-course-content" action="dashboard/course/content?id=${courseContent.getId()}" method="post">
+                    <form class="edit-course-content" action="/dashboard/course/content/edit?id=${courseContent.getId()}" method="post">
                         <div class="mb-3">
-                            <label for="nameContent" class="form-label"><i class="fa-solid fa-book"></i> Tên học phần</label>
-                            <input type="text" class="form-control" name="nameContent" id="nameContent" value="${courseContent.getName()}">
+                            <input type="hidden" name="id-course" value="${course.getId()}">
+                            <label for="name-content" class="form-label"><i class="fa-solid fa-book"></i> Tên học phần</label>
+                            <input type="text" class="form-control" name="name-content" id="name-content" value="${courseContent.getName()}">
                         </div>
                         <div class="mb-3">
                             <label for="description" class="form-label"><i class="fa-solid fa-rectangle-list"></i> Mô tả cho học phần</label>
-                            <textarea class="form-control" id="description" description="description" rows="3">${courseContent.getName()}</textarea>
+                            <textarea class="form-control" id="description" name="description" rows="3">${courseContent.getName()}</textarea>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Submit</button>
