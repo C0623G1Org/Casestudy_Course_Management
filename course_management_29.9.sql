@@ -14,7 +14,7 @@ CREATE TABLE courses (
     price DOUBLE NOT NULL,
     knowledge VARCHAR(500),
     requirements VARCHAR(500),
-    course_inclusioncourse_orders VARCHAR(200),
+    course_inclusion VARCHAR(200),
 	course_level_id INT NOT NULL,
     FOREIGN KEY (course_level_id)
         REFERENCES course_levels (course_level_id)
@@ -62,6 +62,8 @@ CREATE TABLE `user` (
 
 CREATE TABLE course_orders (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
+    order_code INT NOT NULL,
+    `status` VARCHAR(55), 
     order_date DATE NOT NULL,
     order_price DOUBLE NOT NULL,
     user_id INT NOT NULL,
@@ -155,9 +157,9 @@ INSERT INTO `user` (user_name, `password`, full_name, id_card, birthday, gender,
 VALUES ('usertest', 'password456','Người dùng 1','098765432109', '1985-11-15', 0, '0987654321', 'jan2edoe@email.com', 'user');
 
 
-INSERT INTO course_orders (order_date, order_price, user_id, course_id) 
-VALUES ('2022-01-01', 24.99, 1, 1);
-INSERT INTO course_orders (order_date, order_price, user_id, course_id) 
-VALUES ('2022-01-02', 49.99, 1, 2);
-INSERT INTO course_orders (order_date, order_price, user_id, course_id) 
-VALUES ('2022-01-03', 99.99, 1, 3);
+INSERT INTO course_orders (order_date, order_price, user_id, course_id, order_code, `status`) 
+VALUES ('2022-01-01', 24.99, 1, 1, 123456, "hoan thanh");
+INSERT INTO course_orders (order_date, order_price, user_id, course_id, order_code, `status`) 
+VALUES ('2022-01-02', 49.99, 1, 2, 654321, "hoan thanh");
+INSERT INTO course_orders (order_date, order_price, user_id, course_id, order_code, `status`) 
+VALUES ('2022-01-03', 99.99, 1, 3, 567890, "dang xu ly");

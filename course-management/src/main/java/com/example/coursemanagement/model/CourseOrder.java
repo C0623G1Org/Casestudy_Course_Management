@@ -7,11 +7,12 @@ public class CourseOrder {
     private int userId;
     private int courseId;
 
-    private double orderCode;
+    private int orderCode;
 
     private String status;
 
-    public CourseOrder(int orderId, String orderDate, double orderPrice, int userId, int courseId, double orderCode, String status) {
+    public CourseOrder(int orderId, String orderDate, double orderPrice, int userId, int courseId, int orderCode,
+                       String status) {
         this.orderId = orderId;
         this.orderDate = orderDate;
         this.orderPrice = orderPrice;
@@ -27,6 +28,15 @@ public class CourseOrder {
         this.orderPrice = orderPrice;
         this.userId = userId;
         this.courseId = courseId;
+    }
+
+    public CourseOrder(String orderDate, double orderPrice, int userId, int courseId, int orderCode, String status) {
+        this.orderDate = orderDate;
+        this.orderPrice = orderPrice;
+        this.userId = userId;
+        this.courseId = courseId;
+        this.orderCode = orderCode;
+        this.status = status;
     }
 
     public int getOrderId() {
@@ -69,11 +79,11 @@ public class CourseOrder {
         this.courseId = courseId;
     }
 
-    public double getOrderCode() {
+    public int getOrderCode() {
         return orderCode;
     }
 
-    public void setOrderCode(double orderCode) {
+    public void setOrderCode(int orderCode) {
         this.orderCode = orderCode;
     }
 

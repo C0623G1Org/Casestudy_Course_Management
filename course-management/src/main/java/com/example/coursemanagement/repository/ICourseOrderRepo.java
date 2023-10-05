@@ -10,4 +10,6 @@ public interface ICourseOrderRepo {
 
     CourseOrderInf showDetailOrderById(int id);
 
+    void createOrder (CourseOrder courseOrder);
+
 }
