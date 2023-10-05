@@ -105,8 +105,8 @@ public class CourseRepoImpl implements ICourseRepo {
     @Override
     public boolean deleteCourse(int id) {
         if (selectCourse(id) ==  null) {
-            return false;
-        }
+        return false;
+    }
         Connection connection = BaseRepository.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_COURSE);

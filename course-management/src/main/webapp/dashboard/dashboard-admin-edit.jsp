@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="row my-5 content-edit-info ">
-                    <form action="/dashboard/update" class="edit-user-inf my-4 text-start" method="post">
+                    <form action="/dashboard/member/edit" class="edit-user-inf my-4 text-start" method="post">
                         <div class="edit-header">
                             <div class="avatar col-4">
                                 <img src="${req.requestURI}/public/image/ava.png" alt="ava"/> <br>
