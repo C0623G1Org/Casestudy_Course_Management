@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="row my-5 content-edit-info ">
-                    <form action="/dashboard/update" class="edit-user-inf my-4 text-start" method="post">
+                    <form action="/dashboard/member/edit" class="edit-user-inf my-4 text-start" method="post">
                         <div class="edit-header">
                             <div class="avatar col-4">
                                 <img src="${req.requestURI}/public/image/ava.png" alt="ava"/> <br>
@@ -64,7 +64,7 @@
                                             <span>Edit</span>
                                         </label>
                                     </div>
-                                    <input type="text" id="name"  name="fullName" value="${user.getFullName()}">
+                                    <input class="form-control" type="text" id="name"  name="fullName" value="${user.getFullName()}">
                                 </div>
 
                                 <div class="edit-inf col-12">
@@ -78,7 +78,7 @@
                                             <span>Edit</span>
                                         </label>
                                     </div>
-                                    <input type="text" id="email" name="email" value="${user.getEmail()}">
+                                    <input class="form-control" type="text" id="email" name="email" value="${user.getEmail()}">
                                 </div>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                                     <i class='bx bxs-phone-call' style='color:#5585fd'></i>
                                     <span>Số điện thoại</span>
                                 </label>
-                                <input type="text" id="phone" name="phone" value="${user.getPhone()}">
+                                <input class="form-control" type="text" id="phone" name="phone" value="${user.getPhone()}">
                             </div>
                             <div class="edit-phone">
                                 <i class='bx bxs-id-card' style='color:#5585fd'></i>
@@ -105,14 +105,14 @@
                                     <i class='bx bxs-id-card' style='color:#5585fd'></i>
                                     <span>Căn cước công dân</span>
                                 </label>
-                                <input type="text" id="id_card" name="idCard" value="${user.getIdCard()}">
+                                <input class="form-control" type="text" id="id_card" name="idCard" value="${user.getIdCard()}">
                             </div>
                             <div class="edit-birthday">
                                 <label class="lb" for="birthday">
                                     <i class='bx bxs-cake' style='color:#5585fd'></i>
                                     <span>Ngày sinh</span>
                                 </label>
-                                <input type="date" id="birthday" name="birthday" value="${user.getBirthday()}">
+                                <input class="form-control" type="date" id="birthday" name="birthday" value="${user.getBirthday()}">
                             </div>
                         </div>
                         <div class="save">
