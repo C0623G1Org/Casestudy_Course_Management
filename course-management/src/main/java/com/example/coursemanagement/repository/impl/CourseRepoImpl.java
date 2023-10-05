@@ -13,6 +13,7 @@ public class CourseRepoImpl implements ICourseRepo {
 
     private final static String SELECT = "SELECT * FROM courses";
     private final static String SELECT_BY_ID = "SELECT * FROM courses WHERE course_id = ?;";
+    private final static String DELETE_COURSE = "DELETE FROM courses WHERE course_id = ?;";
 
     private final static String UPDATE_COURSE = "UPDATE courses SET course_name = ?, short_description = ?, price =?, knowledge =?, requirements =?, instructor =?, course_inclusion =?, course_level_id =? WHERE course_id = ?;";
     private final static String INSERT_COURSE = "INSERT INTO courses (course_name, short_description, price, knowledge, requirements, instructor , course_inclusion, course_level_id) VALUES (?,?,?,?,?,?,?,?);";
@@ -103,7 +104,20 @@ public class CourseRepoImpl implements ICourseRepo {
 
     @Override
     public boolean deleteCourse(int id) {
-        return false;
+        if (selectCourse(id) ==  null) {
+            return false;
+        }
+        Connection connection = BaseRepository.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(DELETE_COURSE);
+            preparedStatement.setInt(1,id);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return true;
     }
 
     @Override
