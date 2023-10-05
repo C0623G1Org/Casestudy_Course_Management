@@ -27,6 +27,7 @@ import java.util.List;
         value = {"/dashboard",
                 "/dashboard/course",
                 "/dashboard/course/add",
+                "/dashboard/course/edit",
                 "/dashboard/course/content",
                 "/dashboard/course/content/detail/add",
                 "/dashboard/course/content/detail/edit",
@@ -69,6 +70,8 @@ public class DashboardServlet extends HttpServlet {
                     showPageManageMember(request, response, user);
                 } else if (url.endsWith("/dashboard/course/add")) {
                     showFormAddCourse(request,response);
+                } else if (url.endsWith("/dashboard/course/edit")) {
+                    showFormEditCourse(request,response);
                 } else if (url.endsWith("/dashboard/course")) {
                     showPageManageCourse(request, response, user);
                 } else if (url.endsWith("/dashboard/course/content")) {
@@ -94,6 +97,22 @@ public class DashboardServlet extends HttpServlet {
                     getCourseUserBuy(request, response, user);
                 }
             }
+        }
+    }
+
+    private void showFormEditCourse(HttpServletRequest request, HttpServletResponse response) {
+        List<CourseCategory> categoryList = levelService.showListE();
+        int idCourse = Integer.parseInt(request.getParameter("id"));
+        Course course = courseService.selectCourse(idCourse);
+        request.setAttribute("categoryList",categoryList);
+        request.setAttribute("course",course);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/course-content/edit-course.jsp");
+        try {
+            requestDispatcher.forward(request,response);
+        } catch (ServletException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -188,6 +207,8 @@ public class DashboardServlet extends HttpServlet {
                     }
                 } else if (url.endsWith("/dashboard/course/add")) {
                         addCourseToDb(request,response);
+                } else if (url.endsWith("/dashboard/course/edit")) {
+
                 }
             } else {
                 String url = request.getRequestURI();

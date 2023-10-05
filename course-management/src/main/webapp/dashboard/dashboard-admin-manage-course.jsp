@@ -60,7 +60,7 @@
                                         <td>${courses.getPrice()}</td>
                                         <td class="action-course d-flex justify-content-between">
                                                 <a role="button" class="btn btn-primary learn btn-content mb-1" href="/course/detail?id=${courses.getId()}">Xem</a>
-                                                <a role="button" class="btn btn-primary edit btn-content mb-1" href="#">Sửa</a>
+                                                <a role="button" class="btn btn-primary edit btn-content mb-1" href="/dashboard/course/edit?id=${courses.getId()}">Sửa</a>
                                                 <a role="button" class="btn btn-primary delete btn-content mb-1" href="#">Xóa</a>
                                         </td>
                                     </tr>
