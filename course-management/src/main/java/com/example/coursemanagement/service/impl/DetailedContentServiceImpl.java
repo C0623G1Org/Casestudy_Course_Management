@@ -16,7 +16,7 @@ public class DetailedContentServiceImpl implements ICourseDetailContentService {
 
     @Override
     public void saveE(CourseDetailedContent courseDetailedContent) {
-
+        courseDetailedContentIRepository.saveE(courseDetailedContent);
     }
 
     @Override
@@ -26,12 +26,12 @@ public class DetailedContentServiceImpl implements ICourseDetailContentService {
 
     @Override
     public boolean deleteE(int id) {
-        return false;
+        return courseDetailedContentIRepository.deleteE(id);
     }
 
     @Override
-    public boolean updateE(int id, CourseDetailedContent course) {
-        return false;
+    public boolean updateE(int id, CourseDetailedContent courseDetail) {
+        return courseDetailedContentIRepository.updateE(id,courseDetail);
     }
 
     @Override

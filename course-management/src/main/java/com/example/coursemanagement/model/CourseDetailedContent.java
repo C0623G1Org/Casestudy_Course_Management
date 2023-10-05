@@ -25,6 +25,13 @@ public class CourseDetailedContent {
         this.courseContentTypeId = courseContentTypeId;
     }
 
+    public CourseDetailedContent(String title, String content, String idVideo, int courseContentTypeId) {
+        this.title = title;
+        this.content = content;
+        this.idVideo = idVideo;
+        this.courseContentTypeId = courseContentTypeId;
+    }
+
     public int getId() {
         return id;
     }
@@ -71,17 +78,5 @@ public class CourseDetailedContent {
 
     public void setCourseContentTypeId(int courseContentTypeId) {
         this.courseContentTypeId = courseContentTypeId;
-    }
-
-    @Override
-    public String toString() {
-        return "CourseDetailedContent{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                ", idVideo='" + idVideo + '\'' +
-                ", courseContentId=" + courseContentId +
-                ", courseContentTypeId=" + courseContentTypeId +
-                '}';
     }
 }

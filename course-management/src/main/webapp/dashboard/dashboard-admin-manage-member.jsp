@@ -55,14 +55,16 @@
                                     <td>
                                         <div class="row">
                                             <div class="col-4 button-add-update-delete">
-                                                <a role="button" class="btn btn-success" href="/dashboard/member/view?id=${user.getId()}"><i class="fa-solid fa-pen"></i> Xem</a>
+                                                <a role="button" class="btn btn-outline-success" href="/dashboard/member/view?id=${user.getId()}"><i class="fa-solid fa-pen"></i> Xem</a>
                                             </div>
                                             <div class="col-4 button-add-update-delete">
-                                                <a role="button" class="btn btn-warning" href="/dashboard/member/edit?id=${user.getId()}"><i class="fa-solid fa-pen"></i> Sửa</a>
+                                                <a role="button" class="btn btn-outline-warning" href="/dashboard/member/edit?id=${user.getId()}"><i class="fa-solid fa-pen"></i> Sửa</a>
                                             </div>
                                             <div class="col-4 button-add-update-delete">
-                                                <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i>Xóa</button>
+                                                <a role="button" class="btn btn-outline-danger" onclick="sendInforToModal('${user.getId()}','${user.getFullName()}')"
+                                                   data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-pen"></i> Xóa </a>
                                             </div>
+
                                         </div>
                                     </td>
                                 </tr>
@@ -77,4 +79,29 @@
         </div>
     </div>
 </section>
+<div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Thông báo</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Bạn có chắc chắn muốn xóa <span class="text-danger" id="nameDelete"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <a role="button" class="btn btn-outline-info" href="/dashboard/member">NO</a>
+                    <a role="button" class="btn btn-outline-danger" id="deletedMemberId" >YES</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function sendInforToModal(id, name) {
+            document.getElementById("nameDelete").innerText = name;
+            document.getElementById("deletedMemberId").setAttribute("href", "/dashboard/member/delete?id=" + id);
+        }
+    </script>
+</div>
 <c:import url="footer-dashboard.jsp"></c:import>

@@ -10,8 +10,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class CoursePurchaseRepoImpl implements ICoursePurchaseRepo {
-    private final static String SELECT_BY_ID = "SELECT course_id, course_name, course_description, price" +
-            " FROM course WHERE course_id = ?;";
+    private final static String SELECT_BY_ID = "SELECT course_id, course_name, short_description, price \n" +
+            " FROM courses WHERE course_id = ?;";
 
     @Override
     public Course displayCourse(int id) {
@@ -24,15 +24,16 @@ public class CoursePurchaseRepoImpl implements ICoursePurchaseRepo {
             if (resultSet.next()) {
                 int course_id = resultSet.getInt("course_id");
                 String name = resultSet.getString("course_name");
-                String description = resultSet.getString("course_description");
+                String description = resultSet.getString("short_description");
                 double price = resultSet.getDouble("price");
                 course = new Course(course_id,name,description,price);
             }
-            resultSet.close();
+//            resultSet.close();
             preparedStatement.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return course;
     }
+
 }

@@ -1,57 +1,87 @@
 package com.example.coursemanagement.model;
 
 public class CourseOrder {
-    private int order_id;
-    private String order_date;
-    private double order_price;
-    private int user_id;
-    private int course_id;
+    private int orderId;
+    private String orderDate;
+    private double orderPrice;
+    private int userId;
+    private int courseId;
 
-    public CourseOrder(int order_id, String order_date, double order_price, int user_id, int course_id) {
-        this.order_id = order_id;
-        this.order_date = order_date;
-        this.order_price = order_price;
-        this.user_id = user_id;
-        this.course_id = course_id;
+    private double orderCode;
+
+    private String status;
+
+    public CourseOrder(int orderId, String orderDate, double orderPrice, int userId, int courseId, double orderCode, String status) {
+        this.orderId = orderId;
+        this.orderDate = orderDate;
+        this.orderPrice = orderPrice;
+        this.userId = userId;
+        this.courseId = courseId;
+        this.orderCode = orderCode;
+        this.status = status;
     }
 
-    public int getOrder_id() {
-        return order_id;
+    public CourseOrder(int orderId, String orderDate, double orderPrice, int userId, int courseId) {
+        this.orderId = orderId;
+        this.orderDate = orderDate;
+        this.orderPrice = orderPrice;
+        this.userId = userId;
+        this.courseId = courseId;
     }
 
-    public void setOrder_id(int order_id) {
-        this.order_id = order_id;
+    public int getOrderId() {
+        return orderId;
     }
 
-    public String getOrder_date() {
-        return order_date;
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
     }
 
-    public void setOrder_date(String order_date) {
-        this.order_date = order_date;
+    public String getOrderDate() {
+        return orderDate;
     }
 
-    public double getOrder_price() {
-        return order_price;
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
     }
 
-    public void setOrder_price(double order_price) {
-        this.order_price = order_price;
+    public double getOrderPrice() {
+        return orderPrice;
     }
 
-    public int getUser_id() {
-        return user_id;
+    public void setOrderPrice(double orderPrice) {
+        this.orderPrice = orderPrice;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public int getUserId() {
+        return userId;
     }
 
-    public int getCourse_id() {
-        return course_id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public void setCourse_id(int course_id) {
-        this.course_id = course_id;
+    public int getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(int courseId) {
+        this.courseId = courseId;
+    }
+
+    public double getOrderCode() {
+        return orderCode;
+    }
+
+    public void setOrderCode(double orderCode) {
+        this.orderCode = orderCode;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

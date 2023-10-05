@@ -29,9 +29,7 @@
                 </div>
 
                 <div class="row my-5 content-edit-info ">
-                    <form action="#" class="edit-user-inf my-4 text-start" method="post">
-
-
+                    <form action="/dashboard/update" class="edit-user-inf my-4 text-start" method="post">
                         <div class="edit-header">
                             <div class="avatar col-4">
                                 <img src="${req.requestURI}/public/image/ava.png" alt="ava"/> <br>
@@ -52,7 +50,7 @@
                                             <span>Edit</span>
                                         </label>
                                     </div>
-                                    <input type="text" id="user_name" name="userName" value="${user.getUsername()}">
+                                    <input class="form-control" placeholder=" Nhập tên" type="text" id="user_name" name="userName" value="${user.getUsername()}">
                                 </div>
 
                                 <div class="edit-inf col-12">

@@ -34,7 +34,7 @@
                                 <div class="col-md-8 ml-auto">
                                     <div class="category">
                                             <c:forEach items="${categoryList}" var="category">
-                                            <c:if test="${category.getId() == courseList.getCategoryId()}">
+                                            <c:if test="${category.getId() == courseList.getCourseLevelId()}">
                                                 <p class="text-right">${category.getName()}</p>
                                             </c:if>
                                         </c:forEach>                                        </p>
