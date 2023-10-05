@@ -15,11 +15,8 @@ $(document).ready(function () {
                 'emailSignUp': emailSignUp
             },
             success: function (data) {
-                debugger;
                 if (data !== "") {
                     $('#msg-signup').html("<div class='alert alert-danger' role='alert'>" + data + "</div>");
-                } else {
-                    window.location.href = "/dashboard";
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
