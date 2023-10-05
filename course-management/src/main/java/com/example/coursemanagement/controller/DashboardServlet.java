@@ -2,10 +2,14 @@ package com.example.coursemanagement.controller;
 
 import com.example.coursemanagement.model.*;
 import com.example.coursemanagement.repository.IContentType;
-import com.example.coursemanagement.service.*;
+import com.example.coursemanagement.service.ICourseContentService;
+import com.example.coursemanagement.service.ICourseDetailContentService;
 import com.example.coursemanagement.model.Course;
 import com.example.coursemanagement.model.CourseOrderInf;
 import com.example.coursemanagement.model.User;
+import com.example.coursemanagement.service.ICourseOrderService;
+import com.example.coursemanagement.service.ICourseService;
+import com.example.coursemanagement.service.IUserService;
 import com.example.coursemanagement.service.impl.CourseOrderServiceImpl;
 import com.example.coursemanagement.service.impl.CourseServiceImpl;
 import com.example.coursemanagement.service.impl.UserServiceImpl;
@@ -97,6 +101,7 @@ public class DashboardServlet extends HttpServlet {
                     getListCourseAdmin(request, response, user);
                 }
             } else {
+                User userGet = userService.selectByUsername(user.getUsername());
                 String url = request.getRequestURI();
                 if (url.endsWith("/dashboard/update")) {
                     showPageUpdateUser(request, response, user);
@@ -181,6 +186,8 @@ public class DashboardServlet extends HttpServlet {
     }
 
     private void showPageManageOrder(HttpServletRequest request, HttpServletResponse response, User user) {
+        List<CourseOrderInf> courseOrderInfList = courseOrderService.showCourseOrder();
+        request.setAttribute("courseOrderInfList", courseOrderInfList);
         request.setAttribute("user", user);
         dispatcherData(request, response, "/dashboard/dashboard-admin-manage-order.jsp");
     }
@@ -274,6 +281,18 @@ public class DashboardServlet extends HttpServlet {
 
     }
 
+    private void addCourseContentToDb(HttpServletRequest request, HttpServletResponse response) {
+        int idCourse = Integer.parseInt(request.getParameter("id-course"));
+        String nameContent = request.getParameter("name-content");
+        CourseContent courseContent = new CourseContent(nameContent,idCourse);
+        contentService.saveE(courseContent);
+        try {
+            response.sendRedirect("/dashboard/course/edit?id="+idCourse);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private void addCourseToDb(HttpServletRequest request, HttpServletResponse response) {
         String courseName = request.getParameter("name-course");
         String descriptionCourse = request.getParameter("description-course");
@@ -283,7 +302,7 @@ public class DashboardServlet extends HttpServlet {
         String instructor = request.getParameter("instructor");
         String courseInclusion = request.getParameter("course-inclusion");
         int courseLevel = Integer.parseInt(request.getParameter("course-level"));
-        Course course = new Course(courseName,descriptionCourse,instructor,priceCourse,courseLevel,knowledge,requirements,courseInclusion);
+        Course course = new Course(courseName, descriptionCourse, instructor, priceCourse, courseLevel, knowledge, requirements, courseInclusion);
         courseService.saveCourse(course);
         try {
             response.sendRedirect("/dashboard/course");
