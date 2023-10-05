@@ -62,7 +62,7 @@
 
                         <div class="mb-3">
                             <label for="instructor" class="form-label"><i class="fa-solid fa-book"></i> Tác giả</label>
-                            <input type="text" class="form-control" name="instructor" id="instructor">
+                            <input type="number" class="form-control" name="instructor" id="instructor">
                         </div>
 
                         <div class="mb-3">
