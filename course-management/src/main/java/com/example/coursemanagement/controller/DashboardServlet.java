@@ -76,7 +76,7 @@ public class DashboardServlet extends HttpServlet {
                 } else if (url.endsWith("/dashboard/course/add")) {
                     showFormAddCourse(request, response);
                 } else if (url.endsWith("/dashboard/course/edit")) {
-                    showFormEditCourse(request, response);
+                    showFormEditCourse(request,response);
                 } else if (url.endsWith("/dashboard/course")) {
                     showPageManageCourse(request, response, user);
                 } else if (url.endsWith("/dashboard/course/content/add")) {
