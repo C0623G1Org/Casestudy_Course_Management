@@ -6,6 +6,9 @@ import com.example.coursemanagement.service.*;
 import com.example.coursemanagement.model.Course;
 import com.example.coursemanagement.model.CourseOrderInf;
 import com.example.coursemanagement.model.User;
+import com.example.coursemanagement.service.ICourseOrderService;
+import com.example.coursemanagement.service.ICourseService;
+import com.example.coursemanagement.service.IUserService;
 import com.example.coursemanagement.service.impl.CourseOrderServiceImpl;
 import com.example.coursemanagement.service.impl.CourseServiceImpl;
 import com.example.coursemanagement.service.impl.UserServiceImpl;
@@ -94,6 +97,7 @@ public class DashboardServlet extends HttpServlet {
                     getListCourseAdmin(request, response, user);
                 }
             } else {
+                User userGet = userService.selectByUsername(user.getUsername());
                 String url = request.getRequestURI();
                 if (url.endsWith("/dashboard/update")) {
                     showPageUpdateUser(request, response, user);
@@ -199,9 +203,10 @@ public class DashboardServlet extends HttpServlet {
     }
 
     private void getCourseUserBuy(HttpServletRequest request, HttpServletResponse response, User user) {
-        int id = user.getId();
-        List<Course> listCourseUserBuy = courseService.selectByUserBuy(id);
-        request.setAttribute("user", user);
+        String username = user.getUsername();
+        User user1 = userService.selectByUsername(username);
+        List<Course> listCourseUserBuy = courseService.selectByUserBuy(user1.getId());
+        request.setAttribute("user1", user1);
         request.setAttribute("listCourseUserBuy", listCourseUserBuy);
         dispatcherData(request, response, "/dashboard/dashboard-user.jsp");
     }
@@ -233,9 +238,9 @@ public class DashboardServlet extends HttpServlet {
                     addDetailContentToDb(request, response);
                 } else if (url.endsWith("/dashboard/course/content/detail/edit")) {
                     updateDetailContentToDb(request, response);
-                } else if (url.endsWith("/dashboard/member/edit")) {
+                } else if(url.endsWith("/dashboard/member/edit")){
                     try {
-                        updateMember(request, response, user);
+                        updateMember(request,response,user);
                     } catch (ParseException e) {
                         System.out.println(e.getMessage());
                     }
@@ -439,9 +444,35 @@ public class DashboardServlet extends HttpServlet {
     private void getListCourseAdmin(HttpServletRequest request, HttpServletResponse response, User user) {
         List<Course> courseList = courseService.showList();
         request.setAttribute("courseList", courseList);
-        List<CourseOrderInf> courseOrderInfList = courseOrderService.showCourseOrder();
-        request.setAttribute("courseOrderInfList", courseOrderInfList);
+        List<CourseOrderInf> courseOrderInfs = courseOrderService.showCourseOrder();
+        request.setAttribute("courseOrderInfs", courseOrderInfs);
         request.setAttribute("user", user);
         dispatcherData(request, response, "/dashboard/dashboard-admin.jsp");
+    }
+
+    private void changePassWord(HttpServletRequest request,HttpServletResponse response){
+        String oldPassWord=request.getParameter("oldPassWord");
+        int id= Integer.parseInt(request.getParameter("id"));
+        User user=userService.selectE(id);
+        String alert = null;
+        String sucsess = null;
+        if (oldPassWord.equals(user.getPassword())){
+            String newPassWord=request.getParameter("newPassword");
+            String againNewPassWord=request.getParameter("againNewPassword");
+            if(newPassWord.equals(againNewPassWord)){
+                userService.changePassWord(user, againNewPassWord);
+                sucsess = "Thay đổi mật khẩu thành công";
+                request.setAttribute("sucsess",sucsess);
+                showPageUpdatePassword(request,response,user);
+            } else {
+                alert = "Mật Khẩu nhập lại không đúng";
+                request.setAttribute("alert", alert);
+                showPageUpdatePassword(request,response,user);
+            }
+        } else {
+            alert = "Mật khẩu cũ không đúng";
+            request.setAttribute("alert",alert);
+            showPageUpdatePassword(request,response,user);
+        }
     }
 }
