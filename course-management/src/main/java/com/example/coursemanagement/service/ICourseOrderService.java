@@ -10,4 +10,5 @@ public interface ICourseOrderService {
 
     CourseOrderInf showDetailOrderById(int id);
 
+    void createOrder (CourseOrder courseOrder);
 }

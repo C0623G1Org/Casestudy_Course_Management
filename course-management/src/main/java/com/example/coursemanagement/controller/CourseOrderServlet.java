@@ -62,4 +62,9 @@ public class CourseOrderServlet extends HttpServlet {
             throws ServletException, IOException {
 
     }
+
+    private void createOrder (HttpServletRequest request, HttpServletResponse response) {
+    }
+
+
 }
