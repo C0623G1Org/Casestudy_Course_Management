@@ -105,17 +105,18 @@
 
                 <div class="header-content my-5">
                     <div class="row content-oder-detail-1" style="padding-bottom: 10px; padding-left: 30px">
-                        <h4 style="font-weight: bold">Đơn đặt mua khóa học #1</h4>
-                        <p>Chi tiết về đơn đặt mua khóa học #1 </p>
-                        <p> <i class="fa-solid fa-check" style="color: #146c43"></i> Đã hoàn thành &emsp;&emsp;<i class="fa-solid fa-pen" style="color: #0a58ca;height: 30px"></i> edit</p>
+                        <h4 style="font-weight: bold">Đơn đặt mua khóa học ${courseOrderInf.getOrderCode()}</h4>
+                        <p>Chi tiết về đơn đặt mua khóa học ${courseOrderInf.getOrderCode()} </p>
+<%--                        <input type="hidden" name="orderId" value="${courseOrderInf.getOrderId()}">--%>
+                        <p> <i class="fa-solid fa-check" style="color: #146c43"></i>${courseOrderInf.getStatus()}<i class="fa-solid fa-pen" style="color: #0a58ca;height: 30px"></i> edit</p>
                     </div>
                 </div>
                 <div class="row content-oder-detain-1" style="padding-left: 30px">
                     <div class="row content-oder-detail-1" style="padding-bottom: 30px; padding-left: 30px">
                         <h5 style="font-weight: bold;padding-bottom: 20px">Thông tin khách hàng</h5>
-                        <p style="padding-left: 20px"><i class="fa-solid fa-user" style="color: #0a58ca"></i>  Họ tên khách hàng: <b>Trần Thị Vân Loan</b></p>
-                        <p style="padding-left: 20px"><i class="fa-solid fa-phone" style="color: #0a58ca"></i>  Số điện thoại khách hàng: <b> 0123 456 789</b></p>
-                        <p style="padding-left: 20px"><i class="fa-solid fa-envelope"style="color: #0a58ca"></i>  Email khách hàng: <b>loanttv@ltta.co</b></p>
+                        <p style="padding-left: 20px"><i class="fa-solid fa-user" style="color: #0a58ca"></i>  Họ tên khách hàng: <b>${courseOrderInf.getFullName()}</b></p>
+                        <p style="padding-left: 20px"><i class="fa-solid fa-phone" style="color: #0a58ca"></i>  Số điện thoại khách hàng: <b> ${courseOrderInf.getPhone()}</b></p>
+                        <p style="padding-left: 20px"><i class="fa-solid fa-envelope"style="color: #0a58ca"></i>  Email khách hàng: <b>${courseOrderInf.getEmail()}</b></p>
                     </div>
                 </div>
                 <div class="row content-oder-detain-2" style="padding-left: 30px">
@@ -126,11 +127,11 @@
                         <img src="../public/image/Rectangle 52.png" height="100" width="200">
                     </div>
                     <div class="col-lg-5">
-                        <h5 style="font-weight: bold">Javascript Foudatament</h5>
-                        <p>JavaScript là ngôn ngữ lập trình phía client, được sử dụng chủ yếu trong các ứng dụng web để tạo ra các hiệu ứng tương tác trên trang web</p>
+                        <h5 style="font-weight: bold">${courseOrderInf.getCourseName()}</h5>
+                        <p>${courseOrderInf.getShorDescription()}</p>
                     </div>
                     <div class="col-lg-4">
-                        <h5 style="text-align: right;font-weight: bold">1.200.000 VNĐ</h5>
+                        <h5 style="text-align: right;font-weight: bold">${courseOrderInf.getPrice()}</h5>
                     </div>
                     <hr>
                 </div>
@@ -147,12 +148,13 @@
                         <h5 style="padding-left: 30px; font-weight: bold" >Total</h5>
                     </div>
                     <div class="col-lg-2">
-                        <h6 style="font-weight: bold">1.080.000 VNĐ</h6>
+                        <h6 style="font-weight: bold">${courseOrderInf.getOrderPrice()}</h6>
                     </div>
                 </div>
                 <div class="row content-oder-detain-6" style="padding-left: 30px;padding-bottom: 30px">
                     <i style="padding-left: 30px">Khách hàng thanh toán qua chuyển khoản ngân hàng</i>
                 </div>
+
             </div>
         </div>
     </div>

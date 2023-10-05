@@ -33,7 +33,7 @@ public class CourseOrderInf {
     }
 
     public CourseOrderInf(int orderId, double orderPrice, int orderCode, String status, String fullName,
-                          String courseName, int phone, String email, double price, String shorDescription) {
+                          String courseName, int phone, String email, double price, String shortDescription) {
         this.orderId = orderId;
         this.orderPrice = orderPrice;
         this.orderCode = orderCode;
@@ -43,7 +43,7 @@ public class CourseOrderInf {
         this.phone = phone;
         this.email = email;
         this.price = price;
-        this.shorDescription = shorDescription;
+        this.shorDescription = shortDescription;
     }
 
     public int getOrderCode() {
@@ -93,4 +93,37 @@ public class CourseOrderInf {
     public void setOrderPrice(double orderPrice) {
         this.orderPrice = orderPrice;
     }
+
+    public int getPhone() {
+        return phone;
+    }
+
+    public void setPhone(int phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getShorDescription() {
+        return shorDescription;
+    }
+
+    public void setShorDescription(String shorDescription) {
+        this.shorDescription = shorDescription;
+    }
 }
+
