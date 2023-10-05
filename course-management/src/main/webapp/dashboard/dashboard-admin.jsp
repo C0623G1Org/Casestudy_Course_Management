@@ -123,9 +123,9 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <c:forEach items="${courseOrderInfs}" var="order">
+                            <c:forEach items="${courseOrderInfList}" var="order">
                                 <tr>
-                                    <th scope="row"><a href="course-order-servlet?action=show_detail_order&id=${order.getOrderId}">${order.getOrderCode()}</a></th>
+                                    <th scope="row"><a href="/course-order-servlet?action=show_detail_order&orderId=${order.getOrderId()}">${order.getOrderCode()}</a></th>
                                     <td class="done">
                                         <div class="done-content"><i class="fa-solid fa-check"></i>${order.getStatus()}</div>
                                     </td>

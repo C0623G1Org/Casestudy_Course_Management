@@ -52,23 +52,27 @@ public class CourseOrderRepoImpl implements ICourseOrderRepo {
     @Override
     public CourseOrderInf showDetailOrderById(int id) {
         Connection connection = BaseRepository.getConnection();
-        CourseOrderInf courseOrderInf;
+        CourseOrderInf courseOrderInf = null;
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ORDER_BY_ID);
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                int orderId = resultSet.getInt("order_id");
+//              int orderId = resultSet.getInt("order_id");
                 double orderPrice = resultSet.getDouble("order_price");
                 int orderCode = resultSet.getInt("order_code");
                 String status = resultSet.getString("status");
                 String fullName = resultSet.getString("full_name");
                 String courseName = resultSet.getString("course_name");
-
+                int phone = resultSet.getInt("phone");
+                String email = resultSet.getString("email");
+                double price = resultSet.getDouble("price");
+                String shortDescription = resultSet.getString("short_description");
+                courseOrderInf = new CourseOrderInf(id, orderPrice, orderCode, status, fullName, courseName, phone, email, price, shortDescription);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return null;
+        return courseOrderInf;
     }
 }
