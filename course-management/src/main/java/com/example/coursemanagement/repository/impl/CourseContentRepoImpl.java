@@ -14,6 +14,7 @@ public class CourseContentRepoImpl implements ICourseContentRepo {
     private final static String DELETE_BY_ID = "DELETE FROM course_content where course_content_id = ?;";
     private final static String INSERT_CONTENT = "INSERT INTO course_content(course_content_name,course_id) VALUES (?,?);";
     private final static String SELECT_BY_COURSE_ID = "SELECT * FROM course_content WHERE course_id = ?;";
+    private final static String UPDATE_CONTENT = "UPDATE course_content SET course_content_name = ?, course_id = ? WHERE course_content_id = ?;";
     private final static String SELECT_BY_DETAIL_ID = "SELECT cc.* FROM course_content cc JOIN detailed_course_content dc ON cc.course_content_id = dc.course_content_id WHERE dc.course_content_id = ?;";
 
     @Override
@@ -94,8 +95,23 @@ public class CourseContentRepoImpl implements ICourseContentRepo {
     }
 
     @Override
-    public boolean updateE(int id, CourseContent course) {
-        return false;
+    public boolean updateE(int id, CourseContent courseContent) {
+        if (selectE(id) ==  null) {
+            return false;
+        }
+        Connection connection = BaseRepository.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_CONTENT);
+            preparedStatement.setString(1,courseContent.getName());
+            preparedStatement.setInt(2,courseContent.getCourseId());
+            preparedStatement.setInt(3,id);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return true;
     }
 
     @Override

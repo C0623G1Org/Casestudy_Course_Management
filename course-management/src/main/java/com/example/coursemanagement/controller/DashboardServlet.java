@@ -2,8 +2,7 @@ package com.example.coursemanagement.controller;
 
 import com.example.coursemanagement.model.*;
 import com.example.coursemanagement.repository.IContentType;
-import com.example.coursemanagement.service.ICourseContentService;
-import com.example.coursemanagement.service.ICourseDetailContentService;
+import com.example.coursemanagement.service.*;
 import com.example.coursemanagement.model.Course;
 import com.example.coursemanagement.model.CourseOrderInf;
 import com.example.coursemanagement.model.User;
@@ -17,10 +16,6 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.sql.Date;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @WebServlet(
@@ -32,6 +27,7 @@ import java.util.List;
                 "/dashboard/course/delete",
                 "/dashboard/course/content",
                 "/dashboard/course/content/add",
+                "/dashboard/course/content/edit",
                 "/dashboard/course/content/delete",
                 "/dashboard/course/content/detail/add",
                 "/dashboard/course/content/detail/edit",
@@ -253,6 +249,8 @@ public class DashboardServlet extends HttpServlet {
                         updateCourseToDB(request,response);
                 } else if (url.endsWith("/dashboard/course/content/add")) {
                     addCourseContentToDb(request,response);
+                } else if (url.endsWith("/dashboard/course/content/edit")){
+                    updateCourseContentToDb(request,response);
                 }
             } else {
                 String url = request.getRequestURI();
@@ -264,6 +262,20 @@ public class DashboardServlet extends HttpServlet {
                     }
                 }
             }
+        }
+    }
+
+    private void updateCourseContentToDb(HttpServletRequest request, HttpServletResponse response) {
+        int idContent = Integer.parseInt(request.getParameter("id"));
+        int idCourse = Integer.parseInt(request.getParameter("id-course"));
+        String name =  request.getParameter("name-content");
+        String description =  request.getParameter("description");
+        CourseContent courseContent = new CourseContent(name,idCourse);
+        contentService.updateE(idContent,courseContent);
+        try {
+            response.sendRedirect("/dashboard/course/content?id="+idContent);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
