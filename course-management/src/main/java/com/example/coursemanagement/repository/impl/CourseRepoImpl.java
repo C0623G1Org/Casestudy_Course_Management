@@ -18,7 +18,7 @@ public class CourseRepoImpl implements ICourseRepo {
     private final static String UPDATE_COURSE = "UPDATE courses SET course_name = ?, short_description = ?, price =?, knowledge =?, requirements =?, instructor =?, course_inclusion =?, course_level_id =? WHERE course_id = ?;";
     private final static String INSERT_COURSE = "INSERT INTO courses (course_name, short_description, price, knowledge, requirements, instructor , course_inclusion, course_level_id) VALUES (?,?,?,?,?,?,?,?);";
     private final static String SELECT_FULL = "SELECT * FROM courses c JOIN course_content cct ON c.course_content_id = cct.course_content_id JOIN course_levels ccc ON c.course_level_id = ccc.course_level_id WHERE c.course_level_id = ?;";
-    private final static String SELECT_BY_USER_BY = "select c.* from courses c JOIN course_orders co ON c.course_id = co.course_id JOIN user u ON co.user_id = u.user_id WHERE u.user_id = ?;";
+    private final static String SELECT_BY_USER_BUY = "select c.* from courses c JOIN course_orders co ON c.course_id = co.course_id JOIN user u ON co.user_id = u.user_id WHERE u.user_id = ?;";
     @Override
     public List<Course> showList() {
         List<Course> courseList = new ArrayList<>();
@@ -157,7 +157,7 @@ public class CourseRepoImpl implements ICourseRepo {
         List<Course> courseList = new ArrayList<>();
         Connection connection = BaseRepository.getConnection();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BY_USER_BY);
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BY_USER_BUY);
             preparedStatement.setInt(1, idUser);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){

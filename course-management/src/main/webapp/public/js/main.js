@@ -19,7 +19,7 @@ $(document).ready(function () {
                 if (data !== "") {
                     $('#msg-signup').html("<div class='alert alert-danger' role='alert'>" + data + "</div>");
                 } else {
-                    window.location.href = "/dashboard";
+                    $('#msg-signup').html("<div class='alert alert-success' role='alert'> Đăng kí thành công !<br> vui lòng đăng nhập để tiếp tục </div>");
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {

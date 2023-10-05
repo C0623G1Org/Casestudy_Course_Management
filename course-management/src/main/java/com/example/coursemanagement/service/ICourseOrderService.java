@@ -11,4 +11,6 @@ public interface ICourseOrderService {
     CourseOrderInf showDetailOrderById(int id);
 
     void createOrder (CourseOrder courseOrder);
+    List<CourseOrder> selectByUserBuy(int idUser);
+    boolean checkIdBuyCourse(int idUser, int idCourse);
 }
