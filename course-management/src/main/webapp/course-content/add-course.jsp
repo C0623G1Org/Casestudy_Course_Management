@@ -71,7 +71,8 @@
                         </div>
 
                         <div class="mb-3">
-                            <select class="form-select" id="course-level" name="course-level">
+                            <label for="course-level" class="form-label"><i class="fa-solid fa-rectangle-list"></i> Course Level</label>
+                            <select class="form-select form-control" id="course-level" name="course-level">
                                 <c:forEach items="${categoryList}" var="categoryList" varStatus="loop">
                                     <option value="${categoryList.getId()}">${categoryList.getName()}</option>
                                 </c:forEach>

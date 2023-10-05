@@ -16,7 +16,7 @@ public class CourseContentServiceImpl implements ICourseContentService {
 
     @Override
     public void saveE(CourseContent courseContent) {
-
+        courseContentIRepository.saveE(courseContent);
     }
 
     @Override
@@ -26,7 +26,7 @@ public class CourseContentServiceImpl implements ICourseContentService {
 
     @Override
     public boolean deleteE(int id) {
-        return false;
+        return courseContentIRepository.deleteE(id);
     }
 
     @Override
