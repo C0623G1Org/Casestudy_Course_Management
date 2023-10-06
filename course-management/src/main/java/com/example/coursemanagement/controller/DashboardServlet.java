@@ -37,6 +37,7 @@ import java.util.Map;
                 "/dashboard/member",
                 "/dashboard/order",
                 "/dashboard/order/detail",
+                "/dashboard/order/delete",
                 "/dashboard/update",
                 "/dashboard/password",
                 "/dashboard/member/edit",
@@ -93,7 +94,9 @@ public class DashboardServlet extends HttpServlet {
                     deleteDetailContent(request, response);
                 } else if (url.endsWith("/dashboard/order/detail")) {
                     showDetailOrder(request,response);
-                }  else if (url.endsWith("/dashboard/order")) {
+                } else if (url.endsWith("/dashboard/order/delete")) {
+                    deleteOrder(request,response);
+                } else if (url.endsWith("/dashboard/order")) {
                     showPageManageOrder(request, response, user);
                 } else {
                     getListCourseAdmin(request, response, user);
@@ -117,6 +120,16 @@ public class DashboardServlet extends HttpServlet {
         request.setAttribute("order", order);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/detailed-course-order.jsp");
         requestDispatcher.forward(request, response);
+    }
+
+    private void deleteOrder(HttpServletRequest request, HttpServletResponse response) {
+        int orderId = Integer.parseInt(request.getParameter("id"));
+        courseOrderService.deleteOrder(orderId);
+        try {
+            response.sendRedirect("/dashboard/order");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void deleteContent(HttpServletRequest request, HttpServletResponse response) {

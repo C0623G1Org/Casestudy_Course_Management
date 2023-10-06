@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row hero-home">
       <div class="col-lg-6">
-        <h1 style="font-weight: 500">Trở thành lập trình viên chuyên nghiệp với LTTA</h1>
+        <h2>Trở thành lập trình viên chuyên nghiệp với LTTA</h2>
         <p>Cơ hội để trải nghiệm thực tế công việc của một lập trình viên, khởi đầu con đường lập trình chuyên nghiệp!</p>
         <p>Còn chần chờ gì nữa mà không tìm hiểu ngay!</p>
         <div class="row d-flex align-items-center">

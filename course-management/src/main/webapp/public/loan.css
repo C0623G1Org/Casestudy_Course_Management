@@ -281,6 +281,11 @@
     margin-top: 25px;
 }
 
+/*.col-md-3 img {*/
+/*    border-radius: 20px;*/
+/*}*/
+
+
 /*check-out page*/
 .status a button {
     font-weight: 500px;
@@ -304,4 +309,16 @@
     background-color: cornflowerblue;
 }
 
+/**/
+.col-md-3.course-avatar img {
+    border-radius: 20px;
+}
+
+tr.none-underline-code th a {
+    text-decoration: none;
+}
+
+.ava-border img {
+    border-radius: 20px;
+}
 

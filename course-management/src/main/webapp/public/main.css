@@ -58,7 +58,7 @@
 }
 
 .hero-home h2 {
-    font-size: 64px;
+    font-size: 55px;
     font-style: normal;
     font-weight: 700;
 }
@@ -831,4 +831,7 @@ form.check-out .item-order {
     height: 100px;
     margin-right: 10px;
     border-radius: 15px;
+}
+.row.question-course .accordion-body {
+    text-align: left;
 }
