@@ -52,7 +52,7 @@
 
                     <div class="row">
                         <h4 class="my-3"><i class="fa-solid fa-lightbulb"></i>Trạng thái</h4>
-                        <h1>${code}</h1>
+<%--                        <h1>${courseOrder.getStatus()}</h1>--%>
 
                     </div>
                 </div>
@@ -61,6 +61,10 @@
             <div class="col-8">
                 <div class="m-5" >
                     <img style="width: 100%" src="../public/image/Rectangle%20522.png"/>
+                    <div class="status">
+                    <a href="/checkout/success?id=${code}&course-id=${course.getId()}"><button type="submit" name="accept">Chấp nhận thanh toán</button></a>
+                    <a href="/checkout/cancel?id=${code}"><button type="submit" name="cancel">Hủy</button></a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -134,7 +134,7 @@
             <div class="card-body">
               <div class="row card-head">
                 <div class="col-md-4">
-                  <img src="../public/image/Rectangle 43.png">
+                  <img src="${courseList.getAvatar()}" class="card-img" alt="">
                 </div>
                 <div class="col-md-8 ml-auto">
                   <div class="category">
@@ -153,7 +153,7 @@
                 <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>
               </div>
               <div class="card-price">
-                <div class="price">${courseList.getPrice()}</div>
+                <div class="price">${courseList.getPrice()} VNĐ</div>
                   <%--                <a style="color: #FFFFFF" role="button" class="btn-login btn btn-primary" href="/course/id=${courseList.getId()}">Đăng kí</a>--%>
                 <a style="color: #FFFFFF" role="button" class="btn-login btn btn-primary" href="/course/detail?id=${courseList.getId()}">Đăng kí</a>
               </div>
