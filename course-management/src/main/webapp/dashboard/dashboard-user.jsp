@@ -19,7 +19,7 @@
                             <div class="card-body">
                                 <div class="row card-head">
                                     <div class="col-md-4">
-                                        <img src="${courseList.getAvatar()}">
+                                        <img src="${courseOrders.getCourse().getAvatar()}">
                                     </div>
                                     <div class="col-md-8 ml-auto">
                                         <div class="category">

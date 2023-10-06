@@ -57,7 +57,7 @@
     align-items: center;
 }
 
-.hero-home h1 {
+.hero-home h2 {
     font-size: 64px;
     font-style: normal;
     font-weight: 700;
@@ -743,7 +743,18 @@ a.btn.btn-primary.delete.btn-content {
 .col-3.using .title {
     margin: 0;
 }
+span.font-weight-bold {
+    font-weight: 700;
+}
 
+.time-buy p {
+    font-size: 14px;
+}
+p.name-display {
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+}
 /*check-out page*/
 .status a button {
     font-weight: 500;
@@ -757,15 +768,16 @@ a.btn.btn-primary.delete.btn-content {
 }
 
 .status {
-    padding:40px;
+    padding: 40px;
     text-align: center;
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
 }
 
 .status button:hover {
     background-color: cornflowerblue;
 }
+
 span.font-weight-bold {
     font-weight: 700;
 }
@@ -773,20 +785,24 @@ span.font-weight-bold {
 .time-buy p {
     font-size: 14px;
 }
+
 p.name-display {
     font-size: 15px;
     padding: 0;
     margin: 0;
 }
+
 form.check-out label {
     margin-bottom: 5px;
 }
+
 form.check-out .item-order {
     border-radius: 15px;
     background: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 112, 253, 0.22);
     padding: 30px 50px;
 }
+
 .status-order i {
     color: #fff;
 }
@@ -794,30 +810,141 @@ form.check-out .item-order {
 .status-order span {
     padding: 6px 15px;
 }
+
 .card-head img.card-img {
     width: 100px;
     height: 100px;
     border-radius: 15px;
     object-fit: cover;
 }
+
 .col-6.column-2 .content-1 img {
     width: 100%;
     height: 350px;
     border-radius: 15px;
 }
-.col-lg-9.content-dashboard .body-content .card-body .col-2 img {
+
+.col-lg-9.content-dashboard .body-content .card-body .col-2 img, .row.card-head img {
     width: 100%;
     height: 100px;
     border-radius: 15px;
     object-fit: cover;
 }
+
 .video-course.mb-3 img {
     width: 100%;
     border-radius: 15px;
 }
+
 .col-lg-9.box-item.d-flex.justify-content-around img {
     width: 200px;
     height: 100px;
     margin-right: 10px;
     border-radius: 15px;
+}
+
+.avatar.col-4 img {
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .col-lg-9.content-dashboard .body-content .card-body .col-2 img, .row.card-head img {
+        height: 300px;
+    }
+
+    .category, .feedback {
+        justify-content: unset;
+        margin-top: 10px;
+    }
+
+    .card-body .card-head h3 {
+        text-align: unset;
+    }
+
+    .card-price {
+        margin-top: 10px;
+    }
+    .card-course-home {
+        margin-bottom: 15px;
+    }
+
+    .read-more-home {
+        justify-content: center !important;
+    }
+
+    #feedback .row.card-head img {
+        text-align: center;
+        width: 50%;
+        height: auto;
+    }
+
+    .col-lg-3 {
+        width: 50%;
+    }
+
+    .card.text-bg-dark img {
+        height: 500px;
+        border-radius: 30px;
+    }
+
+    .card.text-bg-dark {
+        text-align: center;
+    }
+
+    .card.text-bg-dark ul.nav.nav-pills.menu-footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .hero-home .row.d-flex.align-items-center .col-sm-12 {
+        width: 100% !important;
+        text-align: center;
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .hero-home {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-home .row.d-flex.align-items-center .col-sm-12 {
+        width: 100% !important;
+        text-align: center;
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-home .d-flex.align-items-center {
+        width: 100%;
+    }
+
+    .hero-home .d-flex.align-items-center img {
+        width: 100%;
+    }
+
+    .hero-home .img-hero img {
+        max-width: 100%;
+    }
+
+    .row.my-5.justify-content-around .feature {
+        margin-bottom: 20px;
+    }
+
+    .row.question-course {
+        padding: 5px;
+    }
+    #row4Course {
+        text-align: center;
+    }
+
+    div#row1Course p.col-md-8.fs-5 {
+        font-size: 15px !important;
+    }
 }
