@@ -10,7 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b7fa4d5-6b60-40e8-94a6-bd99b53912e2" name="Changes" comment="khoi phuc file">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/buy-course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/buy-course.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -223,7 +222,6 @@
         </SHUTDOWN>
       </ConfigurationWrapper>
       <method v="2">
-        <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="Gradle : com.example : course-management-1.0-SNAPSHOT.war" />
         </option>
@@ -258,6 +256,7 @@
       <workItem from="1696468720422" duration="8216000" />
       <workItem from="1696497923274" duration="2961000" />
       <workItem from="1696507158959" duration="1179000" />
+      <workItem from="1696560923051" duration="82000" />
     </task>
     <task id="LOCAL-00001" summary="fix bugs">
       <created>1696417177332</created>
@@ -298,7 +297,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696560259774</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="khoi phuc file">
+      <option name="closed" value="true" />
+      <created>1696560956599</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696560956599</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

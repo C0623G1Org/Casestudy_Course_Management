@@ -39,7 +39,7 @@
                     <h3 style="font-weight: bold">Order Summary</h3>
                     <div class="row">
                         <div class="col-md-9"><h5>Order Summary</h5></div>
-                        <div class="col-md-3" style="text-align: right"><i class="fa-solid fa-pen"></i> Edit</div>
+                        <div class="col-md-3" style="text-align: right">Edit</div>
                     </div>
                     <div class="row">
                         <div class="col-md-3">
@@ -54,6 +54,7 @@
                             <p style="font-size: 25px; font-weight: bold; text-align: right">${course.getPrice()}</p>
                         </div>
                     </div>
+                    <hr>
                     <div class="row">
                         <div class="col-md-10"><p>Discount</p></div>
                         <div class="col-md-2"><p style="text-align: right">10%</p></div>
