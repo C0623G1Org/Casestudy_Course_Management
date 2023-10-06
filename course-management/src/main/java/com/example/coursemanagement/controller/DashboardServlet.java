@@ -361,7 +361,6 @@ public class DashboardServlet extends HttpServlet {
         request.setAttribute("user", user);
         dispatcherData(request, response, "/dashboard/dashboard-admin.jsp");
     }
-<<<<<<< HEAD
 
     private void changePassWord(HttpServletRequest request,HttpServletResponse response){
         String oldPassWord=request.getParameter("oldPassWord");
@@ -388,6 +387,4 @@ public class DashboardServlet extends HttpServlet {
             showPageUpdatePassword(request,response,user);
         }
     }
-=======
->>>>>>> 813fd12f44fbd14bf8d0c81fc655aa70fccabcb7
 }
