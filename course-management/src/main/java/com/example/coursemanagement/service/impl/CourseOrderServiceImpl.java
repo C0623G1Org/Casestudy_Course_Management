@@ -25,4 +25,16 @@ public class CourseOrderServiceImpl implements ICourseOrderService {
     public void createOrder(CourseOrder courseOrder) {
         courseOrderRepo.createOrder(courseOrder);
     }
+
+    @Override
+    public void updateStatusDone(int id, CourseOrder courseOrder) {
+        courseOrderRepo.updateStatusDone(id, courseOrder);
+    }
+
+    @Override
+    public void updateStatusCancel(int id, CourseOrder courseOrder) {
+        courseOrderRepo.updateStatusCancel(id, courseOrder);
+    }
+
+
 }
