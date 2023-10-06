@@ -8,36 +8,9 @@
                 <c:import url="admin-siderbar.jsp"></c:import>
             </div>
             <div class="col-lg-9 content-dashboard">
-                <div class="header-content">
-                    <div class="hello">
-                        <form class="row form-search-course g-2">
-                            <div class="col-auto">
-                                <input type="text" class="form-control" id="inputEmail"
-                                       placeholder=" Nhập khóa học cần tìm">
-                            </div>
-                            <div class="col-auto">
-                                <button type="submit" class="btn btn-primary">Tìm</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="user">
-                      <span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">
-                            <img class="rounded-circle me-1" width="35" height="35"
-                                 src="https://zpsocial-f54-org.zadn.vn/24a379da816c6f32367d.jpg"
-                                 alt="">${user.getFullName()}
-                       </span>
-                    </div>
+                <div class="mb-5">
+                    <c:import url="header-content-dashboard.jsp"></c:import>
                 </div>
-
-                <div class="header-content my-5">
-                    <div class="hello">
-                        <h3>Welcome back,</h3>
-                    </div>
-                    <div class="day-now">
-                        <p>${localDate}</p>
-                    </div>
-                </div>
-
                 <div class="body-content">
                     <c:forEach items="${courseList}" var="courseList">
                         <div class="card mb-3" style="width: 100%;">

@@ -5,8 +5,12 @@ import com.example.coursemanagement.model.CourseOrder;
 import com.example.coursemanagement.model.User;
 import com.example.coursemanagement.service.ICourseOrderService;
 import com.example.coursemanagement.service.ICoursePurchaseService;
+import com.example.coursemanagement.service.ICourseService;
+import com.example.coursemanagement.service.IUserService;
 import com.example.coursemanagement.service.impl.CourseOrderServiceImpl;
 import com.example.coursemanagement.service.impl.CoursePurchaseServiceImpl;
+import com.example.coursemanagement.service.impl.CourseServiceImpl;
+import com.example.coursemanagement.service.impl.UserServiceImpl;
 
 import javax.servlet.*;
 import javax.servlet.annotation.*;
@@ -22,6 +26,8 @@ import javax.servlet.http.HttpSession;
 public class CoursePurchaseServlet extends HttpServlet {
     private final ICoursePurchaseService coursePurchaseService = new CoursePurchaseServiceImpl();
     private final ICourseOrderService courseOrderService = new CourseOrderServiceImpl();
+    private final IUserService userService = new UserServiceImpl();
+    private final ICourseService courseService = new CourseServiceImpl();
     private final LocalDate localDate = LocalDate.now();
     private int orderCode = (int) (Math.random() * 20001) + 10000;
 
@@ -42,6 +48,7 @@ public class CoursePurchaseServlet extends HttpServlet {
             }
             switch (action) {
                 case "buy_course":
+
                     showCourseInf(request, response);
                     break;
             }
@@ -81,14 +88,25 @@ public class CoursePurchaseServlet extends HttpServlet {
             }
             switch (action) {
                 case "buy_course":
+
                     showCourseInf(request, response);
                     break;
                 case "check-out":
                     showCheckoutPage(request, response);
-                    createOrder(request, response);
                     break;
             }
         }
+
+//        String action = request.getParameter("action");
+//        if (action == null) {
+//            action = "";
+//        }
+//        switch (action) {
+//            case "check-out":
+//                showCheckoutPage(request, response);
+//                break;
+//
+//        }
     }
 
     private void showCheckoutPage(HttpServletRequest request, HttpServletResponse response) {
@@ -111,8 +129,10 @@ public class CoursePurchaseServlet extends HttpServlet {
         double orderPrice = Double.parseDouble(request.getParameter("orderPrice"));
         int userId = Integer.parseInt(request.getParameter("userId"));
         int courseId = Integer.parseInt(request.getParameter("courseId"));
+        User user = userService.selectE(userId);
+        Course course = courseService.selectCourse(courseId);
 //        String status = request.getParameter("status");
-        courseOrderService.createOrder(new CourseOrder(orderDate, orderPrice, userId, courseId, orderCode));
+        courseOrderService.createOrder(new CourseOrder(orderDate, orderPrice, user, course, orderCode));
         try {
             response.sendRedirect("/course-purchase-servlet");
         } catch (IOException e) {

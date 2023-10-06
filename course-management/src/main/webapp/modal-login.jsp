@@ -28,7 +28,7 @@
                         </div>
 
                         <div class="input-box">
-                            <input type="text" placeholder="Email của bạn" name="emailSignUp" id="emailSignUp" required>
+                            <input type="email" placeholder="Email của bạn" name="emailSignUp" id="emailSignUp" required>
                             <i class='bx bxs-envelope'></i>
                         </div>
 

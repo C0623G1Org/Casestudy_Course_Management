@@ -16,7 +16,9 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet(
         name = "DashboardServlet",
@@ -101,7 +103,7 @@ public class DashboardServlet extends HttpServlet {
                 } else if (url.endsWith("/dashboard/password")) {
                     showPageUpdatePassword(request, response, userGet);
                 } else {
-                    getCourseUserBuy(request, response, userGet);
+                    getCourseUserBuy(request, response);
                 }
             }
         }
@@ -166,7 +168,9 @@ public class DashboardServlet extends HttpServlet {
 
     private void showPageManageCourse(HttpServletRequest request, HttpServletResponse response, User user) {
         List<Course> courses = courseService.showList();
+        List<CourseCategory> categoryList = levelService.showListE();
         request.setAttribute("user", user);
+        request.setAttribute("categoryList", categoryList);
         request.setAttribute("courses", courses);
         dispatcherData(request, response, "/dashboard/dashboard-admin-manage-course.jsp");
     }
@@ -201,12 +205,13 @@ public class DashboardServlet extends HttpServlet {
         dispatcherData(request, response, "/dashboard/dashboard-user-password.jsp");
     }
 
-    private void getCourseUserBuy(HttpServletRequest request, HttpServletResponse response, User user) {
-        String username = user.getUsername();
-        User user1 = userService.selectByUsername(username);
-        List<Course> listCourseUserBuy = courseService.selectByUserBuy(user1.getId());
-        request.setAttribute("user1", user1);
-        request.setAttribute("listCourseUserBuy", listCourseUserBuy);
+    private void getCourseUserBuy(HttpServletRequest request, HttpServletResponse response) {
+        HttpSession session = request.getSession(false);
+        User user = (User) session.getAttribute("user");
+        List<CourseCategory> categoryList = levelService.showListE();
+        List<CourseOrder> courseOrders = courseOrderService.selectByUserBuy(user.getId());
+        request.setAttribute("categoryList",categoryList);
+        request.setAttribute("courseOrders",courseOrders);
         dispatcherData(request, response, "/dashboard/dashboard-user.jsp");
     }
 

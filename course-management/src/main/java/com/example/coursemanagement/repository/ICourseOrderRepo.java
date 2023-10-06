@@ -12,6 +12,10 @@ public interface ICourseOrderRepo {
 
     void createOrder (CourseOrder courseOrder);
 
+    List<CourseOrder> selectByUserBuy(int idUser);
+
+    boolean checkIdBuyCourse(int idUser, int idCourse);
+
     void updateStatusDone (int id, CourseOrder courseOrder);
 
     void updateStatusCancel (int id, CourseOrder courseOrder);
