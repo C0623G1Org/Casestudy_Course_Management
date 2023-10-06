@@ -88,11 +88,11 @@ public class CoursePurchaseServlet extends HttpServlet {
             }
             switch (action) {
                 case "buy_course":
-
                     showCourseInf(request, response);
                     break;
                 case "check-out":
                     showCheckoutPage(request, response);
+                    createOrder(request, response);
                     break;
             }
         }
