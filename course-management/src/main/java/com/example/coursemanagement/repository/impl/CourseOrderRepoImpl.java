@@ -22,6 +22,17 @@ public class CourseOrderRepoImpl implements ICourseOrderRepo {
             "LEFT JOIN courses c ON c.course_id = co.course_id\n" +
             "LEFT JOIN `user` u ON u.user_id = co.user_id\n";
 
+    private static final String SELECT_ORDER_BY_DATE = "SELECT order_id, order_code, `status`, order_date, order_price, co.user_id, co.course_id, course_name, full_name\n" +
+            "FROM course_orders co\n" +
+            "LEFT JOIN courses c ON c.course_id = co.course_id\n" +
+            "LEFT JOIN `user` u ON u.user_id = co.user_id\n" +
+            "WHERE order_date = ?;";
+
+    private static final String SELECT_ORDER = "SELECT order_id, order_code, `status`, order_date, order_price, co.user_id, co.course_id, course_name, full_name\n" +
+            "FROM course_orders co\n" +
+            "LEFT JOIN courses c ON c.course_id = co.course_id\n" +
+            "LEFT JOIN `user` u ON u.user_id = co.user_id\n";
+
     private static final String SELECT_ORDER_BY_ID = "SELECT order_id, order_code, `status`, order_date, order_price, " +
             "co.user_id, co.course_id, course_name, full_name, phone, email, price, short_description\n" +
             "FROM course_orders co\n" +
@@ -36,6 +47,9 @@ public class CourseOrderRepoImpl implements ICourseOrderRepo {
     private final ICourseService courseService = new CourseServiceImpl();
     private final IUserService userService = new UserServiceImpl();
 
+    private static final String UPDATE_STATUS = "UPDATE course_orders \n" +
+            "SET `status` = ?\n" +
+            "WHERE order_id = ?;";
     @Override
     public List<CourseOrderInf> showCourseOrder() {
         Connection connection = BaseRepository.getConnection();
@@ -43,7 +57,7 @@ public class CourseOrderRepoImpl implements ICourseOrderRepo {
         CourseOrderInf courseOrderInf =null;
         try {
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(SELECT_AD_ORDER);
+            ResultSet resultSet = statement.executeQuery(SELECT_ORDER);
 //            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_AD_ORDER);
 //            preparedStatement.setString(1, "order_date");
 //            ResultSet resultSet = preparedStatement.executeQuery();
@@ -99,7 +113,6 @@ public class CourseOrderRepoImpl implements ICourseOrderRepo {
             preparedStatement.setInt(3, courseOrder.getUser().getId());
             preparedStatement.setInt(4, courseOrder.getCourse().getId());
             preparedStatement.setInt(5, courseOrder.getOrderCode());
-            preparedStatement.setString(6, courseOrder.getStatus());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -142,4 +155,31 @@ public class CourseOrderRepoImpl implements ICourseOrderRepo {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public void updateStatusDone(int id, CourseOrder courseOrder) {
+        Connection connection = BaseRepository.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_STATUS);
+            preparedStatement.setInt(2, courseOrder.getOrderId());
+            preparedStatement.setString(1, "Đã thanh toán");
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void updateStatusCancel(int id, CourseOrder courseOrder) {
+        Connection connection = BaseRepository.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_STATUS);
+            preparedStatement.setInt(2, courseOrder.getOrderId());
+            preparedStatement.setString(1, "Đã hủy");
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
 }

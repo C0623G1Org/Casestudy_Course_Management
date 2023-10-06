@@ -46,6 +46,7 @@ public class DashboardServlet extends HttpServlet {
     private final ICourseContentService contentService = new CourseContentServiceImpl();
     private final IUserService userService = new UserServiceImpl();
     private final ICourseOrderService courseOrderService = new CourseOrderServiceImpl();
+
     private final ICourseDetailContentService detailContentService = new DetailedContentServiceImpl();
     private final IContentType contentType = new ContentTypeServiceImpl();
     private final ICourseLevelService levelService = new CourseCategoryServiceImpl();
