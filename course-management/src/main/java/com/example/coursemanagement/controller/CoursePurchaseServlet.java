@@ -128,8 +128,10 @@ public class CoursePurchaseServlet extends HttpServlet {
         double orderPrice = Double.parseDouble(request.getParameter("orderPrice"));
         int userId = Integer.parseInt(request.getParameter("userId"));
         int courseId = Integer.parseInt(request.getParameter("courseId"));
+        User user = userService.selectE(userId);
+        Course course = courseService.selectCourse(courseId);
 //        String status = request.getParameter("status");
-        courseOrderService.createOrder(new CourseOrder(orderDate, orderPrice, userId, courseId, orderCode));
+        courseOrderService.createOrder(new CourseOrder(orderDate, orderPrice, user, course, orderCode));
         try {
             response.sendRedirect("/course-purchase-servlet");
         } catch (IOException e) {
