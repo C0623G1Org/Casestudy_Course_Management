@@ -39,24 +39,14 @@
                                     <td>${user.getFullName()}</td>
                                     <td>${user.getEmail()}</td>
                                     <td>
-                                        <div class="row">
-                                            <div class="col-4 button-add-update-delete">
-                                                <a role="button" class="btn btn-outline-success"
-                                                   href="/dashboard/member/view?id=${user.getId()}"><i
-                                                        class="fa-solid fa-pen"></i> Xem</a>
-                                            </div>
-                                            <div class="col-4 button-add-update-delete">
-                                                <a role="button" class="btn btn-outline-warning"
-                                                   href="/dashboard/member/edit?id=${user.getId()}"><i
-                                                        class="fa-solid fa-pen"></i> Sửa</a>
-                                            </div>
-                                            <div class="col-4 button-add-update-delete">
-                                                <a role="button" class="btn btn-outline-danger"
-                                                   onclick="sendInforToModal('${user.getId()}','${user.getFullName()}')"
-                                                   data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="fa-solid fa-pen"></i> Xóa </a>
-                                            </div>
-
+                                        <div class="action-course d-flex justify-content-around">
+                                            <a role="button" class="btn btn-primary learn btn-content mb-1"
+                                               href="/dashboard/member/view?id=${user.getId()}">Xem</a>
+                                            <a role="button" class="btn btn-primary edit btn-content mb-1"
+                                               href="/dashboard/member/edit?id=${user.getId()}">Sửa</a>
+                                            <a role="button" class="btn btn-primary delete btn-content mb-1"
+                                               onclick="sendInforToModal('${user.getId()}','${user.getFullName()}')"
+                                               data-bs-toggle="modal" data-bs-target="#exampleModal">Xóa</a>
                                         </div>
                                     </td>
                                 </tr>
