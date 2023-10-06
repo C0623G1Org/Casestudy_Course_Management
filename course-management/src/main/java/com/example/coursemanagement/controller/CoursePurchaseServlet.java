@@ -29,7 +29,8 @@ public class CoursePurchaseServlet extends HttpServlet {
     private final IUserService userService = new UserServiceImpl();
     private final ICourseService courseService = new CourseServiceImpl();
     private final LocalDate localDate = LocalDate.now();
-    private int orderCode = (int) (Math.random() * 10001) + 10000;
+    private int orderCode = (int) (Math.random() * 20001) + 10000;
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -138,5 +139,11 @@ public class CoursePurchaseServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
+
+    private void updateOrder(HttpServletRequest request, HttpServletResponse response) {
+
+    }
+
+
 
 }
