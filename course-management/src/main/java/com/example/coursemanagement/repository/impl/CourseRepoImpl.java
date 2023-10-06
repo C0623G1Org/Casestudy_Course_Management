@@ -15,8 +15,8 @@ public class CourseRepoImpl implements ICourseRepo {
     private final static String SELECT_BY_ID = "SELECT * FROM courses WHERE course_id = ?;";
     private final static String DELETE_COURSE = "DELETE FROM courses WHERE course_id = ?;";
 
-    private final static String UPDATE_COURSE = "UPDATE courses SET course_name = ?, short_description = ?, price =?, knowledge =?, requirements =?, instructor =?, course_inclusion =?, course_level_id =? WHERE course_id = ?;";
-    private final static String INSERT_COURSE = "INSERT INTO courses (course_name, short_description, price, knowledge, requirements, instructor , course_inclusion, course_level_id) VALUES (?,?,?,?,?,?,?,?);";
+    private final static String UPDATE_COURSE = "UPDATE courses SET course_name = ?, short_description = ?, price =?, knowledge =?, requirements =?, instructor =?, course_inclusion =?, course_level_id =?, course_avatar=? WHERE course_id = ?;";
+    private final static String INSERT_COURSE = "INSERT INTO courses (course_name, short_description, price, knowledge, requirements, instructor , course_inclusion, course_level_id,course_avatar) VALUES (?,?,?,?,?,?,?,?,?);";
     private final static String SELECT_FULL = "SELECT * FROM courses c JOIN course_content cct ON c.course_content_id = cct.course_content_id JOIN course_levels ccc ON c.course_level_id = ccc.course_level_id WHERE c.course_level_id = ?;";
     private final static String SELECT_BY_USER_BUY = "select c.* from courses c JOIN course_orders co ON c.course_id = co.course_id JOIN user u ON co.user_id = u.user_id WHERE u.user_id = ?;";
     @Override
@@ -61,6 +61,7 @@ public class CourseRepoImpl implements ICourseRepo {
             preparedStatement.setString(6,course.getInstructor());
             preparedStatement.setString(7,course.getCourseInclusion());
             preparedStatement.setInt(8,course.getCourseLevelId());
+            preparedStatement.setString(9,course.getAvatar());
             preparedStatement.executeUpdate();
             preparedStatement.close();
             connection.close();
@@ -94,7 +95,7 @@ public class CourseRepoImpl implements ICourseRepo {
                 String device_requirements = resultSet.getString("requirements");
                 String course_other_info = resultSet.getString("course_inclusion");
                 String avatar = resultSet.getString("course_avatar");
-                course = new Course(course_id,name,description,instructor,price, categoryId,knowledge,device_requirements,course_other_info,avatar);
+                course = new Course(course_id,name,description,instructor,price,categoryId,knowledge,device_requirements,course_other_info,avatar);
             }
             resultSet.close();
             preparedStatement.close();
@@ -138,7 +139,8 @@ public class CourseRepoImpl implements ICourseRepo {
                 preparedStatement.setString(6,course.getInstructor());
                 preparedStatement.setString(7,course.getCourseInclusion());
                 preparedStatement.setInt(8,course.getCourseLevelId());
-                preparedStatement.setInt(9,id);
+                preparedStatement.setString(9,course.getAvatar());
+                preparedStatement.setInt(10,id);
                 preparedStatement.executeUpdate();
                 preparedStatement.close();
                 connection.close();
