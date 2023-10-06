@@ -9,8 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b7fa4d5-6b60-40e8-94a6-bd99b53912e2" name="Changes" comment="khoi phuc file">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/buy-course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/buy-course.jsp" afterDir="false" />
+    <list default="true" id="8b7fa4d5-6b60-40e8-94a6-bd99b53912e2" name="Changes" comment="thanh up">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +119,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.21">
-    <configuration name="course-management [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="course-management [build]" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -236,7 +236,6 @@
         <item itemvalue="Gradle.course-management [build]" />
         <item itemvalue="Gradle.course-management [build]" />
         <item itemvalue="Gradle.course-management [build]" />
-        <item itemvalue="Gradle.course-management [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -256,7 +255,8 @@
       <workItem from="1696468720422" duration="8216000" />
       <workItem from="1696497923274" duration="2961000" />
       <workItem from="1696507158959" duration="1179000" />
-      <workItem from="1696560923051" duration="82000" />
+      <workItem from="1696560923051" duration="418000" />
+      <workItem from="1696561415056" duration="17130000" />
     </task>
     <task id="LOCAL-00001" summary="fix bugs">
       <created>1696417177332</created>
@@ -305,7 +305,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696560956599</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="thanh up">
+      <option name="closed" value="true" />
+      <created>1696561120009</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696561120009</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,6 +334,7 @@
     <MESSAGE value="fix bugs" />
     <MESSAGE value="update" />
     <MESSAGE value="khoi phuc file" />
-    <option name="LAST_COMMIT_MESSAGE" value="khoi phuc file" />
+    <MESSAGE value="thanh up" />
+    <option name="LAST_COMMIT_MESSAGE" value="thanh up" />
   </component>
 </project>
