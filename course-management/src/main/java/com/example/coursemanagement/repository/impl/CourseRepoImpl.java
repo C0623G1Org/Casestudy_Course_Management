@@ -36,8 +36,9 @@ public class CourseRepoImpl implements ICourseRepo {
                 String knowledge = resultSet.getString("knowledge");
                 String device_requirements = resultSet.getString("requirements");
                 String course_other_info = resultSet.getString("course_inclusion");
+                String avatar = resultSet.getString("course_avatar");
                 courseList.add(new Course(course_id,name,description,instructor,price, categoryId,
-                        knowledge,device_requirements,course_other_info));
+                        knowledge,device_requirements,course_other_info, avatar));
             }
             resultSet.close();
             statement.close();
@@ -92,7 +93,8 @@ public class CourseRepoImpl implements ICourseRepo {
                 String knowledge = resultSet.getString("knowledge");
                 String device_requirements = resultSet.getString("requirements");
                 String course_other_info = resultSet.getString("course_inclusion");
-                course = new Course(course_id,name,description,instructor,price, categoryId,knowledge,device_requirements,course_other_info);
+                String avatar = resultSet.getString("course_avatar");
+                course = new Course(course_id,name,description,instructor,price, categoryId,knowledge,device_requirements,course_other_info,avatar);
             }
             resultSet.close();
             preparedStatement.close();

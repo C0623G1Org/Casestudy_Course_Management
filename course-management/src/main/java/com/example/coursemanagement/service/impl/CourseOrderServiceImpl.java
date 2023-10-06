@@ -27,18 +27,6 @@ public class CourseOrderServiceImpl implements ICourseOrderService {
     }
 
     @Override
-    public void updateStatusDone(int id, CourseOrder courseOrder) {
-        courseOrderRepo.updateStatusDone(id, courseOrder);
-    }
-
-    @Override
-    public void updateStatusCancel(int id, CourseOrder courseOrder) {
-        courseOrderRepo.updateStatusCancel(id, courseOrder);
-    }
-
-
-
-    @Override
     public List<CourseOrder> selectByUserBuy(int idUser) {
         return courseOrderRepo.selectByUserBuy(idUser);
     }
@@ -47,4 +35,26 @@ public class CourseOrderServiceImpl implements ICourseOrderService {
     public boolean checkIdBuyCourse(int idUser, int idCourse) {
         return courseOrderRepo.checkIdBuyCourse(idUser,idCourse);
     }
+
+    @Override
+    public List<CourseOrder> getOrderByDateNow() {
+        return courseOrderRepo.getOrderByDateNow();
+    }
+
+    @Override
+    public CourseOrder showOrderById(int idOrder) {
+        return courseOrderRepo.showOrderById(idOrder);
+    }
+
+    @Override
+    public void updateStatusDone(int idOrder) {
+        courseOrderRepo.updateStatusDone(idOrder);
+    }
+
+    @Override
+    public void updateStatusCancel(int idOrder) {
+        courseOrderRepo.updateStatusCancel(idOrder);
+    }
+
+
 }

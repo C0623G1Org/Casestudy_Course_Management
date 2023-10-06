@@ -63,12 +63,12 @@
             </div>
             <div class="col-6 column-2">
                 <div class="content-1">
-                    <img src="../public/image/Rectangle 52.png"/>
+                    <img src="${course.getAvatar()}"/>
                     <div class="mt-5">
                         <h1>${course.getName()}</h1>
                         <p>${course.getDescription()}</p>
                     </div>
-                    <h1 class="mt-5">${course.getPrice()} $</h1>
+                    <h1 class="mt-5">${course.getPrice()} VND</h1>
                     <div class="mt-4 col-4" style="background: #E2F6FF; padding: 5px; border-radius: 40px">
                         <div class="author" style="text-align: center">
                             <i class="fa-solid fa-graduation-cap"></i> <span
@@ -81,14 +81,20 @@
                         </div>
                     </div>
                     <div class="mt-3">
-                        <c:if test="${checkUserBuy == true}">
-                            <div class="alert alert-success" role="alert">
-                                Bạn đã mua khoá học này !
-                            </div>
-                            <a href="/learn?id=${course.getId()}" role="button" class="btn btn-primary btn-order-course">Tiếp tục học</a>
+                        <c:if test="${empty sessionScope.user}">
+                            <a onclick="alert('Bạn cần đăng nhập để mua khóa học');" class="btn-login btn btn-primary btn-order-course" data-bs-toggle="modal" href="#userLogin" role="button">Mua khóa học</a>
+                            <c:import url="modal-login.jsp"></c:import>
                         </c:if>
-                        <c:if test="${checkUserBuy == false}">
-                            <a href="/course-purchase-servlet?action=buy_course&id=${course.getId()}" role="button" class="btn btn-primary btn-order-course">Mua khóa học</a>
+                        <c:if test="${not empty sessionScope.user}">
+                            <c:if test="${checkUserBuy == true}">
+                                <div class="alert alert-success" role="alert">
+                                    Bạn đã mua khoá học này !
+                                </div>
+                                <a href="/learn?id=${course.getId()}" role="button" class="btn btn-primary btn-order-course">Tiếp tục học</a>
+                            </c:if>
+                            <c:if test="${checkUserBuy == false}">
+                                <a href="/order-course?id=${course.getId()}" role="button" class="btn btn-primary btn-order-course">Mua khóa học</a>
+                            </c:if>
                         </c:if>
                     </div>
                 </div>
