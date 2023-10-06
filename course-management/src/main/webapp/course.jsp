@@ -49,7 +49,7 @@
                                 <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>
                             </div>
                             <div class="card-price">
-                                <div class="price">${courseList.getPrice()} VND</div>
+                                <div class="price">${courseList.getPrice()} VNĐ</div>
                                 <a style="color: #FFFFFF" role="button" class="btn-login btn btn-primary" href="/course/detail?id=${courseList.getId()}">Đăng kí</a>
                             </div>
                         </div>

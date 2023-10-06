@@ -48,7 +48,7 @@
                                             </c:if>
                                         </c:forEach>
                                         <td>${courses.getInstructor()}</td>
-                                        <td>${courses.getPrice()} VND</td>
+                                        <td>${courses.getPrice()} VNĐ</td>
                                         <td class="action-course d-flex justify-content-around">
                                                 <a role="button" class="btn btn-primary learn btn-content mb-1" href="/learn?id=${courses.getId()}">Xem</a>
                                                 <a role="button" class="btn btn-primary edit btn-content mb-1" href="/dashboard/course/edit?id=${courses.getId()}">Sửa</a>

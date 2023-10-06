@@ -152,8 +152,8 @@
                 <div class="author"><i class="fa-solid fa-graduation-cap"></i> ${courseList.getInstructor()}</div>
                 <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>
               </div>
-              <div class="${courseList.getAvatar()}">
-                <div class="price">${courseList.getPrice()} VND</div>
+              <div class="card-price">
+                <div class="price">${courseList.getPrice()} VNĐ</div>
                   <%--                <a style="color: #FFFFFF" role="button" class="btn-login btn btn-primary" href="/course/id=${courseList.getId()}">Đăng kí</a>--%>
                 <a style="color: #FFFFFF" role="button" class="btn-login btn btn-primary" href="/course/detail?id=${courseList.getId()}">Đăng kí</a>
               </div>
