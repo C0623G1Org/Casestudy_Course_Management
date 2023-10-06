@@ -37,11 +37,6 @@ public class CoursePurchaseServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
-
-        if (user == null) {
-            int id = Integer.parseInt(request.getParameter("id"));
-            response.sendRedirect("/course/detail?id=" + id);
-        } else {
             String action = request.getParameter("action");
             if (action == null) {
                 action = "";
@@ -52,12 +47,10 @@ public class CoursePurchaseServlet extends HttpServlet {
                     showCourseInf(request, response);
                     break;
             }
-        }
     }
 
     private void showCourseInf(HttpServletRequest request, HttpServletResponse response) {
-
-        int id = Integer.parseInt(request.getParameter("courseId"));
+        int id = Integer.parseInt(request.getParameter("id"));
         Course course = coursePurchaseService.displayCourse(id);
         request.setAttribute("course", course);
         request.setAttribute("code", orderCode);
@@ -78,10 +71,10 @@ public class CoursePurchaseServlet extends HttpServlet {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
 
-        if (user == null) {
-            int id = Integer.parseInt(request.getParameter("id"));
-            response.sendRedirect("/course/detail?id=" + id);
-        } else {
+//        if (user == null) {
+//            int id = Integer.parseInt(request.getParameter("id"));
+//            response.sendRedirect("/course/detail?id=" + id);
+//        } else {
             String action = request.getParameter("action");
             if (action == null) {
                 action = "";
@@ -95,7 +88,7 @@ public class CoursePurchaseServlet extends HttpServlet {
                     showCheckoutPage(request, response);
                     break;
             }
-        }
+//        }
 
 //        String action = request.getParameter("action");
 //        if (action == null) {
@@ -110,7 +103,7 @@ public class CoursePurchaseServlet extends HttpServlet {
     }
 
     private void showCheckoutPage(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("courseId"));
+        int id = Integer.parseInt(request.getParameter("id"));
         Course course = coursePurchaseService.displayCourse(id);
         request.setAttribute("course", course);
         request.setAttribute("code", orderCode);

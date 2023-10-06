@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<a class="btn-login btn btn-primary" data-bs-toggle="modal" href="#userSignup" role="button">Đăng kí</a>
 <div class="modal fade" id="userSignup" aria-hidden="true" aria-labelledby="userSignupLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">

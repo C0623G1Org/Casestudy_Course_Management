@@ -40,7 +40,7 @@ public class LearningServlet extends HttpServlet {
             User user = (User) session.getAttribute("user");
             // Check xem user đã mua chưa khoá học chưa, chưa thì không cho xem
             boolean checkIdBuyCourse = orderService.checkIdBuyCourse(user.getId(),idCourse);
-            if (checkIdBuyCourse) {
+            if (checkIdBuyCourse || user.getRole().equals("admin")) {
                 if (url.endsWith("/learn/lesson/") || url.endsWith("/learn/reading/") || url.endsWith("/learn/exercise/")){
                     getDetailContent(request);
                     renderTableOfContent(request);
