@@ -743,3 +743,15 @@ a.btn.btn-primary.delete.btn-content {
 .col-3.using .title {
     margin: 0;
 }
+span.font-weight-bold {
+    font-weight: 700;
+}
+
+.time-buy p {
+    font-size: 14px;
+}
+p.name-display {
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+}

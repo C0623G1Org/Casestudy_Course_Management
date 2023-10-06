@@ -21,7 +21,7 @@ public class CoursePurchaseRepoImpl implements ICoursePurchaseRepo {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BY_ID);
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
+            while (resultSet.next()) {
                 int course_id = resultSet.getInt("course_id");
                 String name = resultSet.getString("course_name");
                 String description = resultSet.getString("short_description");

@@ -9,6 +9,7 @@ public class BaseRepository {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "Thanhvan01@";
 
+
     private BaseRepository() {
     }
 

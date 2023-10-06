@@ -35,29 +35,11 @@
 
             <div class="col-md-3 text-end">
                 <c:if test="${empty sessionScope.user}">
+                    <a class="btn-login btn btn-primary" data-bs-toggle="modal" href="#userSignup" role="button">Đăng kí</a>
                     <c:import url="modal-login.jsp"></c:import>
                 </c:if>
                 <c:if test="${not empty sessionScope.user}">
-                    <div class="d-flex justify-content-end">
-                        <div class="dropdown">
-                            <button class="btn-login btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <c:if test="${empty sessionScope.user.getFullName()}">
-                                        ${sessionScope.user.getUsername()}
-                                    </c:if>
-                                    <c:if test="${not empty sessionScope.user.getFullName()}">
-                                        ${sessionScope.user.getFullName()}
-                                    </c:if>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
-                                <li><a class="dropdown-item" href="/dashboard/course">Quản lý khóa học</a></li>
-                                <li><a class="dropdown-item" href="/dashboard/order">Quản lý đơn hàng</a></li>
-                                <li><a class="dropdown-item" href="/dashboard/member">Quản lý thành viên</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="/user/logout">Đăng xuất</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    <c:import url="dropdown-menu-user.jsp"></c:import>
                 </c:if>
             </div>
         </div>

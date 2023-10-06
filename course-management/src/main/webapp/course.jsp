@@ -37,7 +37,7 @@
                                             <c:if test="${category.getId() == courseList.getCourseLevelId()}">
                                                 <p class="text-right">${category.getName()}</p>
                                             </c:if>
-                                        </c:forEach>                                        </p>
+                                        </c:forEach>
                                     </div>
                                     <h3>${courseList.getName()}</h3>
                                 </div>

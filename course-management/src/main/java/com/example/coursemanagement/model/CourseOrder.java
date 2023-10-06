@@ -4,39 +4,47 @@ public class CourseOrder {
     private int orderId;
     private String orderDate;
     private double orderPrice;
-    private int userId;
-    private int courseId;
+    private User user;
+    private Course course;
 
     private int orderCode;
 
     private String status;
 
-    public CourseOrder(int orderId, String orderDate, double orderPrice, int userId, int courseId, int orderCode,
+    public CourseOrder(int orderId, String orderDate, double orderPrice, User user, Course course, int orderCode,
                        String status) {
         this.orderId = orderId;
         this.orderDate = orderDate;
         this.orderPrice = orderPrice;
-        this.userId = userId;
-        this.courseId = courseId;
+        this.user = user;
+        this.course = course;
         this.orderCode = orderCode;
         this.status = status;
     }
 
-    public CourseOrder(int orderId, String orderDate, double orderPrice, int userId, int courseId) {
+    public CourseOrder(int orderId, String orderDate, double orderPrice, User user, Course course) {
         this.orderId = orderId;
         this.orderDate = orderDate;
         this.orderPrice = orderPrice;
-        this.userId = userId;
-        this.courseId = courseId;
+        this.user = user;
+        this.course = course;
     }
 
-    public CourseOrder(String orderDate, double orderPrice, int userId, int courseId, int orderCode, String status) {
+    public CourseOrder(String orderDate, double orderPrice, User user, Course course, int orderCode, String status) {
         this.orderDate = orderDate;
         this.orderPrice = orderPrice;
-        this.userId = userId;
-        this.courseId = courseId;
+        this.user = user;
+        this.course = course;
         this.orderCode = orderCode;
         this.status = status;
+    }
+
+    public CourseOrder(String orderDate, double orderPrice, User user, Course course, int orderCode) {
+        this.orderDate = orderDate;
+        this.orderPrice = orderPrice;
+        this.user = user;
+        this.course = course;
+        this.orderCode = orderCode;
     }
 
     public int getOrderId() {
@@ -63,20 +71,20 @@ public class CourseOrder {
         this.orderPrice = orderPrice;
     }
 
-    public int getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public int getCourseId() {
-        return courseId;
+    public Course getCourse() {
+        return course;
     }
 
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
+    public void setCourse(Course course) {
+        this.course = course;
     }
 
     public int getOrderCode() {
