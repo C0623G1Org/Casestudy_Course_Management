@@ -27,7 +27,6 @@ public class CourseOrderRepoImpl implements ICourseOrderRepo {
             "LEFT JOIN courses c ON c.course_id = co.course_id\n" +
             "LEFT JOIN `user` u ON u.user_id = co.user_id\n" +
             "WHERE order_date = ?;";
-
     private static final String SELECT_ORDER = "SELECT order_id, order_code, `status`, order_date, order_price, co.user_id, co.course_id, course_name, full_name\n" +
             "FROM course_orders co\n" +
             "LEFT JOIN courses c ON c.course_id = co.course_id\n" +

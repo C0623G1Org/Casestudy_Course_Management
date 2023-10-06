@@ -5,11 +5,12 @@
   <div class="container">
     <div class="row hero-home">
       <div class="col-lg-6">
-        <h1>Master New Skills with LTTA</h1>
-        <p>Những khóa học được LTTA sản xuất theo tiêu chuẩn chất lượng cao đối với học tập trực tuyến</p>
+        <h1 style="font-weight: 500">Trở thành lập trình viên chuyên nghiệp với LTTA</h1>
+        <p>Cơ hội để trải nghiệm thực tế công việc của một lập trình viên, khởi đầu con đường lập trình chuyên nghiệp!</p>
+        <p>Còn chần chờ gì nữa mà không tìm hiểu ngay!</p>
         <div class="row d-flex align-items-center">
           <div class="col-4">
-            <a class="btn-hero btn btn-primary" href="/course" role="button">Get Started</a>
+            <a class="btn-hero btn btn-primary" href="/course" role="button">Tham gia</a>
           </div>
           <div class="col-5">
             <div class="circle-item">
@@ -21,7 +22,7 @@
           </div>
           <div class="col-3 using">
             <p class="title">42k +</p>
-            <p>User using</p>
+            <p>Học viên</p>
           </div>
         </div>
         <div class="d-flex align-items-center">
@@ -46,13 +47,12 @@
   <div class="container why my-5">
     <div class="row">
       <div class="col-lg-8">
-        <h2>
-          New Skills with LTTA Platform A Detail Look at Our Currient
-        </h2>
+        <h3 style="font-weight: 600">Khởi đầu dễ dàng hơn với LTTA Co.</h3>
+        <h3 style="font-weight: 600">Xem qua các khóa học của chúng tôi.</h3>
       </div>
       <div class="col-lg-4">
-        <p>Những khóa học được LTTA tiêu chuẩn chất lượng cao đối với học tập trực tuyến</p>
-        <a role="button" href="/course" class="btn-started btn btn-primary">Get Started</a>
+        <p>Các khóa học đa dạng từ cơ bản đến nâng cao phù hợp cho học sinh, sinh viên và người đi làm.</p>
+        <a role="button" href="/course" class="btn-started btn btn-primary">Đăng ký ngay</a>
       </div>
     </div>
     <div class="row my-5 justify-content-around">
@@ -61,11 +61,13 @@
           <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
             <i class="fa-solid fa-circle-half-stroke"></i>
           </div>
-          <h5 class="fs-2 text-body-emphasis">Lorem ipsum dolor sit amet adipisicing elit. Doloremque,
-            voluptatibus.</h5>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, esse iure! Molestiae officia,
-            nulla nam voluptatum, voluptas maiores deserunt, labore explicabo quia qui vel vero sint
-            accusantium quidem quam saepe.</p>
+          <h5 class="fs-2 text-body-emphasis">LTTA mang đến cho học viên cơ hội học CNTT 100% trên Internet cùng sự đồng hành
+            của đội ngũ trợ lý học tập, chuyên gia công nghệ, cựu học viên.</h5>
+          <p>...</p>
+<%--          <p>LTTA cung cấp các khóa học CNTT từ căn bản đến chuyên sâu dành cho:</p>--%>
+<%--          <p>(1) Các bạn làm việc trong ngành CNTT muốn học nâng cao trình độ hoặc bổ sung bằng cấp chất lượng. FUNiX có cấp các tín chỉ, chứng chỉ, bằng tốt nghiệp được công nhận bởi 100 trường Đại học, doanh nghiệp.</p>--%>
+<%--          <p>(2) Các bạn làm việc ngành khác muốn học nghề để nhanh chóng chuyển sang làm việc cho ngành CNTT, muốn được nhận vào các doanh nghiệp công nghệ hàng đầu với công việc ổn định bền vững, môi trường văn minh hiện đại.</p>--%>
+<%--          <p>(3) Các bạn muốn học nâng cao năng lực công nghệ để phục vụ cho công việc và cuộc sống.</p>--%>
         </div>
       </div>
       <div class="col-lg-7">
@@ -73,12 +75,11 @@
           <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
             <i class="fa-solid fa-circle-half-stroke"></i>
           </div>
-          <h5 class="fs-2 text-body-emphasis">Lorem ipsum, dolor sit amet elit. Incidunt sapiente dolores
-            saepe quia magni excepturi quidem quam saepe!</h5>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, esse iure! Molestiae officia,
-            nulla nam voluptatum, voluptas maiores deserunt, labore explicabo quia qui vel vero sint
-            accusantium quidem quam saepe. labore explicabo quia qui vel vero sint accusantium quidem quam
-            saepe.</p>
+          <h5 class="fs-2 text-body-emphasis">Đội ngũ giảng viên nhiệt tình, có chuyên môn</h5>
+          <p>Bạn sẽ được hướng dẫn bởi những lập trình viên dày dặn kinh nghiệm làm việc tại các tập đoàn công nghệ lớn.
+            Không chỉ giải đáp thắc mắc về bài học, các giáo viên còn chia sẻ cho bạn những kinh nghiệm thực tế
+            để bạn có thể tự tin bắt đầu sự nghiệp trong ngành Tech.
+            Bên cạnh đó là đội ngũ Trợ giảng luôn sẵn sàng giải đáp bất cứ thắc mắc nào về bài học để đảm bảo hiệu quả học tập của bạn</p>
         </div>
       </div>
     </div>
@@ -175,9 +176,8 @@
   <div class="container">
     <div class="px-4 py-5 my-3 text-center">
       <div class="col-lg-6 mx-auto">
-        <h1 class="display-5 fw-bold text-body-emphasis">Những người từng học nói gì về chúng tôi ?</h1>
-        <p class="lead mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit quia dolorem
-          dignissimos reprehenderit quaerat accusantium.</p>
+        <h3 class="display-5 fw-bold text-body-emphasis">Những người từng học nói gì về chúng tôi ?</h3>
+        <p class="lead mb-4"></p>
       </div>
     </div>
     <div class="row">
@@ -269,7 +269,9 @@
               <i class="fa-solid fa-star"></i>
             </div>
             <p class="content">Khóa học rất thú vị và bổ ích. Giảng viên rất am hiểu về lĩnh vực này. Tôi đã học được cách phát triển ứng dụng di động và đã có
-              thể tạo ra một ứng dụng đơn giản sau khóa học</p>
+              thể tạo ra một ứng dụng đơn giản sau khóa học
+
+            </p>
             <div class="card-bottom">
               <div class="category">Javascript</div>
             </div>
