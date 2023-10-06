@@ -29,7 +29,7 @@
                         <div class="card-body">
                             <div class="row card-head">
                                 <div class="col-md-4">
-                                    <img src="../public/image/Rectangle 43.png">
+                                    <img src="${courseList.getAvatar()}" class="card-img" alt="${courseList.getName()}">
                                 </div>
                                 <div class="col-md-8 ml-auto">
                                     <div class="category">
@@ -49,154 +49,13 @@
                                 <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>
                             </div>
                             <div class="card-price">
-                                <div class="price">${courseList.getPrice()} $</div>
+                                <div class="price">${courseList.getPrice()} VND</div>
                                 <a style="color: #FFFFFF" role="button" class="btn-login btn btn-primary" href="/course/detail?id=${courseList.getId()}">Đăng kí</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </c:forEach>
-            <%--            <div class="col-lg-4 mb-4">--%>
-            <%--                <div class="card" style="width: 100%;">--%>
-            <%--                    <div class="card-body">--%>
-            <%--                        <div class="row card-head">--%>
-            <%--                            <div class="col-md-4">--%>
-            <%--                                <img src="../public/image/Course%20JS.png">--%>
-            <%--                            </div>--%>
-            <%--                            <div class="col-md-8 ml-auto">--%>
-            <%--                                <div class="category">--%>
-            <%--                                    <p class="text-right">Java--%>
-            <%--                                    </p>--%>
-            <%--                                </div>--%>
-            <%--                                <h3>Basic Java <br>Tutorial</h3>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                        <p class="card-text">Java là một ngôn ngữ lập trình đa nền tảng, sử dụng để phát triển các ứng--%>
-            <%--                            dụng desktop, mobile, web và một số hệ thống phức tạp</p>--%>
-            <%--                        <div class="card-bottom">--%>
-            <%--                            <div class="author"><i class="fa-solid fa-graduation-cap"></i> ThanhPV</div>--%>
-            <%--                            <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>--%>
-            <%--                        </div>--%>
-            <%--                        <div class="card-price">--%>
-            <%--                            <div class="price">1.200.000 VNĐ</div>--%>
-            <%--                            <button type="button" class="btn btn-outline-dark">Join now</button>--%>
-            <%--                        </div>--%>
-            <%--                    </div>--%>
-            <%--                </div>--%>
-            <%--            </div>--%>
-            <%--            <div class="col-lg-4 mb-4">--%>
-            <%--                <div class="card" style="width: 100%;">--%>
-            <%--                    <div class="card-body">--%>
-            <%--                        <div class="row card-head">--%>
-            <%--                            <div class="col-md-4">--%>
-            <%--                                <img src="../public/image/Course%20SQl.png">--%>
-            <%--                            </div>--%>
-            <%--                            <div class="col-md-8 ml-auto">--%>
-            <%--                                <div class="category">--%>
-            <%--                                    <p class="text-right">Java--%>
-            <%--                                    </p>--%>
-            <%--                                </div>--%>
-            <%--                                <h3>Basic SQL<br/> Tutorial</h3>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                        <p class="card-text">SQL là ngôn ngữ lập trình để truy vấn và quản lý cơ sở dữ liệu, được sử--%>
-            <%--                            dụng trong các ứng dụng liên quan đến dữ liệu </p>--%>
-            <%--                        <div class="card-bottom">--%>
-            <%--                            <div class="author"><i class="fa-solid fa-graduation-cap"></i> ThanhPV</div>--%>
-            <%--                            <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>--%>
-            <%--                        </div>--%>
-            <%--                        <div class="card-price">--%>
-            <%--                            <div class="price">1.200.000 VNĐ</div>--%>
-            <%--                            <button type="button" class="btn btn-outline-dark">Join now</button>--%>
-            <%--                        </div>--%>
-            <%--                    </div>--%>
-            <%--                </div>--%>
-            <%--            </div>--%>
-            <%--            <div class="col-lg-4 mb-4">--%>
-            <%--                <div class="card" style="width: 100%;">--%>
-            <%--                    <div class="card-body">--%>
-            <%--                        <div class="row card-head">--%>
-            <%--                            <div class="col-md-4">--%>
-            <%--                                <img src="../public/image/Rectangle 43.png">--%>
-            <%--                            </div>--%>
-            <%--                            <div class="col-md-8 ml-auto">--%>
-            <%--                                <div class="category">--%>
-            <%--                                    <p class="text-right">Javascript--%>
-            <%--                                    </p>--%>
-            <%--                                </div>--%>
-            <%--                                <h3>Javascript Foudatament</h3>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                        <p class="card-text">JavaScript là ngôn ngữ lập trình phía client, được sử dụng chủ yếu trong--%>
-            <%--                            các ứng dụng web để tạo ra các hiệu ứng tương tác trên trang web</p>--%>
-            <%--                        <div class="card-bottom">--%>
-            <%--                            <div class="author"><i class="fa-solid fa-graduation-cap"></i> ThanhPV</div>--%>
-            <%--                            <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>--%>
-            <%--                        </div>--%>
-            <%--                        <div class="card-price">--%>
-            <%--                            <div class="price">1.200.000 VNĐ</div>--%>
-            <%--                            <button type="button" class="btn btn-outline-dark">Join now</button>--%>
-            <%--                        </div>--%>
-            <%--                    </div>--%>
-            <%--                </div>--%>
-            <%--            </div>--%>
-            <%--            <div class="col-lg-4 mb-4">--%>
-            <%--                <div class="card" style="width: 100%;">--%>
-            <%--                    <div class="card-body">--%>
-            <%--                        <div class="row card-head">--%>
-            <%--                            <div class="col-md-4">--%>
-            <%--                                <img src="../public/image/Course%20JS.png">--%>
-            <%--                            </div>--%>
-            <%--                            <div class="col-md-8 ml-auto">--%>
-            <%--                                <div class="category">--%>
-            <%--                                    <p class="text-right">Java--%>
-            <%--                                    </p>--%>
-            <%--                                </div>--%>
-            <%--                                <h3>Basic Java <br>Tutorial</h3>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                        <p class="card-text">Java là một ngôn ngữ lập trình đa nền tảng, sử dụng để phát triển các ứng--%>
-            <%--                            dụng desktop, mobile, web và một số hệ thống phức tạp</p>--%>
-            <%--                        <div class="card-bottom">--%>
-            <%--                            <div class="author"><i class="fa-solid fa-graduation-cap"></i> ThanhPV</div>--%>
-            <%--                            <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>--%>
-            <%--                        </div>--%>
-            <%--                        <div class="card-price">--%>
-            <%--                            <div class="price">1.200.000 VNĐ</div>--%>
-            <%--                            <button type="button" class="btn btn-outline-dark">Join now</button>--%>
-            <%--                        </div>--%>
-            <%--                    </div>--%>
-            <%--                </div>--%>
-            <%--            </div>--%>
-            <%--            <div class="col-lg-4 mb-4">--%>
-            <%--                <div class="card" style="width: 100%;">--%>
-            <%--                    <div class="card-body">--%>
-            <%--                        <div class="row card-head">--%>
-            <%--                            <div class="col-md-4">--%>
-            <%--                                <img src="../public/image/Course%20SQl.png">--%>
-            <%--                            </div>--%>
-            <%--                            <div class="col-md-8 ml-auto">--%>
-            <%--                                <div class="category">--%>
-            <%--                                    <p class="text-right">Java--%>
-            <%--                                    </p>--%>
-            <%--                                </div>--%>
-            <%--                                <h3>Basic SQL<br/> Tutorial</h3>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                        <p class="card-text">SQL là ngôn ngữ lập trình để truy vấn và quản lý cơ sở dữ liệu, được sử--%>
-            <%--                            dụng trong các ứng dụng liên quan đến dữ liệu </p>--%>
-            <%--                        <div class="card-bottom">--%>
-            <%--                            <div class="author"><i class="fa-solid fa-graduation-cap"></i> ThanhPV</div>--%>
-            <%--                            <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>--%>
-            <%--                        </div>--%>
-            <%--                        <div class="card-price">--%>
-            <%--                            <div class="price">1.200.000 VNĐ</div>--%>
-            <%--                            <button type="button" class="btn btn-outline-dark">Join now</button>--%>
-            <%--                        </div>--%>
-            <%--                    </div>--%>
-            <%--                </div>--%>
-            <%--            </div>--%>
-
         </div>
         <div class="row course" id="row4Course">
             <h1 style="font-weight: bold; font-size: 50px">FAQ</h1>

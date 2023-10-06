@@ -19,58 +19,73 @@
                     <c:import url="dashboard/header-content-dashboard.jsp"></c:import>
                 </div>
 
-                <div class="header-content my-5">
-                    <div class="row content-oder-detail-1" style="padding-bottom: 10px; padding-left: 30px">
-                        <h4 style="font-weight: bold">Đơn đặt mua khóa học ${courseOrderInf.getOrderCode()}</h4>
-                        <p>Chi tiết về đơn đặt mua khóa học ${courseOrderInf.getOrderCode()} </p>
-<%--                        <input type="hidden" name="orderId" value="${courseOrderInf.getOrderId()}">--%>
-                        <p> <i class="fa-solid fa-check" style="color: #146c43"></i>${courseOrderInf.getStatus()}<i class="fa-solid fa-pen" style="color: #0a58ca;height: 30px"></i> edit</p>
+                <div class="order-detail">
+                    <div style="padding-bottom: 30px; padding-left: 30px;" class="row content-oder-detain-2">
+                        <div class="col-lg-12">
+                            <h4 style="font-weight: bold">Đơn đặt mua khóa học ${order.getOrderCode()}</h4>
+                            <p>Chi tiết về đơn đặt mua khóa học ${order.getOrderCode()} </p>
+                            <c:if test="${order.getStatus() == 'success'}">
+                                <div class="status-order"><span class="badge rounded-pill bg-success"><i
+                                        class="fa-solid fa-check"></i> Đã hoàn thành</span></div>
+                            </c:if>
+                            <c:if test="${order.getStatus() == 'cancel'}">
+                                <div class="status-order"><span class="badge rounded-pill bg-danger"><i
+                                        class="fa-solid fa-ban"></i> Đã hủy</span></div>
+                            </c:if>
+                            <c:if test="${order.getStatus() == 'pending'}">
+                                <div class="status-order"><span class="badge rounded-pill bg-secondary"><i
+                                        class="fa-solid fa-cloud-arrow-down"></i> Đang xử lí</span></div>
+                            </c:if>
+                        </div>
                     </div>
-                </div>
-                <div class="row content-oder-detain-1" style="padding-left: 30px">
-                    <div class="row content-oder-detail-1" style="padding-bottom: 30px; padding-left: 30px">
-                        <h5 style="font-weight: bold;padding-bottom: 20px">Thông tin khách hàng</h5>
-                        <p style="padding-left: 20px"><i class="fa-solid fa-user" style="color: #0a58ca"></i>  Họ tên khách hàng: <b>${courseOrderInf.getFullName()}</b></p>
-                        <p style="padding-left: 20px"><i class="fa-solid fa-phone" style="color: #0a58ca"></i>  Số điện thoại khách hàng: <b> ${courseOrderInf.getPhone()}</b></p>
-                        <p style="padding-left: 20px"><i class="fa-solid fa-envelope"style="color: #0a58ca"></i>  Email khách hàng: <b>${courseOrderInf.getEmail()}</b></p>
+                    <div class="row content-oder-detain-2">
+                        <h5 style="font-weight: bold;padding-bottom: 30px; padding-left: 30px">Thông tin khách hàng</h5>
                     </div>
-                </div>
-                <div class="row content-oder-detain-2" style="padding-left: 30px">
-                    <h5 style="font-weight: bold;padding-bottom: 30px; padding-left: 30px">Item Ordered</h5>
-                </div>
-                <div class="row content-oder-detain-3" style="padding-left: 30px;padding-bottom: 30px">
-                    <div class="col-lg-3" style="padding-left: 30px">
-                        <img src="../public/image/Rectangle 52.png" height="100" width="200">
+                    <div class="row content-oder-detain-1 mb-3" style="padding-left: 30px">
+                        <div class="col-lg-12">
+                            <p style="padding-left: 20px"><i class="fa-solid fa-user" style="color: #0a58ca"></i> Họ tên
+                                khách hàng: <b>${order.getUser().getFullName()}</b></p>
+                            <p style="padding-left: 20px"><i class="fa-solid fa-phone" style="color: #0a58ca"></i> Số
+                                điện thoại khách hàng: <b> ${order.getUser().getPhone()}</b></p>
+                            <p style="padding-left: 20px"><i class="fa-solid fa-envelope" style="color: #0a58ca"></i>
+                                Email khách hàng: <b>${order.getUser().getEmail()}</b></p>
+                        </div>
                     </div>
-                    <div class="col-lg-5">
-                        <h5 style="font-weight: bold">${courseOrderInf.getCourseName()}</h5>
-                        <p>${courseOrderInf.getShorDescription()}</p>
+                    <div class="row content-oder-detain-2">
+                        <h5 style="font-weight: bold;padding-bottom: 30px; padding-left: 30px">Item Ordered</h5>
                     </div>
-                    <div class="col-lg-4">
-                        <h5 style="text-align: right;font-weight: bold">${courseOrderInf.getPrice()}</h5>
+                    <div class="${courseList.getAvatar()}"
+                         style="padding-left: 30px;padding-bottom: 30px;display: flex;">
+                        <div class="col-lg-9 box-item d-flex justify-content-around">
+                            <div class="img">
+                                <img src="${order.getCourse().getAvatar()}" height="100" width="200">
+                            </div>
+                            <div class="info-item">
+                                <h5 style="font-weight: bold">${order.getCourse().getName()}</h5>
+                                <p>${order.getCourse().getDescription()}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg 3 price-item">
+                            <h5 style="text-align: right;font-weight: bold">${order.getCourse().getPrice()}</h5>
+                        </div>
                     </div>
                     <hr>
-                </div>
-                <div class="row content-oder-detain-4" style="padding-left: 30px;padding-bottom: 30px">
-                    <div class="col-lg-11">
-                        <h5 style="padding-left: 30px" >Discount</h5>
+                    <div class="row content-oder-detain-4 mb-3">
+                        <div class="col-lg-12 d-flex justify-content-between">
+                            <h5 style="padding-left: 30px">Discount</h5>
+                            <h5>10%</h5>
+                        </div>
                     </div>
-                    <div class="col-lg-1">
-                        <h5 >10%</h5>
+                    <div class="row content-oder-detain-5">
+                        <div class="col-lg-12 d-flex justify-content-between">
+                            <h5 style="padding-left: 30px; font-weight: bold">Total</h5>
+                            <h6 style="font-weight: bold">${order.getOrderPrice()}</h6>
+                        </div>
+                    </div>
+                    <div class="row content-oder-detain-6">
+                        <i style="padding-left: 30px;padding-bottom: 30px;color: #666;">Khách hàng thanh toán qua chuyển khoản ngân hàng</i>
                     </div>
                 </div>
-                <div class="row content-oder-detain-5" style="padding-left: 30px;padding-bottom: 30px">
-                    <div class="col-lg-10">
-                        <h5 style="padding-left: 30px; font-weight: bold" >Total</h5>
-                    </div>
-                    <div class="col-lg-2">
-                        <h6 style="font-weight: bold">${courseOrderInf.getOrderPrice()}</h6>
-                    </div>
-                </div>
-                <div class="row content-oder-detain-6" style="padding-left: 30px;padding-bottom: 30px">
-                    <i style="padding-left: 30px">Khách hàng thanh toán qua chuyển khoản ngân hàng</i>
-                </div>
-
             </div>
         </div>
     </div>
