@@ -24,6 +24,7 @@
     padding: 10px 30px;
     box-shadow: 2px 10px 20px 0px rgba(11, 16, 63, 0.40);
 }
+
 .btn-login {
     box-shadow: unset;
     background: #101218;
@@ -368,6 +369,7 @@ ul.nav.nav-pills.menu-footer .nav-link {
     font-weight: 700;
     line-height: 20px;
 }
+
 .content-dashboard .header-content span {
     padding: 5px 30px 5px 10px !important;
     font-size: 15px;
@@ -532,48 +534,60 @@ ul.nav.nav-pills.menu-footer .nav-link {
     padding: 5px 10px;
     border: 0;
 }
+
 .content-course .main-content p, .content-course .main-content b {
     font-family: 'Montserrat';
 }
+
 a.btn-hero.btn.btn-primary::after {
     content: "\f0a9";
     font-family: 'FontAwesome';
     margin-left: 10px;
 }
+
 .author i.fa-solid.fa-graduation-cap {
     color: #0070FD;
 }
+
 .rating .fa-solid {
     color: #FEC43F;
 }
+
 .content-font p {
     color: #101218;
     font-size: 17px;
     font-weight: 500;
     margin-bottom: 12px;
 }
+
 .content-knowledge p:before, .content-other-info p:before {
     content: "\f058";
     font-family: 'FontAwesome';
     margin-right: 10px;
     color: #0d6efd;
-}.content-requirements p:before {
+}
+
+.content-requirements p:before {
     content: "\f044";
     font-family: 'FontAwesome';
     margin-right: 10px;
     color: #0d6efd;
 }
+
 .content-font.main-content {
     position: relative;
 }
+
 .content-font.main-content .column-2 {
     margin-top: 0;
 }
+
 .content-font.main-content .column-2 .content-1 {
     position: sticky;
     top: 20px;
     margin-top: 0;
 }
+
 a.btn-order-course {
     font-size: 20px;
     border-radius: 40px;
@@ -582,39 +596,48 @@ a.btn-order-course {
     padding: 10px;
     margin-top: 20px;
 }
+
 .modal-content .wrapper {
     width: 100%;
 }
+
 .btn-close-form {
     display: flex;
     justify-content: flex-end;
 }
+
 .login-link p a {
     font-size: 16px;
     color: #0d6efd !important;
     font-weight: 600;
 }
+
 .card-img-overlay {
     padding: 0;
 }
-.content-font-course .accordion-button , .content-font-course .accordion-item:first-of-type .accordion-button  {
+
+.content-font-course .accordion-button, .content-font-course .accordion-item:first-of-type .accordion-button {
     background: #eee;
     margin-bottom: 15px;
     padding: 10px;
     border: 0 !important;
 }
-.content-font-course .accordion-item{
+
+.content-font-course .accordion-item {
     border: 0 !important;
 }
+
 .content-font-course h3 {
     font-size: 16px;
     font-weight: 700;
 }
+
 .table-of-contents a.list-group-item.list-group-item-action {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 span.course-content-name {
     color: #0070FD;
     font-family: Montserrat;
@@ -623,30 +646,36 @@ span.course-content-name {
     font-weight: 600;
     line-height: normal;
 }
+
 form.edit-course-content {
     border-radius: 40px;
     border: 1px solid #ECEEEE;
     padding: 30px;
 }
-form.edit-course-content i{
+
+form.edit-course-content i {
     background: #E2F6FF;
     border-radius: 50px;
     font-size: 14px;
     padding: 10px;
     color: #0070FD;
 }
+
 form.edit-course-content .form-control {
     border-radius: 20px;
     border: 1px solid #E8E8E8;
 }
+
 form.edit-course-content button.btn.btn-primary {
     border-radius: 30px;
     background: #0070FD;
     padding: 10px 20px;
 }
+
 .content-detail-list h3 {
     font-weight: 600;
 }
+
 a.btn.btn-primary.btn-sm.add-detail-content {
     background: #E2F6FF;
 }
@@ -655,7 +684,9 @@ a.btn.btn-primary.btn-sm.add-detail-content span {
     color: #0B103F;
 }
 
-a.btn.btn-primary.btn-sm.add-detail-content i {color: #0070FD;}
+a.btn.btn-primary.btn-sm.add-detail-content i {
+    color: #0070FD;
+}
 
 
 .course-detail {
@@ -665,6 +696,7 @@ a.btn.btn-primary.btn-sm.add-detail-content i {color: #0070FD;}
     display: flex;
     align-items: center;
 }
+
 .row.course-detail h3 {
     color: #0B0B0B;
     font-family: Montserrat;
@@ -679,9 +711,11 @@ a.btn.btn-primary.btn-sm.add-detail-content i {color: #0070FD;}
     font-style: normal;
     font-weight: 500;
 }
+
 .row.course-detail .btn-content {
-     border-radius: 5px;
+    border-radius: 5px;
 }
+
 a.btn.btn-primary.learn.btn-content {
     color: #5E5EF0;
     background: #C5C5FE;
@@ -696,10 +730,28 @@ a.btn.btn-primary.delete.btn-content {
     background: #FFC4DF;
     color: #FF3290;
 }
+
 .row.course-detail i {
     font-size: 18px;
     color: #0B0B0B;
 }
+
 .action-course a.btn {
     border-radius: 5px;
+}
+
+.col-3.using .title {
+    margin: 0;
+}
+span.font-weight-bold {
+    font-weight: 700;
+}
+
+.time-buy p {
+    font-size: 14px;
+}
+p.name-display {
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
 }

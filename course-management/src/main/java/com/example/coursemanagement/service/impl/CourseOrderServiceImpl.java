@@ -20,4 +20,19 @@ public class CourseOrderServiceImpl implements ICourseOrderService {
     public CourseOrderInf showDetailOrderById(int id) {
         return courseOrderRepo.showDetailOrderById(id);
     }
+
+    @Override
+    public void createOrder(CourseOrder courseOrder) {
+        courseOrderRepo.createOrder(courseOrder);
+    }
+
+    @Override
+    public List<CourseOrder> selectByUserBuy(int idUser) {
+        return courseOrderRepo.selectByUserBuy(idUser);
+    }
+
+    @Override
+    public boolean checkIdBuyCourse(int idUser, int idCourse) {
+        return courseOrderRepo.checkIdBuyCourse(idUser,idCourse);
+    }
 }

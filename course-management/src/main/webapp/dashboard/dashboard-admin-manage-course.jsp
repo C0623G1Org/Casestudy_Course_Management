@@ -9,23 +9,8 @@
             </div>
 
             <div class="col-lg-9 content-dashboard">
-                <div class="header-content">
-                    <div class="hello">
-                        <form class="row form-search-course g-2">
-                            <div class="col-auto">
-                                <input type="text" class="form-control" id="inputEmail"
-                                       placeholder=" Nhập khóa học cần tìm">
-                            </div>
-                            <div class="col-auto">
-                                <button type="submit" class="btn btn-primary">Tìm</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="user">
-                       <span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">
-                            <img class="rounded-circle me-1" width="35" height="35" src="https://zpsocial-f54-org.zadn.vn/24a379da816c6f32367d.jpg" alt="">${user.getFullName()}
-                       </span>
-                    </div>
+                <div class="mb-5">
+                    <c:import url="header-content-dashboard.jsp"></c:import>
                 </div>
                 <div class="header-content mt-5">
                     <div class="hello">
@@ -44,11 +29,12 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th class="text-center" scope="col"><i class="fa-solid fa-arrow-down-wide-short"></i>ID</th>
+                                <th class="text-center" scope="col">ID</th>
                                 <th class="text-center" scope="col">Tên khóa học</th>
+                                <th class="text-center" scope="col">Mức độ</th>
                                 <th class="text-center" scope="col">Instructor</th>
                                 <th class="text-center" scope="col">Giá tiền</th>
-                                <th class="text-center" scope="col" colspan="3">Thao tác</th>
+                                <th class="text-center" scope="col">Thao tác</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -56,12 +42,17 @@
                                     <tr>
                                         <td>${courses.getId()}</td>
                                         <td>${courses.getName()}</td>
+                                        <c:forEach items="${categoryList}" var="category">
+                                            <c:if test="${category.getId() == courses.getCourseLevelId()}">
+                                                <td>${category.getName()}</td>
+                                            </c:if>
+                                        </c:forEach>
                                         <td>${courses.getInstructor()}</td>
-                                        <td>${courses.getPrice()}</td>
-                                        <td class="action-course d-flex justify-content-between">
-                                                <a role="button" class="btn btn-primary learn btn-content mb-1" href="/course/detail?id=${courses.getId()}">Xem</a>
-                                                <a role="button" class="btn btn-primary edit btn-content mb-1" href="#">Sửa</a>
-                                                <a role="button" class="btn btn-primary delete btn-content mb-1" href="#">Xóa</a>
+                                        <td>${courses.getPrice()} VNĐ</td>
+                                        <td class="action-course d-flex justify-content-around">
+                                                <a role="button" class="btn btn-primary learn btn-content mb-1" href="/learn?id=${courses.getId()}">Xem</a>
+                                                <a role="button" class="btn btn-primary edit btn-content mb-1" href="/dashboard/course/edit?id=${courses.getId()}">Sửa</a>
+                                            <a role="button" onclick="displayModalDelete('${courses.getId()}','${courses.getName()}')" class="btn btn-primary delete btn-content mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal">Xóa</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
@@ -73,4 +64,27 @@
         </div>
     </div>
 </section>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Bạn có chắc chắn không?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="modal-body-detail-delete"class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a id="deleteDetailContent" role="button" class="btn btn-danger">Xóa</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function displayModalDelete(id,title) {
+        document.getElementById("modal-body-detail-delete").innerHTML = "Bạn có chắc chắn muốn xóa khóa học <span class='course-content-name'>"+ title + "</span> không ?";
+        document.getElementById("deleteDetailContent").setAttribute("href", "/dashboard/course/delete?id="+id);
+    }
+</script>
 <c:import url="footer-dashboard.jsp"></c:import>

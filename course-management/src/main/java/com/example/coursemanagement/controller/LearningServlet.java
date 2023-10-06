@@ -6,8 +6,10 @@ import com.example.coursemanagement.model.CourseDetailedContent;
 import com.example.coursemanagement.model.User;
 import com.example.coursemanagement.service.ICourseContentService;
 import com.example.coursemanagement.service.ICourseDetailContentService;
+import com.example.coursemanagement.service.ICourseOrderService;
 import com.example.coursemanagement.service.ICourseService;
 import com.example.coursemanagement.service.impl.CourseContentServiceImpl;
+import com.example.coursemanagement.service.impl.CourseOrderServiceImpl;
 import com.example.coursemanagement.service.impl.CourseServiceImpl;
 import com.example.coursemanagement.service.impl.DetailedContentServiceImpl;
 
@@ -25,24 +27,31 @@ public class LearningServlet extends HttpServlet {
     private final ICourseService courseService = new CourseServiceImpl();
     private final ICourseContentService contentService = new CourseContentServiceImpl();
     private final ICourseDetailContentService detailContentService = new DetailedContentServiceImpl();
+    private final ICourseOrderService orderService = new CourseOrderServiceImpl();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(false);
         request.setCharacterEncoding("UTF-8");
         String url = request.getRequestURI();
+        int idCourse = Integer.parseInt(request.getParameter("id"));
         if (session == null || session.getAttribute("user") == null) {
             response.sendRedirect(request.getContextPath() + "/");
         } else {
             User user = (User) session.getAttribute("user");
-            request.setAttribute("user", user);
-        }
-        if (url.endsWith("/learn/lesson/") || url.endsWith("/learn/reading/") || url.endsWith("/learn/exercise/")){
-            getDetailContent(request);
-            renderTableOfContent(request);
-            requestDispatcher(request, response, "/learning/user-learning-video.jsp");
-        } else if (url.endsWith("/learn")) {
-            renderTableOfContent(request);
-            requestDispatcher(request,response,"/learning/user-learning.jsp");
+            // Check xem user đã mua chưa khoá học chưa, chưa thì không cho xem
+            boolean checkIdBuyCourse = orderService.checkIdBuyCourse(user.getId(),idCourse);
+            if (checkIdBuyCourse) {
+                if (url.endsWith("/learn/lesson/") || url.endsWith("/learn/reading/") || url.endsWith("/learn/exercise/")){
+                    getDetailContent(request);
+                    renderTableOfContent(request);
+                    requestDispatcher(request, response, "/learning/user-learning-video.jsp");
+                } else if (url.endsWith("/learn")) {
+                    renderTableOfContent(request);
+                    requestDispatcher(request,response,"/learning/user-learning.jsp");
+                }
+            } else {
+                response.sendRedirect(request.getContextPath() + "/");
+            }
         }
     }
 

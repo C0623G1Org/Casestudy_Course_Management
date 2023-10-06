@@ -7,7 +7,7 @@
       <div class="col-lg-6">
         <h1>Master New Skills with LTTA</h1>
         <p>Những khóa học được LTTA sản xuất theo tiêu chuẩn chất lượng cao đối với học tập trực tuyến</p>
-        <div class="row">
+        <div class="row d-flex align-items-center">
           <div class="col-4">
             <a class="btn-hero btn btn-primary" href="/course" role="button">Get Started</a>
           </div>

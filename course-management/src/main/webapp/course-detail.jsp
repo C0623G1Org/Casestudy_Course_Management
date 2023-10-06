@@ -81,7 +81,15 @@
                         </div>
                     </div>
                     <div class="mt-3">
-                        <a href="/course-purchase-servlet?action=buy_course&id=${course.getId()}" role="button" class="btn btn-primary btn-order-course">Mua khóa học</a>
+                        <c:if test="${checkUserBuy == true}">
+                            <div class="alert alert-success" role="alert">
+                                Bạn đã mua khoá học này !
+                            </div>
+                            <a href="/learn?id=${course.getId()}" role="button" class="btn btn-primary btn-order-course">Tiếp tục học</a>
+                        </c:if>
+                        <c:if test="${checkUserBuy == false}">
+                            <a href="/course-purchase-servlet?action=buy_course&id=${course.getId()}" role="button" class="btn btn-primary btn-order-course">Mua khóa học</a>
+                        </c:if>
                     </div>
                 </div>
             </div>

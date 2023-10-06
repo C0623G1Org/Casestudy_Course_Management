@@ -79,15 +79,11 @@ public class UserServlet extends HttpServlet {
                 sendMessageToView(response, message);
             } else {
                 user = new User(username, password, email);
-                HttpSession session = request.getSession();
-                session.setAttribute("user", user);
                 userService.saveE(user);
-                response.sendRedirect("/dashboard");
-//                sendMessageToView(response, message);
+                sendMessageToView(response, message);
             }
         }
     }
-
     private static void sendMessageToView(HttpServletResponse response, String message) throws IOException {
         response.setContentType("application/json");
         response.setContentType("text/html;charset=UTF-8");

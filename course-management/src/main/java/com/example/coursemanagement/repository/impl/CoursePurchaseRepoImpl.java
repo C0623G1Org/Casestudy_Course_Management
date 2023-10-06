@@ -28,7 +28,7 @@ public class CoursePurchaseRepoImpl implements ICoursePurchaseRepo {
                 double price = resultSet.getDouble("price");
                 course = new Course(course_id,name,description,price);
             }
-//            resultSet.close();
+            resultSet.close();
             preparedStatement.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);

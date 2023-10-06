@@ -47,6 +47,13 @@
                         <h4 class="my-3"><i class="fa-solid fa-money-bill"></i>Số tiền</h4>
                         <input type="hidden" name="id" value="${course.getId()}">
                         <h1>${course.getPrice()}</h1>
+                        <hr>
+                    </div>
+
+                    <div class="row">
+                        <h4 class="my-3"><i class="fa-solid fa-lightbulb"></i>Trạng thái</h4>
+                        <h1>${code}</h1>
+
                     </div>
                 </div>
 
