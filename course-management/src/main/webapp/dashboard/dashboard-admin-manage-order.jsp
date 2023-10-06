@@ -37,14 +37,21 @@
                                 <tr>
                                     <th scope="row">${order.getOrderCode()}</th>
                                     <td class="done">
-                                        <div class="done-content"><i class="fa-solid fa-check"></i>${order.getStatus()}
-                                        </div>
+                                        <c:if test="${order.getStatus() == 'success'}">
+                                            <div class="status-order"><span class="badge rounded-pill bg-success"><i class="fa-solid fa-check"></i>Đã hoàn thành</span></div>
+                                        </c:if>
+                                        <c:if test="${order.getStatus() == 'cancel'}">
+                                            <div class="status-order"><span class="badge rounded-pill bg-danger"><i class="fa-solid fa-ban"></i>Đã hủy</span></div>
+                                        </c:if>
+                                        <c:if test="${order.getStatus() == 'pending'}">
+                                            <div class="status-order"><span class="badge rounded-pill bg-secondary"><i class="fa-solid fa-cloud-arrow-down"></i>Đang xử lí</span></div>
+                                        </c:if>
                                     </td>
                                     <td>${order.getCourseName()}</td>
                                     <td>${order.getFullName()}</td>
                                     <td class="action-course d-flex justify-content-around">
                                         <a role="button" class="btn btn-primary learn btn-content mb-1"
-                                           href="/course-order-servlet?action=show_detail_order&orderId=${order.getOrderId()}">Xem</a>
+                                           href="/dashboard/order/detail?order-id=${order.getOrderId()}">Xem</a>
                                         <a role="button" class="btn btn-primary edit btn-content mb-1" href="#">Sửa</a>
                                         <a role="button" class="btn btn-primary delete btn-content mb-1" href="#">Xóa</a>
                                     </td>

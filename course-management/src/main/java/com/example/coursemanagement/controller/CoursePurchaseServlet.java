@@ -22,7 +22,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-@WebServlet(name = "coursePurchaseServlet", value = "/course-purchase-servlet")
+@WebServlet(name = "coursePurchaseServlet", value = {
+        "/order-course",
+        "/checkout",
+        "/checkout/success",
+        "/checkout/cancel",
+})
 public class CoursePurchaseServlet extends HttpServlet {
     private final ICoursePurchaseService coursePurchaseService = new CoursePurchaseServiceImpl();
     private final ICourseOrderService courseOrderService = new CourseOrderServiceImpl();
@@ -35,18 +40,41 @@ public class CoursePurchaseServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("user");
-            String action = request.getParameter("action");
-            if (action == null) {
-                action = "";
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("user") == null) {
+            response.sendRedirect(request.getContextPath() + "/");
+        } else {
+            request.setCharacterEncoding("UTF-8");
+            String url = request.getRequestURI();
+            if (url.endsWith("/order-course")) {
+                showCourseInf(request, response);
+            } else if (url.endsWith("/checkout/success")) {
+                updateStatusSuccess(request,response);
+            } else if (url.endsWith("/checkout/cancel")) {
+                updateStatusCancel(request,response);
             }
-            switch (action) {
-                case "buy_course":
+        }
+    }
 
-                    showCourseInf(request, response);
-                    break;
-            }
+    private void updateStatusCancel(HttpServletRequest request, HttpServletResponse response) {
+        int codeOrder = Integer.parseInt(request.getParameter("id"));
+        courseOrderService.updateStatusCancel(codeOrder);
+        try {
+            response.sendRedirect("/");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void updateStatusSuccess(HttpServletRequest request, HttpServletResponse response) {
+        int codeOrder = Integer.parseInt(request.getParameter("id"));
+        int idCourse = Integer.parseInt(request.getParameter("course-id"));
+        courseOrderService.updateStatusDone(codeOrder);
+        try {
+            response.sendRedirect("/learn?id="+idCourse);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void showCourseInf(HttpServletRequest request, HttpServletResponse response) {
@@ -68,43 +96,28 @@ public class CoursePurchaseServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("user");
-
-//        if (user == null) {
-//            int id = Integer.parseInt(request.getParameter("id"));
-//            response.sendRedirect("/course/detail?id=" + id);
-//        } else {
-            String action = request.getParameter("action");
-            if (action == null) {
-                action = "";
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("user") == null) {
+            response.sendRedirect(request.getContextPath() + "/");
+        } else {
+            request.setCharacterEncoding("UTF-8");
+            String url = request.getRequestURI();
+            if (url.endsWith("/checkout")) {
+                showCheckoutPage(request, response);
             }
-            switch (action) {
-                case "buy_course":
-
-                    showCourseInf(request, response);
-                    break;
-                case "check-out":
-                    showCheckoutPage(request, response);
-                    break;
-            }
-//        }
-
-//        String action = request.getParameter("action");
-//        if (action == null) {
-//            action = "";
-//        }
-//        switch (action) {
-//            case "check-out":
-//                showCheckoutPage(request, response);
-//                break;
-//
-//        }
+        }
     }
 
     private void showCheckoutPage(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("id"));
-        Course course = coursePurchaseService.displayCourse(id);
+        int idCourse = Integer.parseInt(request.getParameter("id-course"));
+        int idUser = Integer.parseInt(request.getParameter("id-user"));
+        int orderCode = Integer.parseInt(request.getParameter("code-order"));
+        String orderDate = request.getParameter("date-order");
+        double orderPrice = Double.parseDouble(request.getParameter("price-order"));
+        Course course = coursePurchaseService.displayCourse(idCourse);
+        User user = userService.selectE(idUser);
+        CourseOrder courseOrder = new CourseOrder(orderDate,orderPrice,user,course,orderCode);
+        courseOrderService.createOrder(courseOrder);
         request.setAttribute("course", course);
         request.setAttribute("code", orderCode);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/check-out.jsp");
@@ -116,27 +129,5 @@ public class CoursePurchaseServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
-
-    private void createOrder(HttpServletRequest request, HttpServletResponse response) {
-        String orderDate = String.valueOf(localDate);
-        double orderPrice = Double.parseDouble(request.getParameter("orderPrice"));
-        int userId = Integer.parseInt(request.getParameter("userId"));
-        int courseId = Integer.parseInt(request.getParameter("courseId"));
-        User user = userService.selectE(userId);
-        Course course = courseService.selectCourse(courseId);
-//        String status = request.getParameter("status");
-        courseOrderService.createOrder(new CourseOrder(orderDate, orderPrice, user, course, orderCode));
-        try {
-            response.sendRedirect("/course-purchase-servlet");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private void updateOrder(HttpServletRequest request, HttpServletResponse response) {
-
-    }
-
-
 
 }

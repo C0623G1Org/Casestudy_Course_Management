@@ -36,6 +36,7 @@ import java.util.Map;
                 "/dashboard/course/content/detail/delete",
                 "/dashboard/member",
                 "/dashboard/order",
+                "/dashboard/order/detail",
                 "/dashboard/update",
                 "/dashboard/password",
                 "/dashboard/member/edit",
@@ -46,7 +47,6 @@ public class DashboardServlet extends HttpServlet {
     private final ICourseContentService contentService = new CourseContentServiceImpl();
     private final IUserService userService = new UserServiceImpl();
     private final ICourseOrderService courseOrderService = new CourseOrderServiceImpl();
-
     private final ICourseDetailContentService detailContentService = new DetailedContentServiceImpl();
     private final IContentType contentType = new ContentTypeServiceImpl();
     private final ICourseLevelService levelService = new CourseCategoryServiceImpl();
@@ -91,7 +91,9 @@ public class DashboardServlet extends HttpServlet {
                     showFormEditDetailContent(request, response, user);
                 } else if (url.endsWith("/dashboard/course/content/detail/delete")) {
                     deleteDetailContent(request, response);
-                } else if (url.endsWith("/dashboard/order")) {
+                } else if (url.endsWith("/dashboard/order/detail")) {
+                    showDetailOrder(request,response);
+                }  else if (url.endsWith("/dashboard/order")) {
                     showPageManageOrder(request, response, user);
                 } else {
                     getListCourseAdmin(request, response, user);
@@ -108,6 +110,13 @@ public class DashboardServlet extends HttpServlet {
                 }
             }
         }
+    }
+    private void showDetailOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int orderId = Integer.parseInt(request.getParameter("order-id"));
+        CourseOrder order = courseOrderService.showOrderById(orderId);
+        request.setAttribute("order", order);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/detailed-course-order.jsp");
+        requestDispatcher.forward(request, response);
     }
 
     private void deleteContent(HttpServletRequest request, HttpServletResponse response) {
@@ -479,8 +488,8 @@ public class DashboardServlet extends HttpServlet {
     private void getListCourseAdmin(HttpServletRequest request, HttpServletResponse response, User user) {
         List<Course> courseList = courseService.showList();
         request.setAttribute("courseList", courseList);
-        List<CourseOrderInf> courseOrderInfs = courseOrderService.showCourseOrder();
-        request.setAttribute("courseOrderInfs", courseOrderInfs);
+        List<CourseOrder> courseOrdersNow = courseOrderService.getOrderByDateNow();
+        request.setAttribute("courseOrdersNow", courseOrdersNow);
         request.setAttribute("user", user);
         dispatcherData(request, response, "/dashboard/dashboard-admin.jsp");
     }

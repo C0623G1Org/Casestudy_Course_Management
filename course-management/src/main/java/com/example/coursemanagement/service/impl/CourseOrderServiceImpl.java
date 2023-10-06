@@ -37,13 +37,23 @@ public class CourseOrderServiceImpl implements ICourseOrderService {
     }
 
     @Override
-    public void updateStatusDone(int id, CourseOrder courseOrder) {
-        courseOrderRepo.updateStatusDone(id, courseOrder);
+    public List<CourseOrder> getOrderByDateNow() {
+        return courseOrderRepo.getOrderByDateNow();
     }
 
     @Override
-    public void updateStatusCancel(int id, CourseOrder courseOrder) {
-        courseOrderRepo.updateStatusCancel(id, courseOrder);
+    public CourseOrder showOrderById(int idOrder) {
+        return courseOrderRepo.showOrderById(idOrder);
+    }
+
+    @Override
+    public void updateStatusDone(int idOrder) {
+        courseOrderRepo.updateStatusDone(idOrder);
+    }
+
+    @Override
+    public void updateStatusCancel(int idOrder) {
+        courseOrderRepo.updateStatusCancel(idOrder);
     }
 
 
