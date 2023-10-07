@@ -63,12 +63,12 @@
             </div>
             <div class="col-6 column-2">
                 <div class="content-1">
-                    <img src="../public/image/Rectangle 52.png"/>
+                    <img src="${course.getAvatar()}"/>
                     <div class="mt-5">
                         <h1>${course.getName()}</h1>
                         <p>${course.getDescription()}</p>
                     </div>
-                    <h1 class="mt-5">${course.getPrice()} $</h1>
+                    <h1 class="mt-5">${course.getPrice()} VND</h1>
                     <div class="mt-4 col-4" style="background: #E2F6FF; padding: 5px; border-radius: 40px">
                         <div class="author" style="text-align: center">
                             <i class="fa-solid fa-graduation-cap"></i> <span
@@ -93,7 +93,7 @@
                                 <a href="/learn?id=${course.getId()}" role="button" class="btn btn-primary btn-order-course">Tiếp tục học</a>
                             </c:if>
                             <c:if test="${checkUserBuy == false}">
-                                <a href="/course-purchase-servlet?action=buy_course&id=${course.getId()}" role="button" class="btn btn-primary btn-order-course">Mua khóa học</a>
+                                <a href="/order-course?id=${course.getId()}" role="button" class="btn btn-primary btn-order-course">Mua khóa học</a>
                             </c:if>
                         </c:if>
                     </div>

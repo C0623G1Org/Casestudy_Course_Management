@@ -18,11 +18,7 @@
                 <div class="row content-course video my-3">
                     <div class="col-lg-12">
                         <div class="video-course mb-3">
-                            <iframe width="100%" height="500px"
-                                    src="https://www.youtube.com/embed/0SJE9dYdpps?si=qOsUPKp9Un5vi4Ha"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen></iframe>
+                            <img src="${course.getAvatar()}" alt="${course.getName()}">
                         </div>
                         <h3 class="mb-4">Bạn sẽ học được gì?</h3>
                         <div class="content-knowledge">

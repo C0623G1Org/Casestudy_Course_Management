@@ -28,9 +28,6 @@ public class CourseOrderServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
-            case "show_detail_order":
-                showDetailOrder(request, response);
-                break;
             default:
                 showCourseOrder(request, response);
         }
@@ -46,13 +43,7 @@ public class CourseOrderServlet extends HttpServlet {
         requestDispatcher.forward(request, response);
     }
 
-    private void showDetailOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int orderId = Integer.parseInt(request.getParameter("orderId"));
-        CourseOrderInf courseOrderInf = courseOrderService.showDetailOrderById(orderId);
-        request.setAttribute("courseOrderInf", courseOrderInf);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("detailed-course-order.jsp");
-        requestDispatcher.forward(request, response);
-    }
+
 
 
 

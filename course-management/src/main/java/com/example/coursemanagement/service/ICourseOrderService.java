@@ -10,11 +10,19 @@ public interface ICourseOrderService {
 
     CourseOrderInf showDetailOrderById(int id);
 
-    void createOrder (CourseOrder courseOrder);
+    void createOrder(CourseOrder courseOrder);
 
-    void updateStatusDone (int id, CourseOrder courseOrder);
+    void updateStatusDone(int idOrder);
 
-    void updateStatusCancel (int id, CourseOrder courseOrder);
+    void updateStatusCancel(int idOrder);
+
     List<CourseOrder> selectByUserBuy(int idUser);
+
     boolean checkIdBuyCourse(int idUser, int idCourse);
+
+    List<CourseOrder> getOrderByDateNow();
+
+    CourseOrder showOrderById(int idOrder);
+
+    void deleteOrder (int id);
 }

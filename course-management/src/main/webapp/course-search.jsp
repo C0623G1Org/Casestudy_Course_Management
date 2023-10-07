@@ -10,9 +10,15 @@
                     <div class="card-img-overlay">
                         <div class="p-5 mb-4 bg-body-tertiary rounded-3">
                             <div class="container-fluid py-5">
-                                <h3 class="display-5 fw-bold">Tất cả khóa học</h3>
-                                <p class="col-md-8 fs-5">Các khóa học tại LTTA luôn được cập nhật các công nghệ mới nhất
-                                    nhằm đáp ứng nhu cầu tuyển dụng nhân lực CNTT tại Việt Nam và trên thế giới.</p>
+                                <h3 class="display-5 fw-bold">Kết quả tìm kiếm</h3>
+                                <p class="col-md-8 fs-5">Tìm thấy ${courseList.size()} kết quả cho
+                                <c:if test="${not empty nameCourse}">
+                                    Tên khóa học: <span>${nameCourse}</span>
+                                </c:if>
+                                <c:if test="${not empty instructorCourse}">
+                                    Tên giảng viên: <span>${instructorCourse}</span>
+                                </c:if>
+                                </p>
                             </div>
                         </div>
                     </div>
