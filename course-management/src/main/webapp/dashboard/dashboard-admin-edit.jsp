@@ -15,7 +15,7 @@
                     <form action="/dashboard/member/edit" class="edit-user-inf my-4 text-start" method="post">
                         <div class="edit-header">
                             <div class="avatar col-4">
-                                <img src="${req.requestURI}/public/image/ava.png" alt="ava"/> <br>
+                                <img src="${req.requestURI}/public/image/3607444.png" alt="ava"/> <br>
                                 <button class="ava-btn" type="submit">
                                     <i class='bx bxs-user' style='color:#5585fd'></i>
                                     <span>Edit avatar</span>
