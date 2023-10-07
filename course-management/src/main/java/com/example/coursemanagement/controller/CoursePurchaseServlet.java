@@ -34,7 +34,7 @@ public class CoursePurchaseServlet extends HttpServlet {
     private final IUserService userService = new UserServiceImpl();
     private final ICourseService courseService = new CourseServiceImpl();
     private final LocalDate localDate = LocalDate.now();
-    private int orderCode = (int) (Math.random() * 20001) + 10000;
+    private static int orderCode = (int) (Math.random() * 20001) + 10000;
 
 
     @Override
@@ -81,6 +81,7 @@ public class CoursePurchaseServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         Course course = courseService.selectCourse(id);
         request.setAttribute("course", course);
+        orderCode++;
         request.setAttribute("code", orderCode);
         request.setAttribute("localDate", localDate);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/buy-course.jsp");

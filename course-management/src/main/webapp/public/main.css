@@ -837,6 +837,41 @@ form.check-out .item-order {
     width: 100%;
 }
 
+.form-search-home input {
+    border: 0;
+    background: unset;
+}
+
+.form-search-home .col-auto {
+    margin: 0;
+}
+
+.row.form-search-home {
+    padding: 0px;
+    margin: 0;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-search-home .col-auto .btn {
+    padding: 7px 20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.form-search-home .form-control:focus {
+    border: 0;
+    background: unset;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border: 1px solid #D0CCCB;
+    box-shadow: 1px 2px 1px #eee;
+}
+
 @media only screen and (max-width: 600px) {
     .col-lg-9.content-dashboard .body-content .card-body .col-2 img, .row.card-head img {
         height: 300px;
