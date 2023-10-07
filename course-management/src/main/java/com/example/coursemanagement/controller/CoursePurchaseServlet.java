@@ -26,7 +26,7 @@ import javax.servlet.http.HttpSession;
         "/order-course",
         "/checkout",
         "/checkout/success",
-        "/checkout/cancel",
+        "/checkout/cancel"
 })
 public class CoursePurchaseServlet extends HttpServlet {
     private final ICoursePurchaseService coursePurchaseService = new CoursePurchaseServiceImpl();
@@ -79,7 +79,7 @@ public class CoursePurchaseServlet extends HttpServlet {
 
     private void showCourseInf(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
-        Course course = coursePurchaseService.displayCourse(id);
+        Course course = courseService.selectCourse(id);
         request.setAttribute("course", course);
         request.setAttribute("code", orderCode);
         request.setAttribute("localDate", localDate);

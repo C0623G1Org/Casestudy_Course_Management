@@ -116,12 +116,12 @@
                     <c:forEach items="${courseContents}" var="courseContents" varStatus="loop">
                         <div class="container mt-3">
                             <div class="row course-detail">
-                                <div class="col-9">
+                                <div class="col-lg-8">
                                     <h3>${courseContents.getName()}</h3>
                                         <%--                                    <p>${detailedContents.getContent()}</p>--%>
                                 </div>
-                                <div class="col-3">
-                                    <div class="d-flex justify-content-between">
+                                <div class="col-lg-4">
+                                    <div class="d-flex justify-content-around">
                                         <a href="/learn?id=${courseContents.getId()}"
                                            role="button" class="btn btn-primary learn btn-content mb-1">Xem</a>
                                         <a href="/dashboard/course/content?id=${courseContents.getId()}"

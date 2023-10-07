@@ -23,4 +23,6 @@ public interface ICourseOrderService {
     List<CourseOrder> getOrderByDateNow();
 
     CourseOrder showOrderById(int idOrder);
+
+    void deleteOrder (int id);
 }
