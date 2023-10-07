@@ -11,11 +11,8 @@
                         <div class="p-5 mb-4 bg-body-tertiary rounded-3">
                             <div class="container-fluid py-5">
                                 <h3 class="display-5 fw-bold">Tất cả khóa học</h3>
-                                <p class="col-md-8 fs-5">Lorem ipsum dolor sit amet consectetur
-                                    adipisiccing elit.
-                                    Dolores pariatur quibusdam adipisci dignissimos voluptate amet, dolorum dicta maiores!
-                                    Minima cupiditate enum, illo odio explicabo temporibus sequi enim maxime facere!
-                                    Quis!</p>
+                                <p class="col-md-8 fs-5">Các khóa học tại LTTA luôn được cập nhật các công nghệ mới nhất
+                                    nhằm đáp ứng nhu cầu tuyển dụng nhân lực CNTT tại Việt Nam và trên thế giới.</p>
                             </div>
                         </div>
                     </div>
@@ -58,9 +55,9 @@
             </c:forEach>
         </div>
         <div class="row course" id="row4Course">
-            <h1 style="font-weight: bold; font-size: 50px">FAQ</h1>
+<%--            <h1 style="font-weight: bold; font-size: 50px">FAQ</h1>--%>
             <p style="font-weight: bold; font-size: 40px">Câu hỏi thường gặp ?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, assumenda?<br/><br/><br/></p>
+            <p><br/></p>
             <div class="row question-course">
                 <div class="accordion accordion-flush" id="accordionFlushExample">
                     <div class="accordion-item">
@@ -68,14 +65,15 @@
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseOne" aria-expanded="false"
                                     aria-controls="flush-collapseOne">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                Cách học một công nghệ mới hiệu quả nhất là như thế nào?
                             </button>
                         </h2>
                         <div id="flush-collapseOne" class="accordion-collapse collapse"
                              aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
-                                obcaecati. Minus, ea quisquam. Vel labore distinctio ipsum? Aperiam, veritatis tenetur.
-                                Eum ipsam quod quas temporibus quidem nisi. Ipsum, dolorum necessitatibus.
+                            <div class="accordion-body">Đầu tiên, các bạn cần phải tìm cách học hiệu quả cho bản thân,
+                                sau đó phải thực hành (learning by doing – học thông qua làm).
+                                Hoặc để tiết kiệm thời gian bạn có thể đăng ký một khóa học tại trung tâm,
+                                nơi bạn có thể đặt câu hỏi và lấy kinh nghiệm từ giảng viên những chuyên gia trong ngành phần mềm.
                             </div>
                         </div>
                     </div>
@@ -84,14 +82,18 @@
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseTwo" aria-expanded="false"
                                     aria-controls="flush-collapseTwo">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                Để bước vào ngành phần mềm chúng ta phải học và có những kỹ năng chuyên môn gì? Ngoài kỹ năng chuyên môn, thì những kỹ năng cần thiết khác mà các nhà tuyển dụng chú ý đến là gì?
                             </button>
                         </h2>
                         <div id="flush-collapseTwo" class="accordion-collapse collapse"
                              aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
-                                obcaecati. Minus, ea quisquam. Vel labore distinctio ipsum? Aperiam, veritatis tenetur.
-                                Eum ipsam quod quas temporibus quidem nisi. Ipsum, dolorum necessitatibus.
+                            <div class="accordion-body">Đa số những bạn vừa ra trường thường tham gia vào 02 vị trí là Developer(Lập trình viên)
+                                hay Tester (Kiểm thử phần mềm). Do vậy, về kỹ năng chuyên môn nếu là Developer bạn cần trang bị các kỹ năng chính
+                                như Cấu trúc dữ liệu và thuật toán, Cơ sở dữ liệu, Lập trình hướng đối tượng, Các mẫu thiết kế, Debug và Research.
+                                Còn đối với Tester bạn phải trang bị kỹ năng về Manual Testing, Automation Testing và Cơ sở dữ liệu.
+                                Các kỹ năng ngoài chuyên môn thì tập trung vào ngoại ngữ gồm Tiếng Anh hoặc Tiếng Nhật và kỹ năng làm việc nhóm.
+                                Bên cạnh đó, một vấn đề quan trọng các nhà tuyển dụng đặc biệt để ý chính là thái độ của bạn.
+                                Nó được đánh giá thông qua sự cầu thị, chỉnh chu và ham học hỏi của bạn.
                             </div>
                         </div>
                     </div>
@@ -100,14 +102,13 @@
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseThree" aria-expanded="false"
                                     aria-controls="flush-collapseThree">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                Ngoài tiếng Anh và tiếng Nhật thì tiếng Hàn và tiếng Trung có phải là lợi thế không?
                             </button>
                         </h2>
                         <div id="flush-collapseThree" class="accordion-collapse collapse"
                              aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
-                                obcaecati. Minus, ea quisquam. Vel labore distinctio ipsum? Aperiam, veritatis tenetur.
-                                Eum ipsam quod quas temporibus quidem nisi. Ipsum, dolorum necessitatibus.
+                            <div class="accordion-body">Điều này phụ thuộc vào khách hàng, thị tường và công ty mà bạn apply.
+                                Tuy nhiên, hiện nay thị trường tiếng Anh và tiếng Nhật đang chiếm lợi thế và dễ hơn cho các bạn.
                             </div>
                         </div>
                     </div>
@@ -116,14 +117,16 @@
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseThree" aria-expanded="false"
                                     aria-controls="flush-collapseThree">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                Công việc của một Dev mới (fresher) vào nghề là gì? Sẽ gặp khó khăn gì và làm thế nào để vượt qua?
                             </button>
                         </h2>
                         <div id="flush-collapseFour" class="accordion-collapse collapse"
                              aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
-                                obcaecati. Minus, ea quisquam. Vel labore distinctio ipsum? Aperiam, veritatis tenetur.
-                                Eum ipsam quod quas temporibus quidem nisi. Ipsum, dolorum necessitatibus.
+                            <div class="accordion-body">Đầu tiên bạn sẽ không được làm dự án ngay mà phải qua quá trình training,
+                                các bạn sẽ được giao những task ở mức độ vừa phải, để đảm bảo tiến độ của dự án vừa phát triển được kỹ năng của mình.
+                                Sau đó độ khó của các task sẽ tăng dần tùy theo năng lực.
+                                Điều quan trọng là các bạn phải biết học hỏi từ các anh chị đi trước, tìm tòi và luôn chủ động trong công việc,
+                                thể hiện rằng bản thân là người có giá trị và tiềm năng.
                             </div>
                         </div>
                     </div>

@@ -62,7 +62,7 @@ CREATE TABLE `user` (
 
 CREATE TABLE course_orders (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
-    order_code INT NOT NULL,
+    order_code INT NOT NULL UNIQUE,
     `status` VARCHAR(55), 
     order_date DATE NOT NULL,
     order_price DOUBLE NOT NULL,

@@ -11,7 +11,7 @@
                         <div class="px-4 py-5 my-3 text-center">
                             <div class="col-lg-6 mx-auto">
                                 <h1 class="display-5 fw-bold text-body-emphasis">Kết nối với chúng tôi</h1>
-                                <p class="lead mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <p class="lead mb-4">LTTA - Khơi dậy đam mê lập trình!</p>
                                 <form class="row news g-2">
                                     <div class="col-auto">
                                         <input type="text" class="form-control" id="inputEmail"
@@ -23,12 +23,12 @@
                                 </form>
                                 <div class="d-flex justify-content-center py-3">
                                     <ul class="nav nav-pills menu-footer">
-                                        <li class="nav-item"><a href="#" class="nav-link" aria-current="page">Home</a>
+                                        <li class="nav-item"><a href="#" class="nav-link" aria-current="page">Trang chủ</a>
                                         </li>
-                                        <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-                                        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-                                        <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-                                        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                                        <li class="nav-item"><a href="#" class="nav-link">Thông tin</a></li>
+<%--                                        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>--%>
+                                        <li class="nav-item"><a href="#" class="nav-link">Thắc mắc</a></li>
+                                        <li class="nav-item"><a href="#" class="nav-link">Về chúng tôi</a></li>
                                     </ul>
                                 </div>
                                 <hr>

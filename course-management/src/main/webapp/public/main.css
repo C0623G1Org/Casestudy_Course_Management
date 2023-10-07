@@ -57,7 +57,7 @@
     align-items: center;
 }
 
-.hero-home h1 {
+.hero-home h2 {
     font-size: 64px;
     font-style: normal;
     font-weight: 700;
@@ -743,7 +743,18 @@ a.btn.btn-primary.delete.btn-content {
 .col-3.using .title {
     margin: 0;
 }
+span.font-weight-bold {
+    font-weight: 700;
+}
 
+.time-buy p {
+    font-size: 14px;
+}
+p.name-display {
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+}
 /*check-out page*/
 .status a button {
     font-weight: 500;
