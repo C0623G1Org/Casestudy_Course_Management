@@ -17,7 +17,7 @@
         <hr style="margin-bottom: 30px">
         <div class="row row-1">
             <div class="col-4 rounded border border-1">
-                <div class="p-3">
+                <div class="p-3 icon-margin">
                     <h2>Thông tin người nhận</h2>
                     <div class="row">
                         <h4 class="my-3"><i class="fa-solid fa-user"></i>Chủ tài khoản</h4>
@@ -39,7 +39,7 @@
 
                     <div class="row">
                         <h4 class="my-3"><i class="fa-solid fa-lightbulb"></i>Mã đơn hàng</h4>
-                        <h1>${code}</h1>
+                        <h1>#${code}</h1>
                         <hr>
                     </div>
 
@@ -50,11 +50,10 @@
                         <hr>
                     </div>
 
-                    <div class="row">
-                        <h4 class="my-3"><i class="fa-solid fa-lightbulb"></i>Trạng thái</h4>
+<%--                    <div class="row">--%>
+<%--                        <h4 class="my-3"><i class="fa-solid fa-lightbulb"></i>Trạng thái</h4>--%>
 <%--                        <h1>${courseOrder.getStatus()}</h1>--%>
-
-                    </div>
+<%--                    </div>--%>
                 </div>
 
             </div>
