@@ -19,6 +19,9 @@ public class CourseRepoImpl implements ICourseRepo {
     private final static String INSERT_COURSE = "INSERT INTO courses (course_name, short_description, price, knowledge, requirements, instructor , course_inclusion, course_level_id,course_avatar) VALUES (?,?,?,?,?,?,?,?,?);";
     private final static String SELECT_FULL = "SELECT * FROM courses c JOIN course_content cct ON c.course_content_id = cct.course_content_id JOIN course_levels ccc ON c.course_level_id = ccc.course_level_id WHERE c.course_level_id = ?;";
     private final static String SELECT_BY_USER_BUY = "select c.* from courses c JOIN course_orders co ON c.course_id = co.course_id JOIN user u ON co.user_id = u.user_id WHERE u.user_id = ?;";
+
+    private static final String SEARCH_BY_NAME_AND_AUTHOR = "SELECT * FROM courses WHERE course_name LIKE CONCAT('%', ?, '%') AND instructor LIKE CONCAT('%', ?, '%');";
+
     @Override
     public List<Course> showList() {
         List<Course> courseList = new ArrayList<>();
@@ -174,7 +177,36 @@ public class CourseRepoImpl implements ICourseRepo {
                 String knowledge = resultSet.getString("knowledge");
                 String device_requirements = resultSet.getString("requirements");
                 String course_other_info = resultSet.getString("course_inclusion");
-                courseList.add(new Course(course_id,name,description,instructor,price, categoryId,knowledge,device_requirements,course_other_info));
+                String avatar = resultSet.getString("course_avatar");
+                courseList.add(new Course(course_id,name,description,instructor,price, categoryId,knowledge,device_requirements,course_other_info,avatar));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return courseList;
+    }
+
+    @Override
+    public List<Course> searchByNameAndInstructor(String nameSearch, String instructorSearch) {
+        List<Course> courseList = new ArrayList<>();
+        Connection connection = BaseRepository.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_BY_NAME_AND_AUTHOR);
+            preparedStatement.setString(1, nameSearch);
+            preparedStatement.setString(2, instructorSearch);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                int course_id = resultSet.getInt("course_id");
+                String name = resultSet.getString("course_name");
+                String description = resultSet.getString("short_description");
+                String instructor = resultSet.getString("instructor");
+                double price = resultSet.getDouble("price");
+                int categoryId = resultSet.getInt("course_level_id");
+                String knowledge = resultSet.getString("knowledge");
+                String device_requirements = resultSet.getString("requirements");
+                String course_other_info = resultSet.getString("course_inclusion");
+                String avatar = resultSet.getString("course_avatar");
+                courseList.add(new Course(course_id,name,description,instructor,price, categoryId,knowledge,device_requirements,course_other_info,avatar));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
