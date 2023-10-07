@@ -41,6 +41,11 @@
                             <input type="text" class="form-control" name="name-course" id="name-course"
                                    value="${course.getName()}">
                         </div>
+                        <div class="mb-3">
+                            <label for="avatar-course" class="form-label"><i class="fa-solid fa-book"></i> Avatar</label>
+                            <input type="text" class="form-control" name="avatar-course" id="avatar-course"
+                                   value="${course.getAvatar()}">
+                        </div>
 
                         <div class="mb-3">
                             <label for="description-course" class="form-label"><i class="fa-solid fa-book"></i> Mô tả
