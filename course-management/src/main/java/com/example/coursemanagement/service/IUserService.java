@@ -9,4 +9,5 @@ public interface IUserService extends IService<User> {
     void deleteUser(int id);
 
     void changePassWord(User user, String newPassWord);
+    boolean checkExistEmail(String email);
 }
