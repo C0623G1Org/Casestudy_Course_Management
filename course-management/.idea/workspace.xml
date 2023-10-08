@@ -4,32 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b7fa4d5-6b60-40e8-94a6-bd99b53912e2" name="Changes" comment="loan add">
+    <list default="true" id="8b7fa4d5-6b60-40e8-94a6-bd99b53912e2" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/controller/CoursePurchaseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/controller/CoursePurchaseServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/controller/DashboardServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/controller/DashboardServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/ICourseOrderRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/ICourseOrderRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseOrderRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseOrderRepoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/ICourseOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/ICourseOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/impl/CourseOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/impl/CourseOrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/buy-course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/buy-course.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/check-out.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/check-out.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/add-course-content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/add-course-content.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/add-course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/add-course.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/add-detail-to-content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/add-detail-to-content.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/edit-course-content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/edit-course-content.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/edit-course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/edit-course.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/edit-detail-to-content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/edit-detail-to-content.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-course.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-member.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-member.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-order.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/detailed-course-order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/detailed-course-order.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/public/loan.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/public/loan.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/public/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/public/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sql-update.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../sql-update.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +61,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="LogFilters">
@@ -254,10 +237,6 @@
       <workItem from="1696309000169" duration="5805000" />
       <workItem from="1696316958441" duration="9511000" />
       <workItem from="1696330259083" duration="7447000" />
-      <workItem from="1696417020262" duration="4138000" />
-      <workItem from="1696579351700" duration="9469000" />
-      <workItem from="1696665110898" duration="20062000" />
-      <workItem from="1696709398202" duration="4599000" />
     </task>
     <task id="LOCAL-00001" summary="fix bugs">
       <created>1696417177332</created>
