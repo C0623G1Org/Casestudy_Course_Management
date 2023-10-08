@@ -17,6 +17,9 @@ import java.util.List;
 
 
 public class CourseOrderRepoImpl implements ICourseOrderRepo {
+    private final ICourseService courseService = new CourseServiceImpl();
+    private final IUserService userService = new UserServiceImpl();
+
     private static final String SELECT_AD_ORDER = "SELECT order_id, order_code, `status`, order_date, order_price, co.user_id, co.course_id, course_name, full_name\n" +
             "FROM course_orders co\n" +
             "LEFT JOIN courses c ON c.course_id = co.course_id\n" +
@@ -43,13 +46,13 @@ public class CourseOrderRepoImpl implements ICourseOrderRepo {
             "VALUES (?,?,?,?,?,'pending');";
     private static final String GET_BY_USER_BUY = "SELECT co.* from courses c JOIN course_orders co ON c.course_id = co.course_id AND co.status = 'success' JOIN user u ON co.user_id = u.user_id WHERE u.user_id = ?;";
     private static final String GET_ORDER_BY_USER_COURSE = "select co.* from courses c JOIN course_orders co ON c.course_id = co.course_id AND co.status = 'success' JOIN user u ON co.user_id = u.user_id WHERE u.user_id = ? AND c.course_id = ?;";
-
     private static final String GET_ORDER_DATE_NOW = "SELECT * FROM course_orders where order_date = CURDATE();";
-    private final ICourseService courseService = new CourseServiceImpl();
-    private final IUserService userService = new UserServiceImpl();
-
     private static final String UPDATE_STATUS = "UPDATE course_orders SET `status` = ? WHERE order_code = ?;";
     private static final String GET_ORDER_BY_ID = "SELECT * FROM course_orders WHERE order_id = ?;";
+
+    private static final String DELETE_ORDER = "DELETE FROM course_orders \n" +
+            "WHERE order_id = ?;";
+
 
     @Override
     public List<CourseOrderInf> showCourseOrder() {
@@ -203,6 +206,18 @@ public class CourseOrderRepoImpl implements ICourseOrderRepo {
             throw new RuntimeException(e);
         }
         return courseOrder;
+    }
+
+    @Override
+    public void deleteOrder(int id) {
+        Connection connection = BaseRepository.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(DELETE_ORDER);
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

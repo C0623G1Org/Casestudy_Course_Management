@@ -23,8 +23,7 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th class="text-center" scope="col"><i class="fa-solid fa-arrow-down-wide-short"></i>ID
-                                </th>
+                                <th class="text-center" scope="col">ID</th>
                                 <th class="text-center" scope="col">Username</th>
                                 <th class="text-center" scope="col">Tên hiển thị</th>
                                 <th class="text-center" scope="col">Email</th>
