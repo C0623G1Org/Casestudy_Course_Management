@@ -17,7 +17,7 @@ public class RegexUtils {
 
 
     public boolean validateName(String string) {
-        regex = "^([A-Z]([a-z0-9\\s-])+)+$";
+        regex = "^([A-Za-z0-9\\s-])+$";
         return validate(string, regex);
     }
 
