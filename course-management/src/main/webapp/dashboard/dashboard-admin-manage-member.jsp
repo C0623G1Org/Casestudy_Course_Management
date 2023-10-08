@@ -24,7 +24,7 @@
                             <thead>
                             <tr>
                                 <th class="text-center" scope="col">ID</th>
-                                <th class="text-center" scope="col">Username</th>
+                                <th class="text-center" scope="col">Tên đăng nhập</th>
                                 <th class="text-center" scope="col">Tên hiển thị</th>
                                 <th class="text-center" scope="col">Email</th>
                                 <th class="text-center" scope="col">Thao tác</th>
@@ -72,8 +72,8 @@
                     <p>Bạn có chắc chắn muốn xóa <span class="text-danger" id="nameDelete"></span> không?</p>
                 </div>
                 <div class="modal-footer">
-                    <a role="button" class="btn btn-outline-info" href="/dashboard/member">NO</a>
-                    <a role="button" class="btn btn-outline-danger" id="deletedMemberId">YES</a>
+                    <a role="button" class="btn btn-outline-info" href="/dashboard/member">Hủy</a>
+                    <a role="button" class="btn btn-outline-danger" id="deletedMemberId">Xóa</a>
                 </div>
             </div>
         </div>

@@ -34,7 +34,7 @@ public class CoursePurchaseServlet extends HttpServlet {
     private final IUserService userService = new UserServiceImpl();
     private final ICourseService courseService = new CourseServiceImpl();
     private final LocalDate localDate = LocalDate.now();
-    private int orderCode = (int) (Math.random() * 20001) + 10000;
+    private int orderCode;
 
 
     @Override
@@ -79,6 +79,7 @@ public class CoursePurchaseServlet extends HttpServlet {
 
     private void showCourseInf(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
+        orderCode = (int) (Math.random() * 20001) + 10000;
         Course course = courseService.selectCourse(id);
         request.setAttribute("course", course);
         request.setAttribute("code", orderCode);
@@ -116,10 +117,12 @@ public class CoursePurchaseServlet extends HttpServlet {
         double orderPrice = Double.parseDouble(request.getParameter("price-order"));
         Course course = coursePurchaseService.displayCourse(idCourse);
         User user = userService.selectE(idUser);
+
         CourseOrder courseOrder = new CourseOrder(orderDate,orderPrice,user,course,orderCode);
         courseOrderService.createOrder(courseOrder);
         request.setAttribute("course", course);
-        request.setAttribute("code", orderCode);
+        request.setAttribute("courseOrder", courseOrder);
+//        request.setAttribute("code", orderCode);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/check-out.jsp");
         try {
             requestDispatcher.forward(request, response);
@@ -129,5 +132,23 @@ public class CoursePurchaseServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
+
+    private void doPagination(HttpServletRequest request, HttpServletResponse response) {
+        int count = courseOrderService.countOrdersAmount();
+        int endPage = count/10;
+        if (count % 10 != 0) {
+            endPage++;
+        }
+        request.setAttribute("endPage", endPage);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/dashboard/dashboard-admin-manage-course.jsp");
+        try {
+            requestDispatcher.forward(request, response);
+        } catch (ServletException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
 }

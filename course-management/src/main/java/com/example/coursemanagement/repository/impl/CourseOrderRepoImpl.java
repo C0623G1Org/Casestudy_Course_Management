@@ -53,7 +53,11 @@ public class CourseOrderRepoImpl implements ICourseOrderRepo {
     private static final String DELETE_ORDER = "DELETE FROM course_orders \n" +
             "WHERE order_id = ?;";
 
+    private static final String COUNT_ORDER = "SELECT COUNT(*) FROM course_orders;";
 
+    private static final String PAGINATION = "SELECT * FROM course_orders\n" +
+            "ORDER BY order_id\n" +
+            "LIMIT ? OFFSET ?;";
     @Override
     public List<CourseOrderInf> showCourseOrder() {
         Connection connection = BaseRepository.getConnection();
@@ -243,6 +247,37 @@ public class CourseOrderRepoImpl implements ICourseOrderRepo {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+
+    @Override
+    public int countOrdersAmount() {
+        Connection connection = BaseRepository.getConnection();
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(COUNT_ORDER);
+            while (resultSet.next()) {
+                return resultSet.getInt(1);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return 0;
+    }
+
+    @Override
+    public List<CourseOrder> paginateOrders(int index) {
+        Connection connection = BaseRepository.getConnection();
+        List<CourseOrder> courseOrderList = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(PAGINATION);
+            preparedStatement.setInt(1, (index-1)*10);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
     }
 
 
