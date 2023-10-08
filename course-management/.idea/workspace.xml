@@ -1,15 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Gradle : com.example : course-management-1.0-SNAPSHOT.war" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b7fa4d5-6b60-40e8-94a6-bd99b53912e2" name="Changes" comment="an up">
+    <list default="true" id="8b7fa4d5-6b60-40e8-94a6-bd99b53912e2" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/controller/DashboardServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/controller/DashboardServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/BaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/BaseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/utils/RegexUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/utils/RegexUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/add-course-content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/add-course-content.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/add-course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/add-course.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/add-detail-to-content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/add-detail-to-content.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/edit-course-content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/edit-course-content.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/edit-course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/edit-course.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/edit-detail-to-content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/edit-detail-to-content.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/modal-delete.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/modal-delete.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-course.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/detailed-course-order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/detailed-course-order.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/public/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/public/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sql-update.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../sql-update.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,6 +81,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="LogFilters">
@@ -90,7 +112,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/castudyWeb/Casestudy_Course_Management/course-management&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/CodeGym/C0623G1_Pham_Van_Thanh_Module3/Casestudy_Course_Management/course-management/src/main/webapp&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -102,16 +124,30 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CodeGym\C0623G1_Pham_Van_Thanh_Module3\Casestudy_Course_Management\course-management\src\main\webapp" />
+      <recent name="D:\CodeGym\C0623G1_Pham_Van_Thanh_Module3\Casestudy_Course_Management\course-management\src\main\webapp\course-content" />
       <recent name="D:\CodeGym\C0623G1_Pham_Van_Thanh_Module3\Casestudy_Course_Management\course_management\src\main\webapp\learning" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="JarApplication" />
+      </set>
+    </option>
+    <option name="excludedTypes">
+      <set>
+        <option value="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" />
+      </set>
+    </option>
+  </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.21">
-    <configuration name="course-management [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="course-management [build]" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -125,35 +161,20 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="dashboard-admin-manage-course.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/dashboard/dashboard-admin-manage-course.jsp">
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="course_management" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="course_management" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Tomcat 9.0.21" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.21" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="hot-swap-classes" />
+    <configuration name="Tomcat 9.0.21" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.21" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="Gradle : com.example : course_management-1.0-SNAPSHOT.war">
+        <artifact name="Gradle : com.example : course-management-1.0-SNAPSHOT.war">
           <settings>
             <option name="CONTEXT_PATH" value="" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="8580f8a5-b935-4644-9079-d9dc2cb62f17" />
+        <option name="BASE_DIRECTORY_NAME" value="eac3e607-e7dc-485c-94b8-94bff62139aa" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -161,7 +182,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="50656" />
+        <option name="DEBUG_PORT" value="53188" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -224,15 +245,19 @@
         </SHUTDOWN>
       </ConfigurationWrapper>
       <method v="2">
-        <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Gradle : com.example : course_management-1.0-SNAPSHOT.war" />
+          <artifact name="Gradle : com.example : course-management-1.0-SNAPSHOT.war" />
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Gradle.course-management [build]" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.21" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.dashboard-admin-manage-course.jsp" />
+        <item itemvalue="Gradle.course-management [build]" />
+        <item itemvalue="Gradle.course-management [build]" />
         <item itemvalue="Gradle.course-management [build]" />
       </list>
     </recent_temporary>
@@ -248,11 +273,17 @@
       <workItem from="1696309000169" duration="5805000" />
       <workItem from="1696316958441" duration="9511000" />
       <workItem from="1696330259083" duration="7447000" />
-      <workItem from="1696417020262" duration="4138000" />
-      <workItem from="1696598574432" duration="800000" />
-      <workItem from="1696601896509" duration="35000" />
-      <workItem from="1696642695522" duration="2521000" />
-      <workItem from="1696730769072" duration="17751000" />
+      <workItem from="1696417020262" duration="4337000" />
+      <workItem from="1696427412983" duration="2885000" />
+      <workItem from="1696468720422" duration="8216000" />
+      <workItem from="1696497923274" duration="2961000" />
+      <workItem from="1696507158959" duration="1179000" />
+      <workItem from="1696560923051" duration="418000" />
+      <workItem from="1696561415056" duration="17130000" />
+      <workItem from="1696646901204" duration="10166000" />
+      <workItem from="1696732695292" duration="784000" />
+      <workItem from="1696745638860" duration="5217000" />
+      <workItem from="1696757200237" duration="9963000" />
     </task>
     <task id="LOCAL-00001" summary="fix bugs">
       <created>1696417177332</created>
@@ -261,21 +292,111 @@
       <option name="project" value="LOCAL" />
       <updated>1696417177332</updated>
     </task>
-    <task id="LOCAL-00002" summary="fix bugs">
-      <created>1696732861856</created>
+    <task id="LOCAL-00002" summary="update">
+      <option name="closed" value="true" />
+      <created>1696508122920</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1696732861856</updated>
+      <updated>1696508122920</updated>
     </task>
-    <task id="LOCAL-00003" summary="an up">
-      <created>1696732965143</created>
+    <task id="LOCAL-00003" summary="update">
+      <option name="closed" value="true" />
+      <created>1696508303724</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1696732965143</updated>
+      <updated>1696508303724</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update">
+      <option name="closed" value="true" />
+      <created>1696559812343</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696559812343</updated>
+    </task>
+    <task id="LOCAL-00005" summary="khoi phuc file">
+      <option name="closed" value="true" />
+      <created>1696560259774</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696560259774</updated>
+    </task>
+    <task id="LOCAL-00006" summary="khoi phuc file">
+      <option name="closed" value="true" />
+      <created>1696560956599</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696560956599</updated>
+    </task>
+    <task id="LOCAL-00007" summary="thanh up">
+      <option name="closed" value="true" />
+      <created>1696561120009</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696561120009</updated>
+    </task>
+    <task id="LOCAL-00008" summary="thanh up">
+      <option name="closed" value="true" />
+      <created>1696646933753</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1696646933753</updated>
+    </task>
+    <task id="LOCAL-00009" summary="thanh up">
+      <option name="closed" value="true" />
+      <created>1696646974835</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1696646974835</updated>
+    </task>
+    <task id="LOCAL-00010" summary="thanh up">
+      <option name="closed" value="true" />
+      <created>1696647395474</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1696647395474</updated>
+    </task>
+    <task id="LOCAL-00011" summary="update">
+      <option name="closed" value="true" />
+      <created>1696736652626</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1696736652626</updated>
+    </task>
+    <task id="LOCAL-00012" summary="update">
+      <option name="closed" value="true" />
+      <created>1696738156836</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1696738156836</updated>
+    </task>
+    <task id="LOCAL-00013" summary="update">
+      <option name="closed" value="true" />
+      <created>1696752145803</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1696752145803</updated>
+    </task>
+    <task id="LOCAL-00014" summary="update">
+      <option name="closed" value="true" />
+      <created>1696752313722</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1696752313722</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +415,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix bugs" />
-    <MESSAGE value="an up" />
-    <option name="LAST_COMMIT_MESSAGE" value="an up" />
+    <MESSAGE value="khoi phuc file" />
+    <MESSAGE value="thanh up" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>
