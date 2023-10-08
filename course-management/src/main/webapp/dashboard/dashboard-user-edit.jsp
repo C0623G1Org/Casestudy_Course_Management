@@ -15,10 +15,6 @@
                         <div class="edit-header">
                             <div class="avatar col-4">
                                 <img src="${req.requestURI}/public/image/3607444.png" alt="ava"/> <br>
-                                <button class="ava-btn" type="submit">
-                                    <i class='bx bxs-user' style='color:#5585fd'></i>
-                                    <span>Edit avatar</span>
-                                </button>
                             </div>
                             <input type="hidden" name="id" value="${user.getId()}">
                             <input type="hidden" name="role" value="${user.getRole()}">
