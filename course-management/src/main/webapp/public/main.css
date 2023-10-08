@@ -977,3 +977,6 @@ form.check-out .item-order {
 .row.question-course .accordion-body {
     text-align: left;
 }
+input#form-search-name, input#form-search-author {
+    border-right: 1px #788287 solid;
+}
