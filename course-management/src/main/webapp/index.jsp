@@ -90,31 +90,31 @@
         </div>
     </div>
 </section>
-<section>
-    <div class="container my-5">
-        <div class="row voucher-home">
-            <div class="col-lg-4">
-                <h3>Ưu đãi của chúng tôi dành cho bạn</h3>
-            </div>
-            <div class="col-lg-8">
-                <div class="row">
-                    <div class="bg-circe col-lg-3">
-                        <p>Ưu đãi 1</p>
-                    </div>
-                    <div class="bg-circe col-lg-3">
-                        <p>Ưu đãi 2</p>
-                    </div>
-                    <div class="bg-circe col-lg-3">
-                        <p>Ưu đãi 3</p>
-                    </div>
-                    <div class="bg-circe col-lg-3">
-                        <p>Ưu đãi 4</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<%--<section>--%>
+<%--    <div class="container my-5">--%>
+<%--        <div class="row voucher-home">--%>
+<%--            <div class="col-lg-4">--%>
+<%--                <h3>Ưu đãi của chúng tôi dành cho bạn</h3>--%>
+<%--            </div>--%>
+<%--            <div class="col-lg-8">--%>
+<%--                <div class="row">--%>
+<%--                    <div class="bg-circe col-lg-3">--%>
+<%--                        <p>Ưu đãi 1</p>--%>
+<%--                    </div>--%>
+<%--                    <div class="bg-circe col-lg-3">--%>
+<%--                        <p>Ưu đãi 2</p>--%>
+<%--                    </div>--%>
+<%--                    <div class="bg-circe col-lg-3">--%>
+<%--                        <p>Ưu đãi 3</p>--%>
+<%--                    </div>--%>
+<%--                    <div class="bg-circe col-lg-3">--%>
+<%--                        <p>Ưu đãi 4</p>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</section>--%>
 <section>
     <div class="container my-5 course-home">
         <div class="row text-center">

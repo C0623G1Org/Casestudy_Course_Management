@@ -866,6 +866,10 @@ div#alertNotLogIn .modal-content .btn.btn-primary {
     background: #0d6efd;
 }
 
+.alert.alert-danger ul {
+    margin-bottom: 0;
+}
+
 @media only screen and (max-width: 600px) {
     .col-lg-9.content-dashboard .body-content .card-body .col-2 img, .row.card-head img {
         height: 300px;

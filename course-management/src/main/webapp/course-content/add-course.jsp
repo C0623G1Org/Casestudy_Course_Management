@@ -8,25 +8,8 @@
                 <c:import url="/dashboard/admin-siderbar.jsp"></c:import>
             </div>
             <div class="col-lg-9 content-dashboard">
-                <div class="header-content">
-<%--                    <div class="hello">--%>
-<%--                        <form class="row form-search-course g-2">--%>
-<%--                            <div class="col-auto">--%>
-<%--                                <input type="text" class="form-control" id="inputEmail"--%>
-<%--                                       placeholder=" Nhập khóa học cần tìm">--%>
-<%--                            </div>--%>
-<%--                            <div class="col-auto">--%>
-<%--                                <button type="submit" class="btn btn-primary">Tìm</button>--%>
-<%--                            </div>--%>
-<%--                        </form>--%>
-<%--                    </div>--%>
-                    <div class="user">
-                      <span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">
-                            <img class="rounded-circle me-1" width="35" height="35"
-                                 src="https://zpsocial-f54-org.zadn.vn/24a379da816c6f32367d.jpg"
-                                 alt="">${user.getFullName()}
-                       </span>
-                    </div>
+                <div class="mb-5">
+                    <c:import url="/dashboard/header-content-dashboard.jsp"></c:import>
                 </div>
                 <div class="row edit-course mt-4 px-5" >
                     <c:if test="${not empty messegeError}">
@@ -52,9 +35,7 @@
 
                         <div class="mb-3">
                             <label for="description-course" class="form-label"><i class="fa-solid fa-book"></i> Mô tả khóa học</label>
-                            <textarea class="form-control" id="description-course" name="description-course" rows="3">
-                                ${descriptionCourse}
-                            </textarea>
+                            <textarea class="form-control" id="description-course" name="description-course" rows="3">${descriptionCourse}</textarea>
                         </div>
 
                         <div class="mb-3">
@@ -64,9 +45,7 @@
 
                         <div class="mb-3">
                             <label for="knowledge" class="form-label"><i class="fa-solid fa-book"></i> Bạn sẽ học được gì?</label>
-                            <textarea class="form-control" id="knowledge" name="knowledge" rows="5">
-                                ${knowledge}
-                            </textarea>
+                            <textarea class="form-control" id="knowledge" name="knowledge" rows="5">${knowledge}</textarea>
                         </div>
 
                         <div class="mb-3">
@@ -83,9 +62,7 @@
 
                         <div class="mb-3">
                             <label for="course-inclusion" class="form-label"><i class="fa-solid fa-book"></i> Thông tin khác</label>
-                            <textarea class="form-control" id="course-inclusion" name="course-inclusion" rows="3">
-                                ${courseInclusion}
-                            </textarea>
+                            <textarea class="form-control" id="course-inclusion" name="course-inclusion" rows="3">${courseInclusion}</textarea>
                         </div>
 
                         <div class="mb-3">
