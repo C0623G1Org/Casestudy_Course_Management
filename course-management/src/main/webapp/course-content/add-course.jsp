@@ -41,6 +41,11 @@
                         </div>
 
                         <div class="mb-3">
+                            <label for="avatar-course" class="form-label"><i class="fa-solid fa-book"></i> Avatar</label>
+                            <input type="text" class="form-control" name="avatar-course" id="avatar-course">
+                        </div>
+
+                        <div class="mb-3">
                             <label for="description-course" class="form-label"><i class="fa-solid fa-book"></i> Mô tả khóa học</label>
                             <textarea class="form-control" id="description-course" name="description-course" rows="3"></textarea>
                         </div>

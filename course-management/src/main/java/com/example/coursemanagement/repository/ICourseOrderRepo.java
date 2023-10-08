@@ -23,4 +23,7 @@ public interface ICourseOrderRepo {
 
     CourseOrder showOrderById(int idOrder);
 
+    void deleteOrder (int id);
+
+
 }

@@ -32,8 +32,8 @@
                                value="${user.getEmail()}">
                     </div>
                     <div class="mb-3">
-                        <p>(Nếu email của bạn chưa có trên hệ thống, chúng tôi sẽ dùng Email thanh toán này để tạo tài
-                            khoản. Nhằm mục đích lưu trữ trông tin để phục vụ cho việc học tập của bạn)</p>
+<%--                        <p>(Nếu email của bạn chưa có trên hệ thống, chúng tôi sẽ dùng Email thanh toán này để tạo tài--%>
+<%--                            khoản. Nhằm mục đích lưu trữ trông tin để phục vụ cho việc học tập của bạn)</p>--%>
                     </div>
                 </div>
 
@@ -43,7 +43,7 @@
                         <div class="col-md-12 mt-2"><h5>Order Summary</h5></div>
                     </div>
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-3 ava-border">
                             <img src="${course.getAvatar()}" width="120p" height="100">
                         </div>
                         <div class="col-md-6">
@@ -68,10 +68,10 @@
                             <input type="hidden" name="price-order" value="${course.getPrice()}">
                             <p style="font-size: 25px; font-weight: bold">${course.getPrice()}</p><br/>
 
-                            <p>Ngày thanh toán: ${localDate}</p>
+                            <p>Ngày đặt mua: ${localDate}</p>
                             <input type="hidden" name="date-order" value="${localDate}">
 
-                            <p>Mã đơn hàng: ${code}</p>
+                            <p>Mã đơn hàng: #${code}</p>
                             <input type="hidden" name="code-order" value="${code}">
                             <p>(VAT included if applicable)</p>
                         </div>

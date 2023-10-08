@@ -22,8 +22,8 @@
                 <div class="order-detail">
                     <div style="padding-bottom: 30px; padding-left: 30px;" class="row content-oder-detain-2">
                         <div class="col-lg-12">
-                            <h4 style="font-weight: bold">Đơn đặt mua khóa học ${order.getOrderCode()}</h4>
-                            <p>Chi tiết về đơn đặt mua khóa học ${order.getOrderCode()} </p>
+                            <h4 style="font-weight: bold">Đơn đặt mua khóa học #${order.getOrderCode()}</h4>
+                            <p>Chi tiết về đơn đặt mua khóa học #${order.getOrderCode()} </p>
                             <c:if test="${order.getStatus() == 'success'}">
                                 <div class="status-order"><span class="badge rounded-pill bg-success"><i
                                         class="fa-solid fa-check"></i> Đã hoàn thành</span></div>
