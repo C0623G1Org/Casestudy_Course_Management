@@ -81,6 +81,7 @@ public class CoursePurchaseServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         Course course = courseService.selectCourse(id);
         request.setAttribute("course", course);
+        orderCode++;
         request.setAttribute("code", orderCode);
         request.setAttribute("localDate", localDate);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/buy-course.jsp");

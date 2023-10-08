@@ -49,7 +49,8 @@
                                     <td>${order.getCourseName()}</td>
                                     <td>${order.getFullName()}</td>
                                     <td class="action-course d-flex justify-content-around">
-                                        <a role="button" class="btn btn-primary learn btn-content mb-1" href="/dashboard/order/detail?order-id=${order.getOrderId()}">Xem</a>
+                                        <a role="button" class="btn btn-primary learn btn-content mb-1"
+                                           href="/dashboard/order/detail?order-id=${order.getOrderId()}">Xem</a>
                                         <a role="button" onclick="displayModalDelete('${order.getOrderId()}','${order.getOrderCode()}')" class="btn btn-primary delete btn-content mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal">Xóa</a>
                                     </td>
                                 </tr>
