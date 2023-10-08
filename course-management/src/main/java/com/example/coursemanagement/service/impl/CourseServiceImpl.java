@@ -48,4 +48,5 @@ public class CourseServiceImpl implements ICourseService {
     public List<Course> searchByNameAndInstructor(String nameSearch, String instructorSearch) {
         return courseRepo.searchByNameAndInstructor(nameSearch,instructorSearch);
     }
+
 }

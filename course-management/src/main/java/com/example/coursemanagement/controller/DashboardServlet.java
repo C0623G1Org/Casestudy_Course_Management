@@ -116,11 +116,26 @@ public class DashboardServlet extends HttpServlet {
     }
 
     private void showPageManageOrder(HttpServletRequest request, HttpServletResponse response, User user) {
-        List<CourseOrderInf> courseOrderInfList = courseOrderService.showCourseOrder();
+        int currentPage;
+        if (request.getParameter("currentPage") == null) {
+            currentPage = 1;
+        } else {
+            currentPage = Integer.parseInt(request.getParameter("currentPage"));
+        }
+        List<CourseOrderInf> courseOrderInfList = courseOrderService.showCourseOrder(currentPage);
+        int count = courseOrderService.countOrdersAmount();
+        int endPage = count/10;
+        if (count % 10 != 0) {
+            endPage++;
+        }
+        request.setAttribute("currentPage", currentPage);
+        request.setAttribute("endPage", endPage);
         request.setAttribute("courseOrderInfList", courseOrderInfList);
         request.setAttribute("user", user);
         dispatcherData(request, response, "/dashboard/dashboard-admin-manage-order.jsp");
     }
+
+
     private void showDetailOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int orderId = Integer.parseInt(request.getParameter("order-id"));
         CourseOrder order = courseOrderService.showOrderById(orderId);
@@ -505,9 +520,25 @@ public class DashboardServlet extends HttpServlet {
     }
 
     private void getListCourseAdmin(HttpServletRequest request, HttpServletResponse response, User user) {
+        int count = courseOrderService.countOrdersByDate();
+        int currentPage;
+//        if (count > 10) {
+            int endPage = count/10;
+            if (count % 10 != 0) {
+                endPage++;
+            }
+            if (request.getParameter("currentPage") == null) {
+                currentPage = 1;
+            } else {
+                currentPage = Integer.parseInt(request.getParameter("currentPage"));
+            }
+            request.setAttribute("currentPage", currentPage);
+            request.setAttribute("endPage", endPage);
+
+//        }
         List<Course> courseList = courseService.showList();
         request.setAttribute("courseList", courseList);
-        List<CourseOrder> courseOrdersNow = courseOrderService.getOrderByDateNow();
+        List<CourseOrder> courseOrdersNow = courseOrderService.getOrderByDateNow(currentPage);
         request.setAttribute("courseOrdersNow", courseOrdersNow);
         request.setAttribute("user", user);
         dispatcherData(request, response, "/dashboard/dashboard-admin.jsp");

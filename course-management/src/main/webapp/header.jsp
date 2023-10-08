@@ -35,7 +35,7 @@
 
             <div class="col-md-3 text-end">
                 <c:if test="${empty sessionScope.user}">
-                    <a class="btn-login btn btn-primary" data-bs-toggle="modal" href="#userSignup" role="button">Đăng kí</a>
+                    <a class="btn-login btn btn-primary" data-bs-toggle="modal" href="#userSignup" role="button">Đăng ký</a>
                     <c:import url="modal-login.jsp"></c:import>
                 </c:if>
                 <c:if test="${not empty sessionScope.user}">

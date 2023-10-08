@@ -47,7 +47,7 @@
                             </div>
                             <div class="card-price">
                                 <div class="price">${courseList.getPrice()} VNĐ</div>
-                                <a style="color: #FFFFFF" role="button" class="btn-login btn btn-primary" href="/course/detail?id=${courseList.getId()}">Đăng kí</a>
+                                <a style="color: #FFFFFF" role="button" class="btn-login btn btn-primary" href="/course/detail?id=${courseList.getId()}">Đăng ký</a>
                             </div>
                         </div>
                     </div>
@@ -143,7 +143,7 @@
                     <i class="fa-solid fa-xmark"></i>
                 </div>
                 <img src="../public/image/removebg_logo.png" width="170px" height="60px" alt="..."/>
-                <h3>Đăng kí tài khoản</h3>
+                <h3>Đăng ký tài khoản</h3>
                 <p>Tham gia cùng cộng đồng học tập của chúng tôi!</p>
 
                 <div class="input-box">
@@ -173,7 +173,7 @@
                     </p>
                 </div>
                 <div class="accept">
-                    <p>Bằng cách ấn đăng kí, bạn đồng ý với các điều khoản, điều kiện và chính sách dữ liệu của chúng
+                    <p>Bằng cách ấn đăng ký, bạn đồng ý với các điều khoản, điều kiện và chính sách dữ liệu của chúng
                         tôi</p>
                 </div>
             </form>

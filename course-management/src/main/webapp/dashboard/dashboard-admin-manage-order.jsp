@@ -23,6 +23,7 @@
                         <table class="table">
                             <thead>
                             <tr>
+<%--                                <th>STT</th>--%>
                                 <th style="width: 150px" class="text-center" scope="col">Đơn hàng
                                 </th>
                                 <th class="text-center" scope="col">Tình trạng</th>
@@ -34,6 +35,7 @@
                             <tbody>
                             <c:forEach items="${courseOrderInfList}" var="order">
                                 <tr>
+<%--                                    <td>${loop.count}</td>--%>
                                     <th scope="row">#${order.getOrderCode()}</th>
                                     <td class="done">
                                         <c:if test="${order.getStatus() == 'success'}">
@@ -56,6 +58,15 @@
                             </c:forEach>
                             </tbody>
                         </table>
+                    </div>
+                    <div>
+                        <nav aria-label="Page navigation example" class="mt-3">
+                            <ul class="pagination justify-content-center">
+                                <c:forEach begin="1" end="${endPage}" var="page">
+                                    <li class="page-item"><a class="page-link" href="/dashboard/order?currentPage=${page}">${page}</a> </li>
+                                </c:forEach>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
