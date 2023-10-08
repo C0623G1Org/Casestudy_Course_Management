@@ -61,6 +61,17 @@ CREATE TABLE `user` (
     CHECK (`role`= "admin" OR `role`= "user")
 );
 
+CREATE TABLE feed_backs (
+	feedback_id INT AUTO_INCREMENT PRIMARY KEY,
+    content_feedback VARCHAR(55),
+	user_id INT NOT NULL,
+    order_id INT NOT NULL,
+    FOREIGN KEY (user_id)
+        REFERENCES `user` (user_id),
+	FOREIGN KEY (order_id) 
+		REFERENCES course_orders (order_id)
+);
+
 CREATE TABLE course_orders (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
     order_code INT NOT NULL,
@@ -169,3 +180,19 @@ INSERT INTO course_orders (order_date, order_price, user_id, course_id, order_co
 VALUES ('2022-01-02', 49.99, 1, 2, 654321, "success");
 INSERT INTO course_orders (order_date, order_price, user_id, course_id, order_code, `status`) 
 VALUES ('2022-01-03', 99.99, 1, 3, 567890, "pending");
+
+
+INSERT INTO user (user_name, password, full_name, id_card, birthday, gender, phone, email, role)
+VALUES 
+('thanhpham', 'password1', 'Phạm Văn Thành', '123456789', '2000-01-01', 1, '0123456789', 'user1@example.com', 'user'),
+('loanttv', 'password2', 'Trần Thị Vân Loan', '987654321', '1999-02-02', 0, '0987654321', 'user2@example.com', 'user'),
+('truongnq', 'password3', 'Ngô Quang Trường', '111222333', '2001-03-03', 1, '0111222333', 'user3@example.com', 'user'),
+('anhn', 'password4', 'Hồ Ngọc An', '444555666', '2002-04-04', 0, '0444555666', 'user4@example.com', 'user');INSERT INTO feed_backs (content_feedback, user_id, order_id) VALUES ('Feedback 1 for course 1', 4, 5), ('Feedback 2 for course 1', 5, 6), ('Feedback 1 for course 2', 6, 7), ('Feedback 2 for course 2', 7, 8);
+
+SELECT * FROM feed_backs fb JOIN course_orders co ON fb.order_id = co.order_id WHERE co.status = 'success';
+
+
+UPDATE `course_management_ver2`.`feed_backs` SET `content_feedback` = ' LTTA cung cấp các khóa học lập trình rất chất lượng. Tôi đã học khóa Python và rất hài lòng với nội dung và cách giảng dạy. Giáo viên rất am hiểu và hỗ trợ tận tình.' WHERE (`feedback_id` = '1');
+UPDATE `course_management_ver2`.`feed_backs` SET `content_feedback` = 'Tôi đã tham gia khóa học Python của LTTA và thật sự ấn tượng với sự tỉ mỉ và chi tiết trong từng bài giảng. Các bài tập cũng rất thú vị và giúp tôi nắm vững kiến thức.' WHERE (`feedback_id` = '2');
+UPDATE `course_management_ver2`.`feed_backs` SET `content_feedback` = 'LTTA là một nền tảng học trực tuyến tuyệt vời. Tôi đã học khóa React Native và cảm thấy rất hài lòng với sự phong phú của nội dung và tính thực tiễn của ví dụ được sử dụng.' WHERE (`feedback_id` = '3');
+UPDATE `course_management_ver2`.`feed_backs` SET `content_feedback` = 'Khóa học HTML và CSS của LTTA thật sự đáng giá. Môi trường học tập thân thiện, thông qua các bài tập và dự án thực tế, tôi đã nắm vững kiến thức và có thể áp dụng vào công việc thực tế.' WHERE (`feedback_id` = '4');
