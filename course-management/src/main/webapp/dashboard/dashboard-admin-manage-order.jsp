@@ -74,7 +74,7 @@
             <div id="modal-body-detail-delete"class="modal-body">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
                 <a id="deleteDetailContent" role="button" class="btn btn-danger">Xóa</a>
             </div>
         </div>

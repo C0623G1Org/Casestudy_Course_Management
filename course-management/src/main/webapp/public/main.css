@@ -756,27 +756,7 @@ p.name-display {
     margin: 0;
 }
 /*check-out page*/
-.status a button {
-    font-weight: 500;
-    color: white;
-    background-color: black;
-    border: none;
-    border-radius: 30px;
-    width: 300px;
-    height: 45px;
-    text-align: center;
-}
 
-.status {
-    padding:40px;
-    text-align: center;
-    display: flex;
-    justify-content:space-around;
-}
-
-.status button:hover {
-    background-color: cornflowerblue;
-}
 span.font-weight-bold {
     font-weight: 700;
 }
@@ -976,4 +956,7 @@ form.check-out .item-order {
 
 .row.question-course .accordion-body {
     text-align: left;
+}
+input#form-search-name, input#form-search-author {
+    border-right: 1px #788287 solid;
 }

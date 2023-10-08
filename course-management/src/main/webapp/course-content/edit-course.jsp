@@ -9,17 +9,17 @@
             </div>
             <div class="col-lg-9 content-dashboard">
                 <div class="header-content">
-                    <div class="hello">
-                        <form class="row form-search-course g-2">
-                            <div class="col-auto">
-                                <input type="text" class="form-control" id="inputEmail"
-                                       placeholder=" Nhập khóa học cần tìm">
-                            </div>
-                            <div class="col-auto">
-                                <button type="submit" class="btn btn-primary">Tìm</button>
-                            </div>
-                        </form>
-                    </div>
+<%--                    <div class="hello">--%>
+<%--                        <form class="row form-search-course g-2">--%>
+<%--                            <div class="col-auto">--%>
+<%--                                <input type="text" class="form-control" id="inputEmail"--%>
+<%--                                       placeholder=" Nhập khóa học cần tìm">--%>
+<%--                            </div>--%>
+<%--                            <div class="col-auto">--%>
+<%--                                <button type="submit" class="btn btn-primary">Tìm</button>--%>
+<%--                            </div>--%>
+<%--                        </form>--%>
+<%--                    </div>--%>
                     <div class="user">
                       <span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">
                             <img class="rounded-circle me-1" width="35" height="35"
@@ -98,7 +98,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="course-level" class="form-label"><i class="fa-solid fa-rectangle-list"></i> Course Level</label>
+                            <label for="course-level" class="form-label"><i class="fa-solid fa-rectangle-list"></i> Mức độ</label>
                             <select class="form-select form-control" id="course-level" name="course-level">
                                 <c:forEach items="${categoryList}" var="categoryList" varStatus="loop">
                                     <option value="${categoryList.getId()}">${categoryList.getName()}</option>
@@ -107,7 +107,7 @@
                         </div>
 
                         <div class="text-center">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
                         </div>
                     </form>
                 </div>
@@ -158,7 +158,7 @@
             <div id="modal-body-detail-delete"class="modal-body">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
                 <a id="deleteDetailContent" role="button" class="btn btn-danger">Xóa</a>
             </div>
         </div>

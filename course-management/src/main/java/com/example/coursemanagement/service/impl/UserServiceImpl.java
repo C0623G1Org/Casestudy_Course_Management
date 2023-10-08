@@ -63,4 +63,9 @@ public class UserServiceImpl implements IUserService {
     public void changePassWord(User user, String newPassWord) {
         userRepo.changePassWord(user, newPassWord);
     }
+
+    @Override
+    public boolean checkExistEmail(String email) {
+        return userRepo.checkExistEmail(email);
+    }
 }

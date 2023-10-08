@@ -116,6 +116,13 @@ public class DashboardServlet extends HttpServlet {
             }
         }
     }
+
+    private void showPageManageOrder(HttpServletRequest request, HttpServletResponse response, User user) {
+        List<CourseOrderInf> courseOrderInfList = courseOrderService.showCourseOrder();
+        request.setAttribute("courseOrderInfList", courseOrderInfList);
+        request.setAttribute("user", user);
+        dispatcherData(request, response, "/dashboard/dashboard-admin-manage-order.jsp");
+    }
     private void showDetailOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int orderId = Integer.parseInt(request.getParameter("order-id"));
         CourseOrder order = courseOrderService.showOrderById(orderId);
@@ -207,12 +214,7 @@ public class DashboardServlet extends HttpServlet {
         dispatcherData(request, response, "/dashboard/dashboard-admin-manage-member.jsp");
     }
 
-    private void showPageManageOrder(HttpServletRequest request, HttpServletResponse response, User user) {
-        List<CourseOrderInf> courseOrderInfList = courseOrderService.showCourseOrder();
-        request.setAttribute("courseOrderInfList", courseOrderInfList);
-        request.setAttribute("user", user);
-        dispatcherData(request, response, "/dashboard/dashboard-admin-manage-order.jsp");
-    }
+
 
     //    private void showCourseOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        List<CourseOrderInf> courseOrderInfs = courseOrderService.showCourseOrder();
