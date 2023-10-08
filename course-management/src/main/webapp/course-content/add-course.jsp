@@ -29,6 +29,11 @@
                     </div>
                 </div>
                 <div class="row edit-course mt-4 px-5" >
+                    <c:if test="${not empty messegeError}">
+                        <div class="alert alert-danger" role="alert">
+                                ${messegeError}
+                        </div>
+                    </c:if>
                     <div class="row edit-course-1 ">
                         <h3 style="font-weight: bold">Thêm mới khóa học</h3>
                         <p>Thêm mới khóa hoc</p>
@@ -37,42 +42,50 @@
 
                         <div class="mb-3">
                             <label for="name-course" class="form-label"><i class="fa-solid fa-book"></i> Tên khóa học</label>
-                            <input type="text" class="form-control" name="name-course" id="name-course">
+                            <input type="text" class="form-control" name="name-course" id="name-course" value="${courseName}">
                         </div>
 
                         <div class="mb-3">
                             <label for="avatar-course" class="form-label"><i class="fa-solid fa-book"></i> Avatar</label>
-                            <input type="text" class="form-control" name="avatar-course" id="avatar-course">
+                            <input type="text" class="form-control" name="avatar-course" id="avatar-course" value="${avatar}">
                         </div>
 
                         <div class="mb-3">
                             <label for="description-course" class="form-label"><i class="fa-solid fa-book"></i> Mô tả khóa học</label>
-                            <textarea class="form-control" id="description-course" name="description-course" rows="3"></textarea>
+                            <textarea class="form-control" id="description-course" name="description-course" rows="3">
+                                ${descriptionCourse}
+                            </textarea>
                         </div>
 
                         <div class="mb-3">
                             <label for="price-course" class="form-label"><i class="fa-solid fa-book"></i> Giá khóa học</label>
-                            <input type="number" class="form-control" name="price-course" id="price-course">
+                            <input type="text" class="form-control" name="price-course" id="price-course" value="${priceCourse}">
                         </div>
 
                         <div class="mb-3">
                             <label for="knowledge" class="form-label"><i class="fa-solid fa-book"></i> Bạn sẽ học được gì?</label>
-                            <textarea class="form-control" id="knowledge" name="knowledge" rows="5"></textarea>
+                            <textarea class="form-control" id="knowledge" name="knowledge" rows="5">
+                                ${knowledge}
+                            </textarea>
                         </div>
 
                         <div class="mb-3">
                             <label for="requirements" class="form-label"><i class="fa-solid fa-book"></i> Yêu cầu</label>
-                            <textarea class="form-control" id="requirements" name="requirements" rows="3"></textarea>
+                            <textarea class="form-control" id="requirements" name="requirements" rows="3">
+                                ${requirements}
+                            </textarea>
                         </div>
 
                         <div class="mb-3">
                             <label for="instructor" class="form-label"><i class="fa-solid fa-book"></i> Tác giả</label>
-                            <input type="text" class="form-control" name="instructor" id="instructor">
+                            <input type="text" class="form-control" name="instructor" id="instructor" value="${instructor}">
                         </div>
 
                         <div class="mb-3">
                             <label for="course-inclusion" class="form-label"><i class="fa-solid fa-book"></i> Thông tin khác</label>
-                            <textarea class="form-control" id="course-inclusion" name="course-inclusion" rows="3"></textarea>
+                            <textarea class="form-control" id="course-inclusion" name="course-inclusion" rows="3">
+                                ${courseInclusion}
+                            </textarea>
                         </div>
 
                         <div class="mb-3">

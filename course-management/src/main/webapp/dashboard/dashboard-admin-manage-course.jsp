@@ -18,7 +18,6 @@
                         <p>Danh sách khóa học tại LTTA.co</p>
                     </div>
                 </div>
-
                 <div class="mt-2 view-detail-course-bg">
                     <a href="/dashboard/course/add" role="button" class="btn btn-primary btn-sm add-detail-content" ><i class="fa-solid fa-plus"></i> <span>Thêm mới khóa học</span></a>
                 </div>
@@ -80,19 +79,19 @@
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Bạn có chắc chắn không?</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div id="modal-body-detail-delete" class="modal-body">
+            <div id="modal-body-detail-delete"class="modal-body">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <a id="deleteDetailContent" role="button" class="btn btn-danger">Xóa</a>
             </div>
         </div>
     </div>
 </div>
 <script>
-    function displayModalDelete(id, title) {
-        document.getElementById("modal-body-detail-delete").innerHTML = "Bạn có chắc chắn muốn xóa khóa học <span class='course-content-name'>" + title + "</span> không ?";
-        document.getElementById("deleteDetailContent").setAttribute("href", "/dashboard/course/delete?id=" + id);
+    function displayModalDelete(id,title) {
+        document.getElementById("modal-body-detail-delete").innerHTML = "Bạn có chắc chắn muốn xóa khóa học <span class='course-content-name'>"+ title + "</span> không ?";
+        document.getElementById("deleteDetailContent").setAttribute("href", "/dashboard/course/delete?id="+id);
     }
 </script>
 <c:import url="footer-dashboard.jsp"></c:import>

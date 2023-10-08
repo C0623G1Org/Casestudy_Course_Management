@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="info-course-buy">
                                     <div class="time-buy">
-                                        <p class="mt-2">Bạn đã mua khoá học này với giá <span class="font-weight-bold">${courseOrders.getOrderPrice()} VND</span> vào <span class="font-weight-bold">${courseOrders.getOrderDate()} </span></p>
+                                        <p class="mt-2">Bạn đã mua khoá học này với giá <span class="font-weight-bold">${courseOrders.getOrderPrice()} đ</span> vào <span class="font-weight-bold">${courseOrders.getOrderDate()} </span></p>
                                     </div>
                                     <a style="color: #FFFFFF" role="button" class="btn-login btn btn-primary" href="/learn?id=${courseOrders.getCourse().getId()}">Tiếp tục học</a>
                                 </div>

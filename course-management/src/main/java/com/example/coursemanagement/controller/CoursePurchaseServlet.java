@@ -117,7 +117,6 @@ public class CoursePurchaseServlet extends HttpServlet {
         double orderPrice = Double.parseDouble(request.getParameter("price-order"));
         Course course = coursePurchaseService.displayCourse(idCourse);
         User user = userService.selectE(idUser);
-
         CourseOrder courseOrder = new CourseOrder(orderDate,orderPrice,user,course,orderCode);
         courseOrderService.createOrder(courseOrder);
         request.setAttribute("course", course);
