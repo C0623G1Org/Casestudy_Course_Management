@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Master New Skills with LTTA</title>
-    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../libs/fontawesome/css/all.min.css">
     <link rel="shortcut icon" href="../public/image/favaticon.png" type="image/x-icon">

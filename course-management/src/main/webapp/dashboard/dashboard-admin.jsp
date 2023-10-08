@@ -95,7 +95,7 @@
                             </thead>
                             <tbody>
                             <c:forEach items="${courseOrdersNow}" var="courseOrdersNow">
-                                <tr>
+                                <tr class="none-underline-code">
                                     <th scope="row"><a href="/dashboard/order/detail?order-id=${courseOrdersNow.getOrderId()}">${courseOrdersNow.getOrderCode()}</a></th>
                                     <td class="done">
                                         <c:if test="${courseOrdersNow.getStatus() == 'success'}">

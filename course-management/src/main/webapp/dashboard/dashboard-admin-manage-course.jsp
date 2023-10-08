@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="mt-2 view-detail-course-bg">
-                    <a href="/dashboard/course/add" role="button" class="btn btn-primary btn-sm add-detail-content" ><i class="fa-solid fa-plus"></i> <span>Thêm mới nội dung học</span></a>
+                    <a href="/dashboard/course/add" role="button" class="btn btn-primary btn-sm add-detail-content" ><i class="fa-solid fa-plus"></i> <span>Thêm mới khóa học</span></a>
                 </div>
 
 
