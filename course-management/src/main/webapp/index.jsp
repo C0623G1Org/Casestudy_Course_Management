@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:import url="header.jsp"></c:import>
 <section>
     <div class="container">
@@ -63,10 +64,12 @@
                         <i class="fa-solid fa-circle-half-stroke"></i>
                     </div>
                     <h5 class="fs-2 text-body-emphasis">Được hỗ trợ từ chuyên gia</h5>
-                    <p>LTTA là một tổ chức đào tạo học tập hoàn toàn trực tuyến. Điều đặc biệt là học viên sẽ được hỗ trợ
-                    từ đội ngũ chuyên gia và trợ lý học tập của LTTA. Đội ngũ chuyên gia công nghệ của LTTA có kiến thức
-                    sâu rộng và kinh nghiệm thực tiễn trong lĩnh vực CNTT, giúp học viên có thể tiếp cận và nắm vững
-                    kiến thức mới nhất.</p>
+                    <p>LTTA là một tổ chức đào tạo học tập hoàn toàn trực tuyến. Điều đặc biệt là học viên sẽ được hỗ
+                        trợ
+                        từ đội ngũ chuyên gia và trợ lý học tập của LTTA. Đội ngũ chuyên gia công nghệ của LTTA có kiến
+                        thức
+                        sâu rộng và kinh nghiệm thực tiễn trong lĩnh vực CNTT, giúp học viên có thể tiếp cận và nắm vững
+                        kiến thức mới nhất.</p>
                 </div>
             </div>
             <div class="col-lg-7">
@@ -119,10 +122,12 @@
                 <h2>Khoá học phổ biến</h2>
                 <form action="/course/search" class="row g-3 form-search-home mt-3" method="post">
                     <div class="col-auto">
-                        <input type="text" class="form-control" name="name-course" id="form-search-name" placeholder="Tìm theo tên">
+                        <input type="text" class="form-control" name="name-course" id="form-search-name"
+                               placeholder="Tìm theo tên">
                     </div>
                     <div class="col-auto">
-                        <input type="text" class="form-control" name="instructor-course" id="form-search-author" placeholder="Tìm theo Tutor">
+                        <input type="text" class="form-control" name="instructor-course" id="form-search-author"
+                               placeholder="Tìm theo Tutor">
                     </div>
                     <div class="col-auto">
                         <button type="submit" class="btn btn-primary">Tìm kiếm</button>
@@ -157,8 +162,10 @@
                                 <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>
                             </div>
                             <div class="card-price">
-                                <div class="price">${courseList.getPrice()} VNĐ</div>
-                                    <%--                <a style="color: #FFFFFF" role="button" class="btn-login btn btn-primary" href="/course/id=${courseList.getId()}">Đăng kí</a>--%>
+                                <div class="price">
+                                    <fmt:setLocale value="vi_VN"/>
+                                    <fmt:formatNumber value="${courseList.getPrice()}" type="currency"/>
+                                </div>
                                 <a style="color: #FFFFFF" role="button" class="btn-login btn btn-primary"
                                    href="/course/detail?id=${courseList.getId()}">Đăng kí</a>
                             </div>

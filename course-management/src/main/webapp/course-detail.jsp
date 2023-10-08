@@ -82,8 +82,7 @@
                     </div>
                     <div class="mt-3">
                         <c:if test="${empty sessionScope.user}">
-                            <a onclick="alert('Bạn cần đăng nhập để mua khóa học');" class="btn-login btn btn-primary btn-order-course" data-bs-toggle="modal" href="#userLogin" role="button">Mua khóa học</a>
-                            <c:import url="modal-login.jsp"></c:import>
+                            <a class="btn-login btn btn-primary btn-order-course" data-bs-target="#alertNotLogIn" data-bs-toggle="modal" data-bs-dismiss="modal" role="button">Mua khóa học</a><c:import url="modal-login.jsp"></c:import>
                         </c:if>
                         <c:if test="${not empty sessionScope.user}">
                             <c:if test="${checkUserBuy == true}">

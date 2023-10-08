@@ -204,3 +204,7 @@ UPDATE `course_management_ver2`.`feed_backs` SET `content_feedback` = ' LTTA cun
 UPDATE `course_management_ver2`.`feed_backs` SET `content_feedback` = 'Tôi đã tham gia khóa học Python của LTTA và thật sự ấn tượng với sự tỉ mỉ và chi tiết trong từng bài giảng. Các bài tập cũng rất thú vị và giúp tôi nắm vững kiến thức.' WHERE (`feedback_id` = '2');
 UPDATE `course_management_ver2`.`feed_backs` SET `content_feedback` = 'LTTA là một nền tảng học trực tuyến tuyệt vời. Tôi đã học khóa React Native và cảm thấy rất hài lòng với sự phong phú của nội dung và tính thực tiễn của ví dụ được sử dụng.' WHERE (`feedback_id` = '3');
 UPDATE `course_management_ver2`.`feed_backs` SET `content_feedback` = 'Khóa học HTML và CSS của LTTA thật sự đáng giá. Môi trường học tập thân thiện, thông qua các bài tập và dự án thực tế, tôi đã nắm vững kiến thức và có thể áp dụng vào công việc thực tế.' WHERE (`feedback_id` = '4');
+
+UPDATE `course_management_ver2`.`courses` SET `price` = '500000' WHERE (`course_id` = '1');
+UPDATE `course_management_ver2`.`courses` SET `price` = '1599000' WHERE (`course_id` = '2');
+UPDATE `course_management_ver2`.`courses` SET `price` = '1300000' WHERE (`course_id` = '3');

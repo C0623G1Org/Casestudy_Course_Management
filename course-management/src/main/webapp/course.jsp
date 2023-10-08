@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:import url="header.jsp"></c:import>
 <section id="all-course-page">
     <div class="container">
@@ -46,7 +47,10 @@
                                 <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>
                             </div>
                             <div class="card-price">
-                                <div class="price">${courseList.getPrice()} VNĐ</div>
+                                <div class="price">
+                                    <fmt:setLocale value="vi_VN"/>
+                                    <fmt:formatNumber value="${courseList.getPrice()}" type="currency"/>
+                                </div>
                                 <a style="color: #FFFFFF" role="button" class="btn-login btn btn-primary" href="/course/detail?id=${courseList.getId()}">Đăng kí</a>
                             </div>
                         </div>
