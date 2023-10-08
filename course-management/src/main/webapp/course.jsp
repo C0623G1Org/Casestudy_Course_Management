@@ -9,10 +9,10 @@
                 <div class="card text-bg-dark">
                     <img src="../public/image/imgSL1.png" class="card-img" alt="...">
                     <div class="card-img-overlay">
-                        <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+                        <div class="p-lg-3 mb-lg-4 p-md-0 mb-md-0 bg-body-tertiary rounded-3">
                             <div class="container-fluid py-5">
                                 <h3 class="display-5 fw-bold">Tất cả khóa học</h3>
-                                <p class="col-md-8 fs-5">Các khóa học tại LTTA luôn được cập nhật các công nghệ mới nhất
+                                <p class="col-lg-8 col-md-12 fs-5">Các khóa học tại LTTA luôn được cập nhật các công nghệ mới nhất
                                     nhằm đáp ứng nhu cầu tuyển dụng nhân lực CNTT tại Việt Nam và trên thế giới.</p>
                             </div>
                         </div>
@@ -26,18 +26,18 @@
                     <div class="card" style="width: 100%;">
                         <div class="card-body">
                             <div class="row card-head">
-                                <div class="col-md-4">
+                                <div class="col-xl-4 col-md-12">
                                     <img src="${courseList.getAvatar()}" class="card-img" alt="${courseList.getName()}">
                                 </div>
-                                <div class="col-md-8 ml-auto">
-                                    <div class="category">
+                                <div class="col-xl-8 col-md-12 ml-auto mb-sm-3 align-items-lg-start">
+                                    <div class="category mt-lg-3 mt-md-3 justify-content-md-start justify-content-lg-start justify-content-xl-end">
                                             <c:forEach items="${categoryList}" var="category">
                                             <c:if test="${category.getId() == courseList.getCourseLevelId()}">
                                                 <p class="text-right">${category.getName()}</p>
                                             </c:if>
                                         </c:forEach>
                                     </div>
-                                    <h3>${courseList.getName()}</h3>
+                                    <h3 class="text-md-start text-lg-start text-xl-end">${courseList.getName()}</h3>
                                 </div>
                             </div>
                             <p class="card-text">${courseList.getDescription()}</p>
@@ -58,83 +58,85 @@
                 </div>
             </c:forEach>
         </div>
-        <div class="row course" id="row4Course">
-<%--            <h1 style="font-weight: bold; font-size: 50px">FAQ</h1>--%>
-            <p style="font-weight: bold; font-size: 40px">Câu hỏi thường gặp ?</p>
-            <p><br/></p>
-            <div class="row question-course">
-                <div class="accordion accordion-flush" id="accordionFlushExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingOne">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                    aria-controls="flush-collapseOne">
-                                Cách học một công nghệ mới hiệu quả nhất là như thế nào?
-                            </button>
-                        </h2>
-                        <div id="flush-collapseOne" class="accordion-collapse collapse"
-                             aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Đầu tiên, các bạn cần phải tìm cách học hiệu quả cho bản thân,
-                                sau đó phải thực hành (learning by doing – học thông qua làm).
-                                Hoặc để tiết kiệm thời gian bạn có thể đăng ký một khóa học tại trung tâm,
-                                nơi bạn có thể đặt câu hỏi và lấy kinh nghiệm từ giảng viên những chuyên gia trong ngành phần mềm.
+        <div class="row course justify-content-lg-center" id="row4Course">
+            <div class="col-lg-8 col-sm-12 col-md-12">
+                <p style="font-weight: bold; font-size: 40px">Câu hỏi thường gặp ?</p>
+                <p><br/></p>
+                <div class="row question-course">
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                        aria-controls="flush-collapseOne">
+                                    Cách học một công nghệ mới hiệu quả nhất là như thế nào?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                 aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Đầu tiên, các bạn cần phải tìm cách học hiệu quả cho bản thân,
+                                    sau đó phải thực hành (learning by doing – học thông qua làm).
+                                    Hoặc để tiết kiệm thời gian bạn có thể đăng ký một khóa học tại trung tâm,
+                                    nơi bạn có thể đặt câu hỏi và lấy kinh nghiệm từ giảng viên những chuyên gia trong ngành phần mềm.
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseTwo" aria-expanded="false"
-                                    aria-controls="flush-collapseTwo">
-                                Để bước vào ngành phần mềm chúng ta phải học và có những kỹ năng chuyên môn gì? Ngoài kỹ năng chuyên môn, thì những kỹ năng cần thiết khác mà các nhà tuyển dụng chú ý đến là gì?
-                            </button>
-                        </h2>
-                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                             aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Đa số những bạn vừa ra trường thường tham gia vào 02 vị trí là Developer(Lập trình viên)
-                                hay Tester (Kiểm thử phần mềm). Do vậy, về kỹ năng chuyên môn nếu là Developer bạn cần trang bị các kỹ năng chính
-                                như Cấu trúc dữ liệu và thuật toán, Cơ sở dữ liệu, Lập trình hướng đối tượng, Các mẫu thiết kế, Debug và Research.
-                                Còn đối với Tester bạn phải trang bị kỹ năng về Manual Testing, Automation Testing và Cơ sở dữ liệu.
-                                Các kỹ năng ngoài chuyên môn thì tập trung vào ngoại ngữ gồm Tiếng Anh hoặc Tiếng Nhật và kỹ năng làm việc nhóm.
-                                Bên cạnh đó, một vấn đề quan trọng các nhà tuyển dụng đặc biệt để ý chính là thái độ của bạn.
-                                Nó được đánh giá thông qua sự cầu thị, chỉnh chu và ham học hỏi của bạn.
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                        aria-controls="flush-collapseTwo">
+                                    Để bước vào ngành phần mềm chúng ta phải học và có những kỹ năng chuyên môn gì? Ngoài kỹ năng chuyên môn, thì những kỹ năng cần thiết khác mà các nhà tuyển dụng chú ý đến là gì?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                 aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Đa số những bạn vừa ra trường thường tham gia vào 02 vị trí là Developer(Lập trình viên)
+                                    hay Tester (Kiểm thử phần mềm). Do vậy, về kỹ năng chuyên môn nếu là Developer bạn cần trang bị các kỹ năng chính
+                                    như Cấu trúc dữ liệu và thuật toán, Cơ sở dữ liệu, Lập trình hướng đối tượng, Các mẫu thiết kế, Debug và Research.
+                                    Còn đối với Tester bạn phải trang bị kỹ năng về Manual Testing, Automation Testing và Cơ sở dữ liệu.
+                                    Các kỹ năng ngoài chuyên môn thì tập trung vào ngoại ngữ gồm Tiếng Anh hoặc Tiếng Nhật và kỹ năng làm việc nhóm.
+                                    Bên cạnh đó, một vấn đề quan trọng các nhà tuyển dụng đặc biệt để ý chính là thái độ của bạn.
+                                    Nó được đánh giá thông qua sự cầu thị, chỉnh chu và ham học hỏi của bạn.
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseThree" aria-expanded="false"
-                                    aria-controls="flush-collapseThree">
-                                Ngoài tiếng Anh và tiếng Nhật thì tiếng Hàn và tiếng Trung có phải là lợi thế không?
-                            </button>
-                        </h2>
-                        <div id="flush-collapseThree" class="accordion-collapse collapse"
-                             aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Điều này phụ thuộc vào khách hàng, thị tường và công ty mà bạn apply.
-                                Tuy nhiên, hiện nay thị trường tiếng Anh và tiếng Nhật đang chiếm lợi thế và dễ hơn cho các bạn.
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                        aria-controls="flush-collapseThree">
+                                    Ngoài tiếng Anh và tiếng Nhật thì tiếng Hàn và tiếng Trung có phải là lợi thế không?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                 aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Điều này phụ thuộc vào khách hàng, thị tường và công ty mà bạn apply.
+                                    Tuy nhiên, hiện nay thị trường tiếng Anh và tiếng Nhật đang chiếm lợi thế và dễ hơn cho các bạn.
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingFour">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseFour" aria-expanded="false"
-                                    aria-controls="flush-collapseFour">
-                                Công việc của một Dev mới (fresher) vào nghề là gì? Sẽ gặp khó khăn gì và làm thế nào để vượt qua?
-                            </button>
-                        </h2>
-                        <div id="flush-collapseFour" class="accordion-collapse collapse"
-                             aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Đầu tiên bạn sẽ không được làm dự án ngay mà phải qua quá trình training,
-                                các bạn sẽ được giao những task ở mức độ vừa phải, để đảm bảo tiến độ của dự án vừa phát triển được kỹ năng của mình.
-                                Sau đó độ khó của các task sẽ tăng dần tùy theo năng lực. Điều quan trọng là các bạn phải biết học hỏi từ các anh chị đi trước,
-                                tìm tòi và luôn chủ động trong công việc, thể hiện rằng bản thân là người có giá trị và tiềm năng.
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                        aria-controls="flush-collapseFour">
+                                    Công việc của một Dev mới (fresher) vào nghề là gì? Sẽ gặp khó khăn gì và làm thế nào để vượt qua?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                 aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Đầu tiên bạn sẽ không được làm dự án ngay mà phải qua quá trình training,
+                                    các bạn sẽ được giao những task ở mức độ vừa phải, để đảm bảo tiến độ của dự án vừa phát triển được kỹ năng của mình.
+                                    Sau đó độ khó của các task sẽ tăng dần tùy theo năng lực. Điều quan trọng là các bạn phải biết học hỏi từ các anh chị đi trước,
+                                    tìm tòi và luôn chủ động trong công việc, thể hiện rằng bản thân là người có giá trị và tiềm năng.
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+<%--            <h1 style="font-weight: bold; font-size: 50px">FAQ</h1>--%>
         </div>
     </div>
 </section>

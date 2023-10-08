@@ -4,7 +4,7 @@
 <c:import url="header.jsp"></c:import>
 <section>
     <div class="container">
-        <div class="row hero-home">
+        <div class="row hero-home mt-sm-3 mt-lg-auto">
             <div class="col-lg-6">
                 <h2>Trở thành lập trình viên chuyên nghiệp với LTTA</h2>
                 <p>Cơ hội để trải nghiệm thực tế công việc của một lập trình viên, khởi đầu con đường lập trình chuyên
@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 img-hero">
+            <div class="col-lg-6 img-hero align-content-lg-end align-content-md-center">
                 <img src="../public/image/vector-banner 1.png">
             </div>
         </div>
@@ -59,7 +59,7 @@
         </div>
         <div class="row my-5 justify-content-around">
             <div class="col-lg-5">
-                <div class="feature col one">
+                <div class="feature col one my-sm-3 my-md-3">
                     <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
                         <i class="fa-solid fa-circle-half-stroke"></i>
                     </div>
@@ -72,7 +72,7 @@
                         kiến thức mới nhất.</p>
                 </div>
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-7 my-sm-3 my-md-3">
                 <div class="feature col two">
                     <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
                         <i class="fa-solid fa-circle-half-stroke"></i>
@@ -117,8 +117,8 @@
 <%--</section>--%>
 <section>
     <div class="container my-5 course-home">
-        <div class="row text-center">
-            <div class="col-md-6 offset-md-3 col-auto">
+        <div class="row text-center justify-content-lg-center">
+            <div class="col-md-12 col-lg-6 col-auto">
                 <h2>Khoá học phổ biến</h2>
                 <form action="/course/search" class="row g-3 form-search-home mt-3" method="post">
                     <div class="col-auto">
@@ -137,14 +137,14 @@
         </div>
         <div class="row my-5">
             <c:forEach items="${courseList}" var="courseList">
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-sm-12 my-sm-3 my-md-3">
                     <div class="card" style="width: 100%;">
-                        <div class="card-body">
+                        <div class="card-body align-content-md-center">
                             <div class="row card-head">
-                                <div class="col-md-4">
+                                <div class="col-md-12 col-lg-4">
                                     <img src="${courseList.getAvatar()}" class="card-img" alt="">
                                 </div>
-                                <div class="col-md-8 ml-auto">
+                                <div class="col-md-12 col-lg-8 mt-sm-3 mt-md-3">
                                     <div class="category">
                                         <c:forEach items="${categoryList}" var="category">
                                             <c:if test="${category.getId() == courseList.getCourseLevelId()}">
@@ -152,7 +152,7 @@
                                             </c:if>
                                         </c:forEach>
                                     </div>
-                                    <h3>${courseList.getName()}</h3>
+                                    <h3 class="text-md-center">${courseList.getName()}</h3>
                                 </div>
                             </div>
                             <p class="card-text">${courseList.getDescription()}</p>
@@ -175,8 +175,8 @@
             </c:forEach>
         </div>
         <div class="row">
-            <div class="text-center d-flex justify-content-between">
-                <div class="col-lg-12">
+            <div class="text-center d-flex justify-content-between justify-content-md-center justify-content-sm-center">
+                <div class="col-lg-12 col-md-12">
                     <a role="button" href="/course" class="btn-hero btn btn-primary">Xem thêm</a>
                 </div>
             </div>
@@ -194,7 +194,7 @@
         <div class="row">
             <c:forEach items="${feedbacks}" var="feedbacks" varStatus="loop">
                 <c:if test="${loop.count < 5}">
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 col-sm-12 my-sm-3 my-md-3">
                         <div class="card" style="width: 100%;">
                             <div class="card-body">
                                 <div class="row card-head">

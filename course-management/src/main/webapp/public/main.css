@@ -63,10 +63,10 @@
     font-weight: 700;
 }
 
-.img-hero {
-    display: flex;
-    justify-content: flex-end;
-}
+/*.img-hero {*/
+/*    display: flex;*/
+/*    justify-content: flex-end;*/
+/*}*/
 
 .img-hero img {
     max-height: 500px;
@@ -743,6 +743,7 @@ a.btn.btn-primary.delete.btn-content {
 .col-3.using .title {
     margin: 0;
 }
+
 span.font-weight-bold {
     font-weight: 700;
 }
@@ -750,11 +751,13 @@ span.font-weight-bold {
 .time-buy p {
     font-size: 14px;
 }
+
 p.name-display {
     font-size: 15px;
     padding: 0;
     margin: 0;
 }
+
 /*check-out page*/
 
 span.font-weight-bold {
@@ -764,20 +767,24 @@ span.font-weight-bold {
 .time-buy p {
     font-size: 14px;
 }
+
 p.name-display {
     font-size: 15px;
     padding: 0;
     margin: 0;
 }
+
 form.check-out label {
     margin-bottom: 5px;
 }
+
 form.check-out .item-order {
     border-radius: 15px;
     background: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 112, 253, 0.22);
     padding: 30px 50px;
 }
+
 .status-order i {
     color: #fff;
 }
@@ -785,12 +792,14 @@ form.check-out .item-order {
 .status-order span {
     padding: 6px 15px;
 }
+
 .card-head img.card-img {
     width: 100px;
     height: 100px;
     border-radius: 15px;
     object-fit: cover;
 }
+
 .col-6.column-2 .content-1 img {
     width: 100%;
     height: 350px;
@@ -801,16 +810,19 @@ form.check-out .item-order {
     width: 100%;
     object-fit: cover;
 }
+
 .col-lg-9.content-dashboard .body-content .card-body .col-2 img {
     width: 100%;
     height: 100px;
     border-radius: 15px;
     object-fit: cover;
 }
+
 .video-course.mb-3 img {
     width: 100%;
     border-radius: 15px;
 }
+
 .col-lg-9.box-item.d-flex.justify-content-around img {
     width: 200px;
     height: 100px;
@@ -870,7 +882,12 @@ div#alertNotLogIn .modal-content .btn.btn-primary {
     margin-bottom: 0;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
+    button#dropdownContentButton {
+        padding: 13px 20px !important;
+        font-size: 15px;
+    }
+
     .col-lg-9.content-dashboard .body-content .card-body .col-2 img, .row.card-head img {
         height: 300px;
     }
@@ -887,6 +904,7 @@ div#alertNotLogIn .modal-content .btn.btn-primary {
     .card-price {
         margin-top: 10px;
     }
+
     .card-course-home {
         margin-bottom: 15px;
     }
@@ -897,7 +915,6 @@ div#alertNotLogIn .modal-content .btn.btn-primary {
 
     #feedback .row.card-head img {
         text-align: center;
-        width: 50%;
         height: auto;
     }
 
@@ -906,7 +923,7 @@ div#alertNotLogIn .modal-content .btn.btn-primary {
     }
 
     .card.text-bg-dark img {
-        height: 500px;
+        height: 300px;
         border-radius: 30px;
     }
 
@@ -929,10 +946,15 @@ div#alertNotLogIn .modal-content .btn.btn-primary {
         align-items: center;
         justify-content: center;
     }
+
     .hero-home {
         display: flex;
         align-items: center;
         text-align: center;
+    }
+
+    .hero-home h2 {
+        font-size: 30px;
     }
 
     .hero-home .row.d-flex.align-items-center .col-sm-12 {
@@ -963,6 +985,7 @@ div#alertNotLogIn .modal-content .btn.btn-primary {
     .row.question-course {
         padding: 5px;
     }
+
     #row4Course {
         text-align: center;
     }
@@ -970,11 +993,54 @@ div#alertNotLogIn .modal-content .btn.btn-primary {
     div#row1Course p.col-md-8.fs-5 {
         font-size: 15px !important;
     }
+
+    .row.card-head img {
+        height: auto;
+    }
+
+    form.edit-course-content {
+        border-radius: unset;
+        border: unset;
+        padding: unset;
+    }
+
+    /*.siderbar-dashboard {*/
+    /*    position: absolute;*/
+    /*    z-index: 9999;*/
+    /*    display: none;*/
+    /*}*/
+}
+
+@media only screen and (max-width: 1024px) {
+    .card.text-bg-dark img {
+        min-height: 400px;
+    }
+
+    img.card-img {
+        min-height: 300px;
+    }
+
+    .content-1 {
+        margin-left: 0;
+    }
+
+    .row.card-head img {
+        min-height: 250px;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .row.card-head img {
+        min-height: 200px;
+        object-fit: cover;
+    }
 }
 
 .row.question-course .accordion-body {
     text-align: left;
 }
+
 input#form-search-name, input#form-search-author {
     border-right: 1px #788287 solid;
 }
