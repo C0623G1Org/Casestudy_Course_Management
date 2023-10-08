@@ -303,7 +303,7 @@
     justify-content: center;
 }
 
-#status {
+a#status {
     padding: 12px;
     text-align: center;
     display: flex;
@@ -317,13 +317,13 @@
     background-color: black;
 }
 
-#status button {
+a#status button {
     background-color: black;
     border: none;
     color: white;
 }
 
-#status:hover {
+a#status:hover {
     background-color: #0070fd;
 }
 

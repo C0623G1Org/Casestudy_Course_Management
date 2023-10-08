@@ -87,8 +87,8 @@
             </div>
             <div id="modal-body-detail-delete"class="modal-body"></div>
             <div class="modal-footer">
-                <a href="/checkout/success?id=${courseOrder.getOrderCode()}&course-id=${course.getId()}" id="deleteDetailContent" class="btn btn-primary"><button type="submit" name="accept">Chấp nhận</button></a>
-                <a href="/checkout/cancel?id=${courseOrder.getOrderCode()}"><button type="button" class="btn btn-secondary btn-primary" data-bs-dismiss="modal">Hủy</button></a>
+                <a role="button" href="/checkout/success?id=${courseOrder.getOrderCode()}&course-id=${course.getId()}" id="deleteDetailContent" class="btn btn-primary">Chấp nhận</a>
+                <a role="button" href="/checkout/cancel?id=${courseOrder.getOrderCode()}" class="btn btn-secondary btn-primary" data-bs-dismiss="modal">Hủy</a>
             </div>
         </div>
     </div>
