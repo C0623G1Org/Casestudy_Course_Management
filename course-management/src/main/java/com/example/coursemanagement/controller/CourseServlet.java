@@ -1,27 +1,29 @@
 package com.example.coursemanagement.controller;
 
 import com.example.coursemanagement.model.*;
-import com.example.coursemanagement.service.ICourseContentService;
-import com.example.coursemanagement.service.ICourseDetailContentService;
-import com.example.coursemanagement.service.ICourseOrderService;
-import com.example.coursemanagement.service.ICourseService;
+import com.example.coursemanagement.service.impl.FeedbackServiceImpl;
+import com.example.coursemanagement.service.*;
 import com.example.coursemanagement.service.impl.*;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.*;
-import java.util.stream.Collectors;
 
-@WebServlet(name = "CourseServlet", urlPatterns = {"", "/course", "/course/detail"})
+@WebServlet(name = "CourseServlet", urlPatterns = {
+        "",
+        "/course",
+        "/course/detail",
+        "/course/search"
+})
 public class CourseServlet extends HttpServlet {
     private final ICourseService courseService = new CourseServiceImpl();
     private final ICourseContentService courseContentService = new CourseContentServiceImpl();
     private final CourseCategoryServiceImpl categoryService = new CourseCategoryServiceImpl();
     private final ICourseDetailContentService detailContentService = new DetailedContentServiceImpl();
     private final ICourseOrderService orderService = new CourseOrderServiceImpl();
+    private final IService<Feedback> feedbackService = new FeedbackServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -32,12 +34,28 @@ public class CourseServlet extends HttpServlet {
         } else if (url.endsWith("/course")) {
             showCoursePage(request, response);
         } else if (url.endsWith("/")) {
-            showHomePage(request,response);
+            showHomePage(request, response);
         }
     }
 
+    private void showPageSearch(HttpServletRequest request, HttpServletResponse response) {
+        String nameCourse = request.getParameter("name-course");
+        String instructorCourse = request.getParameter("instructor-course");
+        List<Course> courseList = courseService.searchByNameAndInstructor(nameCourse, instructorCourse);
+        List<CourseCategory> categoryList = categoryService.showListE();
+        if (!nameCourse.equals("")) {
+            request.setAttribute("nameCourse", nameCourse);
+        }
+        if (!instructorCourse.equals("")) {
+            request.setAttribute("instructorCourse", instructorCourse);
+        }
+        request.setAttribute("courseList", courseList);
+        request.setAttribute("categoryList", categoryList);
+        requestDispatcher(request, response, "/course-search.jsp");
+    }
+
     private void showHomePage(HttpServletRequest request, HttpServletResponse response) {
-        getListCourseRenderView(request,response,"/index.jsp");
+        getListCourseRenderView(request, response, "/index.jsp");
     }
 
     private void showDetailCourse(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -58,7 +76,7 @@ public class CourseServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
         if (session.getAttribute("user") != null) {
             User user = (User) session.getAttribute("user");
-            boolean checkUserBuy = orderService.checkIdBuyCourse(user.getId(),idCourse);
+            boolean checkUserBuy = orderService.checkIdBuyCourse(user.getId(), idCourse);
             request.setAttribute("checkUserBuy", checkUserBuy);
         }
         request.setAttribute("course", course);
@@ -68,14 +86,16 @@ public class CourseServlet extends HttpServlet {
     }
 
     private void showCoursePage(HttpServletRequest request, HttpServletResponse response) {
-        getListCourseRenderView(request,response, "/course.jsp");
+        getListCourseRenderView(request, response, "/course.jsp");
     }
 
     private void getListCourseRenderView(HttpServletRequest request, HttpServletResponse response, String path) {
         List<Course> courseList = courseService.showList();
         List<CourseCategory> categoryList = categoryService.showListE();
+        List<Feedback> feedbacks = feedbackService.showListE();
         request.setAttribute("courseList", courseList);
         request.setAttribute("categoryList", categoryList);
+        request.setAttribute("feedbacks", feedbacks);
         requestDispatcher(request, response, path);
     }
 
@@ -92,7 +112,11 @@ public class CourseServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.setCharacterEncoding("UTF-8");
+        String url = request.getRequestURI();
+        if (url.endsWith("/course/search")) {
+            showPageSearch(request, response);
+        }
     }
 
 }

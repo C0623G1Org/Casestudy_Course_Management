@@ -14,13 +14,12 @@
                         <input type="hidden" value="${user.getId()}" name="id">
                         <div class="edit-header">
                             <div class="avatar col-4">
-                                <img src="../public/image/ava.png" alt="ava"/> <br>
+                                <img src="${req.requestURI}/public/image/3607444.png" alt="ava"/> <br>
                                 <button class="ava-btn" type="submit">
                                     <i class='bx bxs-user' style='color:#5585fd'></i>
                                     <span>Edit avatar</span>
                                 </button>
                             </div>
-                            <input type="hidden" name="id" value="${user.getId()}">
                             <input type="hidden" name="role" value="${user.getRole()}">
                             <div class="edit-header-inf col-7">
                                 <div class="edit-inf col-12">
@@ -29,12 +28,9 @@
                                                                              style='color:#5585fd'></i>
                                             <span>Tên đăng nhập</span>
                                         </label>
-                                        <label class="lb" for="user_name">
-                                            <i class='bx bx-edit-alt' style='color:#5585fd'></i>
-                                            <span>Edit</span>
-                                        </label>
                                     </div>
-                                    <input class="form-control" type="text" id="user_name" name="username" value="${user.getUsername()}">
+                                    <input class="form-control" type="text" id="user_name" value="${user.getUsername()}">
+                                    <input class="form-control" type="hidden" name="username" value="${user.getUsername()}">
                                 </div>
 
                                 <div class="edit-inf col-12">
@@ -43,12 +39,9 @@
                                             <i class='bx bxs-user-circle' style='color:#5585fd'></i>
                                             <span>Họ và Tên</span>
                                         </label>
-                                        <label class="lb" for="name">
-                                            <i class='bx bx-edit-alt' style='color:#5585fd'></i>
-                                            <span>Edit</span>
-                                        </label>
                                     </div>
-                                    <input class="form-control" type="text" id="name" name="fullName" value="${user.getFullName()}">
+                                    <input class="form-control" type="text" id="name" value="${user.getFullName()}">
+                                    <input class="form-control" type="hidden"  name="fullName" value="${user.getFullName()}">
                                 </div>
 
                                 <div class="edit-inf col-12">
@@ -57,12 +50,9 @@
                                             <i class='bx bx-mail-send' style='color:#5585fd'></i>
                                             <span>Email của bạn</span>
                                         </label>
-                                        <label class="lb" for="email">
-                                            <i class='bx bx-edit-alt' style='color:#5585fd'></i>
-                                            <span>Edit</span>
-                                        </label>
                                     </div>
-                                    <input class="form-control" type="text" id="email" name="email" value="${user.getEmail()}">
+                                    <input class="form-control" type="text" id="email" value="${user.getEmail()}">
+                                    <input class="form-control" type="hidden" name="email" value="${user.getEmail()}">
                                 </div>
                             </div>
                         </div>

@@ -12,69 +12,6 @@
                     <c:import url="header-content-dashboard.jsp"></c:import>
                 </div>
                 <div class="body-content">
-                    <c:forEach items="${courseList}" var="courseList">
-                        <div class="card mb-3" style="width: 100%;">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <img src="../public/image/Rectangle 43.png">
-                                    </div>
-                                    <div class="col-10">
-                                        <div class="row">
-                                            <div class="col-7">
-                                                <h4>${courseList.getName()}</h4>
-                                            </div>
-                                            <div class="col-5">
-                                                <div class="row">
-                                                    <div class="col-7 category">
-                                                        <p class="text-right">Javascript
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-5 category">
-                                                        <p class="text-right"><i class="fa-solid fa-star"></i>4.8
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="body-1">
-                                                <div>
-                                                    <p>Author</p>
-                                                </div>
-
-                                                <div>
-                                                    <p><i class="fa-regular fa-user"></i>${courseList.getInstructor()}
-                                                    </p>
-                                                </div>
-
-                                                <div>
-                                                    <p><i class="fa-regular fa-clock"></i>24h 12m</p>
-                                                </div>
-                                                <div>
-                                                    <p><i class="fa-solid fa-users"></i>1523</p>
-                                                </div>
-                                                <div>
-                                                    <p>25 học phần</p>
-                                                </div>
-                                                <div>
-                                                    <p><i class="fa-solid fa-video"></i>70 bài giảng</p>
-                                                </div>
-                                                <div>
-                                                    <p><i class="fa-regular fa-file"></i>120 bài đọc</p>
-                                                </div>
-                                                <div>
-                                                    <p><i class="fa-regular fa-star"></i>50 bài tập</p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </c:forEach>
                 </div>
                 <div class="mt-5 body-content-2">
                     <div>
@@ -87,23 +24,29 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th class="text-center" scope="col"><i class="fa-solid fa-arrow-down-wide-short"></i>Mã đơn
-                                    hàng
-                                </th>
+                                <th class="text-center" scope="col">Mã đơn hàng</th>
                                 <th class="text-center" scope="col">Tình trạng</th>
-                                <th class="text-center" scope="col">Chi tiết đơn hàng</th>
-                                <th class="text-center" scope="col">Tên học viên</th>
+                                <th class="text-center" scope="col">Tên khóa học</th>
+                                <th class="text-center" scope="col">Người mua</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <c:forEach items="${courseOrderInfList}" var="order">
-                                <tr>
-                                    <th scope="row"><a href="/course-order-servlet?action=show_detail_order&orderId=${order.getOrderId()}">${order.getOrderCode()}</a></th>
+                            <c:forEach items="${courseOrdersNow}" var="courseOrdersNow">
+                                <tr class="none-underline-code">
+                                    <th scope="row"><a href="/dashboard/order/detail?order-id=${courseOrdersNow.getOrderId()}">#${courseOrdersNow.getOrderCode()}</a></th>
                                     <td class="done">
-                                        <div class="done-content"><i class="fa-solid fa-check"></i>${order.getStatus()}</div>
+                                        <c:if test="${courseOrdersNow.getStatus() == 'success'}">
+                                            <div class="status-order"><span class="badge rounded-pill bg-success"><i class="fa-solid fa-check"></i>Đã hoàn thành</span></div>
+                                        </c:if>
+                                        <c:if test="${courseOrdersNow.getStatus() == 'cancel'}">
+                                            <div class="status-order"><span class="badge rounded-pill bg-danger"><i class="fa-solid fa-ban"></i>Đã hủy</span></div>
+                                        </c:if>
+                                        <c:if test="${courseOrdersNow.getStatus() == 'pending'}">
+                                            <div class="status-order"><span class="badge rounded-pill bg-secondary"><i class="fa-solid fa-cloud-arrow-down"></i>Đang xử lí</span></div>
+                                        </c:if>
                                     </td>
-                                    <td>${order.getCourseName()}</td>
-                                    <td>${order.getFullName()}</td>
+                                    <td>${courseOrdersNow.getCourse().getName()}</td>
+                                    <td>${courseOrdersNow.getUser().getUsername()}</td>
                                 </tr>
                             </c:forEach>
                             </tbody>

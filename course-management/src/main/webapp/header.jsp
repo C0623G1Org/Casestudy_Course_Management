@@ -1,11 +1,12 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Master New Skills with LTTA</title>
-    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../libs/fontawesome/css/all.min.css">
     <link rel="shortcut icon" href="../public/image/favaticon.png" type="image/x-icon">
@@ -35,6 +36,7 @@
 
             <div class="col-md-3 text-end">
                 <c:if test="${empty sessionScope.user}">
+                    <a class="btn-login btn btn-primary" data-bs-toggle="modal" href="#userSignup" role="button">Đăng kí</a>
                     <c:import url="modal-login.jsp"></c:import>
                 </c:if>
                 <c:if test="${not empty sessionScope.user}">

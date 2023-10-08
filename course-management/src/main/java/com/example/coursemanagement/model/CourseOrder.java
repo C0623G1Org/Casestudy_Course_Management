@@ -39,6 +39,14 @@ public class CourseOrder {
         this.status = status;
     }
 
+    public CourseOrder(String orderDate, double orderPrice, User user, Course course, int orderCode) {
+        this.orderDate = orderDate;
+        this.orderPrice = orderPrice;
+        this.user = user;
+        this.course = course;
+        this.orderCode = orderCode;
+    }
+
     public int getOrderId() {
         return orderId;
     }

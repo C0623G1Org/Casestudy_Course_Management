@@ -11,89 +11,96 @@
 <c:import url="header.jsp"></c:import>
 <section>
     <div class="container">
-        <form action="/course-purchase-servlet?action=check-out&id=${course.getId()}" method="post" role="form"
-              class="check-out">
+        <form action="/checkout" method="post" role="form"
+              class="check-out add-course edit-course-content">
             <div class="row">
                 <div class="col-md-6">
                     <h3 style="font-weight: bold">Thông tin khách hàng</h3>
-                    <div class="form-group my-3">
+                    <div class="mb-3">
                         <label for="nameBC"><i class="fa-solid fa-user"></i> Họ và tên của bạn*</label>
                         <input type="text" class="form-control" id="nameBC" placeholder="Vui lòng nhập tên"
                                value="${user.getFullName()}">
                     </div>
-                    <div class="form-group my-3">
+                    <div class="mb-3">
                         <label for="numberphoneBC"><i class="fa-solid fa-phone"></i> Số điện thoại của bạn*</label>
                         <input type="text" class="form-control" id="numberphoneBC"
                                placeholder="Vui lòng nhập số điện thoại" value="${user.getPhone()}">
                     </div>
-                    <div class="form-group my-3">
+                    <div class="mb-3">
                         <label for="EmailBC"><i class="fa-solid fa-envelope"></i> Email của bạn*</label>
                         <input type="text" class="form-control" id="EmailBC" placeholder="Vui lòng nhập email"
                                value="${user.getEmail()}">
                     </div>
-                    <p>(Nếu email của bạn chưa có trên hệ thống, chúng tôi sẽ dùng Email thanh toán này để tạo tài
-                        khoản. Nhằm mục đích lưu trữ trông tin để phục vụ cho việc học tập của bạn)</p>
+                    <div class="mb-3">
+<%--                        <p>(Nếu email của bạn chưa có trên hệ thống, chúng tôi sẽ dùng Email thanh toán này để tạo tài--%>
+<%--                            khoản. Nhằm mục đích lưu trữ trông tin để phục vụ cho việc học tập của bạn)</p>--%>
+                    </div>
                 </div>
 
-                <div class="col-md-6">
-                    <h3 style="font-weight: bold">Order Summary</h3>
+                <div class="col-md-6 item-order">
+                    <h3 style="font-weight: bold">Chi tiết thanh toán</h3>
+<%--                    <div class="row">--%>
+<%--                        <div class="col-md-12 mt-2"><h5>Chi tiết thanh toán</h5></div>--%>
+<%--                    </div>--%>
                     <div class="row">
-                        <div class="col-md-9"><h5>Order Summary</h5></div>
-                        <div class="col-md-3" style="text-align: right"><i class="fa-solid fa-pen"></i> Edit</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <img src="../public/image/RectangleBC.png" width="120p" height="100">
+                        <div class="col-md-3 ava-border">
+                            <img src="${course.getAvatar()}" width="120p" height="100">
                         </div>
                         <div class="col-md-6">
-                            <input type="hidden" name="id" value="${course.getId()}">
+                            <input type="hidden" name="id-course" value="${course.getId()}">
+                            <input type="hidden" name="id-user" value="${sessionScope.user.getId()}">
                             <h5 style="font-weight: bold">${course.getName()}</h5>
                             <p>${course.getDescription()}</p>
                         </div>
                         <div class="col-md-3">
-                            <p style="font-size: 25px; font-weight: bold; text-align: right">${course.getPrice()}</p>
+                            <p style="font-size: 25px; font-weight: bold; text-align: right">${course.getPrice()} VND</p>
                         </div>
                     </div>
+                    <hr>
                     <div class="row">
-                        <div class="col-md-10"><p>Discount</p></div>
+                        <div class="col-md-10"><p>Mã giảm giá</p></div>
                         <div class="col-md-2"><p style="text-align: right">10%</p></div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <p style="font-size: 30px; font-weight: bold">Total</p></div>
+                            <p style="font-size: 30px; font-weight: bold; margin-bottom: 0">Thành tiền</p></div>
                         <div class="col-md-6" style="text-align: right">
-                            <%--                                tam thoi chua co discount--%>
-                            <p style="font-size: 25px; font-weight: bold">${course.getPrice()}</p><br/>
-                            <p>Ngày thanh toán: ${localDate}</p>
-                                <p>Mã đơn hàng: ${code}</p>
-                            <p>(VAT included if applicable)</p>
+                            <input type="hidden" name="price-order" value="${course.getPrice()}">
+                            <p style="font-size: 25px; font-weight: bold">${course.getPrice()} VND</p><br/>
+                            <p>(Đã bao gồm VAT)</p>
+<%--                            <p>Ngày đặt mua: ${localDate}</p>--%>
+                            <input type="hidden" name="date-order" value="${localDate}">
+
+<%--                            <p>Mã đơn hàng: #${code}</p>--%>
+                            <input type="hidden" name="code-order" value="${code}">
                         </div>
                     </div>
-                    <%--                    test--%>
-
-                    <div class="row">
-                        <p style="font-size: 30px; font-weight: bold">Phương thức thanh toán</p>
-                        <p><input type="radio" name="payment-methods" value="select-1"> Chuyển khoản qua thẻ ngân hàng
-                        </p><br/>
-                        <p><input type="radio" name="payment-methods" value="select-2"> Thanh toán qua thẻ tín dụng</p>
-                        <br/>
+                    <hr>
+                    <div class="row payment">
+                        <div class="col-lg-12">
+                            <p style="font-size: 30px; font-weight: bold">Phương thức thanh toán</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="payment-methods" value="select-1" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1" checked>
+                                    Chuyển khoản qua thẻ ngân hàng
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="payment-methods" value="select-2" id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Thanh toán qua thẻ tín dụng
+                                </label>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
-                        <button type="submit" class="btn btn-outline-primary">Thanh toán</button>
+                        <button type="submit" class="btn btn-primary">Thanh toán</button>
                     </div>
                 </div>
             </div>
         </form>
     </div>
 </section>
-<%--<div>--%>
-<%--    <c:forEach items="${loan}" var="courseItem">--%>
-<%--        <p>ID: ${courseItem.id}</p>--%>
-<%--        <p>Name: ${courseItem.name}</p>--%>
-<%--        <p>Description: ${courseItem.description}</p>--%>
-<%--        <p>Price: ${courseItem.price}</p>--%>
-<%--    </c:forEach>--%>
-<%--</div>--%>
 <c:import url="footer.jsp"></c:import>
 
 git

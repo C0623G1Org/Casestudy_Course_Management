@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<a class="btn-login btn btn-primary" data-bs-toggle="modal" href="#userSignup" role="button">Đăng kí</a>
 <div class="modal fade" id="userSignup" aria-hidden="true" aria-labelledby="userSignupLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -91,3 +90,22 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="alertNotLogIn" aria-hidden="true" aria-labelledby="alertNotLogInLabel" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Thông báo !</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Bạn cần đăng nhập vào tài khoản trước khi mua !</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" href="#userSignup" role="button">Đăng ký</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" href="#userLogin" role="button">Đăng nhập</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -13,5 +13,5 @@ public interface ICourseRepo {
     boolean updateCourse(int id, Course course);
     List<Course> findByNameCourse(String nameCourse);
     List<Course> selectByUserBuy(int idUser);
-
+    List<Course> searchByNameAndInstructor(String nameSearch, String instructorSearch);
 }

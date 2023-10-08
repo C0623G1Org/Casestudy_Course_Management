@@ -23,9 +23,8 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th class="text-center" scope="col"><i class="fa-solid fa-arrow-down-wide-short"></i>ID
-                                </th>
-                                <th class="text-center" scope="col">Username</th>
+                                <th class="text-center" scope="col">ID</th>
+                                <th class="text-center" scope="col">Tên đăng nhập</th>
                                 <th class="text-center" scope="col">Tên hiển thị</th>
                                 <th class="text-center" scope="col">Email</th>
                                 <th class="text-center" scope="col">Thao tác</th>
@@ -39,24 +38,14 @@
                                     <td>${user.getFullName()}</td>
                                     <td>${user.getEmail()}</td>
                                     <td>
-                                        <div class="row">
-                                            <div class="col-4 button-add-update-delete">
-                                                <a role="button" class="btn btn-outline-success"
-                                                   href="/dashboard/member/view?id=${user.getId()}"><i
-                                                        class="fa-solid fa-pen"></i> Xem</a>
-                                            </div>
-                                            <div class="col-4 button-add-update-delete">
-                                                <a role="button" class="btn btn-outline-warning"
-                                                   href="/dashboard/member/edit?id=${user.getId()}"><i
-                                                        class="fa-solid fa-pen"></i> Sửa</a>
-                                            </div>
-                                            <div class="col-4 button-add-update-delete">
-                                                <a role="button" class="btn btn-outline-danger"
-                                                   onclick="sendInforToModal('${user.getId()}','${user.getFullName()}')"
-                                                   data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="fa-solid fa-pen"></i> Xóa </a>
-                                            </div>
-
+                                        <div class="action-course d-flex justify-content-around">
+                                            <a role="button" class="btn btn-primary learn btn-content mb-1"
+                                               href="/dashboard/member/view?id=${user.getId()}">Xem</a>
+                                            <a role="button" class="btn btn-primary edit btn-content mb-1"
+                                               href="/dashboard/member/edit?id=${user.getId()}">Sửa</a>
+                                            <a role="button" class="btn btn-primary delete btn-content mb-1"
+                                               onclick="sendInforToModal('${user.getId()}','${user.getFullName()}')"
+                                               data-bs-toggle="modal" data-bs-target="#exampleModal">Xóa</a>
                                         </div>
                                     </td>
                                 </tr>
@@ -81,10 +70,11 @@
                 </div>
                 <div class="modal-body">
                     <p>Bạn có chắc chắn muốn xóa <span class="text-danger" id="nameDelete"></span> không?</p>
+                    <p>Tất cả dữ liệu sẽ bị xóa!</p>
                 </div>
                 <div class="modal-footer">
-                    <a role="button" class="btn btn-outline-info" href="/dashboard/member">NO</a>
-                    <a role="button" class="btn btn-outline-danger" id="deletedMemberId">YES</a>
+                    <a role="button" class="btn btn-outline-info" href="/dashboard/member">Hủy</a>
+                    <a role="button" class="btn btn-outline-danger" id="deletedMemberId">Xóa</a>
                 </div>
             </div>
         </div>

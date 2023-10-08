@@ -35,4 +35,41 @@ public class CourseOrderServiceImpl implements ICourseOrderService {
     public boolean checkIdBuyCourse(int idUser, int idCourse) {
         return courseOrderRepo.checkIdBuyCourse(idUser,idCourse);
     }
+
+    @Override
+    public List<CourseOrder> getOrderByDateNow() {
+        return courseOrderRepo.getOrderByDateNow();
+    }
+
+    @Override
+    public CourseOrder showOrderById(int idOrder) {
+        return courseOrderRepo.showOrderById(idOrder);
+    }
+
+    @Override
+    public void deleteOrder(int id) {
+        courseOrderRepo.deleteOrder(id);
+    }
+
+    @Override
+    public int countOrdersAmount() {
+        return courseOrderRepo.countOrdersAmount();
+    }
+
+    @Override
+    public List<CourseOrder> paginateOrders(int index) {
+        return courseOrderRepo.paginateOrders(index);
+    }
+
+    @Override
+    public void updateStatusDone(int idOrder) {
+        courseOrderRepo.updateStatusDone(idOrder);
+    }
+
+    @Override
+    public void updateStatusCancel(int idOrder) {
+        courseOrderRepo.updateStatusCancel(idOrder);
+    }
+
+
 }

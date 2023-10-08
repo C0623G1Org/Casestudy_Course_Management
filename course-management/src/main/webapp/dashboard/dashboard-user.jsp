@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:import url="../dashboard/header-dashboard.jsp"></c:import>
 <section>
     <div class="container my-4">
@@ -19,7 +20,7 @@
                             <div class="card-body">
                                 <div class="row card-head">
                                     <div class="col-md-4">
-                                        <img src="../public/image/Rectangle 43.png">
+                                        <img src="${courseOrders.getCourse().getAvatar()}">
                                     </div>
                                     <div class="col-md-8 ml-auto">
                                         <div class="category">
@@ -40,7 +41,10 @@
                                 </div>
                                 <div class="info-course-buy">
                                     <div class="time-buy">
-                                        <p class="mt-2">Bạn đã mua khoá học này với giá <span class="font-weight-bold">${courseOrders.getOrderPrice()} đ</span> vào <span class="font-weight-bold">${courseOrders.getOrderDate()} </span></p>
+                                        <p class="mt-2">Bạn đã mua khoá học này với giá <span class="font-weight-bold">
+                                            <fmt:setLocale value="vi_VN"/>
+                                            <fmt:formatNumber value="${courseOrders.getOrderPrice()}" type="currency"/>
+                                        </span> vào <span class="font-weight-bold">${courseOrders.getOrderDate()} </span></p>
                                     </div>
                                     <a style="color: #FFFFFF" role="button" class="btn-login btn btn-primary" href="/learn?id=${courseOrders.getCourse().getId()}">Tiếp tục học</a>
                                 </div>

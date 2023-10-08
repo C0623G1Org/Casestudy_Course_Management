@@ -1,6 +1,7 @@
 package com.example.coursemanagement.service;
 
 import com.example.coursemanagement.model.Course;
+import com.example.coursemanagement.model.CourseOrder;
 
 import java.util.List;
 
@@ -12,4 +13,5 @@ public interface ICourseService {
     boolean updateCourse(int id, Course course);
     List<Course> findByNameCourse(String nameCourse);
     List<Course> selectByUserBuy(int idUser);
+    List<Course> searchByNameAndInstructor(String nameSearch, String instructorSearch);
 }

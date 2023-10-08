@@ -11,9 +11,15 @@
                     <div class="card-img-overlay">
                         <div class="p-5 mb-4 bg-body-tertiary rounded-3">
                             <div class="container-fluid py-5">
-                                <h3 class="display-5 fw-bold">Tất cả khóa học</h3>
-                                <p class="col-md-8 fs-5">Các khóa học tại LTTA luôn được cập nhật các công nghệ mới nhất
-                                    nhằm đáp ứng nhu cầu tuyển dụng nhân lực CNTT tại Việt Nam và trên thế giới.</p>
+                                <h3 class="display-5 fw-bold">Kết quả tìm kiếm</h3>
+                                <p class="col-md-8 fs-5">Tìm thấy ${courseList.size()} kết quả cho
+                                <c:if test="${not empty nameCourse}">
+                                    Tên khóa học: <span>${nameCourse}</span>
+                                </c:if>
+                                <c:if test="${not empty instructorCourse}">
+                                    Tên giảng viên: <span>${instructorCourse}</span>
+                                </c:if>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -121,15 +127,13 @@
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseFour" aria-expanded="false"
                                     aria-controls="flush-collapseFour">
-                                Công việc của một Dev mới (fresher) vào nghề là gì? Sẽ gặp khó khăn gì và làm thế nào để vượt qua?
+                                Ngoài tiếng Anh và tiếng Nhật thì tiếng Hàn và tiếng Trung có phải là lợi thế không?
                             </button>
                         </h2>
                         <div id="flush-collapseFour" class="accordion-collapse collapse"
                              aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Đầu tiên bạn sẽ không được làm dự án ngay mà phải qua quá trình training,
-                                các bạn sẽ được giao những task ở mức độ vừa phải, để đảm bảo tiến độ của dự án vừa phát triển được kỹ năng của mình.
-                                Sau đó độ khó của các task sẽ tăng dần tùy theo năng lực. Điều quan trọng là các bạn phải biết học hỏi từ các anh chị đi trước,
-                                tìm tòi và luôn chủ động trong công việc, thể hiện rằng bản thân là người có giá trị và tiềm năng.
+                            <div class="accordion-body">Điều này phụ thuộc vào khách hàng, thị tường và công ty mà bạn apply.
+                                Tuy nhiên, hiện nay thị trường tiếng Anh và tiếng Nhật đang chiếm lợi thế và dễ hơn cho các bạn.
                             </div>
                         </div>
                     </div>
