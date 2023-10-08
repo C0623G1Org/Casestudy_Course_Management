@@ -11,7 +11,7 @@
                     <div class="p-5 mb-4 bg-body-tertiary rounded-3">
                         <div class="container-fluid py-5">
                             <h3 class="display-5 fw-bold">Khóa học ${course.getName()}</h3>
-                            <p class="col-md-8 fs-5">${course.getDescription()}</p>
+                            <p class="col-lg-8 col-md-12 fs-5">${course.getDescription()}</p>
                         </div>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
     </div>
     <div class="section-2 container mt-4">
         <div class="row content-font main-content">
-            <div class="col-6">
+            <div class="col-lg-6 col-md-12">
                 <h1 class="mb-4">Bạn sẽ học được gì?</h1>
                 <div class="content-knowledge">
                     ${course.getKnowledge()}
@@ -63,7 +63,7 @@
                     ${course.getRequirements()}
                 </div>
             </div>
-            <div class="col-6 column-2">
+            <div class="col-lg-6 column-2 col-md-12 order-lg-last order-md-first mb-md-5">
                 <div class="content-1">
                     <img src="${course.getAvatar()}"/>
                     <div class="mt-5">

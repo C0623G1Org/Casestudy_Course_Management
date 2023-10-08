@@ -15,8 +15,8 @@
             <p class="mt-3">Thanh toán chuyển qua ngân hàng</p>
         </div>
         <hr style="margin-bottom: 30px">
-        <div class="row row-1">
-            <div class="col-4 rounded border border-1">
+        <div class="row row-1 px-md-3">
+            <div class="col-lg-4 col-md-12 rounded border border-1">
                 <div class="p-3 icon-margin">
                     <h2>Thông tin người nhận</h2>
                     <div class="row">
@@ -57,7 +57,7 @@
                 </div>
 
             </div>
-            <div class="col-8">
+            <div class="col-lg-8 col-md-12">
                 <div class="m-5">
                     <img style="width: 100%" src="../public/image/Rectangle%20522.png"/>
                     <div class="status">
