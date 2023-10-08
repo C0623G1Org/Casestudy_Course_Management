@@ -10,6 +10,7 @@ import com.example.coursemanagement.service.impl.CourseOrderServiceImpl;
 import com.example.coursemanagement.service.impl.CourseServiceImpl;
 import com.example.coursemanagement.service.impl.UserServiceImpl;
 import com.example.coursemanagement.service.impl.*;
+import com.example.coursemanagement.utils.RegexUtils;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -51,6 +52,7 @@ public class DashboardServlet extends HttpServlet {
     private final ICourseDetailContentService detailContentService = new DetailedContentServiceImpl();
     private final IContentType contentType = new ContentTypeServiceImpl();
     private final ICourseLevelService levelService = new CourseCategoryServiceImpl();
+    private final static RegexUtils regex = new RegexUtils();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -295,40 +297,107 @@ public class DashboardServlet extends HttpServlet {
         }
     }
     private void addCourseToDb(HttpServletRequest request, HttpServletResponse response) {
+        String messegeError = "";
         String courseName = request.getParameter("name-course");
+        if (!regex.validateName(courseName)) {
+            messegeError += "<p>Tên khóa học nhập vào không hợp lệ <p>";
+        } else {
+            request.setAttribute("courseName",courseName);
+        }
         String descriptionCourse = request.getParameter("description-course");
-        double priceCourse = Double.parseDouble(request.getParameter("price-course"));
+        if (!regex.validateOnlyNumberOrText(descriptionCourse)) {
+            messegeError += "<p> Mô tả nhập vào không hợp lệ </p>";
+        } else {
+            request.setAttribute("descriptionCourse",descriptionCourse);
+        }
+        String priceCourse = request.getParameter("price-course");
+        if (!regex.validatePrice(priceCourse)) {
+            messegeError += "<p> Giá nhập vào không hợp lệ </p>";
+        } else {
+            request.setAttribute("priceCourse",priceCourse);
+        }
         String knowledge = request.getParameter("knowledge");
+        if (!regex.validateOnlyNumberOrText(knowledge)) {
+            messegeError += "<p> Kiến thức nhập vào không hợp lệ </p>";
+        } else {
+            request.setAttribute("knowledge",knowledge);
+        }
         String requirements = request.getParameter("requirements");
+        if (!regex.validateOnlyNumberOrText(requirements)) {
+            messegeError += "<p> Yêu cầu nhập vào không hợp lệ </p>";
+        } else {
+            request.setAttribute("requirements",requirements);
+        }
         String instructor = request.getParameter("instructor");
+        if (!regex.validateOnlyText(instructor)) {
+            messegeError += "<p> Tác giả nhập vào không hợp lệ </p>";
+        } else {
+            request.setAttribute("instructor",instructor);
+        }
         String courseInclusion = request.getParameter("course-inclusion");
+        if (!regex.validateOnlyNumberOrText(courseInclusion)) {
+            messegeError += "<p> Thông tin khác  nhập vào không hợp lệ </p>";
+        } else {
+            request.setAttribute("courseInclusion",courseInclusion);
+        }
         int courseLevel = Integer.parseInt(request.getParameter("course-level"));
         String avatar = request.getParameter("avatar-course");
-        Course course = new Course(courseName, descriptionCourse, instructor, priceCourse, courseLevel, knowledge, requirements, courseInclusion,avatar);
-        courseService.saveCourse(course);
-        try {
-            response.sendRedirect("/dashboard/course");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if (!regex.validateOnlyLink(avatar)) {
+            messegeError += "<p> Link nhập vào không hợp lệ </p>";
+        } else {
+            request.setAttribute("avatar",avatar);
+        }
+        if (messegeError != "") {
+            request.setAttribute("messegeError",messegeError);
+            showFormAddCourse(request,response);
+        } else {
+            Course course = new Course(courseName, descriptionCourse, instructor, Double.parseDouble(priceCourse),courseLevel, knowledge, requirements, courseInclusion,avatar);
+            courseService.saveCourse(course);
+            try {
+                response.sendRedirect("/dashboard/course");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
     private void updateCourseToDB(HttpServletRequest request, HttpServletResponse response) {
+        String messegeError = "";
         int courseId = Integer.parseInt(request.getParameter("id-course"));
         String courseName = request.getParameter("name-course");
+        if (!regex.validateName(courseName)) {
+            messegeError += "Tên khóa học nhập vào không hợp lệ <br>";
+        }
         String descriptionCourse = request.getParameter("description-course");
-        double priceCourse = Double.parseDouble(request.getParameter("price-course"));
+        if (!regex.validateOnlyNumberOrText(descriptionCourse)) {
+            messegeError += "<p> Mô tả nhập vào không hợp lệ </p>";
+        }
+        String priceCourse = request.getParameter("price-course");
+        if (!regex.validatePrice(priceCourse)) {
+            messegeError += "<br> Giá nhập vào không hợp lệ <br>";
+        }
         String knowledge = request.getParameter("knowledge");
         String requirements = request.getParameter("requirements");
         String instructor = request.getParameter("instructor");
+        if (!regex.validateOnlyText(instructor)) {
+            messegeError += "<p> Tác giả nhập vào không hợp lệ </p>";
+        }
         String courseInclusion = request.getParameter("course-inclusion");
         int courseLevel = Integer.parseInt(request.getParameter("course-level"));
         String avatar = request.getParameter("avatar-course");
-        Course course = new Course(courseName,descriptionCourse,instructor,priceCourse,courseLevel,knowledge,requirements,courseInclusion,avatar);
-        courseService.updateCourse(courseId, course);
-        try {
-            response.sendRedirect("/dashboard/course");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if (messegeError == "") {
+            Course course = new Course(courseName, descriptionCourse, instructor, Double.parseDouble(priceCourse),courseLevel, knowledge, requirements, courseInclusion,avatar);
+            courseService.updateCourse(courseId, course);
+            try {
+                response.sendRedirect("/dashboard/course");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            try {
+                response.sendRedirect("/dashboard/course/edit?id="+courseId);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
     private void deleteCourseToDB(HttpServletRequest request, HttpServletResponse response) {

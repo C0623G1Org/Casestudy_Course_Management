@@ -29,6 +29,11 @@
                     </div>
                 </div>
                 <div class="row edit-course mt-4 px-5">
+                    <c:if test="${not empty messegeError}">
+                        <div class="alert alert-danger" role="alert">
+                                ${messegeError}
+                        </div>
+                    </c:if>
                     <div class="row edit-course-1 ">
                         <h3 style="font-weight: bold">Chỉnh sửa khóa học</h3>
                         <p>Chỉnh sửa khóa học ${course.getName()}</p>

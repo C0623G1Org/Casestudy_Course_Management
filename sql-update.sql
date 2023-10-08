@@ -61,17 +61,6 @@ CREATE TABLE `user` (
     CHECK (`role`= "admin" OR `role`= "user")
 );
 
-CREATE TABLE feed_backs (
-	feedback_id INT AUTO_INCREMENT PRIMARY KEY,
-    content_feedback VARCHAR(55),
-	user_id INT NOT NULL,
-    order_id INT NOT NULL,
-    FOREIGN KEY (user_id)
-        REFERENCES `user` (user_id),
-	FOREIGN KEY (order_id) 
-		REFERENCES course_orders (order_id)
-);
-
 CREATE TABLE course_orders (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
     order_code INT NOT NULL,
@@ -85,6 +74,17 @@ CREATE TABLE course_orders (
 	FOREIGN KEY (course_id) 
 		REFERENCES courses (course_id),
             CHECK (`status`= "success" OR `status`= "cancel" OR `status`= "pending")
+);
+
+CREATE TABLE feed_backs (
+	feedback_id INT AUTO_INCREMENT PRIMARY KEY,
+    content_feedback VARCHAR(255),
+	user_id INT NOT NULL,
+    order_id INT NOT NULL,
+    FOREIGN KEY (user_id)
+        REFERENCES `user` (user_id),
+	FOREIGN KEY (order_id) 
+		REFERENCES course_orders (order_id)
 );
 
 INSERT INTO course_levels (course_level_name) VALUES ('BEGINNER');
@@ -181,16 +181,24 @@ VALUES ('2022-01-02', 49.99, 1, 2, 654321, "success");
 INSERT INTO course_orders (order_date, order_price, user_id, course_id, order_code, `status`) 
 VALUES ('2022-01-03', 99.99, 1, 3, 567890, "pending");
 
-
 INSERT INTO user (user_name, password, full_name, id_card, birthday, gender, phone, email, role)
 VALUES 
 ('thanhpham', 'password1', 'Phạm Văn Thành', '123456789', '2000-01-01', 1, '0123456789', 'user1@example.com', 'user'),
-('loanttv', 'password2', 'Trần Thị Vân Loan', '987654321', '1999-02-02', 0, '0987654321', 'user2@example.com', 'user'),
+('loanttv', 'password2', 'Trần Thị Vân Loan', '987654321', '1999-02-02', 0, '0987650321', 'user2@example.com', 'user'),
 ('truongnq', 'password3', 'Ngô Quang Trường', '111222333', '2001-03-03', 1, '0111222333', 'user3@example.com', 'user'),
-('anhn', 'password4', 'Hồ Ngọc An', '444555666', '2002-04-04', 0, '0444555666', 'user4@example.com', 'user');INSERT INTO feed_backs (content_feedback, user_id, order_id) VALUES ('Feedback 1 for course 1', 4, 5), ('Feedback 2 for course 1', 5, 6), ('Feedback 1 for course 2', 6, 7), ('Feedback 2 for course 2', 7, 8);
+('anhn', 'password4', 'Hồ Ngọc An', '444555666', '2002-04-04', 0, '0444555666', 'user4@example.com', 'user'); 
 
-SELECT * FROM feed_backs fb JOIN course_orders co ON fb.order_id = co.order_id WHERE co.status = 'success';
+INSERT INTO course_orders (order_code, status, order_date, order_price, user_id, course_id) 
+VALUES (13418, 'pending', '2023-10-06', 99.99, 1, 3), 
+(15909, 'success', '2023-10-07', 24.99, 4, 1), 
+(15910, 'success', '2023-10-07', 49.99, 5, 2), 
+(15911, 'success', '2023-10-07', 99.99, 6, 3), 
+(15912, 'success', '2023-10-07', 24.99, 7, 1), 
+(29301, 'success', '2023-10-07', 99.99, 1, 3), 
+(10570, 'success', '2023-10-07', 24.99, 1, 1), 
+(10571, 'pending', '2023-10-07', 49.99, 1, 2);
 
+INSERT INTO feed_backs (content_feedback, user_id, order_id) VALUES ('Feedback 1 for course 1', 4, 5), ('Feedback 2 for course 1', 5, 6), ('Feedback 1 for course 2', 6, 7), ('Feedback 2 for course 2', 7, 8);
 
 UPDATE `course_management_ver2`.`feed_backs` SET `content_feedback` = ' LTTA cung cấp các khóa học lập trình rất chất lượng. Tôi đã học khóa Python và rất hài lòng với nội dung và cách giảng dạy. Giáo viên rất am hiểu và hỗ trợ tận tình.' WHERE (`feedback_id` = '1');
 UPDATE `course_management_ver2`.`feed_backs` SET `content_feedback` = 'Tôi đã tham gia khóa học Python của LTTA và thật sự ấn tượng với sự tỉ mỉ và chi tiết trong từng bài giảng. Các bài tập cũng rất thú vị và giúp tôi nắm vững kiến thức.' WHERE (`feedback_id` = '2');
