@@ -96,7 +96,7 @@
                             <tbody>
                             <c:forEach items="${courseOrdersNow}" var="courseOrdersNow">
                                 <tr class="none-underline-code">
-                                    <th scope="row"><a href="/dashboard/order/detail?order-id=${courseOrdersNow.getOrderId()}">${courseOrdersNow.getOrderCode()}</a></th>
+                                    <th scope="row"><a href="/dashboard/order/detail?order-id=${courseOrdersNow.getOrderId()}">#${courseOrdersNow.getOrderCode()}</a></th>
                                     <td class="done">
                                         <c:if test="${courseOrdersNow.getStatus() == 'success'}">
                                             <div class="status-order"><span class="badge rounded-pill bg-success"><i class="fa-solid fa-check"></i>Đã hoàn thành</span></div>

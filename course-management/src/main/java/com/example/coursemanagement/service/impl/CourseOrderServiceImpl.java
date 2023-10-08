@@ -52,6 +52,16 @@ public class CourseOrderServiceImpl implements ICourseOrderService {
     }
 
     @Override
+    public int countOrdersAmount() {
+        return courseOrderRepo.countOrdersAmount();
+    }
+
+    @Override
+    public List<CourseOrder> paginateOrders(int index) {
+        return courseOrderRepo.paginateOrders(index);
+    }
+
+    @Override
     public void updateStatusDone(int idOrder) {
         courseOrderRepo.updateStatusDone(idOrder);
     }

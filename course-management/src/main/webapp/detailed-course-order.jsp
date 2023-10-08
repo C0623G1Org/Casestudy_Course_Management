@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <div class="row content-oder-detain-2">
-                        <h5 style="font-weight: bold;padding-bottom: 30px; padding-left: 30px">Item Ordered</h5>
+                        <h5 style="font-weight: bold;padding-bottom: 30px; padding-left: 30px">Khóa học</h5>
                     </div>
                     <div class="${courseList.getAvatar()}"
                          style="padding-left: 30px;padding-bottom: 30px;display: flex;">
@@ -66,20 +66,20 @@
                             </div>
                         </div>
                         <div class="col-lg 3 price-item">
-                            <h5 style="text-align: right;font-weight: bold">${order.getCourse().getPrice()}</h5>
+                            <h5 style="text-align: right;font-weight: bold">${order.getCourse().getPrice()} VND</h5>
                         </div>
                     </div>
                     <hr>
                     <div class="row content-oder-detain-4 mb-3">
                         <div class="col-lg-12 d-flex justify-content-between">
-                            <h5 style="padding-left: 30px">Discount</h5>
+                            <h5 style="padding-left: 30px">Mã giảm giá</h5>
                             <h5>10%</h5>
                         </div>
                     </div>
                     <div class="row content-oder-detain-5">
                         <div class="col-lg-12 d-flex justify-content-between">
-                            <h5 style="padding-left: 30px; font-weight: bold">Total</h5>
-                            <h6 style="font-weight: bold">${order.getOrderPrice()}</h6>
+                            <h5 style="padding-left: 30px; font-weight: bold">Thành tiền</h5>
+                            <h6 style="font-weight: bold">${order.getOrderPrice()} VND</h6>
                         </div>
                     </div>
                     <div class="row content-oder-detain-6">
