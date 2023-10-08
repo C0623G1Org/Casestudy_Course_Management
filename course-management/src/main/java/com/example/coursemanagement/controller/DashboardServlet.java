@@ -302,7 +302,7 @@ public class DashboardServlet extends HttpServlet {
         String messegeError = "<ul>";
         String courseName = request.getParameter("name-course");
         if (!regex.validateName(courseName)) {
-            messegeError += "<li>Tên khóa học nhập vào không hợp lệ (Ex: Node Js Nâng Cao 2)</li>";
+            messegeError += "<li>Tên khóa học nhập vào không hợp lệ (Ex: Node Js Nâng cao 2)</li>";
         } else {
             request.setAttribute("courseName",courseName);
         }
