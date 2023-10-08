@@ -25,4 +25,10 @@ public interface ICourseOrderService {
     CourseOrder showOrderById(int idOrder);
 
     void deleteOrder (int id);
+
+    int countOrdersAmount ();
+
+    List<CourseOrder> paginateOrders(int index);
+
+
 }

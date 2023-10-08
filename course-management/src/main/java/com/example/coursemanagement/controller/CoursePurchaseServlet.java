@@ -81,7 +81,6 @@ public class CoursePurchaseServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         Course course = courseService.selectCourse(id);
         request.setAttribute("course", course);
-        orderCode++;
         request.setAttribute("code", orderCode);
         request.setAttribute("localDate", localDate);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/buy-course.jsp");
@@ -120,7 +119,8 @@ public class CoursePurchaseServlet extends HttpServlet {
         CourseOrder courseOrder = new CourseOrder(orderDate,orderPrice,user,course,orderCode);
         courseOrderService.createOrder(courseOrder);
         request.setAttribute("course", course);
-        request.setAttribute("code", orderCode);
+        request.setAttribute("courseOrder", courseOrder);
+//        request.setAttribute("code", orderCode);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/check-out.jsp");
         try {
             requestDispatcher.forward(request, response);
@@ -130,5 +130,23 @@ public class CoursePurchaseServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
+
+    private void doPagination(HttpServletRequest request, HttpServletResponse response) {
+        int count = courseOrderService.countOrdersAmount();
+        int endPage = count/10;
+        if (count % 10 != 0) {
+            endPage++;
+        }
+        request.setAttribute("endPage", endPage);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/dashboard/dashboard-admin-manage-course.jsp");
+        try {
+            requestDispatcher.forward(request, response);
+        } catch (ServletException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
 }

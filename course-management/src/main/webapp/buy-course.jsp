@@ -38,10 +38,10 @@
                 </div>
 
                 <div class="col-md-6 item-order">
-                    <h3 style="font-weight: bold">Order Summary</h3>
-                    <div class="row">
-                        <div class="col-md-12 mt-2"><h5>Order Summary</h5></div>
-                    </div>
+                    <h3 style="font-weight: bold">Chi tiết thanh toán</h3>
+<%--                    <div class="row">--%>
+<%--                        <div class="col-md-12 mt-2"><h5>Chi tiết thanh toán</h5></div>--%>
+<%--                    </div>--%>
                     <div class="row">
                         <div class="col-md-3 ava-border">
                             <img src="${course.getAvatar()}" width="120p" height="100">
@@ -53,27 +53,26 @@
                             <p>${course.getDescription()}</p>
                         </div>
                         <div class="col-md-3">
-                            <p style="font-size: 25px; font-weight: bold; text-align: right">${course.getPrice()}</p>
+                            <p style="font-size: 25px; font-weight: bold; text-align: right">${course.getPrice()} VND</p>
                         </div>
                     </div>
                     <hr>
                     <div class="row">
-                        <div class="col-md-10"><p>Discount</p></div>
+                        <div class="col-md-10"><p>Mã giảm giá</p></div>
                         <div class="col-md-2"><p style="text-align: right">10%</p></div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <p style="font-size: 30px; font-weight: bold">Total</p></div>
+                            <p style="font-size: 30px; font-weight: bold; margin-bottom: 0">Thành tiền</p></div>
                         <div class="col-md-6" style="text-align: right">
                             <input type="hidden" name="price-order" value="${course.getPrice()}">
-                            <p style="font-size: 25px; font-weight: bold">${course.getPrice()}</p><br/>
-
-                            <p>Ngày đặt mua: ${localDate}</p>
+                            <p style="font-size: 25px; font-weight: bold">${course.getPrice()} VND</p><br/>
+                            <p>(Đã bao gồm VAT)</p>
+<%--                            <p>Ngày đặt mua: ${localDate}</p>--%>
                             <input type="hidden" name="date-order" value="${localDate}">
 
-                            <p>Mã đơn hàng: #${code}</p>
+<%--                            <p>Mã đơn hàng: #${code}</p>--%>
                             <input type="hidden" name="code-order" value="${code}">
-                            <p>(VAT included if applicable)</p>
                         </div>
                     </div>
                     <hr>

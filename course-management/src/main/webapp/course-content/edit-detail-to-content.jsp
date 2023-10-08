@@ -49,7 +49,7 @@
                             <input type="text" class="form-control" id="id-video" name="id-video" value="${detailedContent.getIdVideo()}">
                         </div>
                         <div class="mb-3">
-                            <label for="content-type" class="form-label"><i class="fa-solid fa-rectangle-list"></i> Content Type</label>
+                            <label for="content-type" class="form-label"><i class="fa-solid fa-rectangle-list"></i> Loại bài học</label>
                             <select name="content-type" id="content-type" required class="form-select form-control">
                                 <c:forEach items="${contentTypes}" var="contentTypes" varStatus="loop">
                                     <option <c:if test="${detailedContent.getCourseContentTypeId() == contentTypes.getId()}">selected</c:if> value="${contentTypes.getId()}">${contentTypes.getName()}</option>
@@ -57,7 +57,7 @@
                             </select>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
                         </div>
                     </form>
                 </div>
