@@ -70,18 +70,23 @@ public class UserServlet extends HttpServlet {
         String confirmPassword = request.getParameter("passwordSignUpAgain");
         String email = request.getParameter("emailSignUp");
         User user;
-        if (userService.checkUsernameExits(username)) {
+        if (!userService.checkUsernameExits(username)) {
+            if (!userService.checkExistEmail(email)) {
+                if (password.equals(confirmPassword)) {
+                    user = new User(username, password, email);
+                    userService.saveE(user);
+                    sendMessageToView(response, message);
+                } else {
+                    message = "Mật khẩu nhập lại không khớp !";
+                    sendMessageToView(response, message);
+                }
+            } else {
+                message ="Email đã tồn tại";
+                sendMessageToView(response,message);
+            }
+        } else {
             message = "Tên đăng nhập đã tồn tại trong hệ thống !";
             sendMessageToView(response, message);
-        } else {
-            if (!password.equals(confirmPassword)) {
-                message = "Mật khẩu nhập lại không khớp !";
-                sendMessageToView(response, message);
-            } else {
-                user = new User(username, password, email);
-                userService.saveE(user);
-                sendMessageToView(response, message);
-            }
         }
     }
     private static void sendMessageToView(HttpServletResponse response, String message) throws IOException {

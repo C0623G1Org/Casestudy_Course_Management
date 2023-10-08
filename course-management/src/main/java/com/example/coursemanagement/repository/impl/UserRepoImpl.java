@@ -19,6 +19,7 @@ public class UserRepoImpl implements IUserRepo {
     private static final String SELECT_BY_ID = "SELECT * FROM user WHERE user_id = ?";
     private static final String SELECT_BY_USERNAME = "SELECT * FROM user WHERE user_name = ?;";
     private static final String SELECT_BY_USERNAME_PASSWORD = "SELECT * FROM user WHERE user_name = ? AND password = ?;";
+    private static final String SELECT_BY_EMAIL = "SELECT * FROM user WHERE email = ?";
     private static final String INSERT_USER = "INSERT INTO user(user_name, password, email, role) VALUES (?, ?, ?, 'user');";
     private static final String UPDATE_USER = "update user\n" +
             "set user_name=?, full_name=?,id_card=?, birthday=?, gender=?,phone=?, email=?"+ "\n" +
@@ -26,8 +27,7 @@ public class UserRepoImpl implements IUserRepo {
     private static final String UPDATE_MEMBER = "update user\n" +
             "set user_name=?, full_name=?,id_card=?, birthday=?, gender=?,phone=?, email=?"+ "\n" +
             "where user_id=?;";
-    private static final String DELETE_USER = "delete from user"+"\n" +
-            "where user_id=?;";
+    private static final String DELETE_USER = "call delete_user(?);";
     private static final String CHANGE_PASSWORD = "update user\n" +
             "set password=?"+ "\n" +
             "where user_id=? and role=\"user\";";
@@ -225,9 +225,13 @@ public class UserRepoImpl implements IUserRepo {
     public void deleteUser(int id) {
         Connection connection=BaseRepository.getConnection();
         try {
-            PreparedStatement preparedStatement=connection.prepareStatement(DELETE_USER);
-            preparedStatement.setInt(1,id);
-            preparedStatement.executeUpdate();
+            User user=selectE(id);
+            String role=user.getRole();
+            if(role.equals("user")){
+                PreparedStatement preparedStatement=connection.prepareStatement(DELETE_USER);
+                preparedStatement.setInt(1,id);
+                preparedStatement.executeUpdate();
+            }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -241,6 +245,19 @@ public class UserRepoImpl implements IUserRepo {
             preparedStatement.setString(1,newPassWord);
             preparedStatement.setInt(2,user.getId());
             preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public boolean checkExistEmail(String email) {
+        Connection connection = BaseRepository.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BY_EMAIL);
+            preparedStatement.setString(1, email);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            return resultSet.next();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -70,6 +70,7 @@
                 </div>
                 <div class="modal-body">
                     <p>Bạn có chắc chắn muốn xóa <span class="text-danger" id="nameDelete"></span> không?</p>
+                    <p>Tất cả dữ liệu sẽ bị xóa!</p>
                 </div>
                 <div class="modal-footer">
                     <a role="button" class="btn btn-outline-info" href="/dashboard/member">NO</a>
