@@ -296,44 +296,6 @@ public class DashboardServlet extends HttpServlet {
             }
         }
     }
-
-    private void updateCourseContentToDb(HttpServletRequest request, HttpServletResponse response) {
-        int idContent = Integer.parseInt(request.getParameter("id"));
-        int idCourse = Integer.parseInt(request.getParameter("id-course"));
-        String name =  request.getParameter("name-content");
-        String description =  request.getParameter("description");
-        CourseContent courseContent = new CourseContent(name,idCourse);
-        contentService.updateE(idContent,courseContent);
-        try {
-            response.sendRedirect("/dashboard/course/content?id="+idContent);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private void deleteCourseToDB(HttpServletRequest request, HttpServletResponse response) {
-        int courseId = Integer.parseInt(request.getParameter("id"));
-        courseService.deleteCourse(courseId);
-        try {
-            response.sendRedirect("/dashboard/course");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
-
-    private void addCourseContentToDb(HttpServletRequest request, HttpServletResponse response) {
-        int idCourse = Integer.parseInt(request.getParameter("id-course"));
-        String nameContent = request.getParameter("name-content");
-        CourseContent courseContent = new CourseContent(nameContent,idCourse);
-        contentService.saveE(courseContent);
-        try {
-            response.sendRedirect("/dashboard/course/edit?id="+idCourse);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     private void addCourseToDb(HttpServletRequest request, HttpServletResponse response) {
         String courseName = request.getParameter("name-course");
         String descriptionCourse = request.getParameter("description-course");
@@ -343,7 +305,8 @@ public class DashboardServlet extends HttpServlet {
         String instructor = request.getParameter("instructor");
         String courseInclusion = request.getParameter("course-inclusion");
         int courseLevel = Integer.parseInt(request.getParameter("course-level"));
-        Course course = new Course(courseName, descriptionCourse, instructor, priceCourse, courseLevel, knowledge, requirements, courseInclusion);
+        String avatar = request.getParameter("avatar-course");
+        Course course = new Course(courseName, descriptionCourse, instructor, priceCourse, courseLevel, knowledge, requirements, courseInclusion,avatar);
         courseService.saveCourse(course);
         try {
             response.sendRedirect("/dashboard/course");
@@ -361,7 +324,8 @@ public class DashboardServlet extends HttpServlet {
         String instructor = request.getParameter("instructor");
         String courseInclusion = request.getParameter("course-inclusion");
         int courseLevel = Integer.parseInt(request.getParameter("course-level"));
-        Course course = new Course(courseName,descriptionCourse,instructor,priceCourse,courseLevel,knowledge,requirements,courseInclusion);
+        String avatar = request.getParameter("avatar-course");
+        Course course = new Course(courseName,descriptionCourse,instructor,priceCourse,courseLevel,knowledge,requirements,courseInclusion,avatar);
         courseService.updateCourse(courseId, course);
         try {
             response.sendRedirect("/dashboard/course");
@@ -369,6 +333,46 @@ public class DashboardServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
+    private void deleteCourseToDB(HttpServletRequest request, HttpServletResponse response) {
+        int courseId = Integer.parseInt(request.getParameter("id"));
+        courseService.deleteCourse(courseId);
+        try {
+            response.sendRedirect("/dashboard/course");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void updateCourseContentToDb(HttpServletRequest request, HttpServletResponse response) {
+        int idContent = Integer.parseInt(request.getParameter("id"));
+        int idCourse = Integer.parseInt(request.getParameter("id-course"));
+        String name =  request.getParameter("name-content");
+        String description =  request.getParameter("description");
+        CourseContent courseContent = new CourseContent(name,idCourse);
+        contentService.updateE(idContent,courseContent);
+        try {
+            response.sendRedirect("/dashboard/course/content?id="+idContent);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
+    private void addCourseContentToDb(HttpServletRequest request, HttpServletResponse response) {
+        int idCourse = Integer.parseInt(request.getParameter("id-course"));
+        String nameContent = request.getParameter("name-content");
+        CourseContent courseContent = new CourseContent(nameContent,idCourse);
+        contentService.saveE(courseContent);
+        try {
+            response.sendRedirect("/dashboard/course/edit?id="+idCourse);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
 
     private void updateDetailContentToDb(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("course-detail-id"));

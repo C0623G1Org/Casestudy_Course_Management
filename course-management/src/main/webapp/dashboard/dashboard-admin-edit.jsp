@@ -15,7 +15,7 @@
                     <form action="/dashboard/member/edit" class="edit-user-inf my-4 text-start" method="post">
                         <div class="edit-header">
                             <div class="avatar col-4">
-                                <img src="${req.requestURI}/public/image/ava.png" alt="ava"/> <br>
+                                <img src="${req.requestURI}/public/image/3607444.png" alt="ava"/> <br>
                                 <button class="ava-btn" type="submit">
                                     <i class='bx bxs-user' style='color:#5585fd'></i>
                                     <span>Edit avatar</span>
@@ -28,10 +28,6 @@
                                         <label class="lb" for="user_name"><i class='bx bxs-user-circle' style='color:#5585fd'></i>
                                             <span>Tên đăng nhập</span>
                                         </label>
-<%--                                        <label class="lb" for="user_name">--%>
-<%--                                            <i class='bx bx-edit-alt' style='color:#5585fd'></i>--%>
-<%--                                            <span>Edit</span>--%>
-<%--                                        </label>--%>
                                     </div>
                                     <input class="form-control" placeholder=" Nhập tên" type="text" id="user_name" name="userName" value="${user.getUsername()}">
                                 </div>
@@ -42,10 +38,6 @@
                                             <i class='bx bxs-user-circle' style='color:#5585fd'></i>
                                             <span>Họ và Tên</span>
                                         </label>
-<%--                                        <label class="lb" for="name">--%>
-<%--                                            <i class='bx bx-edit-alt' style='color:#5585fd'></i>--%>
-<%--                                            <span>Edit</span>--%>
-<%--                                        </label>--%>
                                     </div>
                                     <input class="form-control" type="text" id="name"  name="fullName" value="${user.getFullName()}">
                                 </div>
@@ -56,10 +48,6 @@
                                             <i class='bx bx-mail-send' style='color:#5585fd'></i>
                                             <span>Email của bạn</span>
                                         </label>
-<%--                                        <label class="lb" for="email">--%>
-<%--                                            <i class='bx bx-edit-alt' style='color:#5585fd'></i>--%>
-<%--                                            <span>Edit</span>--%>
-<%--                                        </label>--%>
                                     </div>
                                     <input class="form-control" type="text" id="email" name="email" value="${user.getEmail()}">
                                 </div>
