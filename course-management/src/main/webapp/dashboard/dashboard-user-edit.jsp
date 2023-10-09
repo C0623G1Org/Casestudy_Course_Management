@@ -60,7 +60,11 @@
                         <div class="edit-body">
                             <h4>Cập nhật thông tin</h4>
                             <p>Cập nhật thêm thông tin của bạn.</p>
-
+                            <c:if test="${not empty alert}">
+                                <div class="alert alert-danger" role="alert">
+                                        ${alert}
+                                </div>
+                            </c:if>
                             <div class="edit-phone">
                                 <label class="lb" for="phone">
                                     <i class='bx bxs-phone-call' style='color:#5585fd'></i>

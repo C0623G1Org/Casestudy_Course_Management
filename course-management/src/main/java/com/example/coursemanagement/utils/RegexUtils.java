@@ -27,7 +27,8 @@ public class RegexUtils {
     }
 
     public boolean validatePass(String string) {
-        regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$";
+//        regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$";
+        regex = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$";
         return validate(string, regex);
     }
     public boolean validateUsername(String string) {

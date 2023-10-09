@@ -3,6 +3,7 @@ package com.example.coursemanagement.controller;
 import com.example.coursemanagement.model.User;
 import com.example.coursemanagement.service.IUserService;
 import com.example.coursemanagement.service.impl.UserServiceImpl;
+import com.example.coursemanagement.utils.RegexUtils;
 
 
 import javax.servlet.*;
@@ -14,6 +15,7 @@ import java.io.IOException;
 @WebServlet(name = "UserServlet", value = {"/user/signup", "/user/login","/user/logout"})
 public class UserServlet extends HttpServlet {
     private final IUserService userService = new UserServiceImpl();
+    private final static RegexUtils regex = new RegexUtils();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -45,18 +47,28 @@ public class UserServlet extends HttpServlet {
         String message = "";
         String username = request.getParameter("usernameLogIn");
         String password = request.getParameter("passwordLogIn");
-        if (!userService.checkUsernameExits(username)) {
-            message = "Tên đăng nhập chưa tồn tại trong hệ thống, vui lòng nhập lại hoặc đăng kí !";
-            sendMessageToView(response, message);
+        if(!regex.validateUsername(username)){
+            message="Tên đăng nhập không chứa các ký tự đặc biệt";
+            sendMessageToView(response,message);
         } else {
-            if (!userService.checkExitsByUsernameAndPassword(username, password)) {
-                message = "Mật khẩu chưa chính xác !";
-                sendMessageToView(response, message);
+            if(!regex.validatePass(password)){
+                message="Mật khẩu tối thiểu tám ký tự, ít nhất một chữ cái và một số";
+                sendMessageToView(response,message);
             } else {
-                User user = userService.selectByUsername(username);
-                HttpSession session = request.getSession();
-                session.setAttribute("user", user);
-                sendMessageToView(response, message);
+                if (!userService.checkUsernameExits(username)) {
+                    message = "Tên đăng nhập chưa tồn tại trong hệ thống, vui lòng nhập lại hoặc đăng kí !";
+                    sendMessageToView(response, message);
+                } else {
+                    if (!userService.checkExitsByUsernameAndPassword(username, password)) {
+                        message = "Mật khẩu chưa chính xác !";
+                        sendMessageToView(response, message);
+                    } else {
+                        User user = userService.selectByUsername(username);
+                        HttpSession session = request.getSession();
+                        session.setAttribute("user", user);
+                        sendMessageToView(response, message);
+                    }
+                }
             }
         }
     }
@@ -70,23 +82,33 @@ public class UserServlet extends HttpServlet {
         String confirmPassword = request.getParameter("passwordSignUpAgain");
         String email = request.getParameter("emailSignUp");
         User user;
-        if (!userService.checkUsernameExits(username)) {
-            if (!userService.checkExistEmail(email)) {
-                if (password.equals(confirmPassword)) {
-                    user = new User(username, password, email);
-                    userService.saveE(user);
-                    sendMessageToView(response, message);
+        if(!regex.validateUsername(username)){
+            message="Tên đăng nhập không chứa các ký tự đặc biệt";
+            sendMessageToView(response,message);
+        } else {
+            if(!regex.validatePass(password)){
+                message="Mật khẩu tối thiểu tám ký tự, ít nhất một chữ cái và một số";
+                sendMessageToView(response,message);
+            } else {
+                if (!userService.checkUsernameExits(username)) {
+                    if (!userService.checkExistEmail(email)) {
+                        if (password.equals(confirmPassword)) {
+                            user = new User(username, password, email);
+                            userService.saveE(user);
+                            sendMessageToView(response, message);
+                        } else {
+                            message = "Mật khẩu nhập lại không khớp !";
+                            sendMessageToView(response, message);
+                        }
+                    } else {
+                        message ="Email đã tồn tại";
+                        sendMessageToView(response,message);
+                    }
                 } else {
-                    message = "Mật khẩu nhập lại không khớp !";
+                    message = "Tên đăng nhập đã tồn tại trong hệ thống !";
                     sendMessageToView(response, message);
                 }
-            } else {
-                message ="Email đã tồn tại";
-                sendMessageToView(response,message);
             }
-        } else {
-            message = "Tên đăng nhập đã tồn tại trong hệ thống !";
-            sendMessageToView(response, message);
         }
     }
     private static void sendMessageToView(HttpServletResponse response, String message) throws IOException {

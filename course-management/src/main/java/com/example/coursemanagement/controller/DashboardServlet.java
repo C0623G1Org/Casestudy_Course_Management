@@ -566,29 +566,58 @@ public class DashboardServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         String username = request.getParameter("username");
         String fullName = request.getParameter("fullName");
-        String phone = request.getParameter("phone");
         String birthday = request.getParameter("birthday");
         boolean gender = "male".equals(request.getParameter("gender"));
         String email = request.getParameter("email");
         String idCard = request.getParameter("idCard");
+        String phone = request.getParameter("phone");
         String role = request.getParameter("role");
-        User user = new User(id, username, fullName, idCard, birthday, gender, phone, email, role);
-        userService.updateE(user);
-        showPageUpdateUser(request, response, user);
+        String alert="";
+        User user1=new User(id, username, fullName, idCard, birthday, gender, phone, email, role);
+        if(!regex.validateIdentityCard(idCard)){
+            alert="Số căn cước công dân phải có 12 số";
+            request.setAttribute("alert",alert);
+            showPageUpdateUser(request, response, user1);
+        } else {
+            if(!regex.validatePhoneVietNam(phone)){
+                alert="Số điện thoại không đúng";
+                request.setAttribute("alert",alert);
+                showPageUpdateUser(request,response, user1);
+            } else {
+                User user = new User(id, username, fullName, idCard, birthday, gender, phone, email, role);
+                userService.updateE(user);
+                showPageUpdateUser(request,response,user);
+            }
+        }
     }
-
     private void updateMember(HttpServletRequest request, HttpServletResponse response, User admin) throws ParseException {
         int id = Integer.parseInt(request.getParameter("id"));
         String username = request.getParameter("userName");
         String fullName = request.getParameter("fullName");
-        String phone = request.getParameter("phone");
+
         String birthday = request.getParameter("birthday");
         boolean gender = "male".equals(request.getParameter("gender"));
         String email = request.getParameter("email");
         String idCard = request.getParameter("idCard");
-        User userEdit = new User(id, username, fullName, idCard, birthday, gender, phone, email, admin.getRole());
-        userService.updateE(userEdit);
-        showPageMemberEdit(request, response, admin);
+        String phone = request.getParameter("phone");
+        String alert="";
+        User user1=new User(id, username, fullName, idCard, birthday, gender, phone, email, userService.selectE(id).getRole());
+        if(!regex.validateIdentityCard(idCard)){
+            alert="Số căn cước công dân phải có 12 số";
+            request.setAttribute("alert",alert);
+            showPageMemberEdit(request, response, user1);
+        } else {
+            if(!regex.validatePhoneVietNam(phone)){
+                alert="Số điện thoại không đúng";
+                request.setAttribute("alert",alert);
+                showPageMemberEdit(request,response, user1);
+            } else {
+                User userEdit = new User(id, username, fullName, idCard, birthday, gender, phone, email, admin.getRole());
+                userService.updateE(userEdit);
+                showPageMemberEdit(request, response, admin);
+            }
+        }
+
     }
 
     private void deleteDetailContent(HttpServletRequest request, HttpServletResponse response) {

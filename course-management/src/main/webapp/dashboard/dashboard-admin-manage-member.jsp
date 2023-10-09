@@ -74,8 +74,8 @@
                     <p>Tất cả dữ liệu sẽ bị xóa!</p>
                 </div>
                 <div class="modal-footer">
-                    <a role="button" class="btn btn-outline-info" href="/dashboard/member">Hủy</a>
-                    <a role="button" class="btn btn-outline-danger" id="deletedMemberId">Xóa</a>
+                    <a role="button" class="btn btn-secondary" href="/dashboard/member">Hủy</a>
+                    <a role="button" class="btn btn-danger" id="deletedMemberId">Xóa</a>
                 </div>
             </div>
         </div>
