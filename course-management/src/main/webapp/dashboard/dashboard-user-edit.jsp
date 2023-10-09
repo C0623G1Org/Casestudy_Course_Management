@@ -22,15 +22,19 @@
                             </div>
                             <input type="hidden" name="role" value="${user.getRole()}">
                             <div class="edit-header-inf col-7">
+                                <c:if test="${not empty messegeError}">
+                                    <div class="alert alert-danger" role="alert">
+                                            ${messegeError}
+                                    </div>
+                                </c:if>
                                 <div class="edit-inf col-12">
                                     <div class="label-edit-header">
-                                        <label class="lb" for="user_name"><i class='bx bxs-user-circle'
+                                        <label class="lb" for="username"><i class='bx bxs-user-circle'
                                                                              style='color:#5585fd'></i>
                                             <span>Tên đăng nhập</span>
                                         </label>
                                     </div>
-                                    <input class="form-control" type="text" id="user_name" value="${user.getUsername()}">
-                                    <input class="form-control" type="hidden" name="username" value="${user.getUsername()}">
+                                    <input class="form-control" type="text" id="username" name="username" value="${user.getUsername()}">
                                 </div>
 
                                 <div class="edit-inf col-12">

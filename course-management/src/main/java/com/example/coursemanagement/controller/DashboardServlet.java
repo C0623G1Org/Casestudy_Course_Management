@@ -226,6 +226,16 @@ public class DashboardServlet extends HttpServlet {
         request.setAttribute("user", user);
         dispatcherData(request, response, "/dashboard/dashboard-user-edit.jsp");
     }
+    private void showFormEditUser(HttpServletRequest request, HttpServletResponse response) {
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/dashboard/dashboard-user-edit.jsp");
+        try {
+            requestDispatcher.forward(request,response);
+        } catch (ServletException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     private void showPageUpdatePassword(HttpServletRequest request, HttpServletResponse response, User user) {
         request.setAttribute("user", user);
@@ -476,32 +486,107 @@ public class DashboardServlet extends HttpServlet {
     }
 
     private void updateUser(HttpServletRequest request, HttpServletResponse response) throws ParseException {
+        String messegeError = "";
         int id = Integer.parseInt(request.getParameter("id"));
         String username = request.getParameter("username");
+        if (!regex.validateOnlyText(username)) {
+            messegeError += "<p>Tên tài khoản nhập vào không hợp lệ <p>";
+        }
         String fullName = request.getParameter("fullName");
-        String phone = request.getParameter("phone");
-        String birthday = request.getParameter("birthday");
-        boolean gender = "male".equals(request.getParameter("gender"));
+        if (!regex.validateOnlyText(fullName)) {
+            messegeError += "<p> Họ tên nhập vào vào không hợp lệ <p>";
+        }
         String email = request.getParameter("email");
+        if (!regex.validateEmail(email)) {
+            messegeError += "<p> Email nhập vào vào không hợp lệ <p>";
+        }
+        String phone = request.getParameter("phone");
+        if (!regex.validatePhoneVietNam(phone)) {
+            messegeError += "<p> SĐT nhập vào vào không hợp lệ <p>";
+        }
+        String birthday = request.getParameter("birthday");
+        if (!regex.validateBirthday(birthday)) {
+            messegeError += "<p> Ngày sinh nhập vào vào không hợp lệ <p>";
+        }
+        boolean gender = "male".equals(request.getParameter("gender"));
         String idCard = request.getParameter("idCard");
+        if (!regex.validateBirthday(birthday)) {
+            messegeError += "<p> CCCD nhập vào vào không hợp lệ <p>";
+        }
         String role = request.getParameter("role");
-        User user = new User(id, username, fullName, idCard, birthday, gender, phone, email, role);
-        userService.updateE(user);
-        showPageUpdateUser(request, response, user);
+
+        if (messegeError != "") {
+            request.setAttribute("messegeError",messegeError);
+            User user =  userService.selectE(id);
+            request.setAttribute("admin", user.getFullName());
+            request.setAttribute("user", userService.selectE(id));
+            dispatcherData(request, response, "/dashboard/dashboard-admin-edit.jsp");
+        } else {
+            User user = new User(id, username, fullName, idCard, birthday, gender, phone, email, role);
+            userService.updateE(user);
+            try {
+                response.sendRedirect("/dashboard-admin-manage-member.jsp");
+            } catch (Exception e) {
+                messegeError += e.getMessage();
+                request.setAttribute("messegeError",messegeError);
+                request.setAttribute("admin", user.getFullName());
+                request.setAttribute("user", userService.selectE(id));
+                dispatcherData(request, response, "/dashboard/dashboard-admin-edit.jsp");
+            }
+        }
     }
 
     private void updateMember(HttpServletRequest request, HttpServletResponse response, User admin) throws ParseException {
+        String messegeError = "";
         int id = Integer.parseInt(request.getParameter("id"));
-        String username = request.getParameter("userName");
+        String username = request.getParameter("username");
+        if (!regex.validateOnlyText(username)) {
+            messegeError += "<p>Tên tài khoản nhập vào không hợp lệ <p>";
+        }
         String fullName = request.getParameter("fullName");
-        String phone = request.getParameter("phone");
-        String birthday = request.getParameter("birthday");
-        boolean gender = "male".equals(request.getParameter("gender"));
+        if (!regex.validateOnlyText(fullName)) {
+            messegeError += "<p> Họ tên nhập vào vào không hợp lệ <p>";
+        }
         String email = request.getParameter("email");
+        if (!regex.validateEmail(email)) {
+            messegeError += "<p> Email nhập vào vào không hợp lệ <p>";
+        }
+        String phone = request.getParameter("phone");
+        if (!regex.validatePhoneVietNam(phone)) {
+            messegeError += "<p> SĐT nhập vào vào không hợp lệ <p>";
+        }
+        String birthday = request.getParameter("birthday");
+        if (!regex.validateBirthday(birthday)) {
+            messegeError += "<p> Ngày sinh nhập vào vào không hợp lệ <p>";
+        }
+        boolean gender = "male".equals(request.getParameter("gender"));
         String idCard = request.getParameter("idCard");
-        User userEdit = new User(id, username, fullName, idCard, birthday, gender, phone, email, admin.getRole());
-        userService.updateE(userEdit);
-        showPageMemberEdit(request, response, admin);
+        if (!regex.validateBirthday(birthday)) {
+            messegeError += "<p> CCCD nhập vào vào không hợp lệ <p>";
+        }
+        String role = request.getParameter("role");
+
+        if (messegeError != "") {
+            request.setAttribute("messegeError",messegeError);
+            User user =  userService.selectE(id);
+            request.setAttribute("admin", user.getFullName());
+            request.setAttribute("id", id);
+            request.setAttribute("user", userService.selectE(id));
+            dispatcherData(request, response, "/dashboard/dashboard-admin-edit.jsp");
+        } else {
+            User user = new User(id, username, fullName, idCard, birthday, gender, phone, email, role);
+            userService.updateE(user);
+            try {
+                response.sendRedirect("/dashboard-admin-manage-member.jsp");
+            } catch (Exception e) {
+                messegeError += e.getMessage();
+                request.setAttribute("messegeError",messegeError);
+                request.setAttribute("admin", user.getFullName());
+                request.setAttribute("user", userService.selectE(id));
+                request.setAttribute("id", id);
+                dispatcherData(request, response, "/dashboard/dashboard-admin-edit.jsp");
+            }
+        }
     }
 
     private void deleteDetailContent(HttpServletRequest request, HttpServletResponse response) {

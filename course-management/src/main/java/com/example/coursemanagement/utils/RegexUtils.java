@@ -48,7 +48,7 @@ public class RegexUtils {
     public boolean validateIdentityCard(String string) {
         regex = "^[0-9]{9}|[0-9]{12}$";
         if (!validate(string, regex)) {
-            System.out.println("CMND không hợp lệ !");
+            System.out.println("CCCD không hợp lệ !");
         }
         return validate(string, regex);
     }
@@ -56,7 +56,7 @@ public class RegexUtils {
     public boolean validatePhoneVietNam(String string) {
         regex = "^(84|0)[2|3|5|7|8|9]{1}[0-9]{8}$";
         if (!validate(string, regex)) {
-            System.out.println("So dien thoai không hợp lệ !");
+            System.out.println("Số điện thoại không hợp lệ !");
         }
         return validate(string, regex);
     }

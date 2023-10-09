@@ -15,6 +15,11 @@
               class="check-out add-course edit-course-content">
             <div class="row">
                 <div class="col-md-6">
+                    <c:if test="${not empty messegeError}">
+                        <div class="alert alert-danger" role="alert">
+                                ${messegeError}
+                        </div>
+                    </c:if>
                     <h3 style="font-weight: bold">Thông tin khách hàng</h3>
                     <div class="mb-3">
                         <label for="nameBC"><i class="fa-solid fa-user"></i> Họ và tên của bạn*</label>

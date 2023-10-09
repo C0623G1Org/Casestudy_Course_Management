@@ -22,6 +22,9 @@
                                 </button>
                             </div>
                             <input type="hidden" name="id" value="${user.getId()}">
+                            <div class="alert alert-danger" role="alert">
+                                ${messegeError}
+                            </div>
                             <div class="edit-header-inf col-7">
                                 <div class="edit-inf col-12">
                                     <div class="label-edit-header">
@@ -29,7 +32,7 @@
                                             <span>Tên đăng nhập</span>
                                         </label>
                                     </div>
-                                    <input class="form-control" placeholder=" Nhập tên" type="text" id="user_name" name="userName" value="${user.getUsername()}">
+                                    <input class="form-control" placeholder=" Nhập tên" type="text" id="user_name" name="username" value="${user.getUsername()}">
                                 </div>
 
                                 <div class="edit-inf col-12">
