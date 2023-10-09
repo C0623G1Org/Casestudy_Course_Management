@@ -4,25 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b7fa4d5-6b60-40e8-94a6-bd99b53912e2" name="Changes" comment="loan add">
+    <list default="true" id="c68a11a8-da13-4b2f-a52e-6520f62044b1" name="Changes" comment="loan up">
+      <change beforePath="$PROJECT_DIR$/../ERD_image.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/controller/CourseOrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/controller/CourseOrderServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/controller/CoursePurchaseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/controller/CoursePurchaseServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/controller/DashboardServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/controller/DashboardServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/BaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/BaseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/ICourseOrderRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/ICourseOrderRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseOrderRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseOrderRepoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/ICourseOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/ICourseOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/impl/CourseOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/impl/CourseOrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/ICourseRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/ICourseRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/IRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/IRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/IUserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/IUserRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseCategoryRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseCategoryRepoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseContentRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseContentRepoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseContentTypeRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseContentTypeRepoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseDetailedContentRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseDetailedContentRepoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseRepoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/FeedbackRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/FeedbackRepoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/UserRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/UserRepoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/ICourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/ICourseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/IService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/IService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/impl/ContentTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/impl/ContentTypeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/impl/CourseCategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/impl/CourseCategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/impl/CourseContentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/impl/CourseContentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/impl/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/impl/CourseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/impl/DetailedContentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/impl/DetailedContentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/impl/FeedbackServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/impl/FeedbackServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursemanagement/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-course.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-order.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-member.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-member.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/modal-login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modal-login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/public/loan.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/public/loan.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/dropdown-menu-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dropdown-menu-user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sql-update.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../sql-update.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +134,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -139,7 +150,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Tomcat 9.0.21" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.21" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Tomcat 9.0.21" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.21" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Gradle : com.example : course_management-1.0-SNAPSHOT.war">
@@ -149,7 +160,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="8580f8a5-b935-4644-9079-d9dc2cb62f17" />
+        <option name="BASE_DIRECTORY_NAME" value="1d312931-acce-4d7a-a3a6-ecf794d9ddf1" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -157,7 +168,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="50656" />
+        <option name="DEBUG_PORT" value="54761" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -220,7 +231,6 @@
         </SHUTDOWN>
       </ConfigurationWrapper>
       <method v="2">
-        <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="Gradle : com.example : course_management-1.0-SNAPSHOT.war" />
         </option>
@@ -239,7 +249,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8b7fa4d5-6b60-40e8-94a6-bd99b53912e2" name="Changes" comment="" />
+      <changelist id="c68a11a8-da13-4b2f-a52e-6520f62044b1" name="Changes" comment="loan up" />
       <created>1696308999413</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -251,6 +261,10 @@
       <workItem from="1696579351700" duration="9469000" />
       <workItem from="1696665110898" duration="20062000" />
       <workItem from="1696709398202" duration="4599000" />
+      <workItem from="1696764740240" duration="1862000" />
+      <workItem from="1696767589629" duration="8808000" />
+      <workItem from="1696810302404" duration="1207000" />
+      <workItem from="1696816100489" duration="4396000" />
     </task>
     <task id="LOCAL-00001" summary="fix bugs">
       <created>1696417177332</created>
@@ -280,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696736882980</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="loan up">
+      <created>1696754712258</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696754712258</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,17 +321,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix bugs" />
     <MESSAGE value="loan add" />
-    <option name="LAST_COMMIT_MESSAGE" value="loan add" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseDetailedContentRepoImpl.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="loan up" />
+    <option name="LAST_COMMIT_MESSAGE" value="loan up" />
   </component>
 </project>

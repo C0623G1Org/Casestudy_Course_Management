@@ -15,6 +15,11 @@ public class CourseCategoryServiceImpl implements ICourseLevelService {
     }
 
     @Override
+    public List<CourseCategory> showListE(int currentPage) {
+        return categoryRepo.showListE(currentPage);
+    }
+
+    @Override
     public void saveE(CourseCategory courseCategory) {
 
     }

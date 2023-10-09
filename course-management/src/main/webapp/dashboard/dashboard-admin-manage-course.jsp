@@ -62,10 +62,14 @@
                             </c:forEach>
                             </tbody>
                         </table>
-                        <c:forEach begin="1" end="${endPage}" var="page">
-                            <a href="#">${page}</a>
-                        </c:forEach>
                     </div>
+                    <nav aria-label="Page navigation example" class="mt-3">
+                        <ul class="pagination justify-content-center">
+                            <c:forEach begin="1" end="${endPage}" var="page">
+                                <li class="page-item"><a class="page-link" href="/dashboard/course?currentPage=${page}">${page}</a> </li>
+                            </c:forEach>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
@@ -82,7 +86,7 @@
             <div id="modal-body-detail-delete"class="modal-body">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
                 <a id="deleteDetailContent" role="button" class="btn btn-danger">Xóa</a>
             </div>
         </div>

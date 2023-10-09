@@ -53,8 +53,14 @@
 
                             </tbody>
                         </table>
-
                     </div>
+                    <nav aria-label="Page navigation example" class="mt-3">
+                        <ul class="pagination justify-content-center">
+                            <c:forEach begin="1" end="${endPage}" var="page">
+                                <li class="page-item"><a class="page-link" href="/dashboard/member?currentPage=${page}">${page}</a> </li>
+                            </c:forEach>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
@@ -73,8 +79,8 @@
                     <p>Tất cả dữ liệu sẽ bị xóa!</p>
                 </div>
                 <div class="modal-footer">
-                    <a role="button" class="btn btn-outline-info" href="/dashboard/member">Hủy</a>
-                    <a role="button" class="btn btn-outline-danger" id="deletedMemberId">Xóa</a>
+                    <a role="button" class="btn btn-secondary" href="/dashboard/member">Hủy</a>
+                    <a role="button" class="btn btn-danger" id="deletedMemberId">Xóa</a>
                 </div>
             </div>
         </div>

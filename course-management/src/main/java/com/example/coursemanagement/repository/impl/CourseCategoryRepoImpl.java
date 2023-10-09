@@ -11,6 +11,8 @@ import java.util.List;
 
 public class CourseCategoryRepoImpl implements IRepository<CourseCategory> {
     private final static String SELECT = "SELECT * FROM course_levels";
+
+    private final static String SELECT_PAGINATION = "SELECT * FROM course_levels ORDER BY course_level_id LIMIT ?,10;";
     private final static String SELECT_BY_ID = "SELECT * FROM course_levels WHERE course_level_id = ?;";
 
     @Override
@@ -27,6 +29,26 @@ public class CourseCategoryRepoImpl implements IRepository<CourseCategory> {
             }
             resultSet.close();
             statement.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return categoryList;
+    }
+
+    @Override
+    public List<CourseCategory> showListE(int currentPage) {
+        List<CourseCategory> categoryList = new ArrayList<>();
+        Connection connection = BaseRepository.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_PAGINATION);
+            preparedStatement.setInt(1, (currentPage - 1) * 10);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("course_level_id");
+                String name = resultSet.getString("course_level_name");
+                categoryList.add(new CourseCategory(id, name));
+            }
+            resultSet.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

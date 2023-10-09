@@ -16,6 +16,8 @@ import java.util.List;
 
 public class UserRepoImpl implements IUserRepo {
     private final static String SELECT_ALL = "SELECT * FROM user;";
+
+    private final static String SELECT_PAGINATION = "SELECT * FROM user  ORDER BY user_id LIMIT ?,10;";
     private static final String SELECT_BY_ID = "SELECT * FROM user WHERE user_id = ?";
     private static final String SELECT_BY_USERNAME = "SELECT * FROM user WHERE user_name = ?;";
     private static final String SELECT_BY_USERNAME_PASSWORD = "SELECT * FROM user WHERE user_name = ? AND password = ?;";
@@ -31,6 +33,8 @@ public class UserRepoImpl implements IUserRepo {
     private static final String CHANGE_PASSWORD = "update user\n" +
             "set password=?"+ "\n" +
             "where user_id=? and role=\"user\";";
+
+    private static final String COUNT_USER = "SELECT COUNT(*) FROM `user`;";
 
     @Override
     public List<User> showListE() {
@@ -59,6 +63,36 @@ public class UserRepoImpl implements IUserRepo {
         }
         return userList;
     }
+
+    @Override
+    public List<User> showListE(int currentPage) {
+        List<User> userList = new ArrayList<>();
+        Connection connection = BaseRepository.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_PAGINATION);
+            preparedStatement.setInt(1, (currentPage - 1) * 10);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                int userId = resultSet.getInt("user_id");
+                String userName = resultSet.getString("user_name");
+                String password = resultSet.getString("password");
+                String full_name = resultSet.getString("full_name");
+                String idCard = resultSet.getString("id_card");
+                String birthday = resultSet.getString("birthday");
+                boolean gender = resultSet.getBoolean("gender");
+                String phone = resultSet.getString("phone");
+                String email = resultSet.getString("email");
+                String role = resultSet.getString("role");
+                userList.add(new User(userId,userName,password,full_name,idCard,birthday,gender,phone,email,role));
+            }
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return userList;
+    }
+
     @Override
     public void saveE(User user) {
         Connection connection = BaseRepository.getConnection();
@@ -261,5 +295,19 @@ public class UserRepoImpl implements IUserRepo {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public int countUsersAmount() {
+        Connection connection = BaseRepository.getConnection();
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(COUNT_USER);
+            while (resultSet.next()) {
+                return resultSet.getInt(1);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return 0;
     }
 }

@@ -10,6 +10,7 @@ import java.util.List;
 
 public class CourseContentRepoImpl implements ICourseContentRepo {
     private final static String SELECT = "SELECT * FROM course_content";
+    private final static String SELECT_PAGINATION = "SELECT * FROM course_content ORDER BY course_content_id LIMIT ?,10;";
     private final static String SELECT_BY_ID = "SELECT * FROM course_content WHERE course_content_id = ?;";
     private final static String DELETE_BY_ID = "DELETE FROM course_content where course_content_id = ?;";
     private final static String INSERT_CONTENT = "INSERT INTO course_content(course_content_name,course_id) VALUES (?,?);";
@@ -32,6 +33,27 @@ public class CourseContentRepoImpl implements ICourseContentRepo {
             }
             resultSet.close();
             statement.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return courseContentList;
+    }
+
+    @Override
+    public List<CourseContent> showListE(int currentPage) {
+        List<CourseContent> courseContentList = new ArrayList<>();
+        Connection connection = BaseRepository.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_PAGINATION);
+            preparedStatement.setInt(1, (currentPage - 1) * 10);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("course_content_id");
+                String name = resultSet.getString("course_content_name");
+                int courseId = resultSet.getInt("course_id");
+                courseContentList.add(new CourseContent(id, name, courseId));
+            }
+            resultSet.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -67,10 +67,7 @@ CREATE TABLE course_orders (
     `status` VARCHAR(55), 
     order_date DATE NOT NULL,
     order_price DOUBLE NOT NULL,
-    user_id INT NOT NULL,
     course_id INT NOT NULL,
-    FOREIGN KEY (user_id)
-        REFERENCES `user` (user_id),
 	FOREIGN KEY (course_id) 
 		REFERENCES courses (course_id),
             CHECK (`status`= "success" OR `status`= "cancel" OR `status`= "pending")
@@ -79,13 +76,11 @@ CREATE TABLE course_orders (
 CREATE TABLE feed_backs (
 	feedback_id INT AUTO_INCREMENT PRIMARY KEY,
     content_feedback VARCHAR(255),
-	user_id INT NOT NULL,
     order_id INT NOT NULL,
-    FOREIGN KEY (user_id)
-        REFERENCES `user` (user_id),
 	FOREIGN KEY (order_id) 
 		REFERENCES course_orders (order_id)
 );
+drop table feed_backs;
 
 INSERT INTO course_levels (course_level_name) VALUES ('BEGINNER');
 INSERT INTO course_levels (course_level_name) VALUES ('INTERMEDIATE');
@@ -198,7 +193,7 @@ VALUES (13418, 'pending', '2023-10-06', 99.99, 1, 3),
 (10570, 'success', '2023-10-07', 24.99, 1, 1), 
 (10571, 'pending', '2023-10-07', 49.99, 1, 2);
 
-INSERT INTO feed_backs (content_feedback, user_id, order_id) VALUES ('Feedback 1 for course 1', 4, 5), ('Feedback 2 for course 1', 5, 6), ('Feedback 1 for course 2', 6, 7), ('Feedback 2 for course 2', 7, 8);
+INSERT INTO feed_backs (content_feedback, order_id) VALUES ('Feedback 1 for course 1', 5), ('Feedback 2 for course 1', 6), ('Feedback 1 for course 2', 7), ('Feedback 2 for course 2', 8);
 
 UPDATE `course_management_ver2`.`feed_backs` SET `content_feedback` = ' LTTA cung cấp các khóa học lập trình rất chất lượng. Tôi đã học khóa Python và rất hài lòng với nội dung và cách giảng dạy. Giáo viên rất am hiểu và hỗ trợ tận tình.' WHERE (`feedback_id` = '1');
 UPDATE `course_management_ver2`.`feed_backs` SET `content_feedback` = 'Tôi đã tham gia khóa học Python của LTTA và thật sự ấn tượng với sự tỉ mỉ và chi tiết trong từng bài giảng. Các bài tập cũng rất thú vị và giúp tôi nắm vững kiến thức.' WHERE (`feedback_id` = '2');

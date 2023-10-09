@@ -11,6 +11,7 @@ import java.util.List;
 
 public class CourseContentTypeRepoImpl implements IRepository<CourseContentType> {
     private final static String SELECT = "SELECT * FROM content_types";
+    private final static String SELECT_PAGINATION = "SELECT * FROM content_types ORDER BY content_type_id LIMIT ?,10;";
     private final static String SELECT_BY_ID = "SELECT * FROM content_types WHERE content_type_id = ?;";
 
 
@@ -28,6 +29,26 @@ public class CourseContentTypeRepoImpl implements IRepository<CourseContentType>
             }
             resultSet.close();
             statement.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return courseContentTypes;
+    }
+
+    @Override
+    public List<CourseContentType> showListE(int currentPage) {
+        List<CourseContentType> courseContentTypes = new ArrayList<>();
+        Connection connection = BaseRepository.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_PAGINATION);
+            preparedStatement.setInt(1, (currentPage - 1) * 10);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("content_type_id");
+                String name = resultSet.getString("content_type_name");
+                courseContentTypes.add(new CourseContentType(id, name));
+            }
+            resultSet.close();;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

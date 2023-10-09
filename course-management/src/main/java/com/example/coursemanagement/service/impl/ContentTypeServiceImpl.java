@@ -17,6 +17,11 @@ public class ContentTypeServiceImpl implements IContentType {
     }
 
     @Override
+    public List<CourseContentType> showListE(int currentPage) {
+        return null;
+    }
+
+    @Override
     public void saveE(CourseContentType courseContentType) {
 
     }

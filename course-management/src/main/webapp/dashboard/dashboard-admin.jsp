@@ -55,7 +55,7 @@
                     <nav aria-label="Page navigation example" class="mt-3">
                         <ul class="pagination justify-content-center">
                             <c:forEach begin="1" end="${endPage}" var="page">
-                                <li class="page-item"><a class="page-link" href="/dashboard/order?currentPage=${page}">${page}</a> </li>
+                                <li class="page-item"><a class="page-link" href="?currentPage=${page}">${page}</a> </li>
                             </c:forEach>
                         </ul>
                     </nav>

@@ -18,6 +18,10 @@ $(document).ready(function () {
                 debugger;
                 if (data !== "") {
                     $('#msg-signup').html("<div class='alert alert-danger' role='alert'>" + data + "</div>");
+                    document.getElementById("usernameSignUp").value = "";
+                    document.getElementById("passwordSignUp").value = "";
+                    document.getElementById("passwordSignUpAgain").value = "";
+                    document.getElementById("emailSignUp").value = "";
                 } else {
                     $('#msg-signup').html("<div class='alert alert-success' role='alert'> Đăng kí thành công !<br> vui lòng đăng nhập để tiếp tục </div>");
                 }

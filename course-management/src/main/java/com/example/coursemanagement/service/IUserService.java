@@ -10,4 +10,5 @@ public interface IUserService extends IService<User> {
 
     void changePassWord(User user, String newPassWord);
     boolean checkExistEmail(String email);
+    public int countUsersAmount();
 }

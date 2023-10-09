@@ -15,6 +15,11 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
+    public List<User> showListE(int currentPage) {
+        return userRepo.showListE(currentPage);
+    }
+
+    @Override
     public void saveE(User user) {
         userRepo.saveE(user);
     }
@@ -68,4 +73,11 @@ public class UserServiceImpl implements IUserService {
     public boolean checkExistEmail(String email) {
         return userRepo.checkExistEmail(email);
     }
+
+    @Override
+    public int countUsersAmount() {
+        return userRepo.countUsersAmount();
+    }
+
+
 }
