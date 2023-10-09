@@ -81,7 +81,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-9 content-dashboard">
+            <div class="col-xl-9 col-lg-12 content-dashboard">
                 <div class="header-content">
                     <div class="hello">
                         <form class="row form-search-course g-2">

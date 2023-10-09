@@ -1,9 +1,10 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:import url="header.jsp"></c:import>
 <section>
     <div class="container">
-        <div class="row hero-home">
+        <div class="row hero-home mt-sm-3 mt-lg-auto">
             <div class="col-lg-6">
                 <h2>Trở thành lập trình viên chuyên nghiệp với LTTA</h2>
                 <p>Cơ hội để trải nghiệm thực tế công việc của một lập trình viên, khởi đầu con đường lập trình chuyên
@@ -38,7 +39,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 img-hero">
+            <div class="col-lg-6 img-hero align-content-lg-end align-content-md-center">
                 <img src="../public/image/vector-banner 1.png">
             </div>
         </div>
@@ -58,18 +59,20 @@
         </div>
         <div class="row my-5 justify-content-around">
             <div class="col-lg-5">
-                <div class="feature col one">
+                <div class="feature col one my-sm-3 my-md-3">
                     <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
                         <i class="fa-solid fa-circle-half-stroke"></i>
                     </div>
                     <h5 class="fs-2 text-body-emphasis">Được hỗ trợ từ chuyên gia</h5>
-                    <p>LTTA là một tổ chức đào tạo học tập hoàn toàn trực tuyến. Điều đặc biệt là học viên sẽ được hỗ trợ
-                    từ đội ngũ chuyên gia và trợ lý học tập của LTTA. Đội ngũ chuyên gia công nghệ của LTTA có kiến thức
-                    sâu rộng và kinh nghiệm thực tiễn trong lĩnh vực CNTT, giúp học viên có thể tiếp cận và nắm vững
-                    kiến thức mới nhất.</p>
+                    <p>LTTA là một tổ chức đào tạo học tập hoàn toàn trực tuyến. Điều đặc biệt là học viên sẽ được hỗ
+                        trợ
+                        từ đội ngũ chuyên gia và trợ lý học tập của LTTA. Đội ngũ chuyên gia công nghệ của LTTA có kiến
+                        thức
+                        sâu rộng và kinh nghiệm thực tiễn trong lĩnh vực CNTT, giúp học viên có thể tiếp cận và nắm vững
+                        kiến thức mới nhất.</p>
                 </div>
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-7 my-sm-3 my-md-3">
                 <div class="feature col two">
                     <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
                         <i class="fa-solid fa-circle-half-stroke"></i>
@@ -87,42 +90,44 @@
         </div>
     </div>
 </section>
-<section>
-    <div class="container my-5">
-        <div class="row voucher-home">
-            <div class="col-lg-4">
-                <h3>Ưu đãi của chúng tôi dành cho bạn</h3>
-            </div>
-            <div class="col-lg-8">
-                <div class="row">
-                    <div class="bg-circe col-lg-3">
-                        <p>Ưu đãi 1</p>
-                    </div>
-                    <div class="bg-circe col-lg-3">
-                        <p>Ưu đãi 2</p>
-                    </div>
-                    <div class="bg-circe col-lg-3">
-                        <p>Ưu đãi 3</p>
-                    </div>
-                    <div class="bg-circe col-lg-3">
-                        <p>Ưu đãi 4</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<%--<section>--%>
+<%--    <div class="container my-5">--%>
+<%--        <div class="row voucher-home">--%>
+<%--            <div class="col-lg-4">--%>
+<%--                <h3>Ưu đãi của chúng tôi dành cho bạn</h3>--%>
+<%--            </div>--%>
+<%--            <div class="col-lg-8">--%>
+<%--                <div class="row">--%>
+<%--                    <div class="bg-circe col-lg-3">--%>
+<%--                        <p>Ưu đãi 1</p>--%>
+<%--                    </div>--%>
+<%--                    <div class="bg-circe col-lg-3">--%>
+<%--                        <p>Ưu đãi 2</p>--%>
+<%--                    </div>--%>
+<%--                    <div class="bg-circe col-lg-3">--%>
+<%--                        <p>Ưu đãi 3</p>--%>
+<%--                    </div>--%>
+<%--                    <div class="bg-circe col-lg-3">--%>
+<%--                        <p>Ưu đãi 4</p>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</section>--%>
 <section>
     <div class="container my-5 course-home">
-        <div class="row text-center">
-            <div class="col-md-6 offset-md-3 col-auto">
+        <div class="row text-center justify-content-lg-center">
+            <div class="col-md-12 col-lg-6 col-auto">
                 <h2>Khoá học phổ biến</h2>
                 <form action="/course/search" class="row g-3 form-search-home mt-3" method="post">
                     <div class="col-auto">
-                        <input type="text" class="form-control" name="name-course" id="form-search-name" placeholder="Tìm theo tên">
+                        <input type="text" class="form-control" name="name-course" id="form-search-name"
+                               placeholder="Tìm theo tên">
                     </div>
                     <div class="col-auto">
-                        <input type="text" class="form-control" name="instructor-course" id="form-search-author" placeholder="Tìm theo Tutor">
+                        <input type="text" class="form-control" name="instructor-course" id="form-search-author"
+                               placeholder="Tìm theo Tutor">
                     </div>
                     <div class="col-auto">
                         <button type="submit" class="btn btn-primary">Tìm kiếm</button>
@@ -132,14 +137,14 @@
         </div>
         <div class="row my-5">
             <c:forEach items="${courseList}" var="courseList">
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-sm-12 my-sm-3 my-md-3">
                     <div class="card" style="width: 100%;">
-                        <div class="card-body">
+                        <div class="card-body align-content-md-center">
                             <div class="row card-head">
-                                <div class="col-md-4">
+                                <div class="col-md-12 col-lg-4">
                                     <img src="${courseList.getAvatar()}" class="card-img" alt="">
                                 </div>
-                                <div class="col-md-8 ml-auto">
+                                <div class="col-md-12 col-lg-8 mt-sm-3 mt-md-3">
                                     <div class="category">
                                         <c:forEach items="${categoryList}" var="category">
                                             <c:if test="${category.getId() == courseList.getCourseLevelId()}">
@@ -147,7 +152,7 @@
                                             </c:if>
                                         </c:forEach>
                                     </div>
-                                    <h3>${courseList.getName()}</h3>
+                                    <h3 class="text-md-center">${courseList.getName()}</h3>
                                 </div>
                             </div>
                             <p class="card-text">${courseList.getDescription()}</p>
@@ -157,8 +162,10 @@
                                 <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>
                             </div>
                             <div class="card-price">
-                                <div class="price">${courseList.getPrice()} VNĐ</div>
-                                    <%--                <a style="color: #FFFFFF" role="button" class="btn-login btn btn-primary" href="/course/id=${courseList.getId()}">Đăng kí</a>--%>
+                                <div class="price">
+                                    <fmt:setLocale value="vi_VN"/>
+                                    <fmt:formatNumber value="${courseList.getPrice()}" type="currency"/>
+                                </div>
                                 <a style="color: #FFFFFF" role="button" class="btn-login btn btn-primary"
                                    href="/course/detail?id=${courseList.getId()}">Đăng kí</a>
                             </div>
@@ -168,8 +175,8 @@
             </c:forEach>
         </div>
         <div class="row">
-            <div class="text-center d-flex justify-content-between">
-                <div class="col-lg-12">
+            <div class="text-center d-flex justify-content-between justify-content-md-center justify-content-sm-center">
+                <div class="col-lg-12 col-md-12">
                     <a role="button" href="/course" class="btn-hero btn btn-primary">Xem thêm</a>
                 </div>
             </div>
@@ -187,7 +194,7 @@
         <div class="row">
             <c:forEach items="${feedbacks}" var="feedbacks" varStatus="loop">
                 <c:if test="${loop.count < 5}">
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 col-sm-12 my-sm-3 my-md-3">
                         <div class="card" style="width: 100%;">
                             <div class="card-body">
                                 <div class="row card-head">

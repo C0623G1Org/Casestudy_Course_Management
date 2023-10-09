@@ -7,14 +7,13 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:import url="/dashboard/header-dashboard.jsp"></c:import>
 <section>
     <div class="container my-4">
         <div class="row">
-            <div class="col-lg-3 siderbar-dashboard">
-                <c:import url="/dashboard/admin-siderbar.jsp"></c:import>
-            </div>
-            <div class="col-lg-9 content-dashboard">
+            <c:import url="/dashboard/admin-siderbar.jsp"></c:import>
+            <div class="col-xl-9 col-lg-12 content-dashboard">
                 <div class="mb-5">
                     <c:import url="dashboard/header-content-dashboard.jsp"></c:import>
                 </div>
@@ -66,7 +65,10 @@
                             </div>
                         </div>
                         <div class="col-lg 3 price-item">
-                            <h5 style="text-align: right;font-weight: bold">${order.getCourse().getPrice()} VND</h5>
+                            <h5 style="text-align: right;font-weight: bold">
+                                <fmt:setLocale value="vi_VN"/>
+                                <fmt:formatNumber value="${order.getCourse().getPrice()}" type="currency"/>
+                            </h5>
                         </div>
                     </div>
                     <hr>
@@ -79,11 +81,15 @@
                     <div class="row content-oder-detain-5">
                         <div class="col-lg-12 d-flex justify-content-between">
                             <h5 style="padding-left: 30px; font-weight: bold">Thành tiền</h5>
-                            <h6 style="font-weight: bold">${order.getOrderPrice()} VND</h6>
+                            <h6 style="font-weight: bold">
+                                <fmt:setLocale value="vi_VN"/>
+                                <fmt:formatNumber value="${order.getOrderPrice()}" type="currency"/>
+                            </h6>
                         </div>
                     </div>
                     <div class="row content-oder-detain-6">
-                        <i style="padding-left: 30px;padding-bottom: 30px;color: #666;">Khách hàng thanh toán qua chuyển khoản ngân hàng</i>
+                        <i style="padding-left: 30px;padding-bottom: 30px;color: #666;">Khách hàng thanh toán qua chuyển
+                            khoản ngân hàng</i>
                     </div>
                 </div>
             </div>

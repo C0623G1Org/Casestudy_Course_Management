@@ -1,13 +1,12 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:import url="../dashboard/header-dashboard.jsp"></c:import>
 <section>
     <div class="container my-4">
         <div class="row">
-            <div class="col-lg-3 siderbar-dashboard">
                 <c:import url="user-siderbar.jsp"></c:import>
-            </div>
-            <div class="col-lg-9 content-dashboard">
+            <div class="col-xl-9 col-lg-12 content-dashboard">
                 <c:import url="header-content-dashboard.jsp"></c:import>
                 <div class="row my-5">
                     <c:if test="${empty courseOrders}">
@@ -40,7 +39,10 @@
                                 </div>
                                 <div class="info-course-buy">
                                     <div class="time-buy">
-                                        <p class="mt-2">Bạn đã mua khoá học này với giá <span class="font-weight-bold">${courseOrders.getOrderPrice()} đ</span> vào <span class="font-weight-bold">${courseOrders.getOrderDate()} </span></p>
+                                        <p class="mt-2">Bạn đã mua khoá học này với giá <span class="font-weight-bold">
+                                            <fmt:setLocale value="vi_VN"/>
+                                            <fmt:formatNumber value="${courseOrders.getOrderPrice()}" type="currency"/>
+                                        </span> vào <span class="font-weight-bold">${courseOrders.getOrderDate()} </span></p>
                                     </div>
                                     <a style="color: #FFFFFF" role="button" class="btn-login btn btn-primary" href="/learn?id=${courseOrders.getCourse().getId()}">Tiếp tục học</a>
                                 </div>
@@ -53,4 +55,4 @@
         </div>
     </div>
 </section>
-<c:import url="../dashboard/footer-dashboard.jsp"></c:import>
+<c:import url="/dashboard/footer-dashboard.jsp"></c:import>

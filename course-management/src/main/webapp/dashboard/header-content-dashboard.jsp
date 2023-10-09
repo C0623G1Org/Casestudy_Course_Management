@@ -2,15 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="header-content">
     <div class="hello">
-        <form class="row form-search-course g-2">
-<%--            <div class="col-auto">--%>
-<%--                <input type="text" class="form-control" id="inputEmail"--%>
-<%--                       placeholder=" Nhập khóa học cần tìm">--%>
-<%--            </div>--%>
-<%--            <div class="col-auto">--%>
-<%--                <button type="submit" class="btn btn-primary">Tìm</button>--%>
-<%--            </div>--%>
-        </form>
+        <button onclick="displayMenuDashboardMobile();" type="button" style="    background: #3B0200;color: #fff;border: unset;" class="d-xl-none d-lg-block btn btn-outline-primary">Menu</button>
     </div>
     <div class="user">
         <div class="dropdown">
