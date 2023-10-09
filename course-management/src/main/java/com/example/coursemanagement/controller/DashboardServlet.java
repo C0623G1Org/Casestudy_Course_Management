@@ -281,7 +281,7 @@ public class DashboardServlet extends HttpServlet {
                     updateDetailContentToDb(request, response);
                 } else if (url.endsWith("/dashboard/member/edit")) {
                     try {
-                        updateMember(request, response, user);
+                        updateMember(request, response);
                     } catch (ParseException e) {
                         System.out.println(e.getMessage());
                     }
@@ -576,11 +576,11 @@ public class DashboardServlet extends HttpServlet {
         String messegeError = "";
         int id = Integer.parseInt(request.getParameter("id"));
         String username = request.getParameter("username");
-        if (!regex.validateOnlyText(username)) {
+        if (!regex.validateUsername(username)) {
             messegeError += "<p>Tên tài khoản nhập vào không hợp lệ <p>";
         }
         String fullName = request.getParameter("fullName");
-        if (!regex.validateOnlyText(fullName)) {
+        if (!regex.validateFullNameCustomer(fullName)) {
             messegeError += "<p> Họ tên nhập vào vào không hợp lệ <p>";
         }
         String email = request.getParameter("email");
@@ -592,13 +592,10 @@ public class DashboardServlet extends HttpServlet {
             messegeError += "<p> SĐT nhập vào vào không hợp lệ <p>";
         }
         String birthday = request.getParameter("birthday");
-        if (!regex.validateBirthday(birthday)) {
-            messegeError += "<p> Ngày sinh nhập vào vào không hợp lệ <p>";
-        }
         boolean gender = "male".equals(request.getParameter("gender"));
         String idCard = request.getParameter("idCard");
-        if (!regex.validateBirthday(birthday)) {
-            messegeError += "<p> CCCD nhập vào vào không hợp lệ <p>";
+        if (!regex.validateIdentityCard(idCard)) {
+            messegeError += "<p> CCCD/CMND nhập vào vào không hợp lệ <p>";
         }
         String role = request.getParameter("role");
 
@@ -612,7 +609,7 @@ public class DashboardServlet extends HttpServlet {
             User user = new User(id, username, fullName, idCard, birthday, gender, phone, email, role);
             userService.updateE(user);
             try {
-                response.sendRedirect("/dashboard-admin-manage-member.jsp");
+                response.sendRedirect("/dashboard/member/edit?id="+id);
             } catch (Exception e) {
                 messegeError += e.getMessage();
                 request.setAttribute("messegeError",messegeError);
@@ -623,15 +620,15 @@ public class DashboardServlet extends HttpServlet {
         }
     }
 
-    private void updateMember(HttpServletRequest request, HttpServletResponse response, User admin) throws ParseException {
+    private void updateMember(HttpServletRequest request, HttpServletResponse response) throws ParseException {
         String messegeError = "";
         int id = Integer.parseInt(request.getParameter("id"));
         String username = request.getParameter("username");
-        if (!regex.validateOnlyText(username)) {
+        if (!regex.validateUsername(username)) {
             messegeError += "<p>Tên tài khoản nhập vào không hợp lệ <p>";
         }
         String fullName = request.getParameter("fullName");
-        if (!regex.validateOnlyText(fullName)) {
+        if (!regex.validateFullNameCustomer(fullName)) {
             messegeError += "<p> Họ tên nhập vào vào không hợp lệ <p>";
         }
         String email = request.getParameter("email");
@@ -643,13 +640,10 @@ public class DashboardServlet extends HttpServlet {
             messegeError += "<p> SĐT nhập vào vào không hợp lệ <p>";
         }
         String birthday = request.getParameter("birthday");
-        if (!regex.validateBirthday(birthday)) {
-            messegeError += "<p> Ngày sinh nhập vào vào không hợp lệ <p>";
-        }
         boolean gender = "male".equals(request.getParameter("gender"));
         String idCard = request.getParameter("idCard");
-        if (!regex.validateBirthday(birthday)) {
-            messegeError += "<p> CCCD nhập vào vào không hợp lệ <p>";
+        if (!regex.validateIdentityCard(idCard)) {
+            messegeError += "<p> CCCD/CMND nhập vào vào không hợp lệ <p>";
         }
         String role = request.getParameter("role");
 
@@ -657,20 +651,18 @@ public class DashboardServlet extends HttpServlet {
             request.setAttribute("messegeError",messegeError);
             User user =  userService.selectE(id);
             request.setAttribute("admin", user.getFullName());
-            request.setAttribute("id", id);
             request.setAttribute("user", userService.selectE(id));
             dispatcherData(request, response, "/dashboard/dashboard-admin-edit.jsp");
         } else {
             User user = new User(id, username, fullName, idCard, birthday, gender, phone, email, role);
             userService.updateE(user);
             try {
-                response.sendRedirect("/dashboard-admin-manage-member.jsp");
+                response.sendRedirect("/dashboard/member/edit?id="+id);
             } catch (Exception e) {
                 messegeError += e.getMessage();
                 request.setAttribute("messegeError",messegeError);
                 request.setAttribute("admin", user.getFullName());
                 request.setAttribute("user", userService.selectE(id));
-                request.setAttribute("id", id);
                 dispatcherData(request, response, "/dashboard/dashboard-admin-edit.jsp");
             }
         }

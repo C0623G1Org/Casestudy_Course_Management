@@ -10,6 +10,11 @@
                     <c:import url="header-content-dashboard.jsp"></c:import>
                 </div>
                 <div class="row my-5 content-edit-info ">
+                    <c:if test="${not empty messegeError}">
+                        <div class="alert alert-danger" role="alert">
+                                ${messegeError}
+                        </div>
+                    </c:if>
                     <form action="/dashboard/member/edit" class="edit-user-inf my-4 text-start" method="post">
                         <div class="edit-header">
                             <div class="avatar col-4">
@@ -20,9 +25,6 @@
                                 </button>
                             </div>
                             <input type="hidden" name="id" value="${user.getId()}">
-                            <div class="alert alert-danger" role="alert">
-                                ${messegeError}
-                            </div>
                             <div class="edit-header-inf col-7">
                                 <div class="edit-inf col-12">
                                     <div class="label-edit-header">
@@ -86,6 +88,7 @@
                                 </label>
                                 <input class="form-control" type="date" id="birthday" name="birthday" value="${user.getBirthday()}">
                             </div>
+                            <input class="form-control" type="hidden" id="role" name="role" value="${user.getRole()}">
                         </div>
                         <div class="save">
                             <button type="submit">Lưu thay đổi</button>
