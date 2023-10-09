@@ -9,34 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b7fa4d5-6b60-40e8-94a6-bd99b53912e2" name="Changes" comment="update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ad-course-management.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ad-course-management.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/add-course-content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/add-course-content.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/add-course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/add-course.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/add-detail-to-content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/add-detail-to-content.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/edit-course-content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/edit-course-content.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/edit-course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/edit-course.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/edit-detail-to-content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/edit-detail-to-content.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/admin-siderbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/admin-siderbar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-course.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-member.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-member.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-order.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-view.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-user-edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-user-edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-user-password.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-user-password.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/header-content-dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/header-content-dashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/user-siderbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/user-siderbar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/detailed-course-order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/detailed-course-order.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/learning/siderbar-learning.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/learning/siderbar-learning.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/learning/user-learning-video.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/learning/user-learning-video.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/learning/user-learning.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/learning/user-learning.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/public/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/public/main.css" afterDir="false" />
-    </list>
+    <list default="true" id="8b7fa4d5-6b60-40e8-94a6-bd99b53912e2" name="Changes" comment="update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -420,7 +393,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696814035380</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="update">
+      <option name="closed" value="true" />
+      <created>1696822197637</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1696822197637</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
