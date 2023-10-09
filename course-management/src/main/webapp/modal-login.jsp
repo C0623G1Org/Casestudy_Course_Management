@@ -10,7 +10,7 @@
                 <div class="form">
                     <form class="signup_signin" id="form-signup">
                         <img src="../public/image/removebg_logo.png" width="170px" height="60px" alt="..."/>
-                        <h3>Đăng kí tài khoản</h3>
+                        <h3>Đăng ký tài khoản</h3>
                         <p>Tham gia cùng cộng đồng học tập của chúng tôi!</p>
                         <div id="msg-signup"></div>
                         <div class="input-box">
@@ -40,7 +40,7 @@
                             </p>
                         </div>
                         <div class="accept">
-                            <p>Bằng cách ấn đăng kí, bạn đồng ý với các điều khoản, điều kiện và chính sách
+                            <p>Bằng cách ấn đăng ký, bạn đồng ý với các điều khoản, điều kiện và chính sách
                                 dữ
                                 liệu của chúng
                                 tôi</p>

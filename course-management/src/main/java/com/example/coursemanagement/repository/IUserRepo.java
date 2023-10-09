@@ -10,5 +10,5 @@ public interface IUserRepo extends IRepository<User> {
     void deleteUser(int id);
     void changePassWord(User user, String newPassWord);
     boolean checkExistEmail(String email);
-
+    public int countUsersAmount();
 }

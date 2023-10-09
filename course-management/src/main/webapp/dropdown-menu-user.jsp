@@ -12,7 +12,7 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <c:if test="${sessionScope.user.getRole() == 'admin'}">
-                <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+                <li><a class="dropdown-item" href="/dashboard">Tổng quan</a></li>
                 <li><a class="dropdown-item" href="/dashboard/course">Quản lý khóa học</a></li>
                 <li><a class="dropdown-item" href="/dashboard/order">Quản lý đơn hàng</a></li>
                 <li><a class="dropdown-item" href="/dashboard/member">Quản lý thành viên</a></li>

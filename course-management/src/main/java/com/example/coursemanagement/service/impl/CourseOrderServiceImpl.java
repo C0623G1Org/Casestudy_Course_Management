@@ -12,8 +12,8 @@ public class CourseOrderServiceImpl implements ICourseOrderService {
     private final ICourseOrderRepo courseOrderRepo = new CourseOrderRepoImpl();
 
     @Override
-    public List<CourseOrderInf> showCourseOrder() {
-        return courseOrderRepo.showCourseOrder();
+    public List<CourseOrderInf> showCourseOrder(int currentPage) {
+        return courseOrderRepo.showCourseOrder(currentPage);
     }
 
     @Override
@@ -37,8 +37,8 @@ public class CourseOrderServiceImpl implements ICourseOrderService {
     }
 
     @Override
-    public List<CourseOrder> getOrderByDateNow() {
-        return courseOrderRepo.getOrderByDateNow();
+    public List<CourseOrder> getOrderByDateNow(int currentPage) {
+        return courseOrderRepo.getOrderByDateNow(currentPage);
     }
 
     @Override
@@ -54,6 +54,11 @@ public class CourseOrderServiceImpl implements ICourseOrderService {
     @Override
     public int countOrdersAmount() {
         return courseOrderRepo.countOrdersAmount();
+    }
+
+    @Override
+    public int countOrdersByDate() {
+        return courseOrderRepo.countOrdersByDate();
     }
 
     @Override

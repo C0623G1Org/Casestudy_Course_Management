@@ -15,6 +15,11 @@ public class DetailedContentServiceImpl implements ICourseDetailContentService {
     }
 
     @Override
+    public List<CourseDetailedContent> showListE(int currentPage) {
+        return null;
+    }
+
+    @Override
     public void saveE(CourseDetailedContent courseDetailedContent) {
         courseDetailedContentIRepository.saveE(courseDetailedContent);
     }

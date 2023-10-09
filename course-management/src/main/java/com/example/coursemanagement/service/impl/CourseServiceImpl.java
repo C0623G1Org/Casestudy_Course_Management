@@ -15,6 +15,11 @@ public class CourseServiceImpl implements ICourseService {
     }
 
     @Override
+    public List<Course> showList(int currentPage) {
+        return courseRepo.showList(currentPage);
+    }
+
+    @Override
     public void saveCourse(Course course) {
         courseRepo.saveCourse(course);
     }
@@ -48,4 +53,10 @@ public class CourseServiceImpl implements ICourseService {
     public List<Course> searchByNameAndInstructor(String nameSearch, String instructorSearch) {
         return courseRepo.searchByNameAndInstructor(nameSearch,instructorSearch);
     }
+
+    @Override
+    public int countCoursesAmount() {
+        return courseRepo.countCoursesAmount();
+    }
+
 }

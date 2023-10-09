@@ -18,7 +18,7 @@
                                                placeholder="Nhập email của bạn">
                                     </div>
                                     <div class="col-auto">
-                                        <button type="submit" class="btn btn-primary">Đăng kí</button>
+                                        <button type="submit" class="btn btn-primary">Đăng ký</button>
                                     </div>
                                 </form>
                                 <div class="d-flex justify-content-center py-3">

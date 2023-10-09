@@ -20,20 +20,24 @@ public class CourseOrderRepoImpl implements ICourseOrderRepo {
     private final ICourseService courseService = new CourseServiceImpl();
     private final IUserService userService = new UserServiceImpl();
 
-    private static final String SELECT_AD_ORDER = "SELECT order_id, order_code, `status`, order_date, order_price, co.user_id, co.course_id, course_name, full_name\n" +
-            "FROM course_orders co\n" +
-            "LEFT JOIN courses c ON c.course_id = co.course_id\n" +
-            "LEFT JOIN `user` u ON u.user_id = co.user_id\n";
+//    private static final String SELECT_AD_ORDER = "SELECT order_id, order_code, `status`, order_date, order_price, co.user_id, co.course_id, course_name, full_name\n" +
+//            "FROM course_orders co\n" +
+//            "LEFT JOIN courses c ON c.course_id = co.course_id\n" +
+//            "LEFT JOIN `user` u ON u.user_id = co.user_id\n" +
+//            "ORDER BY order_id\n" +
+//            "LIMIT ?,10;";
 
-    private static final String SELECT_ORDER_BY_DATE = "SELECT order_id, order_code, `status`, order_date, order_price, co.user_id, co.course_id, course_name, full_name\n" +
-            "FROM course_orders co\n" +
-            "LEFT JOIN courses c ON c.course_id = co.course_id\n" +
-            "LEFT JOIN `user` u ON u.user_id = co.user_id\n" +
-            "WHERE order_date = ?;";
+    //    private static final String SELECT_ORDER_BY_DATE = "SELECT order_id, order_code, `status`, order_date, order_price, co.user_id, co.course_id, course_name, full_name\n" +
+//            "FROM course_orders co\n" +
+//            "LEFT JOIN courses c ON c.course_id = co.course_id\n" +
+//            "LEFT JOIN `user` u ON u.user_id = co.user_id\n" +
+//            "WHERE order_date = ?;";
     private static final String SELECT_ORDER = "SELECT order_id, order_code, `status`, order_date, order_price, co.user_id, co.course_id, course_name, full_name\n" +
             "FROM course_orders co\n" +
             "LEFT JOIN courses c ON c.course_id = co.course_id\n" +
-            "LEFT JOIN `user` u ON u.user_id = co.user_id\n";
+            "LEFT JOIN `user` u ON u.user_id = co.user_id\n" +
+            "ORDER BY order_id\n" +
+            "LIMIT ?,10;";
 
     private static final String SELECT_ORDER_BY_ID = "SELECT order_id, order_code, `status`, order_date, order_price, " +
             "co.user_id, co.course_id, course_name, full_name, phone, email, price, short_description\n" +
@@ -46,7 +50,8 @@ public class CourseOrderRepoImpl implements ICourseOrderRepo {
             "VALUES (?,?,?,?,?,'pending');";
     private static final String GET_BY_USER_BUY = "SELECT co.* from courses c JOIN course_orders co ON c.course_id = co.course_id AND co.status = 'success' JOIN user u ON co.user_id = u.user_id WHERE u.user_id = ?;";
     private static final String GET_ORDER_BY_USER_COURSE = "select co.* from courses c JOIN course_orders co ON c.course_id = co.course_id AND co.status = 'success' JOIN user u ON co.user_id = u.user_id WHERE u.user_id = ? AND c.course_id = ?;";
-    private static final String GET_ORDER_DATE_NOW = "SELECT * FROM course_orders where order_date = CURDATE();";
+
+    private static final String GET_ORDER_DATE_NOW = "SELECT * FROM course_orders where order_date = CURDATE() ORDER BY order_id LIMIT ?,10;";
     private static final String UPDATE_STATUS = "UPDATE course_orders SET `status` = ? WHERE order_code = ?;";
     private static final String GET_ORDER_BY_ID = "SELECT * FROM course_orders WHERE order_id = ?;";
 
@@ -55,17 +60,23 @@ public class CourseOrderRepoImpl implements ICourseOrderRepo {
 
     private static final String COUNT_ORDER = "SELECT COUNT(*) FROM course_orders;";
 
+    private static final String COUNT_ORDER_BY_DATE = "SELECT COUNT(*) FROM course_orders WHERE order_date = CURDATE();";
+
     private static final String PAGINATION = "SELECT * FROM course_orders\n" +
             "ORDER BY order_id\n" +
-            "LIMIT ? OFFSET ?;";
+            "LIMIT ?,10;";
+
     @Override
-    public List<CourseOrderInf> showCourseOrder() {
+    public List<CourseOrderInf> showCourseOrder(int currentPage) {
         Connection connection = BaseRepository.getConnection();
         List<CourseOrderInf> courseOrderInfs = new ArrayList<>();
         CourseOrderInf courseOrderInf = null;
         try {
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(SELECT_ORDER);
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ORDER);
+            preparedStatement.setInt(1, (currentPage - 1) * 10);
+            ResultSet resultSet = preparedStatement.executeQuery();
+//            Statement statement = connection.createStatement();
+//            ResultSet resultSet = statement.executeQuery(SELECT_ORDER);
             while (resultSet.next()) {
                 int orderId = resultSet.getInt("order_id");
                 double orderPrice = resultSet.getDouble("order_price");
@@ -79,6 +90,21 @@ public class CourseOrderRepoImpl implements ICourseOrderRepo {
             throw new RuntimeException(e);
         }
         return courseOrderInfs;
+    }
+
+    @Override
+    public List<CourseOrder> paginateOrders(int currentPage) {
+        Connection connection = BaseRepository.getConnection();
+        List<CourseOrder> courseOrderList = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(PAGINATION);
+            preparedStatement.setInt(1, (currentPage - 1) * 10);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
     }
 
     @Override
@@ -162,12 +188,15 @@ public class CourseOrderRepoImpl implements ICourseOrderRepo {
     }
 
     @Override
-    public List<CourseOrder> getOrderByDateNow() {
+    public List<CourseOrder> getOrderByDateNow(int currentPage) {
         Connection connection = BaseRepository.getConnection();
         List<CourseOrder> courseOrders = new ArrayList<>();
         try {
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(GET_ORDER_DATE_NOW);
+            PreparedStatement preparedStatement = connection.prepareStatement(GET_ORDER_DATE_NOW);
+            preparedStatement.setInt(1, (currentPage - 1) * 10);
+            ResultSet resultSet = preparedStatement.executeQuery();
+//            Statement statement = connection.createStatement();
+//            ResultSet resultSet = statement.executeQuery(GET_ORDER_DATE_NOW);
             while (resultSet.next()) {
                 int orderId = resultSet.getInt("order_id");
                 double orderPrice = resultSet.getDouble("order_price");
@@ -192,7 +221,7 @@ public class CourseOrderRepoImpl implements ICourseOrderRepo {
         CourseOrder courseOrder = null;
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(GET_ORDER_BY_ID);
-            preparedStatement.setInt(1,idOrder);
+            preparedStatement.setInt(1, idOrder);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int orderId = resultSet.getInt("order_id");
@@ -266,18 +295,18 @@ public class CourseOrderRepoImpl implements ICourseOrderRepo {
     }
 
     @Override
-    public List<CourseOrder> paginateOrders(int index) {
+    public int countOrdersByDate() {
         Connection connection = BaseRepository.getConnection();
-        List<CourseOrder> courseOrderList = new ArrayList<>();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(PAGINATION);
-            preparedStatement.setInt(1, (index-1)*10);
-            ResultSet resultSet = preparedStatement.executeQuery();
-
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(COUNT_ORDER_BY_DATE);
+            while (resultSet.next()) {
+                return resultSet.getInt(1);
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return null;
+        return 0;
     }
 
 

@@ -10,6 +10,7 @@ import java.util.List;
 
 public class CourseDetailedContentRepoImpl implements ICourseDetailRepo {
     private final static String SELECT = "SELECT * FROM detailed_course_content";
+    private final static String SELECT_PAGINATION = "SELECT * FROM detailed_course_content ORDER BY detailed_course_content_id LIMIT ?,10";
     private final static String SELECT_BY_ID = "SELECT * FROM detailed_course_content WHERE detailed_course_content_id = ?;";
     private final static String SELECT_BY_COURSE_CONTENT_ID = "SELECT * FROM detailed_course_content WHERE course_content_id = ?;";
     private final static String INSERT_DETAIL = "INSERT INTO detailed_course_content(content_title, content, url_video_id, course_content_id,content_type_id) VALUES (?,?,?,?,?);";
@@ -34,6 +35,30 @@ public class CourseDetailedContentRepoImpl implements ICourseDetailRepo {
             }
             resultSet.close();
             statement.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return detailedContents;
+    }
+
+    @Override
+    public List<CourseDetailedContent> showListE(int currentPage) {
+        List<CourseDetailedContent> detailedContents = new ArrayList<>();
+        Connection connection = BaseRepository.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_PAGINATION);
+            preparedStatement.setInt(1, (currentPage - 1) * 10);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int detailed_content_id = resultSet.getInt("detailed_course_content_id");
+                String content_title = resultSet.getString("content_title");
+                String content = resultSet.getString("content");
+                String idVideo = resultSet.getString("url_video_id");
+                int courseContentId = resultSet.getInt("course_content_id");
+                int courseContentTypeId = resultSet.getInt("content_type_id");
+                detailedContents.add(new CourseDetailedContent(detailed_content_id, content_title,content,idVideo,courseContentId,courseContentTypeId));
+            }
+            resultSet.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface ICourseService {
     List<Course> showList ();
+    List<Course> showList (int currentPage);
     void saveCourse(Course course);
     Course selectCourse(int id);
     boolean deleteCourse(int id);
@@ -14,4 +15,5 @@ public interface ICourseService {
     List<Course> findByNameCourse(String nameCourse);
     List<Course> selectByUserBuy(int idUser);
     List<Course> searchByNameAndInstructor(String nameSearch, String instructorSearch);
+    int countCoursesAmount ();
 }

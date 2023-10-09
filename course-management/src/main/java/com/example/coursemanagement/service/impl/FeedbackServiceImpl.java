@@ -15,6 +15,11 @@ public class FeedbackServiceImpl implements IService<Feedback> {
     }
 
     @Override
+    public List<Feedback> showListE(int currentPage) {
+        return feedbackRepo.showListE(currentPage);
+    }
+
+    @Override
     public void saveE(Feedback feedback) {
 
     }
