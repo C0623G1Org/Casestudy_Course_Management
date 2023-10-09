@@ -20,40 +20,41 @@
                 </div>
                 <div class="mt-4 body-content-2">
                     <div class="card-table">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th class="text-center" scope="col">ID</th>
-                                <th class="text-center" scope="col">Username</th>
-                                <th class="text-center" scope="col">Tên hiển thị</th>
-                                <th class="text-center" scope="col">Email</th>
-                                <th class="text-center" scope="col">Thao tác</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <c:forEach items="${list}" var="user" varStatus="loop">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
                                 <tr>
-                                    <th scope="row">${loop.count}</th>
-                                    <td>${user.getUsername()}</td>
-                                    <td>${user.getFullName()}</td>
-                                    <td>${user.getEmail()}</td>
-                                    <td>
-                                        <div class="action-course d-flex justify-content-around">
-                                            <a role="button" class="btn btn-primary learn btn-content mb-1"
-                                               href="/dashboard/member/view?id=${user.getId()}">Xem</a>
-                                            <a role="button" class="btn btn-primary edit btn-content mb-1"
-                                               href="/dashboard/member/edit?id=${user.getId()}">Sửa</a>
-                                            <a role="button" class="btn btn-primary delete btn-content mb-1"
-                                               onclick="sendInforToModal('${user.getId()}','${user.getFullName()}')"
-                                               data-bs-toggle="modal" data-bs-target="#exampleModal">Xóa</a>
-                                        </div>
-                                    </td>
+                                    <th class="text-center" scope="col">ID</th>
+                                    <th class="text-center" scope="col">Tên đăng nhập</th>
+                                    <th class="text-center" scope="col">Tên hiển thị</th>
+                                    <th class="text-center" scope="col">Email</th>
+                                    <th class="text-center" scope="col">Thao tác</th>
                                 </tr>
-                            </c:forEach>
+                                </thead>
+                                <tbody>
+                                <c:forEach items="${list}" var="user" varStatus="loop">
+                                    <tr>
+                                        <th scope="row">${loop.count}</th>
+                                        <td>${user.getUsername()}</td>
+                                        <td>${user.getFullName()}</td>
+                                        <td>${user.getEmail()}</td>
+                                        <td>
+                                            <div class="action-course d-flex justify-content-around">
+                                                <a role="button" class="btn btn-primary learn btn-content mb-1"
+                                                   href="/dashboard/member/view?id=${user.getId()}">Xem</a>
+                                                <a role="button" class="btn btn-primary edit btn-content mb-1"
+                                                   href="/dashboard/member/edit?id=${user.getId()}">Sửa</a>
+                                                <a role="button" class="btn btn-primary delete btn-content mb-1"
+                                                   onclick="sendInforToModal('${user.getId()}','${user.getFullName()}')"
+                                                   data-bs-toggle="modal" data-bs-target="#exampleModal">Xóa</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
 
-                            </tbody>
-                        </table>
-
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -73,8 +74,8 @@
                     <p>Tất cả dữ liệu sẽ bị xóa!</p>
                 </div>
                 <div class="modal-footer">
-                    <a role="button" class="btn btn-outline-info" href="/dashboard/member">NO</a>
-                    <a role="button" class="btn btn-outline-danger" id="deletedMemberId">YES</a>
+                    <a role="button" class="btn btn-outline-info" href="/dashboard/member">Hủy</a>
+                    <a role="button" class="btn btn-outline-danger" id="deletedMemberId">Xóa</a>
                 </div>
             </div>
         </div>

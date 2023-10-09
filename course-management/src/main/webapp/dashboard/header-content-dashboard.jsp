@@ -2,15 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="header-content">
     <div class="hello">
-        <form class="row form-search-course g-2">
-<%--            <div class="col-auto">--%>
-<%--                <input type="text" class="form-control" id="inputEmail"--%>
-<%--                       placeholder=" Nhập khóa học cần tìm">--%>
-<%--            </div>--%>
-<%--            <div class="col-auto">--%>
-<%--                <button type="submit" class="btn btn-primary">Tìm</button>--%>
-<%--            </div>--%>
-        </form>
     </div>
     <div class="user">
         <div class="dropdown">

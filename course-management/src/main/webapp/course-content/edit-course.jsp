@@ -8,31 +8,20 @@
                 <c:import url="/dashboard/admin-siderbar.jsp"></c:import>
             </div>
             <div class="col-lg-9 content-dashboard">
-                <div class="header-content">
-                    <div class="hello">
-                        <form class="row form-search-course g-2">
-                            <div class="col-auto">
-                                <input type="text" class="form-control" id="inputEmail"
-                                       placeholder=" Nhập khóa học cần tìm">
-                            </div>
-                            <div class="col-auto">
-                                <button type="submit" class="btn btn-primary">Tìm</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="user">
-                      <span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">
-                            <img class="rounded-circle me-1" width="35" height="35"
-                                 src="https://zpsocial-f54-org.zadn.vn/24a379da816c6f32367d.jpg"
-                                 alt="">${user.getFullName()}
-                       </span>
-                    </div>
+                <div class="mb-5">
+                    <c:import url="/dashboard/header-content-dashboard.jsp"></c:import>
                 </div>
                 <div class="row edit-course mt-4 px-5">
                     <div class="row edit-course-1 ">
                         <h3 style="font-weight: bold">Chỉnh sửa khóa học</h3>
                         <p>Chỉnh sửa khóa học ${course.getName()}</p>
                     </div>
+
+                    <c:if test="${not empty messegeError}">
+                        <div class="alert alert-danger" role="alert">
+                                ${messegeError}
+                        </div>
+                    </c:if>
                     <form class="add-course edit-course-content" action="/dashboard/course/edit" method="post">
                         <input type="hidden" name="id-course" value="${course.getId()}">
                         <div class="mb-3">
@@ -48,61 +37,48 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="description-course" class="form-label"><i class="fa-solid fa-book"></i> Mô tả
-                                khóa học</label>
-                            <textarea class="form-control" id="description-course" name="description-course" rows="3">
-                                ${course.getDescription()}
-                            </textarea>
+                            <label for="description" class="form-label"><i class="fa-solid fa-book"></i> Mô tả khóa học</label>
+                            <textarea class="form-control" id="description" name="description-course" rows="3">${course.getDescription()}</textarea>
                         </div>
 
                         <div class="mb-3">
                             <label for="price-course" class="form-label"><i class="fa-solid fa-book"></i> Giá khóa
                                 học</label>
-                            <input type="text" class="form-control" name="price-course" id="price-course"
-                                   value=" ${course.getPrice()}">
+                            <input type="text" class="form-control" name="price-course" id="price-course" value="${course.getPrice()}">
                         </div>
 
                         <div class="mb-3">
-                            <label for="knowledge" class="form-label"><i class="fa-solid fa-book"></i> Bạn sẽ học được
-                                gì?</label>
-                            <textarea class="form-control" id="knowledge" name="knowledge" rows="5">
-                                ${course.getKnowledge()}
-                            </textarea>
+                            <label for="knowledge" class="form-label"><i class="fa-solid fa-book"></i> Bạn sẽ học được gì?</label>
+                            <textarea class="form-control" id="knowledge" name="knowledge" rows="3">${course.getKnowledge()}</textarea>
                         </div>
 
                         <div class="mb-3">
-                            <label for="requirements" class="form-label"><i class="fa-solid fa-book"></i> Yêu
-                                cầu</label>
-                            <textarea class="form-control" id="requirements" name="requirements" rows="3">
-                                ${course.getKnowledge()}
-                            </textarea>
+                            <label for="requirements" class="form-label"><i class="fa-solid fa-book"></i> Yêu cầu</label>
+                            <textarea class="form-control" id="requirements" name="requirements" rows="3">${course.getRequirements()}</textarea>
                         </div>
 
                         <div class="mb-3">
                             <label for="instructor" class="form-label"><i class="fa-solid fa-book"></i> Tác giả</label>
-                            <input type="text" class="form-control" name="instructor" id="instructor"
-                                   value="${course.getInstructor()}">
+                            <input type="text" class="form-control" name="instructor" id="instructor" value="${course.getInstructor()}">
                         </div>
 
                         <div class="mb-3">
                             <label for="course-inclusion" class="form-label"><i class="fa-solid fa-book"></i> Thông tin
                                 khác</label>
-                            <textarea class="form-control" id="course-inclusion" name="course-inclusion" rows="3">
-                                ${course.getCourseInclusion()}
-                            </textarea>
+                            <textarea class="form-control" id="course-inclusion" name="course-inclusion" rows="3">${course.getCourseInclusion()}</textarea>
                         </div>
 
                         <div class="mb-3">
-                            <label for="course-level" class="form-label"><i class="fa-solid fa-rectangle-list"></i> Course Level</label>
+                            <label for="course-level" class="form-label"><i class="fa-solid fa-rectangle-list"></i> Mức độ</label>
                             <select class="form-select form-control" id="course-level" name="course-level">
                                 <c:forEach items="${categoryList}" var="categoryList" varStatus="loop">
-                                    <option value="${categoryList.getId()}">${categoryList.getName()}</option>
+                                    <option <c:if test="${categoryList.getId() == course.getCourseLevelId()}">selected</c:if> value="${categoryList.getId()}">${categoryList.getName()}</option>
                                 </c:forEach>
                             </select>
                         </div>
 
                         <div class="text-center">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
                         </div>
                     </form>
                 </div>
@@ -153,7 +129,7 @@
             <div id="modal-body-detail-delete"class="modal-body">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
                 <a id="deleteDetailContent" role="button" class="btn btn-danger">Xóa</a>
             </div>
         </div>

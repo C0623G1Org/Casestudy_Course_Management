@@ -12,9 +12,9 @@
 <section>
     <div class="container">
         <form action="/checkout" method="post" role="form"
-              class="check-out add-course edit-course-content">
+              class="mt-md-5 check-out add-course edit-course-content">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-lg-6 col-md-12">
                     <h3 style="font-weight: bold">Thông tin khách hàng</h3>
                     <div class="mb-3">
                         <label for="nameBC"><i class="fa-solid fa-user"></i> Họ và tên của bạn*</label>
@@ -37,43 +37,44 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 item-order">
-                    <h3 style="font-weight: bold">Order Summary</h3>
+                <div class="col-lg-6 col-md-12 item-order">
+                    <h3 style="font-weight: bold">Chi tiết thanh toán</h3>
+<%--                    <div class="row">--%>
+<%--                        <div class="col-md-12 mt-2"><h5>Chi tiết thanh toán</h5></div>--%>
+<%--                    </div>--%>
                     <div class="row">
-                        <div class="col-md-12 mt-2"><h5>Order Summary</h5></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 ava-border">
-                            <img src="${course.getAvatar()}" width="120p" height="100">
+                        <div class="col-lg-9 col-md-6 ava-border d-flex">
+                            <div class="img">
+                                <img src="${course.getAvatar()}" width="120p" height="100">
+                            </div>
+                            <div class="info-course d-lg-flex">
+                                <input type="hidden" name="id-course" value="${course.getId()}">
+                                <input type="hidden" name="id-user" value="${sessionScope.user.getId()}">
+                                <h5 style="font-weight: bold">${course.getName()}</h5>
+                                <p>${course.getDescription()}</p>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <input type="hidden" name="id-course" value="${course.getId()}">
-                            <input type="hidden" name="id-user" value="${sessionScope.user.getId()}">
-                            <h5 style="font-weight: bold">${course.getName()}</h5>
-                            <p>${course.getDescription()}</p>
-                        </div>
-                        <div class="col-md-3">
-                            <p style="font-size: 25px; font-weight: bold; text-align: right">${course.getPrice()}</p>
+                        <div class="col-lg-3 col-md-6">
+                            <p style="font-size: 25px; font-weight: bold; text-align: right">${course.getPrice()} VND</p>
                         </div>
                     </div>
                     <hr>
                     <div class="row">
-                        <div class="col-md-10"><p>Discount</p></div>
+                        <div class="col-md-10"><p>Mã giảm giá</p></div>
                         <div class="col-md-2"><p style="text-align: right">10%</p></div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <p style="font-size: 30px; font-weight: bold">Total</p></div>
+                            <p style="font-size: 30px; font-weight: bold; margin-bottom: 0">Thành tiền</p></div>
                         <div class="col-md-6" style="text-align: right">
                             <input type="hidden" name="price-order" value="${course.getPrice()}">
-                            <p style="font-size: 25px; font-weight: bold">${course.getPrice()}</p><br/>
-
-                            <p>Ngày đặt mua: ${localDate}</p>
+                            <p style="font-size: 25px; font-weight: bold">${course.getPrice()} VND</p><br/>
+                            <p>(Đã bao gồm VAT)</p>
+<%--                            <p>Ngày đặt mua: ${localDate}</p>--%>
                             <input type="hidden" name="date-order" value="${localDate}">
 
-                            <p>Mã đơn hàng: #${code}</p>
+<%--                            <p>Mã đơn hàng: #${code}</p>--%>
                             <input type="hidden" name="code-order" value="${code}">
-                            <p>(VAT included if applicable)</p>
                         </div>
                     </div>
                     <hr>

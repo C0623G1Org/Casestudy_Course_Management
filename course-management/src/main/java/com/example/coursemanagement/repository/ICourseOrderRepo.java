@@ -25,5 +25,8 @@ public interface ICourseOrderRepo {
 
     void deleteOrder (int id);
 
+    int countOrdersAmount ();
+
+    List<CourseOrder> paginateOrders(int index);
 
 }
