@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<div class="col-lg-3 siderbar-dashboard"  id="siderbar-dashboard">
 <div class="menu-left user-siderbar">
     <div class="img-logo-dashboard">
         <a href="/">
@@ -52,4 +53,5 @@
         </li>
     </ul>
     <img width="100%" src="../public/image/vector-banner-2-thanhpv.png">
+</div>
 </div>

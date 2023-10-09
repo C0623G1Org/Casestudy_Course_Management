@@ -1003,12 +1003,6 @@ div#alertNotLogIn .modal-content .btn.btn-primary {
         border: unset;
         padding: unset;
     }
-
-    /*.siderbar-dashboard {*/
-    /*    position: absolute;*/
-    /*    z-index: 9999;*/
-    /*    display: none;*/
-    /*}*/
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1034,6 +1028,13 @@ div#alertNotLogIn .modal-content .btn.btn-primary {
     .row.card-head img {
         min-height: 200px;
         object-fit: cover;
+    }
+
+    .siderbar-dashboard {
+        position: absolute;
+        z-index: 9999;
+        display: none;
+        top: 130px;
     }
 }
 

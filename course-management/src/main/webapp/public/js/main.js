@@ -1,3 +1,12 @@
+function displayMenuDashboardMobile(){
+    let displayMenuMobile = document.getElementById("siderbar-dashboard").style.display;
+    if (displayMenuMobile !== "block"){
+        document.getElementById("siderbar-dashboard").style.display = "block";
+    } else {
+        document.getElementById("siderbar-dashboard").style.display = "none";
+    }
+}
+
 $(document).ready(function () {
     $('#form-signup').submit(function (e) {
         e.preventDefault();
@@ -84,3 +93,4 @@ window.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
