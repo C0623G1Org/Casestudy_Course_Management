@@ -62,6 +62,9 @@
                             </c:forEach>
                             </tbody>
                         </table>
+                        <c:forEach begin="1" end="${endPage}" var="page">
+                            <a href="#">${page}</a>
+                        </c:forEach>
                     </div>
                     <nav aria-label="Page navigation example" class="mt-3">
                         <ul class="pagination justify-content-center">
@@ -83,7 +86,7 @@
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Bạn có chắc chắn không?</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div id="modal-body-detail-delete"class="modal-body">
+            <div id="modal-body-detail-delete" class="modal-body">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
@@ -93,9 +96,9 @@
     </div>
 </div>
 <script>
-    function displayModalDelete(id,title) {
-        document.getElementById("modal-body-detail-delete").innerHTML = "Bạn có chắc chắn muốn xóa khóa học <span class='course-content-name'>"+ title + "</span> không ?";
-        document.getElementById("deleteDetailContent").setAttribute("href", "/dashboard/course/delete?id="+id);
+    function displayModalDelete(id, title) {
+        document.getElementById("modal-body-detail-delete").innerHTML = "Bạn có chắc chắn muốn xóa khóa học <span class='course-content-name'>" + title + "</span> không ?";
+        document.getElementById("deleteDetailContent").setAttribute("href", "/dashboard/course/delete?id=" + id);
     }
 </script>
 <c:import url="footer-dashboard.jsp"></c:import>
