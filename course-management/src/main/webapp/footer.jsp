@@ -8,7 +8,7 @@
                 <div class="card text-bg-dark">
                     <img src="../public/image/Rectangle 48.png" class="card-img" alt="...">
                     <div class="card-img-overlay">
-                        <div class="px-4 py-5 my-3 text-center">
+                        <div class="px-4 py-lg-5 py-md-1 my-3 text-center">
                             <div class="col-lg-6 mx-auto">
                                 <h1 class="display-5 fw-bold text-body-emphasis">Kết nối với chúng tôi</h1>
                                 <p class="lead mb-4">LTTA - Khơi dậy đam mê lập trình!</p>

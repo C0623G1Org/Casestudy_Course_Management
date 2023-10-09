@@ -28,46 +28,48 @@
 
                 <div class="mt-5 body-content-2">
                     <div class="card-table">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th class="text-center" scope="col">ID</th>
-                                <th class="text-center" scope="col">Tên khóa học</th>
-                                <th class="text-center" scope="col">Mức độ</th>
-                                <th class="text-center" scope="col">Giảng viên</th>
-                                <th class="text-center" scope="col">Giá tiền</th>
-                                <th class="text-center" scope="col">Thao tác</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <c:forEach items="${courses}" var="courses" varStatus="loop">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
                                 <tr>
-                                    <td>${courses.getId()}</td>
-                                    <td>${courses.getName()}</td>
-                                    <c:forEach items="${categoryList}" var="category">
-                                        <c:if test="${category.getId() == courses.getCourseLevelId()}">
-                                            <td>${category.getName()}</td>
-                                        </c:if>
-                                    </c:forEach>
-                                    <td>${courses.getInstructor()}</td>
-                                    <td>
-                                        <fmt:setLocale value="vi_VN"/>
-                                        <fmt:formatNumber value="${courses.getPrice()}" type="currency"/>
-                                    </td>
-                                    <td class="action-course d-flex justify-content-around">
-                                        <a role="button" class="btn btn-primary learn btn-content mb-1"
-                                           href="/learn?id=${courses.getId()}">Xem</a>
-                                        <a role="button" class="btn btn-primary edit btn-content mb-1"
-                                           href="/dashboard/course/edit?id=${courses.getId()}">Sửa</a>
-                                        <a role="button"
-                                           onclick="displayModalDelete('${courses.getId()}','${courses.getName()}')"
-                                           class="btn btn-primary delete btn-content mb-1" data-bs-toggle="modal"
-                                           data-bs-target="#exampleModal">Xóa</a>
-                                    </td>
+                                    <th class="text-center" scope="col">ID</th>
+                                    <th class="text-center" scope="col">Tên khóa học</th>
+                                    <th class="text-center" scope="col">Mức độ</th>
+                                    <th class="text-center" scope="col">Giảng viên</th>
+                                    <th class="text-center" scope="col">Giá tiền</th>
+                                    <th class="text-center" scope="col">Thao tác</th>
                                 </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                <c:forEach items="${courses}" var="courses" varStatus="loop">
+                                    <tr>
+                                        <td>${courses.getId()}</td>
+                                        <td>${courses.getName()}</td>
+                                        <c:forEach items="${categoryList}" var="category">
+                                            <c:if test="${category.getId() == courses.getCourseLevelId()}">
+                                                <td>${category.getName()}</td>
+                                            </c:if>
+                                        </c:forEach>
+                                        <td>${courses.getInstructor()}</td>
+                                        <td>
+                                            <fmt:setLocale value="vi_VN"/>
+                                            <fmt:formatNumber value="${courses.getPrice()}" type="currency"/>
+                                        </td>
+                                        <td class="action-course d-flex justify-content-around">
+                                            <a role="button" class="btn btn-primary learn btn-content mb-1"
+                                               href="/learn?id=${courses.getId()}">Xem</a>
+                                            <a role="button" class="btn btn-primary edit btn-content mb-1"
+                                               href="/dashboard/course/edit?id=${courses.getId()}">Sửa</a>
+                                            <a role="button"
+                                               onclick="displayModalDelete('${courses.getId()}','${courses.getName()}')"
+                                               class="btn btn-primary delete btn-content mb-1" data-bs-toggle="modal"
+                                               data-bs-target="#exampleModal">Xóa</a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
