@@ -4,9 +4,7 @@
 <section>
     <div class="container my-4">
         <div class="row">
-            <div class="col-lg-3 siderbar-dashboard">
-                <c:import url="/dashboard/admin-siderbar.jsp"></c:import>
-            </div>
+<c:import url="/dashboard/admin-siderbar.jsp"></c:import>
             <div class="col-xl-9 col-lg-12 content-dashboard">
                 <div class="mb-5">
                     <c:import url="/dashboard/header-content-dashboard.jsp"></c:import>

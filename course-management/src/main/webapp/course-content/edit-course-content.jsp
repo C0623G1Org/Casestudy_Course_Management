@@ -4,9 +4,7 @@
 <section>
     <div class="container my-4">
         <div class="row">
-            <div class="col-lg-3 siderbar-dashboard">
-                <c:import url="/dashboard/admin-siderbar.jsp"></c:import>
-            </div>
+<c:import url="/dashboard/admin-siderbar.jsp"></c:import>
             <div class="col-xl-9 col-lg-12 content-dashboard">
                 <div class="mb-5">
                     <c:import url="/dashboard/header-content-dashboard.jsp"></c:import>
@@ -41,11 +39,11 @@
                     <c:forEach items="${detailedContents}" var="detailedContents" varStatus="loop">
                     <div class="container mt-3">
                         <div class="row course-detail">
-                            <div class="col-9">
+                            <div class="col-lg-9 col-md-12">
                                 <h3><i class="fa-solid fa-video"></i> ${detailedContents.getTitle()}</h3>
                                 <p>${detailedContents.getContent()}</p>
                             </div>
-                            <div class="col-3">
+                            <div class="col-lg-3 col-md-12">
                                 <div class="d-flex justify-content-between">
                                     <c:if test="${detailedContents.getCourseContentTypeId() == 1}">
                                         <a href="/learn/lesson/?id=${course.getId()}&content-detail=${detailedContents.getId()}"
