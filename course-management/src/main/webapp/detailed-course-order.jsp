@@ -12,10 +12,8 @@
 <section>
     <div class="container my-4">
         <div class="row">
-            <div class="col-lg-3 siderbar-dashboard">
-                <c:import url="/dashboard/admin-siderbar.jsp"></c:import>
-            </div>
-            <div class="col-lg-9 content-dashboard">
+            <c:import url="/dashboard/admin-siderbar.jsp"></c:import>
+            <div class="col-xl-9 col-lg-12 content-dashboard">
                 <div class="mb-5">
                     <c:import url="dashboard/header-content-dashboard.jsp"></c:import>
                 </div>
@@ -90,7 +88,8 @@
                         </div>
                     </div>
                     <div class="row content-oder-detain-6">
-                        <i style="padding-left: 30px;padding-bottom: 30px;color: #666;">Khách hàng thanh toán qua chuyển khoản ngân hàng</i>
+                        <i style="padding-left: 30px;padding-bottom: 30px;color: #666;">Khách hàng thanh toán qua chuyển
+                            khoản ngân hàng</i>
                     </div>
                 </div>
             </div>

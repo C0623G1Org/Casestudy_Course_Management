@@ -4,9 +4,7 @@
 <section>
     <div class="container my-4">
         <div class="row d-flex justify-content-between">
-            <div class="col-lg-3 siderbar-dashboard">
                 <c:import url="user-siderbar.jsp"></c:import>
-            </div>
             <div class="col-lg-9 content-dashboard ps-5 ">
                 <c:import url="header-content-dashboard.jsp"></c:import>
                 <div class="row my-5 content-edit-info ">

@@ -11,20 +11,30 @@
   <component name="ChangeListManager">
     <list default="true" id="8b7fa4d5-6b60-40e8-94a6-bd99b53912e2" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/buy-course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/buy-course.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/check-out.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/check-out.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ad-course-management.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ad-course-management.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/add-course-content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/add-course-content.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/add-course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/add-course.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/add-detail-to-content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/add-detail-to-content.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/edit-course-content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/edit-course-content.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/edit-course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/edit-course.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-content/edit-detail-to-content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-content/edit-detail-to-content.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/admin-siderbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/admin-siderbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-edit.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-course.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-member.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-member.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-manage-order.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin-view.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-user-edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-user-edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-user-password.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-user-password.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/dashboard-user.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/header-content-dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/header-content-dashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard/user-siderbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard/user-siderbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/detailed-course-order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/detailed-course-order.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/learning/siderbar-learning.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/learning/siderbar-learning.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/learning/user-learning-video.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/learning/user-learning-video.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/learning/user-learning.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/learning/user-learning.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/public/course.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/public/course.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/public/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/public/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/public/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,9 +82,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
-        <option value="Servlet" />
         <option value="Jsp File" />
+        <option value="Servlet" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -110,7 +120,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/CodeGym/C0623G1_Pham_Van_Thanh_Module3/Casestudy_Course_Management/course-management/src/main/webapp/course-content&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/CodeGym/C0623G1_Pham_Van_Thanh_Module3/Casestudy_Course_Management/course-management/src/main/webapp&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -122,11 +132,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CodeGym\C0623G1_Pham_Van_Thanh_Module3\Casestudy_Course_Management\course-management\src\main\webapp" />
       <recent name="D:\CodeGym\C0623G1_Pham_Van_Thanh_Module3\Casestudy_Course_Management\course-management\src\main\webapp\course-content" />
       <recent name="D:\CodeGym\C0623G1_Pham_Van_Thanh_Module3\Casestudy_Course_Management\course_management\src\main\webapp\learning" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Admin\Documents\GitHub\C0623G1_Pham_Van_Thanh_Module3\Casestudy_Course_Management\course-management\src\main\webapp\public\image" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -142,7 +150,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.21">
-    <configuration name="course-management [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="course-management [build]" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -167,7 +175,7 @@
     <configuration name="Tomcat 9.0.21" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.21" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="Gradle : com.example : course_management-1.0-SNAPSHOT.war">
+        <artifact name="Gradle : com.example : course-management-1.0-SNAPSHOT.war">
           <settings>
             <option name="CONTEXT_PATH" value="" />
           </settings>
@@ -245,14 +253,8 @@
         </SHUTDOWN>
       </ConfigurationWrapper>
       <method v="2">
-        <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="Gradle : com.example : course-management-1.0-SNAPSHOT.war" />
-          <artifact name="Gradle : com.example : course_management-1.0-SNAPSHOT.war" />
-        </option>
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="Gradle : com.example : course-management-1.0-SNAPSHOT.war" />
-          <artifact name="Gradle : com.example : course_management-1.0-SNAPSHOT.war" />
         </option>
       </method>
     </configuration>
@@ -262,6 +264,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.course-management [build]" />
         <item itemvalue="Gradle.course-management [build]" />
         <item itemvalue="Gradle.course-management [build]" />
       </list>
@@ -283,6 +286,12 @@
       <workItem from="1696468720422" duration="8216000" />
       <workItem from="1696497923274" duration="2961000" />
       <workItem from="1696507158959" duration="1179000" />
+      <workItem from="1696560923051" duration="418000" />
+      <workItem from="1696561415056" duration="17130000" />
+      <workItem from="1696646901204" duration="10166000" />
+      <workItem from="1696732695292" duration="784000" />
+      <workItem from="1696745638860" duration="5217000" />
+      <workItem from="1696757200237" duration="10603000" />
     </task>
     <task id="LOCAL-00001" summary="fix bugs">
       <created>1696417177332</created>
@@ -309,13 +318,109 @@
     </task>
     <task id="LOCAL-00004" summary="update">
       <option name="closed" value="true" />
-      <created>1696777123765</created>
+      <created>1696559812343</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1696777123765</updated>
+      <updated>1696559812343</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="khoi phuc file">
+      <option name="closed" value="true" />
+      <created>1696560259774</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696560259774</updated>
+    </task>
+    <task id="LOCAL-00006" summary="khoi phuc file">
+      <option name="closed" value="true" />
+      <created>1696560956599</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696560956599</updated>
+    </task>
+    <task id="LOCAL-00007" summary="thanh up">
+      <option name="closed" value="true" />
+      <created>1696561120009</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696561120009</updated>
+    </task>
+    <task id="LOCAL-00008" summary="thanh up">
+      <option name="closed" value="true" />
+      <created>1696646933753</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1696646933753</updated>
+    </task>
+    <task id="LOCAL-00009" summary="thanh up">
+      <option name="closed" value="true" />
+      <created>1696646974835</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1696646974835</updated>
+    </task>
+    <task id="LOCAL-00010" summary="thanh up">
+      <option name="closed" value="true" />
+      <created>1696647395474</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1696647395474</updated>
+    </task>
+    <task id="LOCAL-00011" summary="update">
+      <option name="closed" value="true" />
+      <created>1696736652626</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1696736652626</updated>
+    </task>
+    <task id="LOCAL-00012" summary="update">
+      <option name="closed" value="true" />
+      <created>1696738156836</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1696738156836</updated>
+    </task>
+    <task id="LOCAL-00013" summary="update">
+      <option name="closed" value="true" />
+      <created>1696752145803</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1696752145803</updated>
+    </task>
+    <task id="LOCAL-00014" summary="update">
+      <option name="closed" value="true" />
+      <created>1696752313722</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1696752313722</updated>
+    </task>
+    <task id="LOCAL-00015" summary="update">
+      <option name="closed" value="true" />
+      <created>1696767316453</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1696767316453</updated>
+    </task>
+    <task id="LOCAL-00016" summary="update">
+      <option name="closed" value="true" />
+      <created>1696814035380</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1696814035380</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,23 +439,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix bugs" />
+    <MESSAGE value="khoi phuc file" />
+    <MESSAGE value="thanh up" />
     <MESSAGE value="update" />
     <option name="LAST_COMMIT_MESSAGE" value="update" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/coursemanagement/controller/CourseServlet.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/coursemanagement/repository/impl/CourseOrderRepoImpl.java</url>
-          <line>133</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
