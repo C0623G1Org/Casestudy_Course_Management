@@ -129,7 +129,6 @@ public class UserRepoImpl implements IUserRepo {
         Connection connection=BaseRepository.getConnection();
         PreparedStatement preparedStatement=null;
         try {
-
             if(user.getRole().equals("admin")){
                 preparedStatement=connection.prepareStatement(UPDATE_MEMBER);
                 preparedStatement.setString(1,user.getUsername());
@@ -153,15 +152,10 @@ public class UserRepoImpl implements IUserRepo {
                 preparedStatement.setInt(8,user.getId());
                 preparedStatement.executeUpdate();
             }
+            preparedStatement.close();
+            connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        } finally {
-            try {
-                preparedStatement.close();
-                connection.close();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
         }
     }
 
